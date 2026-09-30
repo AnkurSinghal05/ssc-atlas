@@ -74,8 +74,8 @@
 @theme inline {
   --font-sans: 'Figtree', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Bricolage Grotesque', 'Figtree', ui-sans-serif, system-ui, sans-serif;
-  --font-hand: 'Kalam', 'Comic Neue', 'Segoe Print', cursive;
-  --font-script: 'Caveat', 'Kalam', 'Segoe Print', cursive;
+  --font-hand: 'Shantell Sans', 'Comic Neue', 'Segoe Print', cursive;
+  --font-script: 'Caveat', 'Shantell Sans', 'Segoe Print', cursive;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
