@@ -11,29 +11,38 @@ const topic: Topic = {
   tags: ['time and work', 'efficiency', 'LCM method', 'man-days', 'wages', 'pipes and cisterns', 'leak', 'alternate days'],
   summary:
     'Work = efficiency × time. Take the total work as the LCM of the given days, turn each person into units per day, and most questions become one division. Pipes are the same idea, with a leak as negative work.',
+  patterns: [
+    { name: 'Two or three people working together', frequency: 'most', example: 'A in 10 days, B in 15. Together?' },
+    { name: 'Efficiency ratios', frequency: 'most', example: 'A is twice as efficient as B; together 14 days. A alone?' },
+    { name: 'Someone leaves or joins midway', frequency: 'often', example: 'A and B work 6 days, then A leaves. B finishes in?' },
+    { name: 'Pipes and cisterns with a leak', frequency: 'often', example: 'Fills in 10 h, with a leak in 12 h. Leak empties in?' },
+    { name: 'Men, days and hours (MDH)', frequency: 'often', example: '10 men × 8 h × 12 days. 8 men at 6 h take?' },
+    { name: 'Wages shared by work done', frequency: 'rare', example: 'A in 10 days, B in 15, paid ₹5,000. A’s share?' },
+    { name: 'Alternate days', frequency: 'rare', example: 'A and B work on alternate days starting with A. Days?' },
+  ],
   keyPoints: [
     {
       title: 'The LCM (total work) method',
       text: 'Take the total work as the LCM of the days given. Each person\'s efficiency is total ÷ their days. Add efficiencies for people working together.',
-      formula: 'time = total work / combined efficiency',
+      formula: 'time = (total work)/(combined efficiency)',
       example: 'A in 10 days, B in 15: work = 30 units, A = 3, B = 2 per day. Together 30/5 = **6 days**.',
     },
     {
       title: 'Two people together',
       text: 'If A takes a days and B takes b days, together they take ab/(a + b) days. If A and B together take a days and A alone takes b, then B alone takes ab/(b − a).',
-      formula: 'together = ab / (a + b)',
+      formula: 'together = ab/(a + b)',
       example: 'A 12 days, B 24 days: 288/36 = **8 days**.',
     },
     {
       title: 'Efficiency and time are inversely proportional',
       text: 'If A is twice as efficient as B, A takes half the time. Efficiency ratio 3 : 2 means time ratio 2 : 3.',
-      formula: 'efficiency ∝ 1 / time',
+      formula: 'efficiency ∝ 1/time',
       example: 'A is twice as fast as B; together 14 days. Work = 3 × 14 = 42 units, A alone = 42/2 = **21 days**.',
     },
     {
       title: 'Man-days (M × D × H)',
       text: 'For the same job, men × days × hours per day stays constant. If the work changes too, divide by the work on each side.',
-      formula: 'M₁D₁H₁ / W₁ = M₂D₂H₂ / W₂',
+      formula: 'M₁D₁H₁/W₁ = M₂D₂H₂/W₂',
       example: '10 men × 8 h × 12 days = 960. 8 men at 6 h/day need 960/48 = **20 days**.',
     },
     {
@@ -56,7 +65,7 @@ const topic: Topic = {
     {
       title: 'Leak from delayed filling',
       text: 'A pipe fills a tank in a hours, but with a leak it takes b hours. The leak alone empties the full tank in ab/(b − a) hours.',
-      formula: 'leak time = ab / (b − a)',
+      formula: 'leak time = ab/(b − a)',
       example: '10 h, but 12 h with a leak: 120/2 = **60 h**.',
     },
   ],
@@ -133,12 +142,12 @@ const topic: Topic = {
         },
         {
           name: 'Shortcut',
-          steps: ['Work = LCM(12, 15, 20) = 60 units.', 'Pair rates 5 + 4 + 3 = 12 = twice the team, so team = 6/day.', '60/6 = 10 days.'],
+          steps: ['Work = LCM(12, 15, 20) = 60 units.', 'Pair rates 5 + 4 + 3 = 12 = twice the team, so team = 6 units per day.', '60/6 = 10 days.'],
           seconds: 20,
         },
         {
           name: 'Formula',
-          steps: ['2xyz/(xy + yz + zx) = 2 × 12 × 15 × 20 / (180 + 300 + 240).', '= 7,200/720 = 10 days.'],
+          steps: ['2xyz/(xy + yz + zx) = 2 × 12 × 15 × 20/(180 + 300 + 240).', '= 7,200/720 = 10 days.'],
           seconds: 15,
         },
       ],
@@ -302,7 +311,7 @@ const topic: Topic = {
       question: 'Two pipes can fill a tank in 12 and 15 minutes. Both are opened together, and after 3 minutes the first pipe is closed. How much more time will the second pipe take to fill the tank?',
       options: ['8 min 30 s', '8 min 15 s', '9 min', '7 min 45 s'],
       answer: 1,
-      explain: 'Tank = 60 units, rates 5 and 4. In 3 minutes: 27 units. Left 33 units at 4/min = 8.25 min = 8 min 15 s.',
+      explain: 'Tank = 60 units, rates 5 and 4. In 3 minutes: 27 units. Left 33 units at 4 units a minute = 8.25 min = 8 min 15 s.',
     },
     {
       type: 'mcq',

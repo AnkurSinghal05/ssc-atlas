@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, Flame, Star } from 'lucide-react';
 import type { Priority, Subject, Topic } from '@/content/types';
 import { formatMinutes, formatTimes, isReady, totalMinutes, totalReviseMinutes, weightageLabel } from '@/content/helpers';
 import { inTier, subjectInTier, TIER_LABEL, useTier } from '@/lib/tier';
@@ -39,6 +39,16 @@ export function SubjectOverview({ subject }: { subject: Subject }) {
   const keep = (t: Topic) => inTier(t, tier) && (priority === 'all' || t.priority === priority);
   const categories = subject.categories.map((c) => ({ ...c, topics: c.topics.filter(keep) })).filter((c) => c.topics.length);
   const topics = categories.flatMap((c) => c.topics);
+  // Consecutive areas with the same `section` (e.g. Basic, Advanced) share a heading.
+  const sections: {
+    name?: string;
+    cats: { cat: (typeof categories)[number]; ci: number }[];
+  }[] = [];
+  categories.forEach((cat, ci) => {
+    const last = sections.at(-1);
+    if (last && last.name === cat.section) last.cats.push({ cat, ci });
+    else sections.push({ name: cat.section, cats: [{ cat, ci }] });
+  });
   const ready = topics.filter(isReady);
   const questions = ready.reduce((n, t) => n + (t.qa?.length ?? 0) + (t.problems?.length ?? 0) + (t.quiz?.length ?? 0), 0);
   const stats: [number | string, string][] = [
@@ -89,7 +99,14 @@ export function SubjectOverview({ subject }: { subject: Subject }) {
       <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Filter by priority">
         <span className="text-muted-foreground mr-1 text-[13px] font-semibold">Priority</span>
         {(['all', 'high', 'medium', 'low'] as const).map((p) => (
-          <Button key={p} size="sm" variant={priority === p ? 'secondary' : 'ghost'} aria-pressed={priority === p} className="capitalize" onClick={() => setPriority(p)}>
+          <Button
+            key={p}
+            size="sm"
+            variant={priority === p ? 'secondary' : 'ghost'}
+            aria-pressed={priority === p}
+            className="capitalize"
+            onClick={() => setPriority(p)}
+          >
             {p}
           </Button>
         ))}
@@ -102,70 +119,89 @@ export function SubjectOverview({ subject }: { subject: Subject }) {
       )}
       {subjectInTier(subject, tier) && !topics.length && <p className="text-muted-foreground">No topics match these filters.</p>}
 
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,290px),1fr))] gap-3.5">
-        {categories.map((cat, ci) => (
-          <Card
-            key={cat.id}
-            style={tintStyle(ci)}
-            className="tint bg-tint border-tint-border border-t-tint-strong gap-1.5 border-t-4 px-3.5 pt-4 pb-3"
-          >
-            <div className="flex items-baseline gap-2.5 px-1.5">
-              <span className="text-tint-ink font-mono text-xs font-semibold">{String(ci + 1).padStart(2, '0')}</span>
-              <h2 className="text-[19px] font-bold">{cat.name}</h2>
-              <span className="text-muted-foreground ml-auto text-xs font-semibold whitespace-nowrap tabular-nums" title="Time to learn · time to revise this area">
-                {formatMinutes(totalMinutes(cat.topics))} · {formatMinutes(totalReviseMinutes(cat.topics))}
+      {sections.map((sec) => (
+        <section key={sec.name ?? 'areas'} className="flex flex-col gap-3">
+          {sec.name && (
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b pb-1.5">
+              <h2 className="text-2xl font-extrabold tracking-[-0.02em]">{sec.name}</h2>
+              <span className="text-muted-foreground text-sm">{sec.cats.map((c) => c.cat.name).join(' · ')}</span>
+              <span className="text-muted-foreground ml-auto text-xs font-semibold tabular-nums" title="Time to learn · time to revise this section">
+                {formatMinutes(totalMinutes(sec.cats.flatMap((c) => c.cat.topics)))} ·{' '}
+                {formatMinutes(totalReviseMinutes(sec.cats.flatMap((c) => c.cat.topics)))}
               </span>
             </div>
-            {cat.blurb && (
-              <p className="text-muted-foreground px-1.5 pb-1.5 text-[13px]">
-                <RichText text={cat.blurb} />
-              </p>
-            )}
-            <ul className="m-0 flex list-none flex-col gap-0.5 p-0">
-              {cat.topics.map((t) => {
-                const sc = scores[scoreKey(subject.id, t.id)];
-                const r = isReady(t);
-                return (
-                  <li key={t.id}>
-                    <a
-                      href={topicHref(subject.id, t.id)}
-                      onClick={(e) => {
-                        // Plain clicks open a preview; modified clicks still open the topic (e.g. in a new tab).
-                        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-                        e.preventDefault();
-                        origin.from(e.currentTarget);
-                        setPreview({ topic: t, area: cat.name, hue: ci });
-                        setPreviewOpen(true);
-                      }}
-                      className={cn(
-                        'flex items-center gap-2.5 rounded-md px-2 py-1.5 text-sm transition-[background-color,transform] duration-150 hover:translate-x-0.5',
-                        r ? 'bg-tint-strong/15 hover:bg-tint-strong/25 font-semibold' : 'text-muted-foreground hover:bg-tint-hover',
-                      )}
-                    >
-                      <StatusDot state={sc && sc.answered === sc.total ? 'done' : r ? 'ready' : 'stub'} />
-                      <span className="flex min-w-0 flex-1 flex-col">
-                        <span>
-                          {t.title}
-                          {t.priority === 'high' && <Star className="text-bad ml-1 inline size-3 -translate-y-px" aria-label="High priority" />}
-                        </span>
-                        <span className="text-muted-foreground text-xs font-medium tabular-nums">
-                          {[sc ? `${sc.correct}/${sc.total} correct` : r ? topicCounts(t) : 'soon', weightageLabel(t, tier)].filter(Boolean).join(' · ')}
-                        </span>
-                      </span>
-                      <span
-                        className="text-muted-foreground text-right text-xs font-semibold whitespace-nowrap tabular-nums"
-                        title="Time to learn · time to revise"
-                      >
-                        {formatTimes(t)}
-                      </span>
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </Card>
-        ))}
-      </div>
+          )}
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,290px),1fr))] gap-3.5">
+            {sec.cats.map(({ cat, ci }) => (
+              <Card
+                key={cat.id}
+                style={tintStyle(ci)}
+                className="tint bg-tint border-tint-border border-t-tint-strong gap-1.5 border-t-4 px-3.5 pt-4 pb-3"
+              >
+                <div className="flex items-baseline gap-2.5 px-1.5">
+                  <span className="text-tint-ink font-mono text-xs font-semibold">{String(ci + 1).padStart(2, '0')}</span>
+                  <h2 className="text-[19px] font-bold">{cat.name}</h2>
+                  <span
+                    className="text-muted-foreground ml-auto text-xs font-semibold whitespace-nowrap tabular-nums"
+                    title="Time to learn · time to revise this area"
+                  >
+                    {formatMinutes(totalMinutes(cat.topics))} · {formatMinutes(totalReviseMinutes(cat.topics))}
+                  </span>
+                </div>
+                {cat.blurb && (
+                  <p className="text-muted-foreground px-1.5 pb-1.5 text-[13px]">
+                    <RichText text={cat.blurb} />
+                  </p>
+                )}
+                <ul className="m-0 flex list-none flex-col gap-0.5 p-0">
+                  {cat.topics.map((t) => {
+                    const sc = scores[scoreKey(subject.id, t.id)];
+                    const r = isReady(t);
+                    return (
+                      <li key={t.id}>
+                        <a
+                          href={topicHref(subject.id, t.id)}
+                          onClick={(e) => {
+                            // Plain clicks open a preview; modified clicks still open the topic (e.g. in a new tab).
+                            if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+                            e.preventDefault();
+                            origin.from(e.currentTarget);
+                            setPreview({ topic: t, area: cat.name, hue: ci });
+                            setPreviewOpen(true);
+                          }}
+                          className={cn(
+                            'flex items-center gap-2.5 rounded-md px-2 py-1.5 text-sm transition-[background-color,transform] duration-150 hover:translate-x-0.5',
+                            r ? 'bg-tint-strong/15 hover:bg-tint-strong/25 font-semibold' : 'text-muted-foreground hover:bg-tint-hover',
+                          )}
+                        >
+                          <StatusDot state={sc && sc.answered === sc.total ? 'done' : r ? 'ready' : 'stub'} />
+                          <span className="flex min-w-0 flex-1 flex-col">
+                            <span>
+                              {t.title}
+                              {t.priority === 'high' && <Star className="text-bad ml-1 inline size-3 -translate-y-px" aria-label="High priority" />}
+                            </span>
+                            <span className="text-muted-foreground text-xs font-medium tabular-nums">
+                              {[sc ? `${sc.correct}/${sc.total} correct` : r ? topicCounts(t) : 'soon', weightageLabel(t, tier)]
+                                .filter(Boolean)
+                                .join(' · ')}
+                            </span>
+                          </span>
+                          <span
+                            className="text-muted-foreground text-right text-xs font-semibold whitespace-nowrap tabular-nums"
+                            title="Time to learn · time to revise"
+                          >
+                            {formatTimes(t)}
+                          </span>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </Card>
+            ))}
+          </div>
+        </section>
+      ))}
 
       <Dialog open={previewOpen} onOpenChange={setPreviewOpen}>
         {preview && (
@@ -202,6 +238,28 @@ function TopicPreview({ subjectId, area, topic }: { subjectId: string; area: str
           )}
         </p>
       </DialogDescription>
+      {!!topic.patterns?.length && (
+        <div className="flex flex-col gap-2">
+          <p className="text-sm font-bold">Question patterns</p>
+          <ul className="flex list-none flex-wrap gap-1.5 p-0">
+            {topic.patterns.map((p) => (
+              <li key={p.name}>
+                <Badge
+                  variant="outline"
+                  className={cn(
+                    'bg-background/50 text-[12.5px] font-medium whitespace-normal',
+                    p.frequency === 'most' && 'border-bad text-bad font-semibold',
+                  )}
+                  title={p.frequency === 'most' ? 'Most asked' : undefined}
+                >
+                  {p.frequency === 'most' && <Flame aria-label="Most asked" />}
+                  {p.name}
+                </Badge>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       {!!topic.keyPoints?.length && (
         <div className="flex flex-col gap-2">
           <p className="text-sm font-bold">Key ideas</p>

@@ -11,6 +11,14 @@ const topic: Topic = {
   tags: ['percent', 'successive change', 'price consumption', 'population', 'depreciation', 'election', 'percentage points'],
   summary:
     'Percent means "out of 100". Learn the fraction table by heart and most questions become one line: change over base, or two changes multiplied.',
+  patterns: [
+    { name: 'Successive percentage changes', frequency: 'most', example: 'A price rises 20% and then falls 20%. Net change?' },
+    { name: 'Price up, consumption down', frequency: 'most', example: 'Sugar costs 25% more. Cut consumption by how much?' },
+    { name: '"More than" vs "less than"', frequency: 'often', example: "A earns 25% more than B. B earns how much less than A?" },
+    { name: 'Population growth and depreciation', frequency: 'often', example: 'A machine loses 10% a year. Value after 2 years?' },
+    { name: 'Elections and pass marks', frequency: 'often', example: 'Winner gets 60% and wins by 1,200. Total valid votes?' },
+    { name: 'Percentage of a percentage', frequency: 'rare', example: '30% of 40% of 500 = ?' },
+  ],
   keyPoints: [
     {
       title: 'Fractions you must know as percentages',
@@ -20,8 +28,8 @@ const topic: Topic = {
     {
       title: 'Percentage change is always over the old value',
       text: 'Change as a percentage = (new − old) ÷ old × 100. The base is the value you start from.',
-      formula: '% change = (new − old) / old × 100',
-      example: '₹20,000 → ₹25,000 is a 5,000 / 20,000 = **25%** rise.',
+      formula: '% change = (new − old)/old × 100',
+      example: '₹20,000 → ₹25,000 is a 5,000/20,000 = **25%** rise.',
     },
     {
       title: 'Two changes in a row',
@@ -32,7 +40,7 @@ const topic: Topic = {
     {
       title: 'Price up, consumption down',
       text: 'To keep spending the same after a price rise of r%, cut consumption by r/(100 + r) × 100%. After a price fall of r%, you can raise it by r/(100 − r) × 100%.',
-      formula: 'cut = r / (100 + r) × 100',
+      formula: 'cut = r/(100 + r) × 100',
       example: 'Price +25%: cut 25/125 = **20%**. As fractions: up by 1/4 means down by 1/5.',
     },
     {

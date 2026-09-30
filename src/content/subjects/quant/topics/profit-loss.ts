@@ -11,23 +11,31 @@ const topic: Topic = {
   tags: ['profit', 'loss', 'cost price', 'selling price', 'marked price', 'discount', 'markup', 'dishonest dealer', 'successive discount'],
   summary:
     'Three prices: cost price (CP), marked price (MP) and selling price (SP). Profit and loss are taken on CP, discount on MP. Keep the bases straight and every question becomes a chain of multipliers.',
+  patterns: [
+    { name: 'Markup and discount together', frequency: 'most', example: 'Marked 40% above CP, 20% discount. Profit percent?' },
+    { name: 'Successive discounts', frequency: 'most', example: 'Discounts of 20% and 15%. Equal single discount?' },
+    { name: 'Dishonest dealer (false weights)', frequency: 'often', example: 'Sells at CP but uses 900 g for 1 kg. Gain percent?' },
+    { name: 'Same SP, x% gain and x% loss', frequency: 'often', example: 'Two phones at ₹12,000 each, 20% gain and 20% loss. Net?' },
+    { name: 'CP of n equals SP of m', frequency: 'often', example: 'CP of 20 articles = SP of 16. Profit percent?' },
+    { name: 'Buy x for ₹a, sell y for ₹b', frequency: 'rare', example: 'Buys 12 for ₹10, sells 10 for ₹12. Gain percent?' },
+  ],
   keyPoints: [
     {
       title: 'Profit and loss are always on the cost price',
       text: 'Profit = SP − CP, loss = CP − SP. The percentage uses CP as the base, unless the question clearly says "on SP".',
-      formula: 'profit % = (SP − CP) / CP × 100',
+      formula: 'profit % = (SP − CP)/CP × 100',
       example: 'CP ₹500, SP ₹600: profit 100/500 = **20%**.',
     },
     {
       title: 'Work with multipliers',
       text: 'A gain of r% means SP = CP × (100 + r)/100. A loss of r% means SP = CP × (100 − r)/100. To go back from SP to CP, divide by the same multiplier.',
-      formula: 'SP = CP × (100 ± r) / 100',
+      formula: 'SP = CP × (100 ± r)/100',
       example: 'SP ₹1,140 at a 5% loss: CP = 1,140 ÷ 0.95 = **₹1,200**.',
     },
     {
       title: 'Discount is always on the marked price',
       text: 'The marked (list) price is what is printed. Discount = MP − SP, and the discount percentage uses MP as the base.',
-      formula: 'SP = MP × (100 − d) / 100',
+      formula: 'SP = MP × (100 − d)/100',
       example: 'MP ₹1,500, discount 12%: SP = 1,500 × 0.88 = **₹1,320**.',
     },
     {
@@ -45,19 +53,19 @@ const topic: Topic = {
     {
       title: 'Same SP, x% gain on one and x% loss on the other',
       text: 'Two items sold at the same selling price, one at x% gain and one at x% loss, always give an overall **loss** of x²/100 percent. The item sold at a loss cost more, so the loss outweighs the gain.',
-      formula: 'loss % = x² / 100',
+      formula: 'loss % = x²/100',
       example: 'Two phones at ₹12,000 each, 20% gain and 20% loss: loss = 400/100 = **4%**.',
     },
     {
       title: 'Dishonest dealer (false weight)',
       text: 'A dealer who sells at CP but gives less weight gains on the weight he keeps back. Gain % = error ÷ (true weight − error) × 100. If he also adds a profit, multiply the two effects.',
-      formula: 'gain % = error / (true − error) × 100',
+      formula: 'gain % = error/(true − error) × 100',
       example: '900 g for 1 kg: 100/900 = **11 1/9%**. Weight 20% less: 20/80 = **25%**.',
     },
     {
       title: 'CP of n articles = SP of m articles',
       text: 'If the cost of n items equals the selling price of m items, the profit (n > m) or loss (n < m) is the difference over m.',
-      formula: 'profit % = (n − m) / m × 100',
+      formula: 'profit % = (n − m)/m × 100',
       example: 'CP of 20 = SP of 16: (20 − 16)/16 = **25% profit**.',
     },
   ],
@@ -145,7 +153,7 @@ const topic: Topic = {
           steps: ['He gives 800 g but charges for 1,000 g.', 'CP of 800 g is his cost; he is paid the price of 1,000 g.', 'Gain = 200/800 × 100 = 25%.'],
           seconds: 35,
         },
-        { name: 'Shortcut', steps: ['error / (true − error) × 100 = 20/80 × 100 = 25%.'], seconds: 10 },
+        { name: 'Shortcut', steps: ['error/(true − error) × 100 = 20/80 × 100 = 25%.'], seconds: 10 },
         { name: 'Fractions', steps: ['1/5 less given, so gain = 1/(5 − 1) = 1/4 = 25%.'], seconds: 5 },
       ],
     },
@@ -260,7 +268,7 @@ const topic: Topic = {
       options: ['10%', '9 1/11%', '11 1/9%', '12.5%'],
       answer: 2,
       explain: 'He gives 900 g but is paid for 1,000 g. Gain = 100/900 × 100 = 11 1/9%.',
-      shortcut: 'error / (true − error) = 100/900 = 1/9 = 11 1/9%.',
+      shortcut: 'error/(true − error) = 100/900 = 1/9 = 11 1/9%.',
     },
     {
       type: 'mcq',

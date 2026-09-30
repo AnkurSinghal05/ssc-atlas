@@ -177,3 +177,22 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Stacked fractions drawn by RichText: numerator over a horizontal bar over denominator */
+.frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 0.86em;
+  line-height: 1.2;
+  margin: 0 0.12em;
+}
+.frac-num {
+  border-bottom: 1.5px solid currentColor;
+  padding: 0 0.2em 0.05em;
+}
+.frac-den {
+  padding: 0.05em 0.2em 0;
+}

@@ -11,6 +11,13 @@ const topic: Topic = {
   tags: ['speed', 'distance', 'km/h to m/s', 'average speed', 'relative speed', 'late and early', 'chase', 'trains', 'boats'],
   summary:
     'Distance = speed × time. Convert units first, use 2xy/(x + y) for equal distances, and add or subtract speeds for things moving towards or after each other.',
+  patterns: [
+    { name: 'Average speed for equal distances', frequency: 'most', example: '40 km/h one way, 60 km/h back. Average speed?' },
+    { name: 'Relative speed (meeting and overtaking)', frequency: 'most', example: 'Two cars start towards each other 300 km apart. When do they meet?' },
+    { name: 'Late and early (same distance, two speeds)', frequency: 'often', example: 'At 4 km/h he is 10 min late; at 5 km/h, 5 min early. Distance?' },
+    { name: 'Speed ratio and time ratio', frequency: 'often', example: 'Walking at 3/4 of his speed he is 20 min late. Usual time?' },
+    { name: 'Unit conversion', frequency: 'rare', example: '72 km/h in m/s?' },
+  ],
   keyPoints: [
     {
       title: 'The one equation',
@@ -27,13 +34,13 @@ const topic: Topic = {
     {
       title: 'Average speed for equal distances',
       text: 'Average speed = total distance ÷ total time, never the plain average of speeds. For two equal distances at x and y, it is 2xy/(x + y).',
-      formula: 'average speed = 2xy / (x + y)',
+      formula: 'average speed = 2xy/(x + y)',
       example: '40 km/h there, 60 km/h back: 4,800/100 = **48 km/h**.',
     },
     {
       title: 'Average speed for equal times',
       text: 'If you travel equal times at x and y, the average speed is the plain average (x + y)/2.',
-      formula: 'average speed = (x + y) / 2',
+      formula: 'average speed = (x + y)/2',
       example: '1 h at 40, 1 h at 60: 100 km in 2 h = **50 km/h**.',
     },
     {
@@ -51,13 +58,13 @@ const topic: Topic = {
     {
       title: 'Late at one speed, early at another',
       text: 'Distance = product of speeds ÷ difference of speeds × total time gap. The time gap is late + early (in hours).',
-      formula: 'D = S₁S₂ / (S₂ − S₁) × (t₁ + t₂)',
+      formula: 'D = S₁S₂/(S₂ − S₁) × (t₁ + t₂)',
       example: '5 km/h late 7 min, 6 km/h early 5 min: 30/1 × 12/60 = **6 km**.',
     },
     {
       title: 'Trains and boats in one line',
       text: 'Trains: distance is the train\'s length (plus the platform or other train). Boats: downstream = boat + stream, upstream = boat − stream. Both have their own topics.',
-      formula: 'stream = (down − up) / 2',
+      formula: 'stream = (down − up)/2',
       example: '150 m train at 54 km/h (15 m/s) passes a pole in **10 s**.',
     },
   ],
@@ -92,7 +99,7 @@ const topic: Topic = {
           steps: ['Take the distance as 120 km (LCM of 40 and 60).', 'Time = 3 h + 2 h = 5 h for 240 km.', 'Average = 240/5 = 48 km/h.'],
           seconds: 35,
         },
-        { name: 'Shortcut', steps: ['2xy/(x + y) = 2 × 40 × 60 / 100 = 48 km/h.'], seconds: 10 },
+        { name: 'Shortcut', steps: ['2xy/(x + y) = 2 × 40 × 60/100 = 48 km/h.'], seconds: 10 },
         {
           name: 'Option elimination',
           steps: ['More time is spent at the slower speed, so the average is below (40 + 60)/2 = 50.', 'Only 48 is below 50.'],
@@ -211,7 +218,7 @@ const topic: Topic = {
       question: 'A car goes from A to B at 40 km/h and comes back at 60 km/h. What is its average speed for the whole journey?',
       options: ['48 km/h', '50 km/h', '45 km/h', '52 km/h'],
       answer: 0,
-      explain: 'Equal distances: 2 × 40 × 60 / (40 + 60) = 4,800/100 = 48 km/h.',
+      explain: 'Equal distances: 2 × 40 × 60/(40 + 60) = 4,800/100 = 48 km/h.',
       shortcut: 'It must be below the plain average 50.',
     },
     {
@@ -220,7 +227,7 @@ const topic: Topic = {
       question: 'A man cycles to his office at 30 km/h and returns at 20 km/h. What is his average speed?',
       options: ['25 km/h', '26 km/h', '22 km/h', '24 km/h'],
       answer: 3,
-      explain: '2 × 30 × 20 / (30 + 20) = 1,200/50 = 24 km/h.',
+      explain: '2 × 30 × 20/(30 + 20) = 1,200/50 = 24 km/h.',
     },
     {
       type: 'mcq',

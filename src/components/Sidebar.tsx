@@ -101,9 +101,12 @@ export function Sidebar({ subject, topicId, onExam, query, onQueryChange, onNavi
         {groups.length === 0 && (
           <p className="text-muted-foreground px-2 text-xs">{q ? `No topics match “${query}”.` : 'No topics in this tier.'}</p>
         )}
-        {groups.map((cat) => (
+        {groups.map((cat, gi) => (
           <div key={cat.id} className="flex flex-col gap-px">
-            <div className="text-muted-foreground px-2 pb-1 text-[11px] font-bold tracking-[0.08em] uppercase">{cat.name}</div>
+            {cat.section && cat.section !== groups[gi - 1]?.section && (
+              <div className="text-foreground mt-1 border-b px-2 pb-1.5 text-sm font-extrabold">{cat.section}</div>
+            )}
+            <div className="text-muted-foreground px-2 pt-1 pb-1 text-[11px] font-bold tracking-[0.08em] uppercase">{cat.name}</div>
             {cat.topics.map((t) => {
               const sc = scores[scoreKey(subject.id, t.id)];
               const ready = isReady(t);

@@ -11,6 +11,14 @@ const topic: Topic = {
   tags: ['algebraic identities', 'x + 1/x', 'x − 1/x', 'a³ + b³ + c³ − 3abc', 'a + b + c = 0', 'put values', 'squares', 'cubes'],
   summary:
     'A dozen identities and the x + 1/x ladder answer most algebra questions. When the options are expressions, put simple numbers in and see which option matches.',
+  patterns: [
+    { name: 'x + 1/x = a, find x² + 1/x² or x³ + 1/x³', frequency: 'most', example: 'x + 1/x = 3. Find x³ + 1/x³.' },
+    { name: 'a + b + c = 0 or a³ + b³ + c³ − 3abc', frequency: 'most', example: 'a + b + c = 0. Find (a³ + b³ + c³)/abc.' },
+    { name: 'a + b and ab given, find a² + b² or a³ + b³', frequency: 'often', example: 'a + b = 7, ab = 12. Find a² + b².' },
+    { name: 'Simplify using an identity', frequency: 'often', example: '(a² − b²)/(a − b) with a = 7, b = 3.' },
+    { name: 'x − 1/x family', frequency: 'often', example: 'x − 1/x = 4. Find x² + 1/x².' },
+    { name: 'Put values to eliminate options', frequency: 'rare', example: 'If a = b = c, which expression is 3?' },
+  ],
   keyPoints: [
     {
       title: 'Square identities',

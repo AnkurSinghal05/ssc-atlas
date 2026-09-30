@@ -217,6 +217,18 @@ export interface Shortcut {
   ladder: ShortcutRung[];
 }
 
+// ---------- Question patterns ----------
+// The kinds of question a topic is asked as, so a learner knows what to expect in the exam.
+
+export interface QuestionPattern {
+  /** e.g. "Successive discounts". */
+  name: string;
+  /** How often it shows up in recent CGL papers (an estimate): "most" is highlighted. */
+  frequency: 'most' | 'often' | 'rare';
+  /** A one-line sample of the pattern. */
+  example?: string;
+}
+
 // ---------- Structure ----------
 
 export interface Topic {
@@ -237,6 +249,8 @@ export interface Topic {
   priority?: Priority;
   /** Average questions per exam shift, from previous papers. */
   weightage?: { tier1?: number; tier2?: number };
+  /** The question types this topic is asked as, most frequent first. */
+  patterns?: QuestionPattern[];
   keyPoints?: KeyPoint[];
   shortcuts?: Shortcut[];
   comparisons?: Comparison[];
@@ -250,6 +264,8 @@ export interface Category {
   id: string;
   name: string;
   blurb?: string;
+  /** Groups areas under a heading on the map, e.g. "Basic" and "Advanced" in Quant. */
+  section?: string;
   topics: Topic[];
 }
 

@@ -23,7 +23,7 @@ export function TopicPage({ subject, topic }: { subject: Subject; topic: TopicWi
   const next = flat[idx + 1];
 
   const tabs = [
-    { id: 'learn' as Tab, label: 'Learn', show: !!(topic.keyPoints?.length || topic.comparisons?.length || topic.visuals?.length) },
+    { id: 'learn' as Tab, label: 'Learn', show: !!(topic.patterns?.length || topic.keyPoints?.length || topic.comparisons?.length || topic.visuals?.length) },
     { id: 'shortcuts' as Tab, label: 'Shortcuts', count: topic.shortcuts?.length, show: !!topic.shortcuts?.length },
     { id: 'qa' as Tab, label: 'Flashcards', count: topic.qa?.length, show: !!topic.qa?.length },
     { id: 'problems' as Tab, label: 'Problems', count: topic.problems?.length, show: !!topic.problems?.length },

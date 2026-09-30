@@ -10,6 +10,7 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/compone
 import { CodeBlock } from './CodeBlock';
 import { PopupNav } from './PopupNav';
 import { ComparisonView } from './ComparisonView';
+import { PatternsView } from './PatternsView';
 
 export function LearnPanel({ topic }: { topic: Topic }) {
   const points = topic.keyPoints ?? [];
@@ -20,6 +21,7 @@ export function LearnPanel({ topic }: { topic: Topic }) {
 
   return (
     <div className="flex flex-col gap-5">
+      {!!topic.patterns?.length && <PatternsView patterns={topic.patterns} />}
       {!!points.length && (
         <div className="flex flex-wrap gap-3">
           {points.map((kp, i) => (

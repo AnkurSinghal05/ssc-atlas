@@ -54,11 +54,17 @@ in its subject's `index.ts`. To write it, add `topics/<id>.ts` exporting a `Topi
 import it in `index.ts` and put it in place of the `planned(...)` line.
 
 A topic can have:
+- `patterns`: the question types the topic is asked as, each with a `frequency` (`most` is highlighted as "Most asked").
 - `keyPoints`: 4 to 8 cards, each with `title`, `text`, and optional `formula` and `example`.
 - `comparisons`: "X vs Y" tables with aspect rows, `reveal` and `whenToUse`. Mark the row that holds the real difference with `key: true`.
 - `shortcuts` (Quant, Reasoning): a question pattern with an example, options and a `ladder` of rungs, slowest first, each with steps and seconds.
 - `qa`: flashcards, answers as 2 to 4 short points, optional tag ("Asked often", "Trap", "Shortcut").
 - `quiz`: `mcq` and `truefalse` questions with `difficulty`, `explain`, optional `shortcut`, and `pyq` only for a verified previous-year question.
+
+Fractions: write `a/b` with no spaces around the slash and brackets around a multi-term part, e.g. `(a + b)/(a − b)`.
+RichText draws it as a stacked fraction with a horizontal bar (see `src/lib/RichText.tsx`). Units like km/h stay as they are.
+
+Areas can carry a `section` (Quant uses Basic and Advanced) to group them under a heading on the map and in the sidebar.
 
 Rules: work out and check every numeric answer before adding it, and never add a `pyq` label you cannot verify.
 
@@ -72,7 +78,7 @@ Same pattern: extend the `Visual` union, then register a component in `src/visua
 
 ## Roadmap (from the blueprint)
 1. Shell, tier switcher, maps and topic pages. **Done.**
-2. High-priority topics in the four Tier 1 subjects, MCQ and true/false. **In progress: 20 topics written (5 per subject), the rest are planned on the map.**
+2. Topic content, MCQ and true/false. **In progress: Quant complete (all 30 topics); 5 topics each in Reasoning, English and GA.**
 3. New quiz types: error-spot, fill-blank, match, series, rc-set, di-set.
 4. Practice hub: sectional tests and full mocks with CGL marking.
 5. Progress, revision mode (spaced repetition), formula sheet.
