@@ -43,6 +43,8 @@ interface QuizBase {
   difficulty?: Difficulty;
   /** The fast route, shown after answering (Quant and Reasoning). */
   shortcut?: string;
+  /** A figure shown with the question, for geometry, mensuration, directions and the like. */
+  figure?: Figure;
   /** Only for a verified previous-year question, e.g. "CGL 2023 Tier 1, 14 Jul, Shift 2". */
   pyq?: string;
 }
@@ -118,7 +120,30 @@ export interface ArrayTraceVisual {
   steps: ArrayTraceStep[];
 }
 
-export type Visual = StepperVisual | ArrayTraceVisual;
+/**
+ * A hand-drawn figure. `svg` is the inner markup of an <svg> with the given viewBox (about 320 wide).
+ * Lines use the pen colour by default; add classes for more:
+ *   d-red, d-green, d-blue, d-soft (stroke colour), d-thin, d-thick, d-dash,
+ *   d-fill, d-fill-pink, d-fill-blue, d-fill-green (soft highlighter fills), d-dot (a filled point).
+ * <text> is set in the handwriting font (use d-red / d-green / d-blue / d-soft on it for colour, d-small for smaller).
+ * Give parts data-step="n" (1-based) to tie them to the nth explanation line: that part is
+ * highlighted while the line is selected.
+ */
+export interface Figure {
+  viewBox: string;
+  svg: string;
+  caption?: string;
+}
+
+/** A labelled diagram with numbered explanation lines beside it (Learn tab). */
+export interface DiagramVisual {
+  type: 'diagram';
+  title: string;
+  figure: Figure;
+  explain: string[];
+}
+
+export type Visual = StepperVisual | ArrayTraceVisual | DiagramVisual;
 export type VisualType = Visual['type'];
 
 // ---------- Coding problems ----------

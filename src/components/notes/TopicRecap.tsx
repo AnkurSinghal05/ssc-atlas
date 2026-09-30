@@ -7,6 +7,7 @@ import { RichText } from '@/lib/RichText';
 import { shuffle } from '@/lib/shuffle';
 import { useTier } from '@/lib/tier';
 import { cn } from '@/lib/utils';
+import { FigureSvg } from '@/visuals/Figure';
 import { PracticePanel } from '../PracticePanel';
 
 const RECAP_SECONDS = 5 * 60;
@@ -38,6 +39,7 @@ export function TopicRecap({ subject, topic }: { subject: Subject; topic: Topic 
   const left = useCountdown(RECAP_SECONDS);
   const weight = weightageLabel(topic, tier);
   const patterns = topic.patterns ?? [];
+  const diagrams = (topic.visuals ?? []).flatMap((v) => (v.type === 'diagram' ? [v] : []));
   const traps = (topic.qa ?? []).filter((q) => q.tag === 'Trap').slice(0, 3);
   const reveals = (topic.comparisons ?? []).filter((c) => c.reveal);
   const mm = Math.floor(left / 60);
@@ -130,6 +132,17 @@ export function TopicRecap({ subject, topic }: { subject: Subject; topic: Topic 
                 </li>
               ))}
             </ol>
+          </section>
+        )}
+
+        {diagrams.length > 0 && (
+          <section className="mt-5">
+            <h2 className="text-[30px]">Picture it</h2>
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,240px),1fr))] gap-4">
+              {diagrams.map((d) => (
+                <FigureSvg key={d.title} figure={{ ...d.figure, caption: d.title }} />
+              ))}
+            </div>
           </section>
         )}
 

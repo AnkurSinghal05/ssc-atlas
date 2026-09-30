@@ -2,7 +2,8 @@
  * Runs every approach of every problem against its examples. In topics that have
  * problems, it also runs each synchronous "predict the output" quiz against its marked answer.
  * It also checks that every comparison table has one cell per compared item, that every multiple-choice
- * question has distinct options and an answer index that exists, and that every shortcut's answer is one of its options.
+ * question has distinct options and an answer index that exists, that every shortcut's answer is one of its options,
+ * and that every figure is well-formed SVG using only the allowed elements, classes and explanation steps.
  * Usage: npm run verify [subjectId]   (default: all subjects)
  */
 import { readdirSync } from 'node:fs';
@@ -19,6 +20,35 @@ const only = process.argv[2];
 const subjects = readdirSync(path.join(root, 'src/content/subjects')).filter((s) => !only || s === only);
 let checked = 0;
 const failures = [];
+
+const FIG_TAGS = new Set(['line', 'path', 'polyline', 'polygon', 'circle', 'ellipse', 'rect', 'text', 'g', 'tspan']);
+const FIG_CLASSES = new Set(
+  'd-red d-green d-blue d-soft d-thin d-thick d-dash d-fill d-fill-pink d-fill-blue d-fill-green d-dot d-small'.split(' '),
+);
+
+/** Problems with a figure's markup, or [] when it is fine. `steps` is the number of explanation lines, if any. */
+function figureProblems(fig, steps) {
+  const out = [];
+  if (!/^-?[\d.]+ -?[\d.]+ [\d.]+ [\d.]+$/.test(fig.viewBox ?? '')) out.push(`bad viewBox "${fig.viewBox}"`);
+  if (/\b(style|fill|stroke|on\w+)\s*=|<script|\$\{/i.test(fig.svg)) out.push('uses style, fill, stroke, an event handler or a script');
+  const stack = [];
+  for (const m of fig.svg.matchAll(/<(\/?)([a-zA-Z]+)([^>]*?)(\/?)>/g)) {
+    const [, close, tag, attrs, self] = m;
+    if (!FIG_TAGS.has(tag)) out.push(`element <${tag}> is not allowed`);
+    if (close) {
+      if (stack.pop() !== tag) out.push(`</${tag}> does not match its opening tag`);
+      continue;
+    }
+    if (!self) stack.push(tag);
+    for (const c of /class="([^"]*)"/.exec(attrs)?.[1].split(/\s+/).filter(Boolean) ?? [])
+      if (!FIG_CLASSES.has(c)) out.push(`unknown class "${c}"`);
+    for (const n of /data-step="([^"]*)"/.exec(attrs)?.[1].split(/[\s,]+/).map(Number) ?? [])
+      if (!Number.isInteger(n) || n < 1 || steps === undefined || n > steps) out.push(`data-step ${n} has no explanation line`);
+  }
+  if (stack.length) out.push(`unclosed <${stack.join('>, <')}>`);
+  if (fig.svg.replace(/<[^>]*>/g, '').includes('<')) out.push('stray "<" in text (write &lt;)');
+  return out;
+}
 
 function captureConsole(code) {
   const lines = [];
@@ -43,7 +73,16 @@ for (const id of subjects) {
           if (list && list.length !== n) failures.push(`${where}: ${name} has ${list.length} entries for ${n} items`);
         }
       }
+      for (const v of topic.visuals ?? []) {
+        if (v.type !== 'diagram') continue;
+        checked++;
+        for (const f of figureProblems(v.figure, v.explain.length)) failures.push(`${topic.id} / diagram "${v.title}": ${f}`);
+      }
       for (const [k, q] of (topic.quiz ?? []).entries()) {
+        if (q.figure) {
+          checked++;
+          for (const f of figureProblems(q.figure)) failures.push(`${topic.id} / quiz ${k + 1} figure: ${f}`);
+        }
         if (q.type !== 'mcq' && q.type !== 'output') continue;
         checked++;
         const where = `${topic.id} / quiz ${k + 1}`;

@@ -210,6 +210,7 @@
   --ink-soft: #4a5677;
   --ink-red: #c2352b;
   --ink-green: #1f7a4d;
+  --ink-blue: #1f5fbf;
   --hl-yellow: rgb(255 226 51 / 0.6);
   --hl-pink: rgb(255 128 170 / 0.4);
   --hl-green: rgb(120 230 140 / 0.45);
@@ -228,6 +229,7 @@
   --ink-soft: #a9adbb;
   --ink-red: #ff8a80;
   --ink-green: #6fdca0;
+  --ink-blue: #7ab8ff;
   --hl-yellow: rgb(255 214 0 / 0.3);
   --hl-pink: rgb(255 110 160 / 0.3);
   --hl-green: rgb(90 220 130 / 0.26);
@@ -364,6 +366,45 @@
   font-weight: 700;
 }
 .red-pen .pen-body { color: var(--ink); }
+
+/* Hand-drawn figures (src/visuals/Figure.tsx) */
+.diagram svg { overflow: visible; }
+.diagram svg :where(line, path, polyline, polygon, circle, ellipse, rect) {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: opacity 0.2s ease, stroke-width 0.2s ease;
+}
+.diagram svg text {
+  fill: var(--ink);
+  stroke: none;
+  font-family: var(--font-hand);
+  font-size: 17px;
+  transition: opacity 0.2s ease;
+}
+.diagram svg .d-small { font-size: 13px; }
+.diagram svg .d-red { stroke: var(--ink-red); }
+.diagram svg .d-green { stroke: var(--ink-green); }
+.diagram svg .d-blue { stroke: var(--ink-blue); }
+.diagram svg .d-soft { stroke: var(--ink-soft); }
+.diagram svg text.d-red { fill: var(--ink-red); }
+.diagram svg text.d-green { fill: var(--ink-green); }
+.diagram svg text.d-blue { fill: var(--ink-blue); }
+.diagram svg text.d-soft { fill: var(--ink-soft); }
+.diagram svg .d-thin { stroke-width: 1.3; }
+.diagram svg .d-thick { stroke-width: 3; }
+.diagram svg .d-dash { stroke-dasharray: 6 5; }
+.diagram svg .d-fill { fill: var(--hl-yellow); }
+.diagram svg .d-fill-pink { fill: var(--hl-pink); }
+.diagram svg .d-fill-blue { fill: var(--hl-blue); }
+.diagram svg .d-fill-green { fill: var(--hl-green); }
+.diagram svg .d-dot { fill: var(--ink); stroke: none; }
+.diagram svg .d-dot.d-red { fill: var(--ink-red); }
+.diagram svg .d-off { opacity: 0.18; }
+.diagram svg .d-on:not(text) { stroke-width: 3.2; }
+.diagram svg text.d-on { font-weight: 700; }
 
 /* Sticky notes with a strip of tape */
 .sticky-note {
