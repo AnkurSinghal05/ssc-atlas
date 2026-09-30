@@ -393,6 +393,7 @@
 .diagram svg text.d-green { fill: var(--ink-green); }
 .diagram svg text.d-blue { fill: var(--ink-blue); }
 .diagram svg text.d-soft { fill: var(--ink-soft); }
+.diagram svg text:is(.d-red, .d-green, .d-blue, .d-soft) { stroke: none; }
 .diagram svg .d-thin { stroke-width: 1.3; }
 .diagram svg .d-thick { stroke-width: 3; }
 .diagram svg .d-dash { stroke-dasharray: 6 5; }

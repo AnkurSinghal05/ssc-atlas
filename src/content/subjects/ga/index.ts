@@ -6,6 +6,11 @@ import parliament from './topics/parliament';
 import modernHistory from './topics/modern-history';
 import biology from './topics/biology';
 import moneyBanking from './topics/money-banking';
+import constitutionPreamble from './topics/constitution-preamble';
+import importantArticles from './topics/important-articles';
+import judiciary from './topics/judiciary';
+import stateLocal from './topics/state-local';
+import bodiesAmendments from './topics/bodies-amendments';
 
 const subject: Subject = {
   ...meta,
@@ -25,14 +30,7 @@ const subject: Subject = {
       id: 'polity',
       name: 'Polity',
       blurb: 'Articles, amendments and bodies. Most questions test one article number or one power.',
-      topics: [
-        p('constitution-preamble', 'Constitution making and the Preamble', 'beginner', 60, 20, 'high', { weightage: { tier1: 0.5, tier2: 0.5 } }),
-        rightsDpspDuties,
-        parliament,
-        p('judiciary', 'Judiciary', 'intermediate', 60, 20, 'medium'),
-        p('state-local', 'State government and local bodies', 'intermediate', 60, 20, 'medium'),
-        p('bodies-amendments', 'Bodies, amendments and schedules', 'intermediate', 90, 30, 'high', { weightage: { tier1: 0.5, tier2: 0.5 } }),
-      ],
+      topics: [constitutionPreamble, importantArticles, rightsDpspDuties, parliament, judiciary, stateLocal, bodiesAmendments],
     },
     {
       id: 'geography',
