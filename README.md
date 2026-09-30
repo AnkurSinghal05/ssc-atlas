@@ -24,8 +24,13 @@ Routing is hash-based (`#quant.percentage`, `#exam`), so any static host works w
   The data lives in `src/content/exam.ts`; re-check it against the latest notice on ssc.gov.in each cycle.
 - **Subject map**: areas as coloured cards, topics with priority star, weightage ("~2 Qs per shift"), learn and revise
   times, and a priority filter. Clicking a topic opens a pop-up preview.
-- **Topic page** tabs: Learn (key ideas with formulas and examples, comparisons), Shortcuts (Quant and Reasoning),
-  Flashcards, Practice.
+- **Topic page** tabs: Learn (key ideas as sticky notes with hand-boxed formulas, comparisons), Shortcuts (rough work
+  on a notebook page, fastest method circled in red), Flashcards (flip-over index cards: one at a time with Got it /
+  Again and a missed-cards round, or all cards), Practice (explanations as a red-pen correction).
+- **Handwritten notes** (`src/components/notes/`, styles under "Handwritten notes" in `src/index.css`):
+  - High-yield notes (`#high-yield`): the high-priority topics per subject as sticky notes, most asked patterns first.
+  - Formula sheet (`#formulas`): every formula on a notebook page per subject, filterable and printable.
+  - 5-minute recap (`#<subject>.<topic>.recap`): a timed one-page revision plus a 5-question quick check.
 
 ## Layout
 
@@ -81,5 +86,5 @@ Same pattern: extend the `Visual` union, then register a component in `src/visua
 2. Topic content, MCQ and true/false. **In progress: Quant complete (all 30 topics); 5 topics each in Reasoning, English and GA.**
 3. New quiz types: error-spot, fill-blank, match, series, rc-set, di-set.
 4. Practice hub: sectional tests and full mocks with CGL marking.
-5. Progress, revision mode (spaced repetition), formula sheet.
+5. Progress, revision mode (spaced repetition). Formula sheet, high-yield notes and 5-minute recaps are **done**.
 6. Current affairs, updated monthly.

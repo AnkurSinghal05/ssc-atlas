@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { ArrowRight, Flame, Star } from 'lucide-react';
+import { ArrowRight, Flame, Star, Timer } from 'lucide-react';
 import type { Priority, Subject, Topic } from '@/content/types';
 import { formatMinutes, formatTimes, isReady, totalMinutes, totalReviseMinutes, weightageLabel } from '@/content/helpers';
 import { inTier, subjectInTier, TIER_LABEL, useTier } from '@/lib/tier';
-import { topicHref } from '@/lib/useHashRoute';
+import { recapHref, topicHref } from '@/lib/useHashRoute';
 import { RichText } from '@/lib/RichText';
 import { scoreKey, useScores } from '@/lib/scores';
 import { tintStyle } from '@/lib/tint';
@@ -272,7 +272,14 @@ function TopicPreview({ subjectId, area, topic }: { subjectId: string; area: str
           </ul>
         </div>
       )}
-      <div className="mt-1 flex justify-end">
+      <div className="mt-1 flex flex-wrap justify-end gap-2">
+        {ready && (
+          <Button asChild variant="outline">
+            <a href={recapHref(subjectId, topic.id)}>
+              <Timer /> 5-min recap
+            </a>
+          </Button>
+        )}
         <Button asChild>
           <a href={topicHref(subjectId, topic.id)}>
             {ready ? 'Study this topic' : 'Open topic'} <ArrowRight />

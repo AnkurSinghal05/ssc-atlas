@@ -1,8 +1,8 @@
-import { ClipboardList, Search } from 'lucide-react';
+import { ClipboardList, NotebookPen, Search, Sigma } from 'lucide-react';
 import type { Subject, Topic } from '@/content/types';
 import { subjectList } from '@/content/registry';
 import { formatTimes, isReady } from '@/content/helpers';
-import { subjectHref, topicHref } from '@/lib/useHashRoute';
+import { subjectHref, topicHref, type PageId } from '@/lib/useHashRoute';
 import { scoreKey, useScores } from '@/lib/scores';
 import { inTier, subjectInTier, useTier } from '@/lib/tier';
 import { cn } from '@/lib/utils';
@@ -15,24 +15,30 @@ import { TierSwitch } from './TierSwitch';
 interface Props {
   subject: Subject;
   topicId?: string;
-  /** The exam pattern page is open. */
-  onExam?: boolean;
+  /** The site-wide page that is open, if any. */
+  page?: PageId;
   query: string;
   onQueryChange: (q: string) => void;
   onNavigate?: () => void;
 }
 
-export function Sidebar({ subject, topicId, onExam, query, onQueryChange, onNavigate }: Props) {
+const PAGE_LINKS: { id: PageId; label: string; Icon: typeof ClipboardList }[] = [
+  { id: 'exam', label: 'CGL exam pattern', Icon: ClipboardList },
+  { id: 'high-yield', label: 'High-yield notes', Icon: NotebookPen },
+  { id: 'formulas', label: 'Formula sheet', Icon: Sigma },
+];
+
+export function Sidebar({ subject, topicId, page, query, onQueryChange, onNavigate }: Props) {
   const { scores } = useScores();
   const { tier } = useTier();
   const q = query.trim().toLowerCase();
   const matches = (t: Topic) =>
     inTier(t, tier) &&
     (!q ||
-    t.title.toLowerCase().includes(q) ||
-    (t.tags ?? []).some((tag) => tag.toLowerCase().includes(q)) ||
-    (t.qa ?? []).some((x) => x.q.toLowerCase().includes(q)) ||
-    (t.problems ?? []).some((p) => p.title.toLowerCase().includes(q)));
+      t.title.toLowerCase().includes(q) ||
+      (t.tags ?? []).some((tag) => tag.toLowerCase().includes(q)) ||
+      (t.qa ?? []).some((x) => x.q.toLowerCase().includes(q)) ||
+      (t.problems ?? []).some((p) => p.title.toLowerCase().includes(q)));
   const groups = subject.categories.map((c) => ({ ...c, topics: c.topics.filter(matches) })).filter((c) => c.topics.length);
 
   return (
@@ -41,18 +47,23 @@ export function Sidebar({ subject, topicId, onExam, query, onQueryChange, onNavi
 
       <TierSwitch />
 
-      <a
-        href="#exam"
-        onClick={onNavigate}
-        aria-current={onExam ? 'page' : undefined}
-        className={cn('hover:bg-muted -my-1 flex items-center gap-2 rounded-md px-2 py-1.5 text-sm font-semibold', onExam && 'bg-muted')}
-      >
-        <ClipboardList className="text-muted-foreground size-4" aria-hidden="true" /> CGL exam pattern
-      </a>
+      <nav aria-label="Pages" className="-my-1 flex flex-col gap-px">
+        {PAGE_LINKS.map(({ id, label, Icon }) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            onClick={onNavigate}
+            aria-current={page === id ? 'page' : undefined}
+            className={cn('hover:bg-muted flex items-center gap-2 rounded-md px-2 py-1.5 text-sm font-semibold', page === id && 'bg-muted')}
+          >
+            <Icon className="text-muted-foreground size-4" aria-hidden="true" /> {label}
+          </a>
+        ))}
+      </nav>
 
       <div className="flex flex-wrap gap-1.5" role="tablist" aria-label="Subjects">
         {subjectList.map((s) => {
-          const current = !onExam && s.id === subject.id;
+          const current = !page && s.id === subject.id;
           const offTier = !subjectInTier(s, tier);
           return (
             <a
@@ -98,9 +109,7 @@ export function Sidebar({ subject, topicId, onExam, query, onQueryChange, onNavi
       </div>
 
       <nav aria-label={`${subject.name} topics`} className="flex flex-1 flex-col gap-3.5">
-        {groups.length === 0 && (
-          <p className="text-muted-foreground px-2 text-xs">{q ? `No topics match “${query}”.` : 'No topics in this tier.'}</p>
-        )}
+        {groups.length === 0 && <p className="text-muted-foreground px-2 text-xs">{q ? `No topics match “${query}”.` : 'No topics in this tier.'}</p>}
         {groups.map((cat, gi) => (
           <div key={cat.id} className="flex flex-col gap-px">
             {cat.section && cat.section !== groups[gi - 1]?.section && (
@@ -137,9 +146,7 @@ export function Sidebar({ subject, topicId, onExam, query, onQueryChange, onNavi
 
       <div className="flex flex-col gap-2 border-t pt-3">
         <ColorModeToggle />
-        <p className="text-muted-foreground text-xs">
-          SSC CGL study atlas. Check dates and patterns against the latest notice on ssc.gov.in.
-        </p>
+        <p className="text-muted-foreground text-xs">SSC CGL study atlas. Check dates and patterns against the latest notice on ssc.gov.in.</p>
       </div>
     </div>
   );

@@ -74,6 +74,8 @@
 @theme inline {
   --font-sans: 'Figtree', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Bricolage Grotesque', 'Figtree', ui-sans-serif, system-ui, sans-serif;
+  --font-hand: 'Kalam', 'Comic Neue', 'Segoe Print', cursive;
+  --font-script: 'Caveat', 'Kalam', 'Segoe Print', cursive;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -196,3 +198,236 @@
 .frac-den {
   padding: 0.05em 0.2em 0;
 }
+
+/* ---------- Handwritten notes (formula sheet, high-yield notes, 5-minute recap) ----------
+   A ruled notebook page with a red margin and punched holes, blue-black pen ink,
+   highlighter strokes, sticky notes with tape, and hand-drawn boxes. */
+:root {
+  --paper: #fdfaf0;
+  --paper-rule: rgb(74 120 196 / 0.2);
+  --paper-margin: rgb(222 84 84 / 0.5);
+  --ink: #1d2a4d;
+  --ink-soft: #4a5677;
+  --ink-red: #c2352b;
+  --ink-green: #1f7a4d;
+  --hl-yellow: rgb(255 226 51 / 0.6);
+  --hl-pink: rgb(255 128 170 / 0.4);
+  --hl-green: rgb(120 230 140 / 0.45);
+  --hl-blue: rgb(120 200 255 / 0.45);
+  --sticky-yellow: #fff3a8;
+  --sticky-pink: #ffd6e3;
+  --sticky-blue: #d4ecff;
+  --sticky-green: #d9f5d0;
+  --tape: rgb(222 214 190 / 0.75);
+}
+.dark {
+  --paper: #1b1f2a;
+  --paper-rule: rgb(140 170 230 / 0.13);
+  --paper-margin: rgb(240 107 98 / 0.4);
+  --ink: #e9e6dc;
+  --ink-soft: #a9adbb;
+  --ink-red: #ff8a80;
+  --ink-green: #6fdca0;
+  --hl-yellow: rgb(255 214 0 / 0.3);
+  --hl-pink: rgb(255 110 160 / 0.3);
+  --hl-green: rgb(90 220 130 / 0.26);
+  --hl-blue: rgb(90 180 255 / 0.28);
+  --sticky-yellow: #3b3721;
+  --sticky-pink: #3d2530;
+  --sticky-blue: #1f3042;
+  --sticky-green: #22352a;
+  --tape: rgb(200 190 160 / 0.28);
+}
+
+.notebook {
+  position: relative;
+  color: var(--ink);
+  font-family: var(--font-hand);
+  font-size: 17px;
+  line-height: 32px;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(90deg, transparent 51px, var(--paper-margin) 51px, var(--paper-margin) 53px, transparent 53px),
+    repeating-linear-gradient(to bottom, transparent 0 31px, var(--paper-rule) 31px 32px);
+  background-position: 0 12px;
+  border-radius: 6px 14px 10px 8px;
+  box-shadow:
+    0 1px 0 rgb(0 0 0 / 0.04),
+    0 12px 28px -12px rgb(20 30 60 / 0.3),
+    6px 6px 0 -2px var(--paper),
+    6px 6px 0 -1px var(--paper-rule);
+  padding: 28px 22px 32px 70px;
+}
+/* Punched holes down the left edge */
+.notebook::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 16px;
+  width: 18px;
+  background: radial-gradient(circle at 9px 9px, var(--background) 7px, rgb(0 0 0 / 0.12) 8px, transparent 9px) 0 0 / 18px 72px repeat-y;
+  pointer-events: none;
+}
+@media (max-width: 640px) {
+  .notebook {
+    padding: 22px 14px 26px 44px;
+    font-size: 16px;
+    background-image:
+      linear-gradient(90deg, transparent 33px, var(--paper-margin) 33px, var(--paper-margin) 35px, transparent 35px),
+      repeating-linear-gradient(to bottom, transparent 0 31px, var(--paper-rule) 31px 32px);
+  }
+  .notebook::before { left: 8px; width: 14px; background-size: 14px 64px; }
+}
+.notebook h1, .notebook h2, .notebook h3 {
+  font-family: var(--font-script);
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+.notebook a { text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.notebook .frac { line-height: 1.15; }
+:is(.notebook, .sticky-note, .index-card, .red-pen) .frac { font-size: 0.95em; }
+.ink-red { color: var(--ink-red); }
+.ink-green { color: var(--ink-green); }
+.ink-soft { color: var(--ink-soft); }
+
+/* Highlighter stroke behind text; wraps across lines */
+.hl, .hl-pink, .hl-green, .hl-blue {
+  --hl: var(--hl-yellow);
+  background: linear-gradient(100deg, transparent 0.4em, var(--hl) 0.55em, var(--hl) calc(100% - 0.5em), transparent calc(100% - 0.3em)) 0 60% / 100% 78% no-repeat;
+  padding: 0 0.35em;
+  margin: 0 -0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.hl-pink { --hl: var(--hl-pink); }
+.hl-green { --hl: var(--hl-green); }
+.hl-blue { --hl: var(--hl-blue); }
+
+/* A wavy pen underline */
+.squiggle {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8' viewBox='0 0 24 8'%3E%3Cpath d='M0 4 Q6 0 12 4 T24 4' fill='none' stroke='%23d23b31' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 24px 8px;
+  padding-bottom: 6px;
+}
+
+/* A box drawn by hand around a formula */
+.hand-box {
+  display: inline-block;
+  border: 2px solid currentColor;
+  border-radius: 255px 18px 225px 18px / 18px 225px 18px 255px;
+  padding: 2px 12px;
+  line-height: 1.6;
+}
+.hand-circle {
+  display: inline-block;
+  border: 2px solid var(--ink-red);
+  color: var(--ink-red);
+  border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
+  padding: 0 10px;
+  line-height: 1.5;
+  transform: rotate(-3deg);
+}
+
+/* A loose red loop drawn around the best answer on rough work */
+.rough-circle {
+  border: 2.5px solid var(--ink-red);
+  border-radius: 46% 54% 42% 58% / 22% 18% 26% 20%;
+  rotate: -0.5deg;
+}
+
+/* A teacher's red-pen note under an answer */
+.red-pen {
+  position: relative;
+  color: var(--ink-red);
+  font-family: var(--font-hand);
+  font-size: 16.5px;
+  line-height: 1.55;
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(to bottom, transparent 0 25px, var(--paper-rule) 25px 26px);
+  background-position: 0 4px;
+  border-left: 2px solid var(--paper-margin);
+  border-radius: 4px;
+  padding: 6px 14px 8px 44px;
+}
+.red-pen .mark {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  font-family: var(--font-script);
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 700;
+}
+.red-pen .pen-body { color: var(--ink); }
+
+/* Sticky notes with a strip of tape */
+.sticky-note {
+  --sticky: var(--sticky-yellow);
+  position: relative;
+  background: var(--sticky);
+  color: var(--ink);
+  font-family: var(--font-hand);
+  line-height: 1.5;
+  padding: 22px 16px 16px;
+  border-radius: 2px 2px 14px 2px / 2px 2px 26px 2px;
+  box-shadow: 0 10px 18px -10px rgb(0 0 0 / 0.35), inset 0 -10px 18px -16px rgb(0 0 0 / 0.3);
+  transform: rotate(var(--tilt, -1deg));
+  transition: transform 0.2s ease;
+}
+.sticky-note:hover { transform: rotate(0deg) translateY(-2px); }
+.sticky-note::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 84px;
+  height: 22px;
+  translate: -50% 0;
+  rotate: var(--tape-tilt, 2deg);
+  background: var(--tape);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+}
+.note-pink { --sticky: var(--sticky-pink); }
+.note-blue { --sticky: var(--sticky-blue); }
+.note-green { --sticky: var(--sticky-green); }
+
+@media print {
+  aside, .no-print, .md\:hidden { display: none !important; }
+  body { background: #fff; }
+  .app-shell { display: block !important; }
+  main { max-width: none !important; padding: 0 !important; }
+  .notebook { box-shadow: none; break-inside: auto; }
+  .notebook section, .sticky-note { break-inside: avoid; }
+  .sticky-note { transform: none; box-shadow: none; border: 1px solid #ccc; }
+}
+
+/* Flashcards as ruled index cards that flip over */
+.index-card {
+  color: var(--ink);
+  font-family: var(--font-hand);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(to bottom, transparent 46px, var(--paper-margin) 46px, var(--paper-margin) 48px, transparent 48px),
+    repeating-linear-gradient(to bottom, transparent 0 29px, var(--paper-rule) 29px 30px);
+  background-position: 0 0, 0 48px;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 14px 26px -16px rgb(20 30 60 / 0.4);
+}
+.flip { perspective: 1400px; }
+.flip-inner {
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.3, 0.9, 0.3, 1.05);
+}
+.flip.is-flipped .flip-inner { transform: rotateY(180deg); }
+.flip-face {
+  grid-area: 1 / 1;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-back { transform: rotateY(180deg); }

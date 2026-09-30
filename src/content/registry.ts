@@ -2,6 +2,7 @@
  * Subjects are discovered automatically: every folder in ./subjects with a
  * meta.ts and an index.ts becomes a subject. No other file needs editing.
  */
+import { useEffect, useState } from 'react';
 import type { Subject, SubjectMeta, Topic, Category } from './types';
 
 const metaModules = import.meta.glob<SubjectMeta>('./subjects/*/meta.ts', { eager: true, import: 'default' });
@@ -35,4 +36,20 @@ export type TopicWithCategory = Topic & { category: Category };
 
 export function allTopics(subject: Subject): TopicWithCategory[] {
   return subject.categories.flatMap((category) => category.topics.map((t) => ({ ...t, category })));
+}
+
+/** Loads every subject (for site-wide pages like the formula sheet). Undefined until all are loaded. */
+export function useAllSubjects(): Subject[] | undefined {
+  const [subjects, setSubjects] = useState<Subject[] | undefined>(() => {
+    const cached = subjectList.map((m) => cache.get(m.id));
+    return cached.every(Boolean) ? (cached as Subject[]) : undefined;
+  });
+  useEffect(() => {
+    let live = true;
+    Promise.all(subjectList.map((m) => loadSubject(m.id))).then((all) => live && setSubjects(all));
+    return () => {
+      live = false;
+    };
+  }, []);
+  return subjects;
 }

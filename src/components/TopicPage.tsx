@@ -2,7 +2,8 @@ import { useState } from 'react';
 import type { Subject } from '@/content/types';
 import { allTopics, type TopicWithCategory } from '@/content/registry';
 import { isReady } from '@/content/helpers';
-import { subjectHref, topicHref } from '@/lib/useHashRoute';
+import { recapHref, subjectHref, topicHref } from '@/lib/useHashRoute';
+import { Timer } from 'lucide-react';
 import { RichText } from '@/lib/RichText';
 import { scoreKey } from '@/lib/scores';
 import { Button } from '@/components/ui/button';
@@ -23,7 +24,11 @@ export function TopicPage({ subject, topic }: { subject: Subject; topic: TopicWi
   const next = flat[idx + 1];
 
   const tabs = [
-    { id: 'learn' as Tab, label: 'Learn', show: !!(topic.patterns?.length || topic.keyPoints?.length || topic.comparisons?.length || topic.visuals?.length) },
+    {
+      id: 'learn' as Tab,
+      label: 'Learn',
+      show: !!(topic.patterns?.length || topic.keyPoints?.length || topic.comparisons?.length || topic.visuals?.length),
+    },
     { id: 'shortcuts' as Tab, label: 'Shortcuts', count: topic.shortcuts?.length, show: !!topic.shortcuts?.length },
     { id: 'qa' as Tab, label: 'Flashcards', count: topic.qa?.length, show: !!topic.qa?.length },
     { id: 'problems' as Tab, label: 'Problems', count: topic.problems?.length, show: !!topic.problems?.length },
@@ -45,6 +50,15 @@ export function TopicPage({ subject, topic }: { subject: Subject; topic: TopicWi
         <div className="flex flex-wrap items-center gap-2">
           <TopicBadges topic={topic} />
         </div>
+        {isReady(topic) && (
+          <div>
+            <Button asChild variant="outline" size="sm" className="font-hand text-[15px]">
+              <a href={recapHref(subject.id, topic.id)}>
+                <Timer /> Revise in 5 minutes
+              </a>
+            </Button>
+          </div>
+        )}
         {topic.summary && (
           <p className="text-muted-foreground max-w-[62ch] text-[17px]">
             <RichText text={topic.summary} />
@@ -99,7 +113,8 @@ export function TopicPage({ subject, topic }: { subject: Subject; topic: TopicWi
         <div className="flex flex-col gap-2.5 rounded-xl border-[1.5px] border-dashed p-6">
           <h2 className="text-xl font-bold">On the map, not written yet</h2>
           <p className="text-muted-foreground max-w-[60ch]">
-            This topic is planned with its priority and times, and gets its key ideas, flashcards and practice questions in a later content pass. These topics are ready now:
+            This topic is planned with its priority and times, and gets its key ideas, flashcards and practice questions in a later content pass.
+            These topics are ready now:
           </p>
           <div className="mt-1.5 flex flex-wrap gap-2">
             {flat.filter(isReady).map((t) => (

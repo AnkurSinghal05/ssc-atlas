@@ -116,12 +116,18 @@ export function PracticePanel({ quiz, topicTitle, scoreId, onReviewQA }: Props) 
         <QuizQuestionView key={`${attempt}-${index}`} question={q} onAnswer={record} />
         {answered && (
           <div className="flex flex-col gap-3">
-            <div className={cn('rounded-md px-3 py-2.5 text-[14.5px]', ok ? 'bg-good-soft' : 'bg-bad-soft')}>
-              <strong className={ok ? 'text-good' : 'text-bad'}>{ok ? 'Correct.' : 'Not quite.'}</strong> <RichText text={q.explain} />
+            <div className="red-pen">
+              <span className="mark" aria-hidden="true">
+                {ok ? '✓' : '✗'}
+              </span>
+              <strong>{ok ? 'Correct!' : 'Not quite.'}</strong>{' '}
+              <span className="pen-body">
+                <RichText text={q.explain} />
+              </span>
             </div>
             {q.shortcut && (
-              <div className="bg-muted rounded-md px-3 py-2.5 text-[14.5px]">
-                <strong>Shortcut.</strong> <RichText text={q.shortcut} />
+              <div className="font-hand ink-green -mt-1 pl-11 text-[16px] leading-snug">
+                <strong>Shortcut:</strong> <RichText text={q.shortcut} />
               </div>
             )}
             {q.explainCode && <CodeBlock code={q.explainCode} />}
