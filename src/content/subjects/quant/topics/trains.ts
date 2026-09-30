@@ -12,10 +12,26 @@ const topic: Topic = {
     'A train question is speed × time = distance with two twists: the train has a length, and the other object may be moving. Decide the distance (whose lengths?) and the speed (add or subtract?) before any arithmetic.',
   patterns: [
     { name: 'Crossing a pole, platform or bridge', frequency: 'most', example: 'A 240 m train at 72 km/h crosses a 360 m platform. Time?' },
-    { name: 'Two trains crossing each other', frequency: 'most', example: 'Trains of 150 m and 100 m at 60 and 30 km/h in opposite directions. Time to cross?' },
-    { name: 'Length or speed from two crossing times', frequency: 'often', example: 'A train passes a pole in 15 s and a 150 m platform in 25 s. Its length?' },
-    { name: 'Train passes a moving man or cyclist', frequency: 'often', example: 'A 250 m train at 50 km/h passes a man walking at 5 km/h the same way. Time?' },
-    { name: 'Trains starting from two stations', frequency: 'often', example: 'Stations 330 km apart; trains at 60 and 75 km/h, one starting an hour later. When do they meet?' },
+    {
+      name: 'Two trains crossing each other',
+      frequency: 'most',
+      example: 'Trains of 150 m and 100 m at 60 and 30 km/h in opposite directions. Time to cross?',
+    },
+    {
+      name: 'Length or speed from two crossing times',
+      frequency: 'often',
+      example: 'A train passes a pole in 15 s and a 150 m platform in 25 s. Its length?',
+    },
+    {
+      name: 'Train passes a moving man or cyclist',
+      frequency: 'often',
+      example: 'A 250 m train at 50 km/h passes a man walking at 5 km/h the same way. Time?',
+    },
+    {
+      name: 'Trains starting from two stations',
+      frequency: 'often',
+      example: 'Stations 330 km apart; trains at 60 and 75 km/h, one starting an hour later. When do they meet?',
+    },
     { name: 'Times taken after meeting', frequency: 'rare', example: 'After meeting, trains take 9 h and 4 h to finish. Ratio of speeds?' },
     { name: 'Stoppage time per hour', frequency: 'rare', example: 'Speed 54 km/h without stops and 45 km/h with stops. Minutes stopped per hour?' },
   ],
@@ -52,7 +68,7 @@ const topic: Topic = {
     },
     {
       title: 'Passing a moving man or car',
-      text: 'Treat the man as a pole with a speed: the distance is the train\'s length, and the speed is relative.',
+      text: "Treat the man as a pole with a speed: the distance is the train's length, and the speed is relative.",
       example: '250 m train at 50 km/h, man at 5 km/h the same way: 45 km/h = 12.5 m/s, 250/12.5 = **20 s**.',
     },
     {
@@ -68,17 +84,86 @@ const topic: Topic = {
       example: '54 km/h without stops, 45 km/h with: 9/54 × 60 = **10 minutes**.',
     },
   ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'Crossing a platform: the train covers its own length too',
+      figure: {
+        viewBox: '0 0 320 205',
+        svg: `
+<line x1="8" y1="100" x2="312" y2="100"/>
+<rect x="96" y="102" width="120" height="12" class="d-fill-blue"/>
+<rect x="96" y="102" width="120" height="12" class="d-thin"/>
+<text x="156" y="134" text-anchor="middle" class="d-small d-blue">platform 360 m</text>
+<text x="56" y="64" text-anchor="middle" class="d-small d-soft" data-step="1">start</text>
+<rect x="16" y="80" width="80" height="18" class="d-fill" data-step="1"/>
+<rect x="16" y="80" width="80" height="18" data-step="1"/>
+<text x="56" y="94" text-anchor="middle" class="d-small" data-step="1">240 m</text>
+<circle cx="96" cy="89" r="3.5" class="d-dot d-red" data-step="1"/>
+<text x="256" y="64" text-anchor="middle" class="d-small d-soft" data-step="2">end</text>
+<rect x="216" y="80" width="80" height="18" class="d-fill" data-step="2"/>
+<rect x="216" y="80" width="80" height="18" data-step="2"/>
+<text x="256" y="94" text-anchor="middle" class="d-small" data-step="2">240 m</text>
+<circle cx="296" cy="89" r="3.5" class="d-dot d-red" data-step="2"/>
+<line x1="96" y1="116" x2="96" y2="150" class="d-dash d-soft" data-step="3"/>
+<line x1="296" y1="102" x2="296" y2="150" class="d-dash d-soft" data-step="3"/>
+<line x1="96" y1="150" x2="296" y2="150" class="d-red" data-step="3"/><path d="M289.9,153.5 L296,150 L289.9,146.5" class="d-red" data-step="3"/>
+<text x="196" y="170" text-anchor="middle" class="d-small d-red" data-step="3">front moves 240 + 360 = 600 m</text>
+<text x="196" y="192" text-anchor="middle" data-step="4">600/20 = 30 s</text>`,
+        caption: 'Distance = train + platform',
+      },
+      explain: [
+        'Start: the front of the 240 m train (red dot) reaches the platform.',
+        'End: the rear of the train leaves the far end, so the whole train is past.',
+        'Follow the front: it moved the platform plus the train, 240 + 360 = 600 m.',
+        'At 72 km/h = 20 m/s: 600/20 = **30 s**. A pole has no length, so a pole takes only 240/20 = 12 s.',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'Two trains crossing in opposite directions',
+      figure: {
+        viewBox: '0 0 320 200',
+        svg: `
+<line x1="8" y1="80" x2="312" y2="80"/>
+<line x1="8" y1="125" x2="312" y2="125"/>
+<rect x="40" y="62" width="150" height="18" class="d-fill"/>
+<rect x="40" y="62" width="150" height="18"/>
+<text x="115" y="76" text-anchor="middle" class="d-small">A: 150 m</text>
+<rect x="190" y="107" width="100" height="18" class="d-fill-pink"/>
+<rect x="190" y="107" width="100" height="18"/>
+<text x="240" y="121" text-anchor="middle" class="d-small">B: 100 m</text>
+<line x1="190" y1="44" x2="190" y2="140" class="d-dash d-red" data-step="1"/>
+<text x="190" y="36" text-anchor="middle" class="d-small d-red" data-step="1">fronts meet</text>
+<text x="40" y="52" class="d-small" data-step="2">60 km/h</text>
+<line x1="100" y1="48" x2="140" y2="48" data-step="2"/><path d="M133.9,51.5 L140,48 L133.9,44.5" data-step="2"/>
+<line x1="292" y1="145" x2="256" y2="145" data-step="2"/><path d="M262.1,141.5 L256,145 L262.1,148.5" data-step="2"/>
+<text x="248" y="150" text-anchor="end" class="d-small" data-step="2">30 km/h</text>
+<line x1="40" y1="82" x2="40" y2="170" class="d-dash d-soft" data-step="3"/>
+<line x1="290" y1="127" x2="290" y2="170" class="d-dash d-soft" data-step="3"/>
+<line x1="40" y1="170" x2="290" y2="170" class="d-blue" data-step="3"/><path d="M284.8,173 L290,170 L284.8,167" class="d-blue" data-step="3"/><path d="M45.2,167 L40,170 L45.2,173" class="d-blue" data-step="3"/>
+<text x="165" y="190" text-anchor="middle" class="d-blue" data-step="3">150 + 100 = 250 m</text>`,
+      },
+      explain: [
+        'The crossing starts when the two fronts meet at the red line.',
+        'They move towards each other, so the speeds add: 60 + 30 = 90 km/h = 25 m/s.',
+        'It ends when the two rears pass each other: together they cover 150 + 100 = 250 m.',
+        'Time = 250/25 = **10 s**.',
+      ],
+    },
+  ],
   comparisons: [
     {
       title: 'Crossing a pole vs a platform vs another train',
       items: ['A pole or standing man', 'A platform or bridge', 'Another train'],
       rows: [
-        { aspect: 'Distance covered', values: ['Train\'s own length', 'Train + platform', 'Both trains\' lengths'], key: true },
-        { aspect: 'Speed used', values: ['Train\'s speed', 'Train\'s speed', 'S₁ + S₂ opposite, S₁ − S₂ same way'] },
+        { aspect: 'Distance covered', values: ["Train's own length", 'Train + platform', "Both trains' lengths"], key: true },
+        { aspect: 'Speed used', values: ["Train's speed", "Train's speed", 'S₁ + S₂ opposite, S₁ − S₂ same way'] },
         { aspect: 'Formula', values: ['L/S', '(L + P)/S', '(L₁ + L₂)/(S₁ ± S₂)'] },
         { aspect: 'Example', values: ['150 m at 54 km/h: 10 s', '200 m + 300 m at 90 km/h: 20 s', '150 m + 100 m, 60 + 30 km/h: 10 s'] },
       ],
-      reveal: 'The front of the train starts at the start of the object; the rear must clear its end. So every length involved is added, and only moving objects change the speed.',
+      reveal:
+        'The front of the train starts at the start of the object; the rear must clear its end. So every length involved is added, and only moving objects change the speed.',
       whenToUse: [
         'Pole, post, tree, signal or a standing person.',
         'Platform, bridge, tunnel or another object that does not move.',
@@ -95,7 +180,11 @@ const topic: Topic = {
       ladder: [
         { name: 'Standard', steps: ['Distance = 240 + 360 = 600 m.', 'Speed = 72 × 1,000/3,600 = 20 m/s.', 'Time = 600/20 = 30 s.'], seconds: 35 },
         { name: 'Shortcut', steps: ['72 km/h = 20 m/s from the table.', '600/20 = 30 s.'], seconds: 10 },
-        { name: 'Option elimination', steps: ['Pole time alone is 240/20 = 12 s, and the platform is longer than the train.', 'Time must be more than 24 s; 600/20 = 30 s.'], seconds: 10 },
+        {
+          name: 'Option elimination',
+          steps: ['Pole time alone is 240/20 = 12 s, and the platform is longer than the train.', 'Time must be more than 24 s; 600/20 = 30 s.'],
+          seconds: 10,
+        },
       ],
     },
     {
@@ -117,7 +206,11 @@ const topic: Topic = {
       ladder: [
         { name: 'Standard', steps: ['60 km/h = 50/3 m/s and 30 km/h = 25/3 m/s.', 'Sum = 25 m/s; distance 250 m.', '250/25 = 10 s.'], seconds: 45 },
         { name: 'Shortcut', steps: ['Add first, convert once: 90 × 5/18 = 25 m/s.', '250/25 = 10 s.'], seconds: 12 },
-        { name: 'Option elimination', steps: ['30 s is the same-direction trap: 250/(30 × 5/18) = 30 s.', 'Opposite is faster, so 10 s.'], seconds: 10 },
+        {
+          name: 'Option elimination',
+          steps: ['30 s is the same-direction trap: 250/(30 × 5/18) = 30 s.', 'Opposite is faster, so 10 s.'],
+          seconds: 10,
+        },
       ],
     },
   ],
@@ -149,7 +242,7 @@ const topic: Topic = {
     },
     {
       q: 'A man sits in a moving train. Another train passes him. What distance counts?',
-      a: ['Only the length of the other train.', 'The man is a point; his train\'s length does not matter.'],
+      a: ['Only the length of the other train.', "The man is a point; his train's length does not matter."],
       tag: 'Trap',
     },
     {
@@ -215,7 +308,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'Two trains 200 m and 250 m long run on parallel tracks in the same direction at 72 km/h and 54 km/h. How long does the faster train take to pass the slower one completely?',
+      question:
+        'Two trains 200 m and 250 m long run on parallel tracks in the same direction at 72 km/h and 54 km/h. How long does the faster train take to pass the slower one completely?',
       options: ['15 s', '45 s', '90 s', '60 s'],
       answer: 2,
       explain: 'Relative speed = 18 km/h = 5 m/s. 450/5 = 90 s.',
@@ -239,7 +333,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'Stations A and B are 330 km apart. A train leaves A at 8 am at 60 km/h towards B. Another leaves B at 9 am at 75 km/h towards A. When do they meet?',
+      question:
+        'Stations A and B are 330 km apart. A train leaves A at 8 am at 60 km/h towards B. Another leaves B at 9 am at 75 km/h towards A. When do they meet?',
       options: ['10:30 am', '10 am', '11:30 am', '11 am'],
       answer: 3,
       explain: 'By 9 am the first covers 60 km, leaving 270 km. 270/(60 + 75) = 2 h after 9 am: 11 am.',
@@ -263,15 +358,37 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'Two trains start at the same time from two stations towards each other. After meeting, they take 9 hours and 4 hours to reach their destinations. The first train runs at 60 km/h. What is the speed of the second train?',
+      question:
+        'Two trains start at the same time from two stations towards each other. After meeting, they take 9 hours and 4 hours to reach their destinations. The first train runs at 60 km/h. What is the speed of the second train?',
       options: ['40 km/h', '90 km/h', '80 km/h', '135 km/h'],
       answer: 1,
-      explain: 'S₁ : S₂ = √4 : √9 = 2 : 3. S₂ = 60 × 3/2 = 90 km/h.',
+      explain:
+        'Say they meet after t hours. The stretch the first train still has left (9 h at S₁) is what the second covered in t h: 9S₁ = tS₂. Likewise 4S₂ = tS₁. Dividing, 9S₁/(4S₂) = S₂/S₁, so S₂² : S₁² = 9 : 4 and S₁ : S₂ = 2 : 3. S₂ = 60 × 3/2 = 90 km/h.',
     },
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'A train passes a man standing on a platform in 8 seconds and passes the whole 264 m platform in 20 seconds. What is the length of the train?',
+      question:
+        'A train passes a man standing on a platform in 8 seconds and passes the whole 264 m platform in 20 seconds. What is the length of the train?',
+      figure: {
+        viewBox: '0 58 320 120',
+        svg: `
+<line x1="10" y1="110" x2="310" y2="110"/>
+<rect x="120" y="112" width="176" height="12" class="d-fill-blue"/>
+<rect x="120" y="112" width="176" height="12" class="d-thin"/>
+<text x="208" y="145" text-anchor="middle" class="d-blue">264 m</text>
+<rect x="26" y="90" width="90" height="18" class="d-fill"/>
+<rect x="26" y="90" width="90" height="18"/>
+<text x="71" y="104" text-anchor="middle" class="d-small">x m</text>
+<line x1="40" y1="76" x2="90" y2="76"/><path d="M83.9,79.5 L90,76 L83.9,72.5"/>
+<circle cx="134" cy="80" r="4.5"/>
+<line x1="134" y1="85" x2="134" y2="100"/>
+<line x1="128" y1="91" x2="140" y2="91"/>
+<line x1="134" y1="100" x2="129" y2="111"/>
+<line x1="134" y1="100" x2="139" y2="111"/>
+<text x="146" y="86" class="d-small">man: 8 s</text>
+<text x="208" y="165" text-anchor="middle" class="d-small">whole platform: 20 s</text>`,
+      },
       options: ['160 m', '192 m', '176 m', '180 m'],
       answer: 2,
       explain: 'The extra 12 s covers 264 m, so speed = 22 m/s. Length = 22 × 8 = 176 m.',
@@ -279,11 +396,12 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'A man sitting in a train running at 42 km/h sees a 150 m long train coming from the opposite direction pass him in 6 seconds. What is the speed of the other train?',
+      question:
+        'A man sitting in a train running at 42 km/h sees a 150 m long train coming from the opposite direction pass him in 6 seconds. What is the speed of the other train?',
       options: ['54 km/h', '45 km/h', '50 km/h', '48 km/h'],
       answer: 3,
       explain: 'Relative speed = 150/6 = 25 m/s = 90 km/h. Other train = 90 − 42 = 48 km/h.',
-      shortcut: 'Only the 150 m train\'s length counts; the man is a point.',
+      shortcut: "Only the 150 m train's length counts; the man is a point.",
     },
     {
       type: 'truefalse',

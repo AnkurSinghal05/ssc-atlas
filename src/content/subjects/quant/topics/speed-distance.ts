@@ -13,8 +13,16 @@ const topic: Topic = {
     'Distance = speed × time. Convert units first, use 2xy/(x + y) for equal distances, and add or subtract speeds for things moving towards or after each other.',
   patterns: [
     { name: 'Average speed for equal distances', frequency: 'most', example: '40 km/h one way, 60 km/h back. Average speed?' },
-    { name: 'Relative speed (meeting and overtaking)', frequency: 'most', example: 'Two cars start towards each other 300 km apart. When do they meet?' },
-    { name: 'Late and early (same distance, two speeds)', frequency: 'often', example: 'At 4 km/h he is 10 min late; at 5 km/h, 5 min early. Distance?' },
+    {
+      name: 'Relative speed (meeting and overtaking)',
+      frequency: 'most',
+      example: 'Two cars start towards each other 300 km apart. When do they meet?',
+    },
+    {
+      name: 'Late and early (same distance, two speeds)',
+      frequency: 'often',
+      example: 'At 4 km/h he is 10 min late; at 5 km/h, 5 min early. Distance?',
+    },
     { name: 'Speed ratio and time ratio', frequency: 'often', example: 'Walking at 3/4 of his speed he is 20 min late. Usual time?' },
     { name: 'Unit conversion', frequency: 'rare', example: '72 km/h in m/s?' },
   ],
@@ -63,9 +71,81 @@ const topic: Topic = {
     },
     {
       title: 'Trains and boats in one line',
-      text: 'Trains: distance is the train\'s length (plus the platform or other train). Boats: downstream = boat + stream, upstream = boat − stream. Both have their own topics.',
+      text: "Trains: distance is the train's length (plus the platform or other train). Boats: downstream = boat + stream, upstream = boat − stream. Both have their own topics.",
       formula: 'stream = (down − up)/2',
       example: '150 m train at 54 km/h (15 m/s) passes a pole in **10 s**.',
+    },
+  ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'Meeting: the gap closes at the sum of the speeds',
+      figure: {
+        viewBox: '0 0 320 190',
+        svg: `
+<line x1="30" y1="55" x2="290" y2="55" class="d-soft" data-step="1"/><path d="M284.8,58 L290,55 L284.8,52" class="d-soft" data-step="1"/><path d="M35.2,52 L30,55 L35.2,58" class="d-soft" data-step="1"/>
+<text x="160" y="45" text-anchor="middle" data-step="1">300 km</text>
+<line x1="20" y1="110" x2="300" y2="110" class="d-thick"/>
+<circle cx="30" cy="110" r="4" class="d-dot"/>
+<circle cx="290" cy="110" r="4" class="d-dot"/>
+<text x="30" y="134" text-anchor="middle">A</text>
+<text x="290" y="134" text-anchor="middle">B</text>
+<line x1="34" y1="90" x2="74" y2="90" class="d-blue" data-step="2"/><path d="M67.9,93.5 L74,90 L67.9,86.5" class="d-blue" data-step="2"/>
+<text x="34" y="80" class="d-blue d-small" data-step="2">40 km/h</text>
+<line x1="286" y1="90" x2="246" y2="90" class="d-red" data-step="2"/><path d="M252.1,86.5 L246,90 L252.1,93.5" class="d-red" data-step="2"/>
+<text x="286" y="80" text-anchor="end" class="d-red d-small" data-step="2">60 km/h</text>
+<line x1="64.7" y1="105" x2="64.7" y2="115" class="d-blue" data-step="3"/>
+<text x="64.7" y="130" text-anchor="middle" class="d-small d-blue" data-step="3">1 h</text>
+<line x1="238" y1="105" x2="238" y2="115" class="d-red" data-step="3"/>
+<text x="238" y="130" text-anchor="middle" class="d-small d-red" data-step="3">1 h</text>
+<line x1="99.3" y1="105" x2="99.3" y2="115" class="d-blue" data-step="3"/>
+<text x="99.3" y="130" text-anchor="middle" class="d-small d-blue" data-step="3">2 h</text>
+<line x1="186" y1="105" x2="186" y2="115" class="d-red" data-step="3"/>
+<text x="186" y="130" text-anchor="middle" class="d-small d-red" data-step="3">2 h</text>
+<circle cx="134" cy="110" r="5" class="d-dot d-red" data-step="4"/>
+<text x="134" y="97" text-anchor="middle" data-step="4">M</text>
+<line x1="30" y1="158" x2="134" y2="158" class="d-blue" data-step="4"/><path d="M128.8,161 L134,158 L128.8,155" class="d-blue" data-step="4"/><path d="M35.2,155 L30,158 L35.2,161" class="d-blue" data-step="4"/>
+<text x="82" y="178" text-anchor="middle" class="d-blue" data-step="4">120 km</text>
+<line x1="134" y1="158" x2="290" y2="158" class="d-red" data-step="4"/><path d="M284.8,161 L290,158 L284.8,155" class="d-red" data-step="4"/><path d="M139.2,155 L134,158 L139.2,161" class="d-red" data-step="4"/>
+<text x="212" y="178" text-anchor="middle" class="d-red" data-step="4">180 km</text>`,
+        caption: 'Opposite directions: add the speeds',
+      },
+      explain: [
+        'A and B are 300 km apart and start at the same time towards each other.',
+        'Every hour A covers 40 km and B covers 60 km, both eating into the same gap.',
+        'So the gap shrinks by 40 + 60 = 100 km each hour (see the 1 h and 2 h marks).',
+        'Time = 300/100 = **3 h**. A has gone 40 × 3 = 120 km and B 180 km, so they meet at M.',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'Chasing: the gap closes at the difference of the speeds',
+      figure: {
+        viewBox: '0 0 320 200',
+        svg: `
+<line x1="290" y1="58" x2="290" y2="145" class="d-dash d-soft" data-step="3"/>
+<text x="290" y="50" text-anchor="middle" class="d-small" data-step="3">caught</text>
+<circle cx="30" cy="80" r="4" class="d-dot"/>
+<line x1="30" y1="80" x2="287" y2="80" class="d-blue"/><path d="M280.9,83.5 L287,80 L280.9,76.5" class="d-blue"/>
+<text x="38" y="70" class="d-small d-blue" data-step="2">police, 10 km/h</text>
+<text x="180" y="98" text-anchor="middle" class="d-small d-blue" data-step="4">1,000 m</text>
+<circle cx="82" cy="130" r="4" class="d-dot"/>
+<line x1="82" y1="130" x2="287" y2="130" class="d-red" data-step="4"/><path d="M280.9,133.5 L287,130 L280.9,126.5" class="d-red" data-step="4"/>
+<text x="90" y="120" class="d-small d-red" data-step="2">thief, 8 km/h</text>
+<text x="196" y="148" text-anchor="middle" class="d-red" data-step="4">800 m</text>
+<line x1="30" y1="86" x2="30" y2="172" class="d-dash d-soft" data-step="1"/>
+<line x1="82" y1="136" x2="82" y2="172" class="d-dash d-soft" data-step="1"/>
+<line x1="30" y1="168" x2="82" y2="168" data-step="1"/><path d="M76.8,171 L82,168 L76.8,165" data-step="1"/><path d="M35.2,165 L30,168 L35.2,171" data-step="1"/>
+<text x="56" y="188" text-anchor="middle" data-step="1">200 m</text>
+<text x="108" y="186" class="d-small" data-step="2">gap shrinks 10 − 8 = 2 km/h</text>`,
+        caption: 'Same direction: subtract the speeds',
+      },
+      explain: [
+        'The thief starts 200 m ahead of the policeman.',
+        'Both run the same way, so the gap shrinks only by 10 − 8 = 2 km/h.',
+        'Time to close 0.2 km at 2 km/h = 0.2/2 = 0.1 h (6 minutes).',
+        'In 0.1 h the thief runs 8 × 0.1 = 0.8 km = **800 m**; the policeman runs 1,000 m.',
+      ],
     },
   ],
   comparisons: [
@@ -74,17 +154,19 @@ const topic: Topic = {
       items: ['Same direction', 'Opposite direction'],
       rows: [
         { aspect: 'Relative speed', values: ['**S₁ − S₂**', '**S₁ + S₂**'], key: true },
-        { aspect: 'Typical question', values: ['Police chases a thief; a fast train overtakes a slow one', 'Two people walk towards each other; trains cross going opposite ways'] },
+        {
+          aspect: 'Typical question',
+          values: [
+            'Police chases a thief; a fast train overtakes a slow one',
+            'Two people walk towards each other; trains cross going opposite ways',
+          ],
+        },
         { aspect: 'Gap to cover', values: ['Head start between them', 'Distance between them'] },
         { aspect: '50 and 40 km/h', values: ['10 km/h', '90 km/h'] },
         { aspect: 'Two trains 200 m and 150 m', values: ['350 m at 10 km/h = 126 s', '350 m at 90 km/h = 14 s'] },
       ],
-      reveal:
-        'The distance to cover is the same idea in both cases. Only the closing speed changes: subtract when chasing, add when meeting.',
-      whenToUse: [
-        'One is catching up with or overtaking the other.',
-        'They move towards each other, meet or cross.',
-      ],
+      reveal: 'The distance to cover is the same idea in both cases. Only the closing speed changes: subtract when chasing, add when meeting.',
+      whenToUse: ['One is catching up with or overtaking the other.', 'They move towards each other, meet or cross.'],
     },
   ],
   shortcuts: [
@@ -241,7 +323,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'Two towns are 300 km apart. Two cars start from them at the same time towards each other at 40 km/h and 60 km/h. After how long do they meet?',
+      question:
+        'Two towns are 300 km apart. Two cars start from them at the same time towards each other at 40 km/h and 60 km/h. After how long do they meet?',
       options: ['2.5 h', '3.5 h', '3 h', '4 h'],
       answer: 2,
       explain: 'Relative speed = 40 + 60 = 100 km/h. Time = 300/100 = 3 h.',
@@ -249,7 +332,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'A thief is spotted by a policeman 200 m away. The thief runs at 8 km/h and the policeman chases at 10 km/h. How far will the thief have run before he is caught?',
+      question:
+        'A thief is spotted by a policeman 200 m away. The thief runs at 8 km/h and the policeman chases at 10 km/h. How far will the thief have run before he is caught?',
       options: ['1 km', '600 m', '900 m', '800 m'],
       answer: 3,
       explain: 'Relative speed = 2 km/h. Time = 0.2/2 = 0.1 h. Thief runs 8 × 0.1 = 0.8 km = 800 m.',
@@ -291,7 +375,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'Two trains 200 m and 150 m long run at 50 km/h and 40 km/h in opposite directions on parallel tracks. How long do they take to cross each other?',
+      question:
+        'Two trains 200 m and 150 m long run at 50 km/h and 40 km/h in opposite directions on parallel tracks. How long do they take to cross each other?',
       options: ['14 s', '126 s', '12 s', '16 s'],
       answer: 0,
       explain: 'Relative speed = 90 km/h = 25 m/s. Distance = 350 m. Time = 350/25 = 14 s.',
@@ -300,7 +385,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'A man covers a journey in 5 hours. He travels the first half of the distance at 4 km/h and the second half at 6 km/h. What is the total distance?',
+      question:
+        'A man covers a journey in 5 hours. He travels the first half of the distance at 4 km/h and the second half at 6 km/h. What is the total distance?',
       options: ['20 km', '25 km', '30 km', '24 km'],
       answer: 3,
       explain: 'D/8 + D/12 = 5, so 5D/24 = 5 and D = 24 km.',
@@ -309,7 +395,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'A car leaves a point at 40 km/h. One hour later, a second car leaves the same point on the same road at 50 km/h. How far from the start will the second car catch the first?',
+      question:
+        'A car leaves a point at 40 km/h. One hour later, a second car leaves the same point on the same road at 50 km/h. How far from the start will the second car catch the first?',
       options: ['160 km', '200 km', '240 km', '180 km'],
       answer: 1,
       explain: 'Head start = 40 km. Gap closes at 10 km/h, so 4 h. Second car covers 50 × 4 = 200 km.',

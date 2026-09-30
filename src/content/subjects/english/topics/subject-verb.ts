@@ -53,6 +53,33 @@ const topic: Topic = {
       example: '**More than one student was** absent. **Many a man has** tried and failed.',
     },
   ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'Which subject does the verb look at?',
+      figure: {
+        viewBox: '0 0 320 195',
+        svg: `
+<text x="12" y="76" class="d-small">Neither the</text><text x="80" y="76" class="d-small">teacher</text><text x="128" y="76" class="d-small">nor the</text><text x="174" y="76" class="d-small d-green" data-step="2">students</text><text x="234" y="76" class="d-small d-green" data-step="1 2">were …</text>
+<path d="M243,62 Q171,14 100,62" class="d-red d-dash" data-step="1"/><polyline points="104.4,54.2 100,62 108.9,60.8" class="d-red d-dash" data-step="1"/>
+<text x="171" y="30" text-anchor="middle" class="d-small d-red" data-step="1">not this one</text>
+<path d="M247,62 Q223,40 200,62" class="d-green" data-step="1 2"/><polyline points="203,53.6 200,62 208.5,59.4" class="d-green" data-step="1 2"/>
+<text x="200" y="94" text-anchor="middle" class="d-small d-soft" data-step="2">nearer, plural</text>
+<rect x="92" y="146" width="158" height="20" rx="5" class="d-dash d-soft" data-step="3"/>
+<text x="12" y="160" class="d-small">The</text><text x="36" y="160" class="d-small d-blue" data-step="4">captain,</text><text x="98" y="160" class="d-small d-soft" data-step="3">along with his players,</text><text x="256" y="160" class="d-small d-blue" data-step="4">was …</text>
+<text x="171" y="186" text-anchor="middle" class="d-small d-soft" data-step="3">extra phrase: skip it</text>
+<path d="M264,144 Q164,96 62,144" class="d-blue" data-step="4"/><polyline points="67.5,137 62,144 70.9,144.2" class="d-blue" data-step="4"/>
+<text x="164" y="112" text-anchor="middle" class="d-small d-blue" data-step="4">first subject, singular</text>`,
+        caption: 'Neither the teacher nor the students were present. The captain, along with his players, was welcomed.',
+      },
+      explain: [
+        'With neither...nor, either...or and not only...but also, the verb agrees with the subject nearest to it, not the first one.',
+        'The nearer subject "the students" is plural, so the verb is **were**.',
+        'Along with, as well as, together with, besides: the phrase is extra information. Skip it when you look for the subject.',
+        'The verb goes back to the first subject, "the captain", which is singular, so the verb is **was**.',
+      ],
+    },
+  ],
   comparisons: [
     {
       title: 'A number of vs the number of',
@@ -80,7 +107,8 @@ const topic: Topic = {
           values: ['both...and', 'along with, together with, with, besides, in addition to', 'either...or, not only...but also, or, nor'],
         },
       ],
-      reveal: 'Only "and" joins two subjects into one plural subject. "As well as" type phrases are just extra detail, and "or / nor" pairs let the nearer subject decide.',
+      reveal:
+        'Only "and" joins two subjects into one plural subject. "As well as" type phrases are just extra detail, and "or / nor" pairs let the nearer subject decide.',
       whenToUse: [
         'Two separate subjects joined by "and" (unless they name one person or one idea).',
         'An extra noun is added with a phrase, often between commas.',
@@ -120,7 +148,11 @@ const topic: Topic = {
     },
     {
       q: 'When does a collective noun take a plural verb?',
-      a: ['When the members act separately or disagree.', 'The committee **were** divided in their views.', 'As one unit: The committee **has** made its decision.'],
+      a: [
+        'When the members act separately or disagree.',
+        'The committee **were** divided in their views.',
+        'As one unit: The committee **has** made its decision.',
+      ],
     },
     {
       q: 'Which verb follows "More than one" and "Many a"?',

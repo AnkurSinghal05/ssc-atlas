@@ -27,6 +27,9 @@ Routing is hash-based (`#quant.percentage`, `#exam`), so any static host works w
 - **Topic page** tabs: Learn (key ideas as sticky notes with hand-boxed formulas, comparisons), Shortcuts (rough work
   on a notebook page, fastest method circled in red), Flashcards (flip-over index cards: one at a time with Got it /
   Again and a missed-cards round, or all cards), Practice (explanations as a red-pen correction).
+- **Diagrams**: hand-drawn figures (`Figure` in `src/content/types.ts`) as `diagram` visuals on the Learn tab, with
+  numbered notes that light up their part of the figure (`data-step`), in the 5-minute recap, and on practice questions
+  (`figure`). `npm run verify` checks every figure's markup, classes and steps.
 - **Handwritten notes** (`src/components/notes/`, styles under "Handwritten notes" in `src/index.css`):
   - High-yield notes (`#high-yield`): the high-priority topics per subject as sticky notes, most asked patterns first.
   - Formula sheet (`#formulas`): every formula on a notebook page per subject, filterable and printable.

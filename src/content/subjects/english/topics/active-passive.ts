@@ -58,6 +58,31 @@ const topic: Topic = {
       example: 'He gave me a book. → I was given a book by him. / A book was given to me by him.',
     },
   ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'Active to passive: the object swaps to the front',
+      figure: {
+        viewBox: '0 0 320 185',
+        svg: `
+<text x="55" y="24" text-anchor="middle" class="d-small d-soft">subject</text><text x="160" y="24" text-anchor="middle" class="d-small d-soft">verb</text><text x="262" y="24" text-anchor="middle" class="d-small d-soft">object</text>
+<text x="55" y="50" text-anchor="middle" data-step="3">Ram</text><text x="160" y="50" text-anchor="middle" data-step="2">writes</text><text x="262" y="50" text-anchor="middle" data-step="1">a letter.</text>
+<line x1="248" y1="60" x2="72" y2="132" class="d-red" data-step="1"/><polyline points="78.6,124.4 72,132 82,132.8" class="d-red" data-step="1"/>
+<line x1="70" y1="60" x2="246" y2="132" class="d-blue" data-step="3"/><polyline points="236,132.8 246,132 239.4,124.4" class="d-blue" data-step="3"/>
+<line x1="160" y1="60" x2="160" y2="84" class="d-green" data-step="2"/>
+<line x1="160" y1="110" x2="160" y2="132" class="d-green" data-step="2"/><polyline points="155.5,123 160,132 164.5,123" class="d-green" data-step="2"/>
+<text x="55" y="152" text-anchor="middle" class="d-red" data-step="1 4">A letter</text><text x="160" y="152" text-anchor="middle" class="d-green" data-step="2 4">is written</text><text x="262" y="152" text-anchor="middle" class="d-blue" data-step="3 4">by Ram.</text>
+<text x="55" y="174" text-anchor="middle" class="d-small d-soft">new subject</text><text x="160" y="174" text-anchor="middle" class="d-small d-soft">be + V3</text><text x="262" y="174" text-anchor="middle" class="d-small d-soft">by + agent</text>`,
+        caption: 'Active on top, passive below.',
+      },
+      explain: [
+        'Find the object of the active sentence: "a letter". It moves to the front and becomes the new subject.',
+        '"Writes" is simple present, so keep the present in the form of "be": is + written (V3).',
+        'The old subject "Ram" moves to the end, after "by". A pronoun changes case here: I → me, he → him.',
+        'Read the new sentence: **A letter is written by Ram.** Same meaning, same tense, doer at the end.',
+      ],
+    },
+  ],
   comparisons: [
     {
       title: 'Active vs passive, tense by tense',
@@ -92,12 +117,9 @@ const topic: Topic = {
         },
         { aspect: 'Pattern', values: ['Let + object + be + V3', 'You are requested to + V1', 'Let + object + not be + V3'] },
       ],
-      reveal: 'A command uses "Let ... be + V3". A polite request uses "You are requested to". A negative command can also be written "You are forbidden to touch the wire."',
-      whenToUse: [
-        'A plain order with an object.',
-        'The sentence starts with please or kindly.',
-        'The sentence starts with "Do not" or "Don\'t".',
-      ],
+      reveal:
+        'A command uses "Let ... be + V3". A polite request uses "You are requested to". A negative command can also be written "You are forbidden to touch the wire."',
+      whenToUse: ['A plain order with an object.', 'The sentence starts with please or kindly.', 'The sentence starts with "Do not" or "Don\'t".'],
     },
   ],
   qa: [
@@ -156,25 +178,40 @@ const topic: Topic = {
       type: 'mcq',
       difficulty: 'easy',
       question: 'Select the option that expresses the given sentence in passive voice.\nThe boy kicked the ball.',
-      options: ['The ball is kicked by the boy.', 'The ball was kicked by the boy.', 'The ball was being kicked by the boy.', 'The ball had been kicked by the boy.'],
+      options: [
+        'The ball is kicked by the boy.',
+        'The ball was kicked by the boy.',
+        'The ball was being kicked by the boy.',
+        'The ball had been kicked by the boy.',
+      ],
       answer: 1,
-      explain: 'Simple past: was / were + V3.',
+      explain: '"Kicked" is simple past, so use was / were + V3. The object "the ball" is singular: The ball was kicked by the boy.',
     },
     {
       type: 'mcq',
       difficulty: 'easy',
       question: 'Select the option that expresses the given sentence in passive voice.\nThey are building a house.',
-      options: ['A house is built by them.', 'A house is being built by them.', 'A house was being built by them.', 'A house has been built by them.'],
+      options: [
+        'A house is built by them.',
+        'A house is being built by them.',
+        'A house was being built by them.',
+        'A house has been built by them.',
+      ],
       answer: 1,
-      explain: 'Present continuous: is / are + being + V3.',
+      explain: '"Are building" is present continuous, so use is / are + being + V3. "A house" is singular: A house is being built by them.',
     },
     {
       type: 'mcq',
       difficulty: 'easy',
       question: 'Select the option that expresses the given sentence in passive voice.\nShe has finished the work.',
-      options: ['The work was finished by her.', 'The work has been finished by her.', 'The work had been finished by her.', 'The work has finished by her.'],
+      options: [
+        'The work was finished by her.',
+        'The work has been finished by her.',
+        'The work had been finished by her.',
+        'The work has finished by her.',
+      ],
       answer: 1,
-      explain: 'Present perfect: has / have + been + V3.',
+      explain: '"Has finished" is present perfect, so use has / have + been + V3: The work has been finished by her.',
     },
     {
       type: 'mcq',
@@ -201,17 +238,29 @@ const topic: Topic = {
       type: 'mcq',
       difficulty: 'medium',
       question: 'Select the option that expresses the given sentence in passive voice.\nDid he write this letter?',
-      options: ['Was this letter written by him?', 'Is this letter written by him?', 'Was this letter wrote by him?', 'Had this letter been written by him?'],
+      options: [
+        'Was this letter written by him?',
+        'Is this letter written by him?',
+        'Was this letter wrote by him?',
+        'Had this letter been written by him?',
+      ],
       answer: 0,
-      explain: 'Simple past question: Was / Were + object + V3 + by + agent?',
+      explain:
+        '"Did … write" is a simple past question, so the passive uses "was". Put "was" first, then the new subject "this letter", then V3 "written", then "by him": Was this letter written by him?',
     },
     {
       type: 'mcq',
       difficulty: 'medium',
       question: 'Select the option that expresses the given sentence in passive voice.\nWho broke the window?',
-      options: ['By whom the window was broken?', 'By whom was the window broken?', 'Who was the window broken by him?', 'By whom has the window been broken?'],
+      options: [
+        'By whom the window was broken?',
+        'By whom was the window broken?',
+        'Who was the window broken by him?',
+        'By whom has the window been broken?',
+      ],
       answer: 1,
-      explain: '"Who" becomes "By whom", and the question keeps the helping verb before the subject.',
+      explain:
+        '"Broke" is simple past, so the passive verb is "was broken". "Who" becomes "By whom" at the front; then the helping verb comes before the subject: By whom was the window broken?',
     },
     {
       type: 'mcq',
@@ -219,7 +268,8 @@ const topic: Topic = {
       question: 'Select the option that expresses the given sentence in passive voice.\nSomeone has stolen my purse.',
       options: ['My purse was stolen by someone.', 'My purse has been stolen.', 'My purse had been stolen.', 'My purse is stolen by someone.'],
       answer: 1,
-      explain: 'Present perfect: has been + V3. The vague agent "someone" is dropped.',
+      explain:
+        '"Has stolen" is present perfect, so use has been + V3: My purse has been stolen. "Someone" is a vague doer, so "by someone" is dropped.',
     },
     {
       type: 'mcq',
@@ -232,7 +282,8 @@ const topic: Topic = {
         'The results will have been announced by the committee tomorrow.',
       ],
       answer: 1,
-      explain: 'Simple future: will be + V3.',
+      explain:
+        '"Will announce" is simple future, so use will be + V3. Object first, then "by the committee", and the time word stays at the end: The results will be announced by the committee tomorrow.',
     },
     {
       type: 'mcq',
@@ -256,7 +307,8 @@ const topic: Topic = {
       question: 'Select the option that expresses the given sentence in passive voice.\nHe gave me a book.',
       options: ['I was given a book by him.', 'I am given a book by him.', 'A book is given to me by him.', 'A book had been given to me by him.'],
       answer: 0,
-      explain: 'Simple past with two objects: either object can be the subject, but the tense must stay past: was given.',
+      explain:
+        '"Gave" is simple past, so the passive verb is "was given". The verb has two objects, "me" and "a book"; take "me" as the subject and change it to "I": I was given a book by him. The other options change the tense to "am", "is" or "had been".',
     },
     {
       type: 'mcq',
@@ -264,7 +316,8 @@ const topic: Topic = {
       question: 'Select the option that expresses the given sentence in passive voice.\nDo not touch the wire.',
       options: ['Let the wire be not touch.', 'Let the wire not be touched.', 'The wire is not touched.', 'Let not the wire touched.'],
       answer: 1,
-      explain: 'A negative command becomes Let + object + not be + V3.',
+      explain:
+        'A negative command becomes Let + object + not be + V3. The object is "the wire" and V3 of touch is "touched": Let the wire not be touched.',
     },
     {
       type: 'mcq',
@@ -272,7 +325,8 @@ const topic: Topic = {
       question: 'Select the option that expresses the given sentence in passive voice.\nPeople say that he is honest.',
       options: ['He is said to be honest.', 'He was said to be honest.', 'He is said being honest.', 'He is being said to be honest.'],
       answer: 0,
-      explain: '"People say that..." becomes "It is said that..." or "He is said to be...". The tense stays present.',
+      explain:
+        '"People" is a vague doer, so drop it. "Say" is simple present, so it becomes "is said". Make "he" the subject and turn "that he is" into "to be": He is said to be honest.',
     },
     {
       type: 'truefalse',

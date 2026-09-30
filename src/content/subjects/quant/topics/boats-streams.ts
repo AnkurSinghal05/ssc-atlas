@@ -9,13 +9,25 @@ const topic: Topic = {
   priority: 'medium',
   tags: ['boats', 'streams', 'upstream', 'downstream', 'still water', 'current', 'round trip'],
   summary:
-    'The stream helps the boat one way and slows it the other. Downstream = B + S, upstream = B − S. Half their sum is the boat\'s speed and half their difference is the stream\'s.',
+    "The stream helps the boat one way and slows it the other. Downstream = B + S, upstream = B − S. Half their sum is the boat's speed and half their difference is the stream's.",
   patterns: [
-    { name: 'Boat and stream speed from downstream and upstream', frequency: 'most', example: 'A boat goes 30 km downstream in 2 h and 18 km upstream in 2 h. Speed of the stream?' },
+    {
+      name: 'Boat and stream speed from downstream and upstream',
+      frequency: 'most',
+      example: 'A boat goes 30 km downstream in 2 h and 18 km upstream in 2 h. Speed of the stream?',
+    },
     { name: 'Round trip: time or distance', frequency: 'most', example: 'Boat 10 km/h, stream 2 km/h, round trip takes 5 h. How far is the place?' },
-    { name: 'Upstream takes k times as long', frequency: 'often', example: 'Rowing up takes twice as long as rowing down. Ratio of boat to stream speed?' },
+    {
+      name: 'Upstream takes k times as long',
+      frequency: 'often',
+      example: 'Rowing up takes twice as long as rowing down. Ratio of boat to stream speed?',
+    },
     { name: 'Two trips, two equations', frequency: 'often', example: '30 km up and 44 km down in 10 h; 40 km up and 55 km down in 13 h. Speeds?' },
-    { name: 'Distances in the same time', frequency: 'often', example: 'A boat goes 26 km down and 14 km up in the same time. Boat 10 km/h. Stream?' },
+    {
+      name: 'Distances in the same time',
+      frequency: 'often',
+      example: 'A boat goes 26 km down and 14 km up in the same time. Boat 10 km/h. Stream?',
+    },
     { name: 'Average speed of a round trip', frequency: 'rare', example: 'Boat 12 km/h, stream 3 km/h. Average speed for the round trip?' },
   ],
   keyPoints: [
@@ -60,6 +72,67 @@ const topic: Topic = {
       example: 'B = 12, S = 3: 135/12 = **11.25 km/h**.',
     },
   ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'With the stream and against it',
+      figure: {
+        viewBox: '0 0 320 200',
+        svg: `
+<rect x="10" y="60" width="300" height="100" class="d-fill-blue"/>
+<line x1="10" y1="60" x2="310" y2="60" class="d-blue"/>
+<line x1="10" y1="160" x2="310" y2="160" class="d-blue"/>
+<line x1="28" y1="112" x2="72" y2="112" class="d-blue d-thin" data-step="2"/><path d="M66.8,115 L72,112 L66.8,109" class="d-blue d-thin" data-step="2"/>
+<line x1="222" y1="112" x2="266" y2="112" class="d-blue d-thin" data-step="2"/><path d="M260.8,115 L266,112 L260.8,109" class="d-blue d-thin" data-step="2"/>
+<text x="160" y="117" text-anchor="middle" class="d-small d-blue" data-step="2">stream 3 km/h</text>
+<path d="M98,79 L142,79 L134,91 L106,91 Z" class="d-fill" data-step="1"/>
+<path d="M98,79 L142,79 L134,91 L106,91 Z" data-step="1"/>
+<line x1="150" y1="85" x2="200" y2="85" class="d-red d-thick" data-step="3"/><path d="M193.9,88.5 L200,85 L193.9,81.5" class="d-red d-thick" data-step="3"/>
+<path d="M178,134 L222,134 L214,146 L186,146 Z" class="d-fill" data-step="1"/>
+<path d="M178,134 L222,134 L214,146 L186,146 Z" data-step="1"/>
+<line x1="170" y1="140" x2="120" y2="140" class="d-green d-thick" data-step="4"/><path d="M126.1,136.5 L120,140 L126.1,143.5" class="d-green d-thick" data-step="4"/>
+<text x="160" y="44" text-anchor="middle" class="d-red" data-step="3">downstream: 12 + 3 = 15 km/h</text>
+<text x="160" y="186" text-anchor="middle" class="d-green" data-step="4">upstream: 12 − 3 = 9 km/h</text>
+<text x="120" y="104" text-anchor="middle" class="d-small" data-step="1">boat 12</text>
+<text x="200" y="130" text-anchor="middle" class="d-small" data-step="1">boat 12</text>`,
+      },
+      explain: [
+        'In still water the boat moves at B = 12 km/h.',
+        'The stream carries everything on it at S = 3 km/h, left to right.',
+        'Going with the stream, the two speeds add: downstream = 12 + 3 = **15 km/h**.',
+        'Going against it, the stream pulls back: upstream = 12 − 3 = **9 km/h**.',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'B is halfway between upstream and downstream',
+      figure: {
+        viewBox: '0 0 320 165',
+        svg: `
+<line x1="24" y1="120" x2="296" y2="120"/>
+<line x1="95" y1="113" x2="95" y2="127" class="d-green" data-step="1"/>
+<text x="95" y="146" text-anchor="middle" class="d-green" data-step="1">U = 9</text>
+<line x1="225" y1="113" x2="225" y2="127" class="d-red" data-step="1"/>
+<text x="225" y="146" text-anchor="middle" class="d-red" data-step="1">D = 15</text>
+<circle cx="160" cy="120" r="4.5" class="d-dot" data-step="3"/>
+<text x="160" y="146" text-anchor="middle" data-step="3">B = 12</text>
+<line x1="95" y1="100" x2="160" y2="100" class="d-blue" data-step="2"/><path d="M154.8,103 L160,100 L154.8,97" class="d-blue" data-step="2"/><path d="M100.2,97 L95,100 L100.2,103" class="d-blue" data-step="2"/>
+<text x="127.5" y="92" text-anchor="middle" class="d-blue" data-step="2">S</text>
+<line x1="160" y1="100" x2="225" y2="100" class="d-blue" data-step="2"/><path d="M219.8,103 L225,100 L219.8,97" class="d-blue" data-step="2"/><path d="M165.2,97 L160,100 L165.2,103" class="d-blue" data-step="2"/>
+<text x="192.5" y="92" text-anchor="middle" class="d-blue" data-step="2">S</text>
+<line x1="95" y1="60" x2="95" y2="112" class="d-dash d-soft" data-step="4"/>
+<line x1="225" y1="60" x2="225" y2="112" class="d-dash d-soft" data-step="4"/>
+<line x1="95" y1="60" x2="225" y2="60" data-step="4"/><path d="M219.8,63 L225,60 L219.8,57" data-step="4"/><path d="M100.2,57 L95,60 L100.2,63" data-step="4"/>
+<text x="160" y="50" text-anchor="middle" data-step="4">D − U = 6 = 2S</text>`,
+      },
+      explain: [
+        'Mark the two speeds you can measure: upstream U = 9 and downstream D = 15.',
+        'Each is one stream-speed S away from the boat speed B, on opposite sides.',
+        'So B sits exactly in the middle: B = (15 + 9)/2 = **12 km/h**.',
+        'The whole gap D − U holds two streams: S = (15 − 9)/2 = **3 km/h**.',
+      ],
+    },
+  ],
   comparisons: [
     {
       title: 'Upstream vs downstream',
@@ -84,12 +157,17 @@ const topic: Topic = {
       ladder: [
         { name: 'Standard', steps: ['D = 15, U = 9.', 'B + S = 15 and B − S = 9.', 'Subtract: 2S = 6, so S = 3 km/h.'], seconds: 30 },
         { name: 'Shortcut', steps: ['S = (D − U)/2 = (15 − 9)/2 = 3 km/h.'], seconds: 10 },
-        { name: 'Option elimination', steps: ['12 km/h is the boat, not the stream.', '6 km/h forgets to halve the difference. So 3 km/h.'], seconds: 8 },
+        {
+          name: 'Option elimination',
+          steps: ['12 km/h is the boat, not the stream.', '6 km/h forgets to halve the difference. So 3 km/h.'],
+          seconds: 8,
+        },
       ],
     },
     {
       pattern: 'Round trip, find the distance',
-      example: 'A boat\'s speed in still water is 10 km/h and the stream flows at 2 km/h. It goes to a place and comes back in 5 hours. How far is the place?',
+      example:
+        "A boat's speed in still water is 10 km/h and the stream flows at 2 km/h. It goes to a place and comes back in 5 hours. How far is the place?",
       options: ['24 km', '20 km', '25 km', '30 km'],
       answer: '24 km',
       ladder: [
@@ -100,7 +178,8 @@ const topic: Topic = {
     },
     {
       pattern: 'Upstream takes k times as long',
-      example: 'A boat takes twice as long to go upstream as to go the same distance downstream. Its speed in still water is 18 km/h. What is the speed of the stream?',
+      example:
+        'A boat takes twice as long to go upstream as to go the same distance downstream. Its speed in still water is 18 km/h. What is the speed of the stream?',
       options: ['6 km/h', '9 km/h', '4.5 km/h', '3 km/h'],
       answer: '6 km/h',
       ladder: [
@@ -117,7 +196,7 @@ const topic: Topic = {
       tag: 'Asked often',
     },
     {
-      q: 'How do you get the boat\'s and the stream\'s speed from D and U?',
+      q: "How do you get the boat's and the stream's speed from D and U?",
       a: ['B = (D + U)/2.', 'S = (D − U)/2.'],
       tag: 'Asked often',
     },
@@ -128,7 +207,7 @@ const topic: Topic = {
     },
     {
       q: 'What does "speed in still water" mean?',
-      a: ['The boat\'s own speed, B.', 'It is the speed with no current at all.'],
+      a: ["The boat's own speed, B.", 'It is the speed with no current at all.'],
     },
     {
       q: 'Upstream takes k times as long as downstream. Ratio B : S?',
@@ -141,7 +220,7 @@ const topic: Topic = {
       tag: 'Shortcut',
     },
     {
-      q: 'Is the average speed of a round trip equal to the boat\'s speed B?',
+      q: "Is the average speed of a round trip equal to the boat's speed B?",
       a: ['No. It is (B² − S²)/B, always less than B.', 'More time is spent going slowly upstream.'],
       tag: 'Trap',
     },
@@ -162,7 +241,7 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'easy',
-      question: 'A boat\'s downstream speed is 20 km/h and its upstream speed is 12 km/h. What is its speed in still water?',
+      question: "A boat's downstream speed is 20 km/h and its upstream speed is 12 km/h. What is its speed in still water?",
       options: ['4 km/h', '16 km/h', '8 km/h', '14 km/h'],
       answer: 1,
       explain: 'B = (20 + 12)/2 = 16 km/h.',
@@ -170,7 +249,7 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'easy',
-      question: 'A boat\'s speed in still water is 12 km/h and the stream flows at 3 km/h. How long does it take to go 45 km downstream?',
+      question: "A boat's speed in still water is 12 km/h and the stream flows at 3 km/h. How long does it take to go 45 km downstream?",
       options: ['5 h', '4 h', '3 h', '3.75 h'],
       answer: 2,
       explain: 'Downstream speed = 15 km/h. 45/15 = 3 h.',
@@ -194,7 +273,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'A boat\'s speed in still water is 15 km/h and the stream flows at 3 km/h. It goes 36 km downstream and returns. How long does the round trip take?',
+      question:
+        "A boat's speed in still water is 15 km/h and the stream flows at 3 km/h. It goes 36 km downstream and returns. How long does the round trip take?",
       options: ['4.8 h', '5.5 h', '5 h', '4.5 h'],
       answer: 2,
       explain: '36/18 + 36/12 = 2 + 3 = 5 h.',
@@ -202,7 +282,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'A boat\'s speed in still water is 15 km/h and the stream flows at 5 km/h. It goes to a place and back in 6 hours. How far is the place?',
+      question:
+        "A boat's speed in still water is 15 km/h and the stream flows at 5 km/h. It goes to a place and back in 6 hours. How far is the place?",
       options: ['45 km', '36 km', '40 km', '50 km'],
       answer: 2,
       explain: 'd/20 + d/10 = 6 gives 3d/20 = 6, so d = 40 km.',
@@ -211,10 +292,12 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'A boat takes 3 times as long to go upstream as to go the same distance downstream. What is the ratio of the boat\'s speed in still water to the speed of the stream?',
+      question:
+        "A boat takes 3 times as long to go upstream as to go the same distance downstream. What is the ratio of the boat's speed in still water to the speed of the stream?",
       options: ['3 : 1', '2 : 1', '4 : 1', '3 : 2'],
       answer: 1,
-      explain: 'B : S = (k + 1) : (k − 1) = 4 : 2 = 2 : 1.',
+      explain:
+        'Same distance, so speeds go inversely as times: D : U = 3 : 1. Take D = 3 and U = 1. Then B = (3 + 1)/2 = 2 and S = (3 − 1)/2 = 1, so B : S = 2 : 1.',
     },
     {
       type: 'mcq',
@@ -227,7 +310,7 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'A boat\'s speed in still water is 12 km/h and the stream flows at 3 km/h. What is its average speed for a round trip?',
+      question: "A boat's speed in still water is 12 km/h and the stream flows at 3 km/h. What is its average speed for a round trip?",
       options: ['12 km/h', '11 km/h', '10.5 km/h', '11.25 km/h'],
       answer: 3,
       explain: 'D = 15, U = 9. Average = 2 × 15 × 9/(15 + 9) = 270/24 = 11.25 km/h.',
@@ -236,10 +319,11 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'A man can row at 9 km/h in still water. It takes him twice as long to row upstream as to row the same distance downstream. What is the speed of the stream?',
+      question:
+        'A man can row at 9 km/h in still water. It takes him twice as long to row upstream as to row the same distance downstream. What is the speed of the stream?',
       options: ['4.5 km/h', '3 km/h', '6 km/h', '2 km/h'],
       answer: 1,
-      explain: 'B : S = (2 + 1) : (2 − 1) = 3 : 1, so S = 9/3 = 3 km/h.',
+      explain: 'Twice the time for the same distance means D = 2U. So B + S = 2(B − S), which gives B = 3S. With B = 9, S = 9/3 = 3 km/h.',
     },
     {
       type: 'mcq',
@@ -252,7 +336,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'A boat goes 30 km upstream and 44 km downstream in 10 hours. It goes 40 km upstream and 55 km downstream in 13 hours. What is the speed of the stream?',
+      question:
+        'A boat goes 30 km upstream and 44 km downstream in 10 hours. It goes 40 km upstream and 55 km downstream in 13 hours. What is the speed of the stream?',
       options: ['8 km/h', '3 km/h', '5 km/h', '2.5 km/h'],
       answer: 1,
       explain: 'Let u = 1/U, d = 1/D: 30u + 44d = 10 and 40u + 55d = 13. This gives d = 1/11, u = 1/5, so D = 11, U = 5 and S = 3 km/h.',
@@ -261,7 +346,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'A man rows to a place 48 km away and back in 14 hours. He can row 4 km downstream in the same time as 3 km upstream. What is the speed of the stream?',
+      question:
+        'A man rows to a place 48 km away and back in 14 hours. He can row 4 km downstream in the same time as 3 km upstream. What is the speed of the stream?',
       options: ['2 km/h', '1.5 km/h', '1 km/h', '0.5 km/h'],
       answer: 2,
       explain: 'D : U = 4 : 3. Let D = 4k, U = 3k: 12/k + 16/k = 14, so k = 2. D = 8, U = 6, S = 1 km/h.',
@@ -269,7 +355,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'A boat\'s speed in still water is 10 km/h. It goes 26 km downstream and 14 km upstream in the same time. What is the speed of the stream?',
+      question:
+        "A boat's speed in still water is 10 km/h. It goes 26 km downstream and 14 km upstream in the same time. What is the speed of the stream?",
       options: ['4 km/h', '2 km/h', '2.5 km/h', '3 km/h'],
       answer: 3,
       explain: '(10 + S)/(10 − S) = 26/14 = 13/7. 70 + 7S = 130 − 13S, so S = 3 km/h.',
@@ -278,14 +365,14 @@ const topic: Topic = {
     {
       type: 'truefalse',
       difficulty: 'easy',
-      statement: 'When a stream is flowing, a boat\'s downstream speed is always greater than its upstream speed.',
+      statement: "When a stream is flowing, a boat's downstream speed is always greater than its upstream speed.",
       answer: true,
       explain: 'B + S is greater than B − S whenever S is more than 0.',
     },
     {
       type: 'truefalse',
       difficulty: 'medium',
-      statement: 'If a boat\'s downstream and upstream speeds are 16 km/h and 10 km/h, the stream flows at 6 km/h.',
+      statement: "If a boat's downstream and upstream speeds are 16 km/h and 10 km/h, the stream flows at 6 km/h.",
       answer: false,
       explain: 'S = (16 − 10)/2 = 3 km/h. 6 is the difference, not the stream.',
     },

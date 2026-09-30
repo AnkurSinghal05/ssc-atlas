@@ -8,18 +8,31 @@ const topic: Topic = {
   reviseMinutes: 70,
   priority: 'high',
   weightage: { tier1: 1.5, tier2: 1.5 },
-  tags: ['Plassey', 'Buxar', 'Governor-General', 'Viceroy', 'social reform', 'INC', 'moderates', 'extremists', 'Gandhi', 'Quit India', 'Government of India Act'],
+  tags: [
+    'Plassey',
+    'Buxar',
+    'Governor-General',
+    'Viceroy',
+    'social reform',
+    'INC',
+    'moderates',
+    'extremists',
+    'Gandhi',
+    'Quit India',
+    'Government of India Act',
+  ],
   summary:
     'From Plassey (1757) to independence (1947). Learn it as four timelines: battles, Governors-General with their events, reform movements with founders, and the national movement with its sessions and campaigns.',
   keyPoints: [
     {
       title: 'Battles of British expansion',
       text: '**Plassey 1757**: Robert Clive defeats Siraj-ud-Daulah of Bengal. **Wandiwash 1760**: the English defeat the French. **Panipat III 1761**: Ahmad Shah Abdali defeats the Marathas. **Buxar 1764**: Hector Munro defeats Mir Qasim, Shuja-ud-Daula of Awadh and Mughal emperor Shah Alam II; the **Treaty of Allahabad (1765)** gives the Company the Diwani of Bengal, Bihar and Odisha.',
-      example: 'Four Anglo-Mysore wars end in **1799** with Tipu Sultan killed at Seringapatam. The third Anglo-Maratha war ends Maratha power in 1818. Punjab is annexed in **1849** after the second Anglo-Sikh war.',
+      example:
+        'Four Anglo-Mysore wars end in **1799** with Tipu Sultan killed at Seringapatam. The third Anglo-Maratha war ends Maratha power in 1818. Punjab is annexed in **1849** after the second Anglo-Sikh war.',
     },
     {
       title: 'Governors-General and their events (Company rule)',
-      text: '**Warren Hastings**: first Governor-General of Bengal (Regulating Act 1773). **Cornwallis**: Permanent Settlement **1793**. **Wellesley**: Subsidiary Alliance. **William Bentinck**: abolished sati **1829**; first Governor-General of India (Charter Act 1833); English Education Act 1835. **Dalhousie**: Doctrine of Lapse, first railway Bombay to Thane **1853**, Wood\'s Despatch 1854, annexation of Awadh 1856.',
+      text: "**Warren Hastings**: first Governor-General of Bengal (Regulating Act 1773). **Cornwallis**: Permanent Settlement **1793**. **Wellesley**: Subsidiary Alliance. **William Bentinck**: abolished sati **1829**; first Governor-General of India (Charter Act 1833); English Education Act 1835. **Dalhousie**: Doctrine of Lapse, first railway Bombay to Thane **1853**, Wood's Despatch 1854, annexation of Awadh 1856.",
       example: 'Doctrine of Lapse annexed Satara, Jhansi and Nagpur, among others.',
     },
     {
@@ -30,12 +43,14 @@ const topic: Topic = {
     {
       title: 'Social and religious reform movements',
       text: '**Brahmo Samaj** (1828): Raja Ram Mohan Roy. **Prarthana Samaj** (1867): Atmaram Pandurang. **Satyashodhak Samaj** (1873): Jyotiba Phule. **Arya Samaj** (1875, Bombay): Swami Dayanand Saraswati, "Go back to the Vedas". **Theosophical Society** (1875, New York): Madame Blavatsky and Colonel Olcott. **Ramakrishna Mission** (1897): Swami Vivekananda. **Aligarh Movement**: Sir Syed Ahmad Khan. **Young Bengal**: Henry Vivian Derozio.',
-      example: 'Ishwar Chandra Vidyasagar campaigned for the **Hindu Widows\' Remarriage Act, 1856**. Dayanand wrote **Satyarth Prakash**; Phule wrote **Gulamgiri**.',
+      example:
+        "Ishwar Chandra Vidyasagar campaigned for the **Hindu Widows' Remarriage Act, 1856**. Dayanand wrote **Satyarth Prakash**; Phule wrote **Gulamgiri**.",
     },
     {
       title: 'Indian National Congress: sessions to remember',
       text: 'Founded **28 December 1885** in Bombay by **A.O. Hume**; first president **W.C. Bonnerjee**, 72 delegates. **1886 Calcutta**: Dadabhai Naoroji. **1887 Madras**: Badruddin Tyabji, first Muslim president. **1906 Calcutta**: Naoroji, swaraj as the goal. **1907 Surat**: split into moderates and extremists. **1916 Lucknow**: reunion and the Congress-League pact. **1917 Calcutta**: Annie Besant, first woman president. **1924 Belgaum**: only session Gandhi presided. **1925 Kanpur**: Sarojini Naidu, first Indian woman president. **1929 Lahore**: Jawaharlal Nehru, Purna Swaraj. **1931 Karachi**: Vallabhbhai Patel, resolution on Fundamental Rights.',
-      example: '26 January 1930 was celebrated as Independence Day after the Lahore session; that is why the Constitution came into force on 26 January.',
+      example:
+        '26 January 1930 was celebrated as Independence Day after the Lahore session; that is why the Constitution came into force on 26 January.',
     },
     {
       title: 'Gandhian movements with years',
@@ -44,12 +59,61 @@ const topic: Topic = {
     },
     {
       title: 'Key acts of British rule',
-      text: '**Regulating Act 1773**: Governor-General of Bengal, Supreme Court at Calcutta. **Pitt\'s India Act 1784**: Board of Control. **Charter Act 1813**: ended the Company\'s trade monopoly except tea and trade with China; ₹1 lakh a year for education. **Charter Act 1833**: Governor-General of India. **Charter Act 1853**: open competition for civil services. **Government of India Act 1858**: Crown rule, Secretary of State for India. **Indian Councils Act 1909** (Morley-Minto): separate electorates for Muslims. **GoI Act 1919** (Montagu-Chelmsford): dyarchy in provinces. **GoI Act 1935**: provincial autonomy, federal court. **Indian Independence Act 1947**.',
+      text: "**Regulating Act 1773**: Governor-General of Bengal, Supreme Court at Calcutta. **Pitt's India Act 1784**: Board of Control. **Charter Act 1813**: ended the Company's trade monopoly except tea and trade with China; ₹1 lakh a year for education. **Charter Act 1833**: Governor-General of India. **Charter Act 1853**: open competition for civil services. **Government of India Act 1858**: Crown rule, Secretary of State for India. **Indian Councils Act 1909** (Morley-Minto): separate electorates for Muslims. **GoI Act 1919** (Montagu-Chelmsford): dyarchy in provinces. **GoI Act 1935**: provincial autonomy, federal court. **Indian Independence Act 1947**.",
     },
     {
       title: 'Other milestones',
       text: 'Revolt of 1857 began at **Meerut on 10 May 1857**. **Muslim League** founded in Dhaka, **1906**. **Home Rule Leagues 1916**: Tilak and Annie Besant. **Jallianwala Bagh, 13 April 1919**, Amritsar (General Dyer). **Simon Commission** (appointed 1927) boycotted because it had no Indian member. **Poona Pact 1932**: Gandhi and B.R. Ambedkar. **Cripps Mission 1942**, **Cabinet Mission 1946**.',
       example: 'Rabindranath Tagore gave up his knighthood in protest against Jallianwala Bagh.',
+    },
+  ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'Eight years that handed Bengal to the Company',
+      figure: {
+        viewBox: '0 0 320 232',
+        svg: `
+<line x1="64" y1="18" x2="64" y2="214" class="d-soft"/>
+<circle cx="64" cy="31" r="4" class="d-dot" data-step="1"/><text x="54" y="36" text-anchor="end" data-step="1">1757</text><text x="76" y="36" data-step="1">Plassey</text><text x="76" y="52" class="d-small" data-step="1">Clive defeats Siraj-ud-Daulah of Bengal</text>
+<circle cx="64" cy="73" r="4" class="d-dot" data-step="2"/><text x="54" y="78" text-anchor="end" data-step="2">1760</text><text x="76" y="78" data-step="2">Wandiwash</text><text x="76" y="94" class="d-small" data-step="2">The English defeat the French</text>
+<circle cx="64" cy="115" r="4" class="d-dot" data-step="3"/><text x="54" y="120" text-anchor="end" data-step="3">1761</text><text x="76" y="120" data-step="3">Panipat III</text><text x="76" y="136" class="d-small" data-step="3">Abdali defeats the Marathas</text>
+<circle cx="64" cy="157" r="4" class="d-dot" data-step="4"/><text x="54" y="162" text-anchor="end" data-step="4">1764</text><text x="76" y="162" data-step="4">Buxar</text><text x="76" y="178" class="d-small" data-step="4">Munro defeats three allied rulers</text>
+<circle cx="64" cy="199" r="4" class="d-dot" data-step="5"/><text x="54" y="204" text-anchor="end" class="d-red" data-step="5">1765</text><text x="76" y="204" class="d-red" data-step="5">Treaty of Allahabad</text><text x="76" y="220" class="d-small" data-step="5">Diwani of Bengal, Bihar and Odisha</text>`,
+      },
+      explain: [
+        '1757, Plassey: Robert Clive defeats Siraj-ud-Daulah, Nawab of Bengal, after Mir Jafar betrays him.',
+        '1760, Wandiwash: the English defeat the French, ending the French challenge in the Carnatic.',
+        '1761, Panipat III: Ahmad Shah Abdali defeats the Marathas. The British did not fight here, a common trap.',
+        '1764, Buxar: Hector Munro defeats Mir Qasim, Shuja-ud-Daula of Awadh and Mughal emperor Shah Alam II together.',
+        '1765, Treaty of Allahabad: the Company gets the **Diwani** (right to collect revenue) of Bengal, Bihar and Odisha.',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'The national movement on one line',
+      figure: {
+        viewBox: '0 0 320 245',
+        svg: `
+<line x1="64" y1="16" x2="64" y2="232" class="d-soft"/>
+<circle cx="64" cy="27" r="4" class="d-dot" data-step="1"/><text x="54" y="32" text-anchor="end" data-step="1">1885</text><text x="76" y="32" class="d-small" data-step="1">INC founded in Bombay</text>
+<circle cx="64" cy="49" r="4" class="d-dot" data-step="2"/><text x="54" y="54" text-anchor="end" data-step="2">1905</text><text x="76" y="54" class="d-small" data-step="2">Partition of Bengal; Swadeshi</text>
+<circle cx="64" cy="71" r="4" class="d-dot" data-step="2"/><text x="54" y="76" text-anchor="end" data-step="2">1907</text><text x="76" y="76" class="d-small" data-step="2">Surat split</text>
+<circle cx="64" cy="93" r="4" class="d-dot" data-step="3"/><text x="54" y="98" text-anchor="end" data-step="3">1917</text><text x="76" y="98" class="d-small" data-step="3">Champaran satyagraha</text>
+<circle cx="64" cy="115" r="4" class="d-dot" data-step="3"/><text x="54" y="120" text-anchor="end" data-step="3">1919</text><text x="76" y="120" class="d-small" data-step="3">Jallianwala Bagh, 13 April</text>
+<circle cx="64" cy="137" r="4" class="d-dot" data-step="3"/><text x="54" y="142" text-anchor="end" data-step="3">1920</text><text x="76" y="142" class="d-small" data-step="3">Non-Cooperation, till 1922</text>
+<circle cx="64" cy="159" r="4" class="d-dot" data-step="4"/><text x="54" y="164" text-anchor="end" data-step="4">1929</text><text x="76" y="164" class="d-small" data-step="4">Lahore session: Purna Swaraj</text>
+<circle cx="64" cy="181" r="4" class="d-dot" data-step="4"/><text x="54" y="186" text-anchor="end" data-step="4">1930</text><text x="76" y="186" class="d-small" data-step="4">Dandi March, Civil Disobedience</text>
+<circle cx="64" cy="203" r="4" class="d-dot" data-step="5"/><text x="54" y="208" text-anchor="end" data-step="5">1942</text><text x="76" y="208" class="d-small" data-step="5">Quit India, 8 August</text>
+<circle cx="64" cy="225" r="4" class="d-dot" data-step="5"/><text x="54" y="230" text-anchor="end" class="d-red" data-step="5">1947</text><text x="76" y="230" class="d-small" data-step="5">Independence, 15 August</text>`,
+      },
+      explain: [
+        '1885: A.O. Hume founds the Congress in Bombay. The moderates lead it for twenty years.',
+        "1905 to 1907: Curzon's partition of Bengal sparks the Swadeshi Movement; the Congress splits at Surat.",
+        "1917 to 1922: Gandhi's first satyagraha at Champaran; after Jallianwala Bagh comes Non-Cooperation, called off after Chauri Chaura.",
+        '1929 to 1930: Purna Swaraj is declared at Lahore, and the Dandi March starts Civil Disobedience.',
+        '1942: Quit India, "Do or Die". Freedom follows on **15 August 1947**.',
+      ],
     },
   ],
   comparisons: [
@@ -58,28 +122,65 @@ const topic: Topic = {
       items: ['Moderates', 'Extremists'],
       rows: [
         { aspect: 'Dominant phase', values: ['1885 to 1905', '1905 to about 1920'] },
-        { aspect: 'Leaders', values: ['Dadabhai Naoroji, G.K. Gokhale, Pherozeshah Mehta, Surendranath Banerjea', 'Bal Gangadhar Tilak, Lala Lajpat Rai, Bipin Chandra Pal (Lal-Bal-Pal), Aurobindo Ghosh'] },
+        {
+          aspect: 'Leaders',
+          values: [
+            'Dadabhai Naoroji, G.K. Gokhale, Pherozeshah Mehta, Surendranath Banerjea',
+            'Bal Gangadhar Tilak, Lala Lajpat Rai, Bipin Chandra Pal (Lal-Bal-Pal), Aurobindo Ghosh',
+          ],
+        },
         { aspect: 'Goal', values: ['Reforms and more Indian share in government within British rule', '**Swaraj**'], key: true },
-        { aspect: 'Methods', values: ['Petitions, prayers and protests through constitutional means', 'Swadeshi, boycott, national education, mass agitation'], key: true },
+        {
+          aspect: 'Methods',
+          values: ['Petitions, prayers and protests through constitutional means', 'Swadeshi, boycott, national education, mass agitation'],
+          key: true,
+        },
         { aspect: 'View of British rule', values: ['Faith in British sense of justice', 'No faith; saw rule as exploitative'] },
         { aspect: 'Support base', values: ['Educated urban middle class', 'Wider masses, including the lower middle class'] },
         { aspect: 'Signature idea', values: ['Drain of wealth theory (Naoroji)', '"Swaraj is my birthright" (Tilak)'] },
       ],
-      reveal: 'Both wanted Indians to gain power. The split was over method and pace: constitutional appeals against mass agitation. They split at Surat (1907) and reunited at Lucknow (1916).',
-      whenToUse: ['Questions on the early Congress, petitions or the drain theory.', 'Questions on the Swadeshi Movement, boycott, Lal-Bal-Pal or the Surat split.'],
+      reveal:
+        'Both wanted Indians to gain power. The split was over method and pace: constitutional appeals against mass agitation. They split at Surat (1907) and reunited at Lucknow (1916).',
+      whenToUse: [
+        'Questions on the early Congress, petitions or the drain theory.',
+        'Questions on the Swadeshi Movement, boycott, Lal-Bal-Pal or the Surat split.',
+      ],
     },
     {
       title: 'Three mass movements led by Gandhi',
       items: ['Non-Cooperation', 'Civil Disobedience', 'Quit India'],
       rows: [
         { aspect: 'Year', values: ['1920 to 1922', '1930 to 1934', '1942'] },
-        { aspect: 'Trigger', values: ['Rowlatt Act, Jallianwala Bagh, Khilafat issue', 'Purna Swaraj resolution (Lahore 1929); salt law', 'Failure of the Cripps Mission'] },
-        { aspect: 'Signature act', values: ['Boycott of schools, courts, councils and foreign cloth', 'Dandi March to make salt', '"Do or Die"; leaders arrested at once'], key: true },
+        {
+          aspect: 'Trigger',
+          values: [
+            'Rowlatt Act, Jallianwala Bagh, Khilafat issue',
+            'Purna Swaraj resolution (Lahore 1929); salt law',
+            'Failure of the Cripps Mission',
+          ],
+        },
+        {
+          aspect: 'Signature act',
+          values: ['Boycott of schools, courts, councils and foreign cloth', 'Dandi March to make salt', '"Do or Die"; leaders arrested at once'],
+          key: true,
+        },
         { aspect: 'Viceroy', values: ['Chelmsford, then Reading', 'Irwin, then Willingdon', 'Linlithgow'], key: true },
-        { aspect: 'How it ended', values: ['Withdrawn after Chauri Chaura (1922)', 'Paused by the Gandhi-Irwin Pact (1931), finally withdrawn in 1934', 'Crushed by force; leaders released later'] },
+        {
+          aspect: 'How it ended',
+          values: [
+            'Withdrawn after Chauri Chaura (1922)',
+            'Paused by the Gandhi-Irwin Pact (1931), finally withdrawn in 1934',
+            'Crushed by force; leaders released later',
+          ],
+        },
       ],
-      reveal: 'Non-cooperation meant refusing to cooperate with the government. Civil disobedience went further: deliberately breaking laws. Quit India demanded that the British leave at once.',
-      whenToUse: ['Questions on Chauri Chaura, Khilafat or boycott of councils.', 'Questions on Dandi, salt or the Gandhi-Irwin Pact.', 'Questions on 1942, "Do or Die" or August Kranti.'],
+      reveal:
+        'Non-cooperation meant refusing to cooperate with the government. Civil disobedience went further: deliberately breaking laws. Quit India demanded that the British leave at once.',
+      whenToUse: [
+        'Questions on Chauri Chaura, Khilafat or boycott of councils.',
+        'Questions on Dandi, salt or the Gandhi-Irwin Pact.',
+        'Questions on 1942, "Do or Die" or August Kranti.',
+      ],
     },
   ],
   qa: [
@@ -126,7 +227,7 @@ const topic: Topic = {
       a: ['Violence at Chauri Chaura (Gorakhpur district) in February 1922.', 'A crowd set fire to a police station.'],
     },
     {
-      q: 'Which was Gandhi\'s first satyagraha in India?',
+      q: "Which was Gandhi's first satyagraha in India?",
       a: ['Champaran, Bihar, 1917, for indigo farmers.', 'Ahmedabad (1918) was his first hunger strike.'],
     },
     {
@@ -136,7 +237,11 @@ const topic: Topic = {
     },
     {
       q: 'Match the founders: Arya Samaj, Brahmo Samaj, Satyashodhak Samaj, Ramakrishna Mission.',
-      a: ['Arya Samaj: Dayanand Saraswati.', 'Brahmo Samaj: Raja Ram Mohan Roy.', 'Satyashodhak Samaj: Jyotiba Phule. Ramakrishna Mission: Vivekananda.'],
+      a: [
+        'Arya Samaj: Dayanand Saraswati.',
+        'Brahmo Samaj: Raja Ram Mohan Roy.',
+        'Satyashodhak Samaj: Jyotiba Phule. Ramakrishna Mission: Vivekananda.',
+      ],
     },
   ],
   quiz: [
@@ -223,7 +328,7 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'Gandhi\'s first satyagraha in India was at:',
+      question: "Gandhi's first satyagraha in India was at:",
       options: ['Kheda', 'Ahmedabad', 'Champaran', 'Bardoli'],
       answer: 2,
       explain: 'Champaran, Bihar, 1917, for indigo farmers. Ahmedabad and Kheda followed in 1918.',

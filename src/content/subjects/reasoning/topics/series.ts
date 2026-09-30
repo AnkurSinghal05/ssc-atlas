@@ -51,6 +51,76 @@ const topic: Topic = {
       example: '3, 8, 15, 24, **34**, 48 is n² − 1 with 35 replaced by 34.',
     },
   ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'The difference ladder',
+      figure: {
+        viewBox: '0 0 320 180',
+        svg: `
+<text x="30" y="50" text-anchor="middle" data-step="1">6</text>
+<text x="80" y="50" text-anchor="middle" data-step="1">11</text>
+<text x="130" y="50" text-anchor="middle" data-step="1">21</text>
+<text x="180" y="50" text-anchor="middle" data-step="1">36</text>
+<text x="230" y="50" text-anchor="middle" data-step="1">56</text>
+<text x="280" y="50" text-anchor="middle" class="d-red" data-step="5">81</text>
+<line x1="35" y1="58" x2="51" y2="88" class="d-thin" data-step="2"/><line x1="75" y1="58" x2="59" y2="88" class="d-thin" data-step="2"/>
+<text x="55" y="105" text-anchor="middle" class="d-blue" data-step="2">5</text>
+<line x1="85" y1="58" x2="101" y2="88" class="d-thin" data-step="2"/><line x1="125" y1="58" x2="109" y2="88" class="d-thin" data-step="2"/>
+<text x="105" y="105" text-anchor="middle" class="d-blue" data-step="2">10</text>
+<line x1="135" y1="58" x2="151" y2="88" class="d-thin" data-step="2"/><line x1="175" y1="58" x2="159" y2="88" class="d-thin" data-step="2"/>
+<text x="155" y="105" text-anchor="middle" class="d-blue" data-step="2">15</text>
+<line x1="185" y1="58" x2="201" y2="88" class="d-thin" data-step="2"/><line x1="225" y1="58" x2="209" y2="88" class="d-thin" data-step="2"/>
+<text x="205" y="105" text-anchor="middle" class="d-blue" data-step="2">20</text>
+<line x1="235" y1="58" x2="251" y2="88" class="d-thin d-red d-dash" data-step="4"/><line x1="275" y1="58" x2="259" y2="88" class="d-thin d-red d-dash" data-step="4"/>
+<text x="255" y="105" text-anchor="middle" class="d-red" data-step="4">25</text>
+<line x1="60" y1="113" x2="76" y2="143" class="d-thin" data-step="3"/><line x1="100" y1="113" x2="84" y2="143" class="d-thin" data-step="3"/>
+<text x="80" y="160" text-anchor="middle" class="d-green" data-step="3">5</text>
+<line x1="110" y1="113" x2="126" y2="143" class="d-thin" data-step="3"/><line x1="150" y1="113" x2="134" y2="143" class="d-thin" data-step="3"/>
+<text x="130" y="160" text-anchor="middle" class="d-green" data-step="3">5</text>
+<line x1="160" y1="113" x2="176" y2="143" class="d-thin" data-step="3"/><line x1="200" y1="113" x2="184" y2="143" class="d-thin" data-step="3"/>
+<text x="180" y="160" text-anchor="middle" class="d-green" data-step="3">5</text>
+<line x1="210" y1="113" x2="226" y2="143" class="d-thin d-red d-dash" data-step="4"/><line x1="250" y1="113" x2="234" y2="143" class="d-thin d-red d-dash" data-step="4"/>
+<text x="230" y="160" text-anchor="middle" class="d-red" data-step="4">5</text>`,
+        caption: '6, 11, 21, 36, 56, ?',
+      },
+      explain: [
+        'Write the terms in a row: 6, 11, 21, 36, 56.',
+        'Subtract each term from the next: 5, 10, 15, 20. Not constant yet, so go one row down.',
+        'Subtract again: 5, 5, 5. A constant row means the pattern is found.',
+        'Extend from the bottom: add one more 5, so the next top difference is 20 + 5 = 25.',
+        'Climb back up: 56 + 25 = **81**.',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'Zig-zag series: two rules taking turns',
+      figure: {
+        viewBox: '0 0 320 180',
+        svg: `
+<text x="25" y="116" text-anchor="middle" data-step="1">5</text>
+<text x="70" y="116" text-anchor="middle" data-step="1">10</text>
+<text x="115" y="116" text-anchor="middle" data-step="1">8</text>
+<text x="160" y="116" text-anchor="middle" data-step="1">16</text>
+<text x="205" y="116" text-anchor="middle" data-step="1">14</text>
+<text x="250" y="116" text-anchor="middle" data-step="1">28</text>
+<text x="295" y="116" text-anchor="middle" class="d-red" data-step="4">26</text>
+<path d="M29,96 Q47.5,58 66,96" class="d-blue" data-step="2"/><text x="47.5" y="68" text-anchor="middle" class="d-blue" data-step="2">×2</text>
+<path d="M74,124 Q92.5,160 111,124" class="d-green" data-step="3"/><text x="92.5" y="164" text-anchor="middle" class="d-green" data-step="3">−2</text>
+<path d="M119,96 Q137.5,58 156,96" class="d-blue" data-step="2"/><text x="137.5" y="68" text-anchor="middle" class="d-blue" data-step="2">×2</text>
+<path d="M164,124 Q182.5,160 201,124" class="d-green" data-step="3"/><text x="182.5" y="164" text-anchor="middle" class="d-green" data-step="3">−2</text>
+<path d="M209,96 Q227.5,58 246,96" class="d-blue" data-step="2"/><text x="227.5" y="68" text-anchor="middle" class="d-blue" data-step="2">×2</text>
+<path d="M254,124 Q272.5,160 291,124" class="d-red" data-step="4"/><text x="272.5" y="164" text-anchor="middle" class="d-red" data-step="4">−2</text>`,
+        caption: '5, 10, 8, 16, 14, 28, ?',
+      },
+      explain: [
+        'The terms rise and fall: 5, 10, 8, 16, 14, 28. One rule cannot do both, so look at the rises and falls apart.',
+        'Every rise doubles: 5 → 10, 8 → 16, 14 → 28. That rule is **×2**.',
+        'Every fall is the same: 10 → 8, 16 → 14. That rule is **−2**.',
+        'The last step (14 → 28) was a rise, so a fall comes next: 28 − 2 = **26**.',
+      ],
+    },
+  ],
   comparisons: [
     {
       title: 'Which kind of series is it?',
@@ -65,7 +135,8 @@ const topic: Topic = {
         { aspect: 'Example', values: ['6, 11, 21, 36, 56', '3, 7, 15, 31, 63', '0, 7, 26, 63, 124', '5, 10, 8, 16, 14, 28'] },
         { aspect: 'Next term', values: ['81 (+25)', '127 (×2 + 1)', '215 (6³ − 1)', '26 (−2 after ×2)'] },
       ],
-      reveal: 'The shape of the growth tells you which test to run first. Slow growth: differences. Fast growth: ratios. Near a square or cube: n² or n³. Zig-zag: split it.',
+      reveal:
+        'The shape of the growth tells you which test to run first. Slow growth: differences. Fast growth: ratios. Near a square or cube: n² or n³. Zig-zag: split it.',
       whenToUse: [
         'Terms grow by small, changing steps.',
         'The last term is about two or three times the one before.',
@@ -121,7 +192,11 @@ const topic: Topic = {
       ladder: [
         {
           name: 'Standard',
-          steps: ['Differences: +5, −2, +8, −2, +14. No single pattern.', 'Try ratios on the rises: 10/5 = 2, 16/8 = 2, 28/14 = 2.', 'So ×2 and −2 alternate; next is 28 − 2 = 26.'],
+          steps: [
+            'Differences: +5, −2, +8, −2, +14. No single pattern.',
+            'Try ratios on the rises: 10/5 = 2, 16/8 = 2, 28/14 = 2.',
+            'So ×2 and −2 alternate; next is 28 − 2 = 26.',
+          ],
           seconds: 45,
         },
         { name: 'Shortcut', steps: ['Every fall is −2, so the next step (a fall) is 28 − 2 = 26.'], seconds: 10 },

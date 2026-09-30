@@ -8,16 +8,45 @@ const topic: Topic = {
   reviseMinutes: 40,
   priority: 'high',
   weightage: { tier1: 1, tier2: 1.5 },
-  tags: ['volume', 'surface area', 'cube', 'cuboid', 'cylinder', 'cone', 'sphere', 'hemisphere', 'frustum', 'prism', 'pyramid', 'melting and recasting'],
+  tags: [
+    'volume',
+    'surface area',
+    'cube',
+    'cuboid',
+    'cylinder',
+    'cone',
+    'sphere',
+    'hemisphere',
+    'frustum',
+    'prism',
+    'pyramid',
+    'melting and recasting',
+  ],
   summary:
     'Volume stays the same when a solid is melted and recast, and surface area and volume scale as k² and k³. With the cylinder, cone and sphere formulas, that covers most questions.',
   patterns: [
     { name: 'Melting and recasting', frequency: 'most', example: 'A sphere of radius 9 cm is melted into spheres of radius 3 cm. How many?' },
-    { name: 'Cylinder, cone and sphere: direct volume or surface area', frequency: 'most', example: 'A cone has radius 6 cm and height 8 cm. Curved surface area?' },
-    { name: 'Cube and cuboid: diagonal, surface area, small cubes', frequency: 'often', example: 'Longest rod that fits in a 12 m × 9 m × 8 m room?' },
-    { name: 'Ratio of volumes or surface areas', frequency: 'often', example: 'Cylinder, cone and sphere of the same radius and height 2r. Ratio of volumes?' },
+    {
+      name: 'Cylinder, cone and sphere: direct volume or surface area',
+      frequency: 'most',
+      example: 'A cone has radius 6 cm and height 8 cm. Curved surface area?',
+    },
+    {
+      name: 'Cube and cuboid: diagonal, surface area, small cubes',
+      frequency: 'often',
+      example: 'Longest rod that fits in a 12 m × 9 m × 8 m room?',
+    },
+    {
+      name: 'Ratio of volumes or surface areas',
+      frequency: 'often',
+      example: 'Cylinder, cone and sphere of the same radius and height 2r. Ratio of volumes?',
+    },
     { name: 'Percentage change in volume or surface area', frequency: 'often', example: 'Radius of a sphere rises 10%. Change in volume?' },
-    { name: 'Hemisphere and combined solids; water level rise', frequency: 'often', example: 'A toy is a cone on a hemisphere of radius 7 cm. Total surface area?' },
+    {
+      name: 'Hemisphere and combined solids; water level rise',
+      frequency: 'often',
+      example: 'A toy is a cone on a hemisphere of radius 7 cm. Total surface area?',
+    },
     { name: 'Frustum, prism and pyramid', frequency: 'rare', example: 'Frustum with radii 10 cm and 4 cm, height 8 cm. Volume?' },
   ],
   keyPoints: [
@@ -70,6 +99,98 @@ const topic: Topic = {
       example: 'Radius +10%: 1.1³ = 1.331, volume up **33.1%**; surface up 21%.',
     },
   ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'The longest rod in a room',
+      figure: {
+        viewBox: '0 0 320 220',
+        svg: `
+<polygon points="48,196 238.8,169 238.8,73" class="d-fill-pink" data-step="3"/>
+<polygon points="48,196 192,196 192,100 48,100"/>
+<polyline points="48,100 94.8,73 238.8,73 192,100"/>
+<polyline points="192,196 238.8,169 238.8,73"/>
+<line x1="94.8" y1="169" x2="238.8" y2="169" class="d-dash d-soft"/>
+<line x1="94.8" y1="169" x2="94.8" y2="73" class="d-dash d-soft"/>
+<line x1="94.8" y1="169" x2="48" y2="196" class="d-dash d-soft"/>
+<line x1="48" y1="196" x2="238.8" y2="169" class="d-blue d-dash" data-step="2 3"/>
+<line x1="48" y1="196" x2="238.8" y2="73" class="d-red d-thick" data-step="1 4"/>
+<text x="120" y="214" text-anchor="middle" data-step="2">12</text>
+<text x="223.4" y="194.5" data-step="2">9</text>
+<text x="246.8" y="127" data-step="3">8</text>
+<text x="178" y="164" text-anchor="middle" class="d-blue" data-step="2 3">15</text>
+<text x="118" y="130" text-anchor="middle" class="d-red" data-step="4">17</text>`,
+        caption: 'Hidden edges are dashed',
+      },
+      explain: [
+        'The room is 12 m × 9 m × 8 m. The longest rod runs from a bottom corner to the opposite top corner (red).',
+        'First cross the floor: floor diagonal = √(12² + 9²) = √225 = 15 m (blue).',
+        'The floor diagonal and the 8 m height meet at a right angle, with the rod as the hypotenuse (shaded).',
+        'Rod = √(15² + 8²) = √289 = **17 m**. In one go: √(l² + b² + h²).',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'Cone: height, radius and slant make a right triangle',
+      figure: {
+        viewBox: '0 0 320 210',
+        svg: `
+<polygon points="150,30 150,142 234,142" class="d-fill" data-step="3"/>
+<path d="M66,142 A84,20 0 0 1 234,142" class="d-dash d-soft"/>
+<path d="M66,142 A84,20 0 0 0 234,142"/>
+<line x1="150" y1="30" x2="67.4" y2="138.4"/>
+<line x1="150" y1="30" x2="232.6" y2="138.4" class="d-red d-thick" data-step="3"/>
+<line x1="150" y1="30" x2="150" y2="142" class="d-blue d-dash" data-step="1"/>
+<line x1="150" y1="142" x2="234" y2="142" class="d-green" data-step="2"/>
+<path d="M159,142 L159,133 L150,133" class="d-thin" data-step="2"/>
+<circle cx="150" cy="142" r="2.5" class="d-dot"/>
+<text x="156" y="108" class="d-blue" data-step="1">h = 8</text>
+<text x="192" y="178" text-anchor="middle" class="d-green" data-step="2">r = 6</text>
+<text x="204" y="86" class="d-red" data-step="3 4">l = 10</text>`,
+        caption: 'Back half of the base is dashed',
+      },
+      explain: [
+        'The height h = 8 goes from the tip straight down to the centre of the base.',
+        'The radius r = 6 runs from the centre to the rim, at right angles to the height.',
+        'The slant height l is the hypotenuse of that triangle: l = √(6² + 8²) = √100 = 10.',
+        'Curved surface = πrl = π × 6 × 10 = **60π cm²**. Volume would use h, not l: 1/3 π × 36 × 8 = 96π.',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'Rolling a sector into a cone',
+      figure: {
+        viewBox: '0 0 320 200',
+        svg: `
+<path d="M88,104 L107.2,45 A62,62 0 1 0 107.2,163 Z" class="d-fill"/>
+<path d="M107.2,45 A62,62 0 1 0 107.2,163" class="d-blue d-thick" data-step="2"/>
+<line x1="88" y1="104" x2="107.2" y2="45" class="d-red d-thick" data-step="1"/>
+<line x1="88" y1="104" x2="107.2" y2="163" class="d-red d-thick" data-step="1"/>
+<path d="M92.9,88.8 A16,16 0 1 0 92.9,119.2" class="d-thin"/>
+<text x="90" y="109" text-anchor="start" class="d-small">216°</text>
+<text x="105.5" y="73.7" text-anchor="start" class="d-red" data-step="1">10</text>
+<text x="20" y="109" text-anchor="end" class="d-small d-blue" data-step="2">arc</text>
+<path d="M152,104 L184,104 M176,98 L184,104 L176,110" class="d-soft"/>
+<path d="M195,106 A51,13 0 0 1 297,106" class="d-dash d-soft"/>
+<path d="M195,106 A51,13 0 0 0 297,106" class="d-blue d-thick" data-step="2"/>
+<line x1="246" y1="38" x2="195.9" y2="103.5" class="d-red d-thick" data-step="1"/>
+<line x1="246" y1="38" x2="296.1" y2="103.5"/>
+<line x1="246" y1="38" x2="246" y2="106" class="d-dash" data-step="3"/>
+<line x1="246" y1="106" x2="297" y2="106" class="d-green" data-step="2 3"/>
+<path d="M254,106 L254,98 L246,98" class="d-thin" data-step="3"/>
+<text x="242" y="84" text-anchor="end" data-step="3">h</text>
+<text x="271.5" y="140" text-anchor="middle" class="d-green" data-step="2 3">r</text>
+<text x="213" y="70.8" text-anchor="end" class="d-red" data-step="1">l = 10</text>`,
+        caption: 'Sector of radius 10 and angle 216°',
+      },
+      explain: [
+        'Roll the sector up until its two straight edges meet. The sector radius 10 becomes the slant height: l = 10.',
+        'The arc becomes the rim of the base: 216/360 × 2π × 10 = 12π = 2πr, so r = 6.',
+        'The height comes from the right triangle: h = √(10² − 6²) = √64 = 8.',
+        'Volume = 1/3 × π × 6² × 8 = **96π**. Shortcut: r = θ/360 × R = 3/5 × 10.',
+      ],
+    },
+  ],
   comparisons: [
     {
       title: 'Cylinder vs cone vs sphere',
@@ -80,7 +201,8 @@ const topic: Topic = {
         { aspect: 'Total surface', values: ['2πr(r + h)', 'πr(l + r)', '4πr²', '3πr²'] },
         { aspect: 'Same r, h = 2r: volume', values: ['2πr³ (ratio 3)', '2/3 πr³ (ratio 1)', '4/3 πr³ (ratio 2)', '2/3 πr³ (ratio 1)'] },
       ],
-      reveal: 'A cone is one third of its cylinder. A sphere that fits exactly inside a cylinder is two thirds of it. So cylinder : cone : sphere = 3 : 1 : 2.',
+      reveal:
+        'A cone is one third of its cylinder. A sphere that fits exactly inside a cylinder is two thirds of it. So cylinder : cone : sphere = 3 : 1 : 2.',
       whenToUse: [
         'Pipes, tanks, wells, rollers and coins.',
         'Tents, ice-cream cones, heaps of grain, and a sector rolled up.',
@@ -98,10 +220,7 @@ const topic: Topic = {
         { aspect: 'Diagonal (longest rod)', values: ['a√3', '√(l² + b² + h²)'], key: true },
       ],
       reveal: 'A cube is a cuboid with l = b = h = a. Room questions ask for the four walls, so use the lateral surface.',
-      whenToUse: [
-        'Dice, boxes of equal sides, and small cubes cut from a block.',
-        'Rooms, bricks, tanks and boxes.',
-      ],
+      whenToUse: ['Dice, boxes of equal sides, and small cubes cut from a block.', 'Rooms, bricks, tanks and boxes.'],
     },
   ],
   shortcuts: [
@@ -113,18 +232,36 @@ const topic: Topic = {
       ladder: [
         { name: 'Standard', steps: ['Big volume = 4/3 π × 729.', 'Small volume = 4/3 π × 27.', 'n = 729 ÷ 27 = 27.'], seconds: 30 },
         { name: 'Shortcut', steps: ['n = (R/r)³ = 3³ = 27.'], seconds: 5 },
-        { name: 'Option elimination', steps: ['Volume goes as the cube of the radius ratio 3.', '9 is only the square and 3 is only the ratio. 27 is the cube.'], seconds: 5 },
+        {
+          name: 'Option elimination',
+          steps: ['Volume goes as the cube of the radius ratio 3.', '9 is only the square and 3 is only the ratio. 27 is the cube.'],
+          seconds: 5,
+        },
       ],
     },
     {
       pattern: 'Cylinder, cone and sphere of the same size',
-      example: 'A cylinder, a cone and a sphere have the same radius, and the height of the cylinder and cone equals the diameter of the sphere. Ratio of their volumes?',
+      example:
+        'A cylinder, a cone and a sphere have the same radius, and the height of the cylinder and cone equals the diameter of the sphere. Ratio of their volumes?',
       options: ['3 : 1 : 2', '1 : 2 : 3', '3 : 2 : 1', '2 : 1 : 3'],
       answer: '3 : 1 : 2',
       ladder: [
-        { name: 'Standard', steps: ['Cylinder: πr² × 2r = 2πr³.', 'Cone: 1/3 × πr² × 2r = 2/3 πr³.', 'Sphere: 4/3 πr³.', 'Ratio 2 : 2/3 : 4/3 = 6 : 2 : 4 = 3 : 1 : 2.'], seconds: 45 },
+        {
+          name: 'Standard',
+          steps: [
+            'Cylinder: πr² × 2r = 2πr³.',
+            'Cone: 1/3 × πr² × 2r = 2/3 πr³.',
+            'Sphere: 4/3 πr³.',
+            'Ratio 2 : 2/3 : 4/3 = 6 : 2 : 4 = 3 : 1 : 2.',
+          ],
+          seconds: 45,
+        },
         { name: 'Shortcut', steps: ['Cone is 1/3 of the cylinder and sphere is 2/3 of it.', '1 : 1/3 : 2/3 = 3 : 1 : 2.'], seconds: 10 },
-        { name: 'Option elimination', steps: ['The cylinder is the biggest and the cone the smallest.', 'Only 3 : 1 : 2 has that order.'], seconds: 5 },
+        {
+          name: 'Option elimination',
+          steps: ['The cylinder is the biggest and the cone the smallest.', 'Only 3 : 1 : 2 has that order.'],
+          seconds: 5,
+        },
       ],
     },
     {
@@ -135,7 +272,11 @@ const topic: Topic = {
       ladder: [
         { name: 'Standard', steps: ['Take r = 10: volume ∝ 1,000.', 'New r = 12: volume ∝ 1,728.', 'Increase 728 on 1,000 = 72.8%.'], seconds: 30 },
         { name: 'Shortcut', steps: ['Apply 20% three times: 20 + 20 + 4 = 44.', '44 + 20 + 8.8 = 72.8%.'], seconds: 15 },
-        { name: 'Option elimination', steps: ['Must be more than 3 × 20 = 60%, since the changes compound.', 'Only 72.8% is above 60%.'], seconds: 5 },
+        {
+          name: 'Option elimination',
+          steps: ['Must be more than 3 × 20 = 60%, since the changes compound.', 'Only 72.8% is above 60%.'],
+          seconds: 5,
+        },
       ],
     },
   ],
@@ -160,7 +301,7 @@ const topic: Topic = {
       a: ['l = √(r² + h²).', 'Common triplets: (6, 8, 10), (5, 12, 13), (7, 24, 25).'],
     },
     {
-      q: 'Radius doubled and height halved: what happens to a cylinder\'s volume?',
+      q: "Radius doubled and height halved: what happens to a cylinder's volume?",
       a: ['πr²h becomes π(2r)²(h/2) = 2πr²h.', 'It doubles.'],
       tag: 'Asked often',
     },
@@ -227,7 +368,8 @@ const topic: Topic = {
       question: 'A metal sphere of radius 6 cm is melted and drawn into a wire of radius 0.2 cm. How long is the wire?',
       options: ['36 m', '7.2 m', '144 m', '72 m'],
       answer: 3,
-      explain: '4/3 π × 216 = π × 0.04 × L, so L = 288 ÷ 0.04 = 7,200 cm = 72 m.',
+      explain:
+        'Volume stays the same. Sphere: 4/3 × π × 6³ = 288π cm³. The wire is a long cylinder: π × 0.2² × L = 0.04πL. So 0.04L = 288 and L = 7,200 cm = 72 m.',
       shortcut: 'π cancels: L = 4r³/(3 × 0.04) with r³ = 216.',
     },
     {
@@ -249,15 +391,55 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'A sphere of radius 3 cm is dropped into a cylindrical vessel of radius 6 cm that is partly filled with water. By how much does the water level rise?',
+      question:
+        'A sphere of radius 3 cm is dropped into a cylindrical vessel of radius 6 cm that is partly filled with water. By how much does the water level rise?',
+      figure: {
+        viewBox: '0 0 320 210',
+        svg: `
+<path d="M96,120 A64,13 0 0 0 224,120 L224,186 A64,13 0 0 1 96,186 Z" class="d-fill-blue"/>
+<ellipse cx="160" cy="120" rx="64" ry="13" class="d-blue"/>
+<ellipse cx="160" cy="98" rx="64" ry="13" class="d-blue d-dash d-thin"/>
+<ellipse cx="160" cy="40" rx="64" ry="13"/>
+<line x1="96" y1="40" x2="96" y2="186"/>
+<line x1="224" y1="40" x2="224" y2="186"/>
+<path d="M96,186 A64,13 0 0 0 224,186"/>
+<path d="M96,186 A64,13 0 0 1 224,186" class="d-dash d-soft"/>
+<circle cx="160" cy="156" r="30" class="d-fill-pink"/>
+<line x1="160" y1="156" x2="190" y2="156" class="d-red"/>
+<text x="168" y="150" class="d-small d-red">3</text>
+<line x1="160" y1="40" x2="224" y2="40" class="d-green"/>
+<circle cx="160" cy="40" r="2.5" class="d-dot"/>
+<text x="192" y="23" text-anchor="middle" class="d-small d-green">6 cm</text>
+<line x1="236" y1="98" x2="236" y2="120" class="d-red"/>
+<text x="242" y="114" class="d-small d-red">rise = ?</text>`,
+      },
       options: ['1 cm', '2 cm', '0.5 cm', '1.5 cm'],
       answer: 0,
-      explain: 'Sphere volume = 4/3 π × 27 = 36π. Rise h: π × 36 × h = 36π, so h = 1 cm.',
+      explain:
+        'The water rises by exactly the volume of the sphere. Sphere: 4/3 × π × 3³ = 36π. The risen layer is a flat cylinder of radius 6: π × 6² × h = 36πh. So 36πh = 36π and h = 1 cm.',
     },
     {
       type: 'mcq',
       difficulty: 'medium',
       question: 'A frustum of a cone has end radii 10 cm and 4 cm and height 8 cm. What is its volume?',
+      figure: {
+        viewBox: '0 0 320 210',
+        svg: `
+<path d="M60,176 A100,20 0 0 1 260,176" class="d-dash d-soft"/>
+<path d="M60,176 A100,20 0 0 0 260,176"/>
+<ellipse cx="160" cy="96" rx="40" ry="8"/>
+<line x1="60" y1="176" x2="120" y2="96"/>
+<line x1="260" y1="176" x2="200" y2="96"/>
+<line x1="160" y1="96" x2="160" y2="176" class="d-dash"/>
+<circle cx="160" cy="96" r="2.5" class="d-dot"/>
+<circle cx="160" cy="176" r="2.5" class="d-dot"/>
+<line x1="160" y1="96" x2="200" y2="96" class="d-green"/>
+<text x="180" y="82" text-anchor="middle" class="d-small d-green">4 cm</text>
+<line x1="160" y1="176" x2="260" y2="176" class="d-blue"/>
+<text x="210" y="170" text-anchor="middle" class="d-small d-blue">10 cm</text>
+<text x="154" y="141" text-anchor="end" class="d-small">8 cm</text>`,
+        caption: 'Volume = ?',
+      },
       options: ['312π cm³', '448π cm³', '416π cm³', '520π cm³'],
       answer: 2,
       explain: '1/3 π × 8 × (100 + 16 + 40) = 1/3 π × 8 × 156 = 416π cm³.',
@@ -274,6 +456,25 @@ const topic: Topic = {
       type: 'mcq',
       difficulty: 'medium',
       question: 'A pyramid has a square base of side 10 cm and a height of 12 cm. What is its lateral surface area?',
+      figure: {
+        viewBox: '0 0 320 216',
+        svg: `
+<polygon points="156,37 70,196 190,196" class="d-fill"/>
+<polyline points="70,196 190,196 242,166"/>
+<line x1="122" y1="166" x2="70" y2="196" class="d-dash d-soft"/>
+<line x1="122" y1="166" x2="242" y2="166" class="d-dash d-soft"/>
+<line x1="122" y1="166" x2="156" y2="37" class="d-dash d-soft"/>
+<line x1="156" y1="37" x2="70" y2="196"/>
+<line x1="156" y1="37" x2="190" y2="196"/>
+<line x1="156" y1="37" x2="242" y2="166"/>
+<line x1="156" y1="37" x2="156" y2="181" class="d-dash"/>
+<circle cx="156" cy="181" r="2.5" class="d-dot"/>
+<line x1="156" y1="37" x2="130" y2="196" class="d-red d-thick"/>
+<text x="130" y="214" text-anchor="middle" class="d-small">10 cm</text>
+<text x="162" y="129" class="d-small">12 cm</text>
+<text x="131" y="106.5" text-anchor="end" class="d-red">?</text>`,
+        caption: 'Slant height (red) = ?',
+      },
       options: ['240 cm²', '260 cm²', '400 cm²', '520 cm²'],
       answer: 1,
       explain: 'Slant height = √(12² + 5²) = 13. Lateral area = 1/2 × 40 × 13 = 260 cm².',
@@ -282,6 +483,15 @@ const topic: Topic = {
       type: 'mcq',
       difficulty: 'hard',
       question: 'A sector of radius 25 cm and angle 216° is rolled into a cone. What is the volume of the cone?',
+      figure: {
+        viewBox: '0 0 320 216',
+        svg: `
+<path d="M150,108 L176.6,26.2 A86,86 0 1 0 176.6,189.8 Z" class="d-fill"/>
+<path d="M155.6,90.9 A18,18 0 1 0 155.6,125.1" class="d-thin"/>
+<text x="154" y="113" class="d-small">216°</text>
+<text x="173.8" y="69.8" text-anchor="start" class="d-small">25 cm</text>`,
+        caption: 'Rolled up into a cone: volume = ?',
+      },
       options: ['1,200π cm³', '1,500π cm³', '2,250π cm³', '1,800π cm³'],
       answer: 1,
       explain: 'Arc = 216/360 × 50π = 30π = 2πr, so r = 15. l = 25, so h = 20. V = 1/3 π × 225 × 20 = 1,500π cm³.',
@@ -299,7 +509,27 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'A toy is a cone mounted on a hemisphere of the same radius, 7 cm. The total height of the toy is 31 cm. What is its total surface area? (Take π = 22/7.)',
+      question:
+        'A toy is a cone mounted on a hemisphere of the same radius, 7 cm. The total height of the toy is 31 cm. What is its total surface area? (Take π = 22/7.)',
+      figure: {
+        viewBox: '0 0 320 200',
+        svg: `
+<path d="M105,152 A35,35 0 0 0 175,152"/>
+<path d="M105,152 A35,8 0 0 0 175,152"/>
+<path d="M105,152 A35,8 0 0 1 175,152" class="d-dash d-soft"/>
+<line x1="140" y1="32" x2="105" y2="152"/>
+<line x1="140" y1="32" x2="175" y2="152"/>
+<line x1="140" y1="152" x2="175" y2="152" class="d-green"/>
+<circle cx="140" cy="152" r="2.5" class="d-dot"/>
+<text x="157.5" y="146" text-anchor="middle" class="d-small d-green">7</text>
+<line x1="210" y1="32" x2="210" y2="187" class="d-blue d-thin"/>
+<line x1="203" y1="32" x2="217" y2="32" class="d-blue d-thin"/>
+<line x1="203" y1="187" x2="217" y2="187" class="d-blue d-thin"/>
+<line x1="144" y1="32" x2="198" y2="32" class="d-dash d-soft d-thin"/>
+<line x1="144" y1="187" x2="198" y2="187" class="d-dash d-soft d-thin"/>
+<text x="220" y="114.5" class="d-blue">31 cm</text>`,
+        caption: 'Radius 7 cm. Total surface area = ?',
+      },
       options: ['858 cm²', '1,012 cm²', '704 cm²', '770 cm²'],
       answer: 0,
       explain: 'Cone height = 31 − 7 = 24, so l = 25. Area = πrl + 2πr² = 22/7 × 7 × (25 + 14) = 22 × 39 = 858 cm².',

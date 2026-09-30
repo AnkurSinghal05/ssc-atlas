@@ -68,6 +68,135 @@ const topic: Topic = {
       example: '⁷P₃ = 210 and ⁷C₃ = 35.',
     },
   ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'Two dice: the 36-square grid',
+      figure: {
+        viewBox: '0 0 320 215',
+        svg: `
+<rect x="80" y="45" width="26" height="26" class="d-fill-green" data-step="4"/>
+<rect x="80" y="175" width="26" height="26" class="d-fill" data-step="2"/>
+<rect x="106" y="71" width="26" height="26" class="d-fill-green" data-step="4"/>
+<rect x="106" y="149" width="26" height="26" class="d-fill" data-step="2"/>
+<rect x="132" y="97" width="26" height="26" class="d-fill-green" data-step="4"/>
+<rect x="132" y="123" width="26" height="26" class="d-fill" data-step="2"/>
+<rect x="132" y="175" width="26" height="26" class="d-fill-pink" data-step="3"/>
+<rect x="158" y="97" width="26" height="26" class="d-fill" data-step="2"/>
+<rect x="158" y="123" width="26" height="26" class="d-fill-green" data-step="4"/>
+<rect x="158" y="149" width="26" height="26" class="d-fill-pink" data-step="3"/>
+<rect x="184" y="71" width="26" height="26" class="d-fill" data-step="2"/>
+<rect x="184" y="123" width="26" height="26" class="d-fill-pink" data-step="3"/>
+<rect x="184" y="149" width="26" height="26" class="d-fill-green" data-step="4"/>
+<rect x="210" y="45" width="26" height="26" class="d-fill" data-step="2"/>
+<rect x="210" y="97" width="26" height="26" class="d-fill-pink" data-step="3"/>
+<rect x="210" y="175" width="26" height="26" class="d-fill-green" data-step="4"/>
+<line x1="106" y1="45" x2="106" y2="201" class="d-thin d-soft"/>
+<line x1="80" y1="71" x2="236" y2="71" class="d-thin d-soft"/>
+<line x1="132" y1="45" x2="132" y2="201" class="d-thin d-soft"/>
+<line x1="80" y1="97" x2="236" y2="97" class="d-thin d-soft"/>
+<line x1="158" y1="45" x2="158" y2="201" class="d-thin d-soft"/>
+<line x1="80" y1="123" x2="236" y2="123" class="d-thin d-soft"/>
+<line x1="184" y1="45" x2="184" y2="201" class="d-thin d-soft"/>
+<line x1="80" y1="149" x2="236" y2="149" class="d-thin d-soft"/>
+<line x1="210" y1="45" x2="210" y2="201" class="d-thin d-soft"/>
+<line x1="80" y1="175" x2="236" y2="175" class="d-thin d-soft"/>
+<rect x="80" y="45" width="156" height="156" data-step="1"/>
+<text x="93" y="62.5" text-anchor="middle" class="d-small">2</text>
+<text x="93" y="88.5" text-anchor="middle" class="d-small">3</text>
+<text x="93" y="114.5" text-anchor="middle" class="d-small">4</text>
+<text x="93" y="140.5" text-anchor="middle" class="d-small">5</text>
+<text x="93" y="166.5" text-anchor="middle" class="d-small">6</text>
+<text x="93" y="192.5" text-anchor="middle" class="d-small">7</text>
+<text x="119" y="62.5" text-anchor="middle" class="d-small">3</text>
+<text x="119" y="88.5" text-anchor="middle" class="d-small">4</text>
+<text x="119" y="114.5" text-anchor="middle" class="d-small">5</text>
+<text x="119" y="140.5" text-anchor="middle" class="d-small">6</text>
+<text x="119" y="166.5" text-anchor="middle" class="d-small">7</text>
+<text x="119" y="192.5" text-anchor="middle" class="d-small">8</text>
+<text x="145" y="62.5" text-anchor="middle" class="d-small">4</text>
+<text x="145" y="88.5" text-anchor="middle" class="d-small">5</text>
+<text x="145" y="114.5" text-anchor="middle" class="d-small">6</text>
+<text x="145" y="140.5" text-anchor="middle" class="d-small">7</text>
+<text x="145" y="166.5" text-anchor="middle" class="d-small">8</text>
+<text x="145" y="192.5" text-anchor="middle" class="d-small">9</text>
+<text x="171" y="62.5" text-anchor="middle" class="d-small">5</text>
+<text x="171" y="88.5" text-anchor="middle" class="d-small">6</text>
+<text x="171" y="114.5" text-anchor="middle" class="d-small">7</text>
+<text x="171" y="140.5" text-anchor="middle" class="d-small">8</text>
+<text x="171" y="166.5" text-anchor="middle" class="d-small">9</text>
+<text x="171" y="192.5" text-anchor="middle" class="d-small">10</text>
+<text x="197" y="62.5" text-anchor="middle" class="d-small">6</text>
+<text x="197" y="88.5" text-anchor="middle" class="d-small">7</text>
+<text x="197" y="114.5" text-anchor="middle" class="d-small">8</text>
+<text x="197" y="140.5" text-anchor="middle" class="d-small">9</text>
+<text x="197" y="166.5" text-anchor="middle" class="d-small">10</text>
+<text x="197" y="192.5" text-anchor="middle" class="d-small">11</text>
+<text x="223" y="62.5" text-anchor="middle" class="d-small">7</text>
+<text x="223" y="88.5" text-anchor="middle" class="d-small">8</text>
+<text x="223" y="114.5" text-anchor="middle" class="d-small">9</text>
+<text x="223" y="140.5" text-anchor="middle" class="d-small">10</text>
+<text x="223" y="166.5" text-anchor="middle" class="d-small">11</text>
+<text x="223" y="192.5" text-anchor="middle" class="d-small">12</text>
+<text x="93" y="37" text-anchor="middle" class="d-small d-blue" data-step="1">1</text>
+<text x="72" y="62.5" text-anchor="end" class="d-small d-blue" data-step="1">1</text>
+<text x="119" y="37" text-anchor="middle" class="d-small d-blue" data-step="1">2</text>
+<text x="72" y="88.5" text-anchor="end" class="d-small d-blue" data-step="1">2</text>
+<text x="145" y="37" text-anchor="middle" class="d-small d-blue" data-step="1">3</text>
+<text x="72" y="114.5" text-anchor="end" class="d-small d-blue" data-step="1">3</text>
+<text x="171" y="37" text-anchor="middle" class="d-small d-blue" data-step="1">4</text>
+<text x="72" y="140.5" text-anchor="end" class="d-small d-blue" data-step="1">4</text>
+<text x="197" y="37" text-anchor="middle" class="d-small d-blue" data-step="1">5</text>
+<text x="72" y="166.5" text-anchor="end" class="d-small d-blue" data-step="1">5</text>
+<text x="223" y="37" text-anchor="middle" class="d-small d-blue" data-step="1">6</text>
+<text x="72" y="192.5" text-anchor="end" class="d-small d-blue" data-step="1">6</text>
+<text x="80" y="20" class="d-small d-blue" data-step="1">die 1 →</text>
+<text x="18" y="128" class="d-small d-blue" data-step="1">die 2</text>
+<rect x="246" y="69" width="12" height="12" class="d-fill" data-step="2"/>
+<rect x="246" y="69" width="12" height="12" class="d-thin" data-step="2"/>
+<text x="262" y="80" class="d-small" data-step="2">sum 7: 6</text>
+<rect x="246" y="109" width="12" height="12" class="d-fill-pink" data-step="3"/>
+<rect x="246" y="109" width="12" height="12" class="d-thin" data-step="3"/>
+<text x="262" y="120" class="d-small" data-step="3">sum 9: 4</text>
+<rect x="246" y="149" width="12" height="12" class="d-fill-green" data-step="4"/>
+<rect x="246" y="149" width="12" height="12" class="d-thin" data-step="4"/>
+<text x="262" y="160" class="d-small" data-step="4">doubles: 6</text>`,
+        caption: 'Each step away from 7 loses one square',
+      },
+      explain: [
+        'Two dice give 6 × 6 = 36 equally likely outcomes, one square each. Each square shows the sum.',
+        'Sum 7 fills a whole diagonal: 6 squares, so 6/36 = 1/6. No other sum has more.',
+        'Sum 9 is a shorter diagonal: 4 squares, so 4/36 = **1/9**.',
+        'Doubles, (1, 1) to (6, 6), lie on the other diagonal: 6/36 = 1/6.',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'King or red: count the overlap once',
+      figure: {
+        viewBox: '0 0 320 232',
+        svg: `
+<rect x="20" y="30" width="280" height="172" data-step="1"/>
+<text x="290" y="50" text-anchor="end" class="d-small" data-step="1">52 cards</text>
+<circle cx="130" cy="118" r="72" class="d-fill-pink" data-step="2"/>
+<circle cx="222" cy="118" r="42" class="d-fill-blue" data-step="3"/>
+<circle cx="130" cy="118" r="72" class="d-red" data-step="2"/>
+<circle cx="222" cy="118" r="42" class="d-blue" data-step="3"/>
+<text x="112" y="98" text-anchor="middle" class="d-small d-red" data-step="2">red (26)</text>
+<text x="112" y="132" text-anchor="middle" data-step="2">24</text>
+<text x="240" y="68" text-anchor="middle" class="d-small d-blue" data-step="3">kings (4)</text>
+<text x="238" y="132" text-anchor="middle" data-step="3">2</text>
+<text x="191" y="124" text-anchor="middle" class="d-red" data-step="3">2</text>
+<text x="160" y="222" text-anchor="middle" data-step="4">26 + 4 − 2 = 28 cards</text>`,
+      },
+      explain: [
+        'The box is the whole pack: 52 cards.',
+        'The red circle holds the 26 red cards.',
+        'The king circle holds the 4 kings. The 2 red kings sit in both circles.',
+        'King or red = 26 + 4 − 2 = 28 cards, so P = 28/52 = **7/13**.',
+      ],
+    },
+  ],
   comparisons: [
     {
       title: 'Permutation vs combination',
@@ -131,7 +260,11 @@ const topic: Topic = {
       ladder: [
         { name: 'Standard', steps: ['Red cards 26, black kings 2 more: 28 favourable.', '28/52 = 7/13.'], seconds: 30 },
         { name: 'Shortcut', steps: ['4/52 + 26/52 − 2/52 (red kings counted twice) = 28/52 = 7/13.'], seconds: 15 },
-        { name: 'Option elimination', steps: ['Red alone is 1/2, and kings add a little: must be just above 1/2.', '15/26 (30 cards) forgets the overlap. 7/13 is it.'], seconds: 12 },
+        {
+          name: 'Option elimination',
+          steps: ['Red alone is 1/2, and kings add a little: must be just above 1/2.', '15/26 (30 cards) forgets the overlap. 7/13 is it.'],
+          seconds: 12,
+        },
       ],
     },
   ],

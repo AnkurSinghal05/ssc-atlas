@@ -26,7 +26,7 @@ export function FigureSvg({ figure, active, className }: { figure: Figure; activ
       <svg viewBox={figure.viewBox} className="h-auto w-full max-w-[420px]" role="img" aria-label={figure.caption ?? 'Figure'}>
         <filter id={`rough-${id}`}>
           <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" />
-          <feDisplacementMap in="SourceGraphic" scale="1.6" />
+          <feDisplacementMap in="SourceGraphic" scale="1.2" />
         </filter>
         <g ref={ref} filter={`url(#rough-${id})`} dangerouslySetInnerHTML={{ __html: figure.svg }} />
       </svg>

@@ -23,7 +23,7 @@ const topic: Topic = {
   keyPoints: [
     {
       title: 'The LCM (total work) method',
-      text: 'Take the total work as the LCM of the days given. Each person\'s efficiency is total ÷ their days. Add efficiencies for people working together.',
+      text: "Take the total work as the LCM of the days given. Each person's efficiency is total ÷ their days. Add efficiencies for people working together.",
       formula: 'time = (total work)/(combined efficiency)',
       example: 'A in 10 days, B in 15: work = 30 units, A = 3, B = 2 per day. Together 30/5 = **6 days**.',
     },
@@ -69,6 +69,106 @@ const topic: Topic = {
       example: '10 h, but 12 h with a leak: 120/2 = **60 h**.',
     },
   ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'The LCM method: the job as a bar of units',
+      figure: {
+        viewBox: '0 0 320 190',
+        svg: `
+<rect x="34" y="24" width="14" height="14" class="d-fill" data-step="2"/>
+<rect x="34" y="24" width="14" height="14" class="d-thin" data-step="2"/>
+<text x="56" y="36" class="d-small" data-step="2">A: 30/10 = 3 units a day</text>
+<rect x="34" y="48" width="14" height="14" class="d-fill-blue" data-step="3"/>
+<rect x="34" y="48" width="14" height="14" class="d-thin" data-step="3"/>
+<text x="56" y="60" class="d-small" data-step="3">B: 30/15 = 2 units a day</text>
+<rect x="25" y="100" width="27" height="30" class="d-fill" data-step="2"/>
+<rect x="52" y="100" width="18" height="30" class="d-fill-blue" data-step="3"/>
+<rect x="70" y="100" width="27" height="30" class="d-fill" data-step="2"/>
+<rect x="97" y="100" width="18" height="30" class="d-fill-blue" data-step="3"/>
+<rect x="115" y="100" width="27" height="30" class="d-fill" data-step="2"/>
+<rect x="142" y="100" width="18" height="30" class="d-fill-blue" data-step="3"/>
+<rect x="160" y="100" width="27" height="30" class="d-fill" data-step="2"/>
+<rect x="187" y="100" width="18" height="30" class="d-fill-blue" data-step="3"/>
+<rect x="205" y="100" width="27" height="30" class="d-fill" data-step="2"/>
+<rect x="232" y="100" width="18" height="30" class="d-fill-blue" data-step="3"/>
+<rect x="250" y="100" width="27" height="30" class="d-fill" data-step="2"/>
+<rect x="277" y="100" width="18" height="30" class="d-fill-blue" data-step="3"/>
+<line x1="34" y1="100" x2="34" y2="130" class="d-thin d-soft"/>
+<line x1="43" y1="100" x2="43" y2="130" class="d-thin d-soft"/>
+<line x1="52" y1="100" x2="52" y2="130" class="d-thin d-soft"/>
+<line x1="61" y1="100" x2="61" y2="130" class="d-thin d-soft"/>
+<line x1="79" y1="100" x2="79" y2="130" class="d-thin d-soft"/>
+<line x1="88" y1="100" x2="88" y2="130" class="d-thin d-soft"/>
+<line x1="97" y1="100" x2="97" y2="130" class="d-thin d-soft"/>
+<line x1="106" y1="100" x2="106" y2="130" class="d-thin d-soft"/>
+<line x1="124" y1="100" x2="124" y2="130" class="d-thin d-soft"/>
+<line x1="133" y1="100" x2="133" y2="130" class="d-thin d-soft"/>
+<line x1="142" y1="100" x2="142" y2="130" class="d-thin d-soft"/>
+<line x1="151" y1="100" x2="151" y2="130" class="d-thin d-soft"/>
+<line x1="169" y1="100" x2="169" y2="130" class="d-thin d-soft"/>
+<line x1="178" y1="100" x2="178" y2="130" class="d-thin d-soft"/>
+<line x1="187" y1="100" x2="187" y2="130" class="d-thin d-soft"/>
+<line x1="196" y1="100" x2="196" y2="130" class="d-thin d-soft"/>
+<line x1="214" y1="100" x2="214" y2="130" class="d-thin d-soft"/>
+<line x1="223" y1="100" x2="223" y2="130" class="d-thin d-soft"/>
+<line x1="232" y1="100" x2="232" y2="130" class="d-thin d-soft"/>
+<line x1="241" y1="100" x2="241" y2="130" class="d-thin d-soft"/>
+<line x1="259" y1="100" x2="259" y2="130" class="d-thin d-soft"/>
+<line x1="268" y1="100" x2="268" y2="130" class="d-thin d-soft"/>
+<line x1="277" y1="100" x2="277" y2="130" class="d-thin d-soft"/>
+<line x1="286" y1="100" x2="286" y2="130" class="d-thin d-soft"/>
+<line x1="70" y1="96" x2="70" y2="134" data-step="4"/>
+<line x1="115" y1="96" x2="115" y2="134" data-step="4"/>
+<line x1="160" y1="96" x2="160" y2="134" data-step="4"/>
+<line x1="205" y1="96" x2="205" y2="134" data-step="4"/>
+<line x1="250" y1="96" x2="250" y2="134" data-step="4"/>
+<rect x="25" y="100" width="270" height="30" class="d-thick" data-step="1"/>
+<text x="160" y="90" text-anchor="middle" data-step="1">whole job = LCM(10, 15) = 30 units</text>
+<text x="47.5" y="150" text-anchor="middle" class="d-small" data-step="4">day 1</text>
+<text x="92.5" y="150" text-anchor="middle" class="d-small" data-step="4">day 2</text>
+<text x="137.5" y="150" text-anchor="middle" class="d-small" data-step="4">day 3</text>
+<text x="182.5" y="150" text-anchor="middle" class="d-small" data-step="4">day 4</text>
+<text x="227.5" y="150" text-anchor="middle" class="d-small" data-step="4">day 5</text>
+<text x="272.5" y="150" text-anchor="middle" class="d-small" data-step="4">day 6</text>
+<text x="160" y="178" text-anchor="middle" class="d-red" data-step="4">5 units a day: 30/5 = 6 days</text>`,
+        caption: 'Each small cell is 1 unit of work',
+      },
+      explain: [
+        'A takes 10 days and B takes 15. Call the whole job LCM(10, 15) = 30 units.',
+        'A does 30/10 = 3 units a day (yellow).',
+        'B does 30/15 = 2 units a day (blue).',
+        'Together they fill 3 + 2 = 5 units each day, so the bar is full after 30/5 = **6 days**.',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'Pipes: inlets add, outlets subtract',
+      figure: {
+        viewBox: '0 0 320 215',
+        svg: `
+<rect x="110" y="135" width="120" height="45" class="d-fill-blue"/>
+<path d="M110,70 L110,180 L230,180 L230,70" class="d-thick" data-step="1"/>
+<text x="170" y="112" text-anchor="middle" class="d-small" data-step="1">tank = 60 units</text>
+<path d="M18,40 L140,40 L140,64" class="d-green" data-step="2"/>
+<line x1="140" y1="58" x2="140" y2="80" class="d-green" data-step="2"/><path d="M136.5,73.9 L140,80 L143.5,73.9" class="d-green" data-step="2"/>
+<text x="20" y="30" class="d-small d-green" data-step="2">A (20 min): +3</text>
+<path d="M302,40 L200,40 L200,64" class="d-green" data-step="2"/>
+<line x1="200" y1="58" x2="200" y2="80" class="d-green" data-step="2"/><path d="M196.5,73.9 L200,80 L203.5,73.9" class="d-green" data-step="2"/>
+<text x="300" y="30" text-anchor="end" class="d-small d-green" data-step="2">B (30 min): +2</text>
+<path d="M110,170 L60,170 L60,184" class="d-red" data-step="3"/>
+<line x1="60" y1="180" x2="60" y2="204" class="d-red" data-step="3"/><path d="M56.5,197.9 L60,204 L63.5,197.9" class="d-red" data-step="3"/>
+<text x="18" y="150" class="d-small d-red" data-step="3">C (15 min): −4</text>
+<text x="170" y="204" text-anchor="middle" class="d-small" data-step="4">net 3 + 2 − 4 = +1 a minute</text>`,
+      },
+      explain: [
+        'Take the tank as LCM(20, 30, 15) = 60 units.',
+        'Inlets: A fills 60/20 = 3 units a minute and B fills 60/30 = 2.',
+        'The outlet C empties 60/15 = 4 units a minute, so it counts as −4.',
+        'Net rate = 3 + 2 − 4 = 1 unit a minute, so the tank is full in 60/1 = **60 minutes**.',
+      ],
+    },
+  ],
   comparisons: [
     {
       title: 'Time and work vs pipes and cisterns',
@@ -81,10 +181,7 @@ const topic: Topic = {
         { aspect: 'Method', values: ['LCM of days as total work', 'LCM of hours or minutes as tank capacity'] },
       ],
       reveal: 'It is one model: rate × time = work. Pipes only add the idea of a negative rate, so always check which pipes empty.',
-      whenToUse: [
-        'People, machines, men and days, wages.',
-        'Tanks, taps, leaks, or any question where something undoes the work.',
-      ],
+      whenToUse: ['People, machines, men and days, wages.', 'Tanks, taps, leaks, or any question where something undoes the work.'],
     },
   ],
   shortcuts: [
@@ -156,7 +253,11 @@ const topic: Topic = {
   qa: [
     {
       q: 'What is the LCM method in time and work?',
-      a: ['Take total work = LCM of the given days.', 'Efficiency = total ÷ days for each person.', 'Add efficiencies, then divide the total by the sum.'],
+      a: [
+        'Take total work = LCM of the given days.',
+        'Efficiency = total ÷ days for each person.',
+        'Add efficiencies, then divide the total by the sum.',
+      ],
       tag: 'Shortcut',
     },
     {
@@ -239,7 +340,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'A can do a job in 20 days and B in 30 days. They work together for 6 days, then A leaves. In how many more days will B finish the job?',
+      question:
+        'A can do a job in 20 days and B in 30 days. They work together for 6 days, then A leaves. In how many more days will B finish the job?',
       options: ['12 days', '15 days', '18 days', '10 days'],
       answer: 1,
       explain: 'Work = 60 units, A = 3, B = 2. In 6 days: 6 × 5 = 30 units. Left 30 units, B takes 30/2 = 15 days.',
@@ -256,7 +358,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'A pipe can fill a tank in 10 hours. Because of a leak at the bottom, it takes 12 hours. In how many hours can the leak alone empty the full tank?',
+      question:
+        'A pipe can fill a tank in 10 hours. Because of a leak at the bottom, it takes 12 hours. In how many hours can the leak alone empty the full tank?',
       options: ['50 hours', '120 hours', '60 hours', '22 hours'],
       answer: 2,
       explain: 'Leak rate = 1/10 − 1/12 = 1/60. The leak empties the tank in 60 hours.',
@@ -265,7 +368,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'Pipes A and B can fill a tank in 20 and 30 minutes. Pipe C can empty it in 15 minutes. If all three are opened together, how long will the empty tank take to fill?',
+      question:
+        'Pipes A and B can fill a tank in 20 and 30 minutes. Pipe C can empty it in 15 minutes. If all three are opened together, how long will the empty tank take to fill?',
       options: ['30 minutes', '45 minutes', '50 minutes', '60 minutes'],
       answer: 3,
       explain: 'Tank = 60 units. Net rate = 3 + 2 − 4 = 1 per minute. Full in 60 minutes.',
@@ -300,7 +404,7 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'A can do a job in 10 days and B in 15 days. Working together, they are paid ₹5,000. What is A\'s share?',
+      question: "A can do a job in 10 days and B in 15 days. Working together, they are paid ₹5,000. What is A's share?",
       options: ['₹2,500', '₹2,000', '₹3,500', '₹3,000'],
       answer: 3,
       explain: 'Efficiencies 3 : 2 (from 30 units). A gets 3/5 × 5,000 = ₹3,000.',
@@ -308,7 +412,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'Two pipes can fill a tank in 12 and 15 minutes. Both are opened together, and after 3 minutes the first pipe is closed. How much more time will the second pipe take to fill the tank?',
+      question:
+        'Two pipes can fill a tank in 12 and 15 minutes. Both are opened together, and after 3 minutes the first pipe is closed. How much more time will the second pipe take to fill the tank?',
       options: ['8 min 30 s', '8 min 15 s', '9 min', '7 min 45 s'],
       answer: 1,
       explain: 'Tank = 60 units, rates 5 and 4. In 3 minutes: 27 units. Left 33 units at 4 units a minute = 8.25 min = 8 min 15 s.',
@@ -316,7 +421,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'A can do a job in 10 days and B in 15 days. They work on alternate days, starting with A. In how many days will the job be finished?',
+      question:
+        'A can do a job in 10 days and B in 15 days. They work on alternate days, starting with A. In how many days will the job be finished?',
       options: ['11 days', '12 days', '13 days', '6 days'],
       answer: 1,
       explain: 'Work = 30 units. Each 2-day block does 3 + 2 = 5 units. 6 blocks = 12 days finish exactly 30 units.',

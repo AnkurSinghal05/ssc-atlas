@@ -69,6 +69,78 @@ const topic: Topic = {
       example: 'CP of 20 = SP of 16: (20 − 16)/16 = **25% profit**.',
     },
   ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'Mark-up and discount have different bases',
+      figure: {
+        viewBox: '0 0 320 210',
+        svg: `
+<line x1="40" y1="120" x2="300" y2="120"/>
+<line x1="67.5" y1="114" x2="67.5" y2="126" data-step="1"/>
+<text x="67.5" y="106" text-anchor="middle" data-step="1">CP</text>
+<text x="67.5" y="142" text-anchor="middle" data-step="1">100</text>
+<line x1="287.5" y1="114" x2="287.5" y2="126" class="d-blue" data-step="2"/>
+<text x="287.5" y="106" text-anchor="middle" class="d-blue" data-step="2">MP</text>
+<text x="287.5" y="142" text-anchor="middle" class="d-blue" data-step="2">140</text>
+<line x1="133.5" y1="114" x2="133.5" y2="126" class="d-red" data-step="3"/>
+<text x="133.5" y="106" text-anchor="middle" class="d-red" data-step="3">SP</text>
+<text x="133.5" y="142" text-anchor="middle" class="d-red" data-step="3">112</text>
+<path d="M67.5,88 Q177.5,20 287.5,88" class="d-blue" data-step="2"/>
+<path d="M280.5,87.8 L287.5,88 L284.2,81.8" class="d-blue" data-step="2"/>
+<text x="177.5" y="46" text-anchor="middle" class="d-small d-blue" data-step="2">mark up 40% of CP = +40</text>
+<path d="M287.5,152 Q210.5,200 133.5,152" class="d-red" data-step="3"/>
+<path d="M140.5,152.2 L133.5,152 L136.8,158.2" class="d-red" data-step="3"/>
+<text x="210.5" y="196" text-anchor="middle" class="d-small d-red" data-step="3">20% of MP = −28</text>
+<line x1="67.5" y1="160" x2="133.5" y2="160" class="d-green" data-step="4"/><path d="M129.2,162.5 L133.5,160 L129.2,157.5" class="d-green" data-step="4"/><path d="M71.8,157.5 L67.5,160 L71.8,162.5" class="d-green" data-step="4"/>
+<text x="100.5" y="178" text-anchor="middle" class="d-green" data-step="4">+12</text>`,
+      },
+      explain: [
+        'Take the cost price as 100.',
+        'Mark it up 40% of CP: the marked price is 140.',
+        'The 20% discount is on MP, not CP: 20% of 140 = 28, so SP = 140 − 28 = 112.',
+        'Profit = 112 − 100 = 12 on a cost of 100: **12%**. Shortcut: 40 − 20 − (40 × 20)/100 = 12.',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'Same selling price, x% gain and x% loss',
+      figure: {
+        viewBox: '0 0 320 232',
+        svg: `
+<line x1="24" y1="190" x2="300" y2="190"/>
+<rect x="40" y="100" width="50" height="90" class="d-fill-blue" data-step="2"/>
+<rect x="40" y="100" width="50" height="90" data-step="2"/>
+<text x="65" y="160" text-anchor="middle" class="d-small" data-step="2">10,000</text>
+<text x="65" y="206" text-anchor="middle" class="d-small" data-step="2">CP</text>
+<rect x="95" y="82" width="50" height="108" class="d-fill" data-step="1"/>
+<rect x="95" y="82" width="50" height="108" data-step="1"/>
+<text x="120" y="160" text-anchor="middle" class="d-small" data-step="1">12,000</text>
+<text x="120" y="206" text-anchor="middle" class="d-small" data-step="1">SP</text>
+<rect x="175" y="55" width="50" height="135" class="d-fill-blue" data-step="3"/>
+<rect x="175" y="55" width="50" height="135" data-step="3"/>
+<text x="200" y="160" text-anchor="middle" class="d-small" data-step="3">15,000</text>
+<text x="200" y="206" text-anchor="middle" class="d-small" data-step="3">CP</text>
+<rect x="230" y="82" width="50" height="108" class="d-fill" data-step="1"/>
+<rect x="230" y="82" width="50" height="108" data-step="1"/>
+<text x="255" y="160" text-anchor="middle" class="d-small" data-step="1">12,000</text>
+<text x="255" y="206" text-anchor="middle" class="d-small" data-step="1">SP</text>
+<line x1="24" y1="82" x2="300" y2="82" class="d-dash d-soft" data-step="1"/>
+<line x1="65" y1="98" x2="65" y2="84" class="d-green" data-step="2"/><path d="M67,87.5 L65,84 L63,87.5" class="d-green" data-step="2"/><path d="M63,94.5 L65,98 L67,94.5" class="d-green" data-step="2"/>
+<text x="65" y="76" text-anchor="middle" class="d-small d-green" data-step="2">+2,000</text>
+<line x1="255" y1="57" x2="255" y2="80" class="d-red" data-step="3"/><path d="M253,76.5 L255,80 L257,76.5" class="d-red" data-step="3"/><path d="M257,60.5 L255,57 L253,60.5" class="d-red" data-step="3"/>
+<text x="255" y="49" text-anchor="middle" class="d-small d-red" data-step="3">−3,000</text>
+<text x="92.5" y="224" text-anchor="middle" class="d-small" data-step="2">phone 1: 20% gain</text>
+<text x="227.5" y="224" text-anchor="middle" class="d-small" data-step="3">phone 2: 20% loss</text>`,
+      },
+      explain: [
+        'Both phones sell for ₹12,000 (the dashed line).',
+        '20% gain: CP = 12,000/1.2 = 10,000, so the gain is ₹2,000.',
+        '20% loss: CP = 12,000/0.8 = 15,000, so the loss is ₹3,000.',
+        'The loss is bigger because it is on the costlier phone. Net loss 1,000 on CP 25,000 = **4%** = 20²/100.',
+      ],
+    },
+  ],
   comparisons: [
     {
       title: 'Markup vs discount vs profit',
@@ -150,7 +222,11 @@ const topic: Topic = {
       ladder: [
         {
           name: 'Standard',
-          steps: ['He gives 800 g but charges for 1,000 g.', 'CP of 800 g is his cost; he is paid the price of 1,000 g.', 'Gain = 200/800 × 100 = 25%.'],
+          steps: [
+            'He gives 800 g but charges for 1,000 g.',
+            'CP of 800 g is his cost; he is paid the price of 1,000 g.',
+            'Gain = 200/800 × 100 = 25%.',
+          ],
           seconds: 35,
         },
         { name: 'Shortcut', steps: ['error/(true − error) × 100 = 20/80 × 100 = 25%.'], seconds: 10 },

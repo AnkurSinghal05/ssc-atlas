@@ -16,7 +16,11 @@ const topic: Topic = {
     { name: 'Removal and replacement', frequency: 'most', example: '4 L of a 40 L can of milk is replaced by water 3 times. Milk left?' },
     { name: 'Add water to change the ratio', frequency: 'often', example: '60 L of milk and water is 2 : 1. How much water makes it 1 : 2?' },
     { name: 'Mixing with a profit', frequency: 'often', example: 'Tea at ₹60 and ₹75 per kg is sold at ₹80 with 25% profit. Ratio?' },
-    { name: 'Part sold at one profit, rest at another', frequency: 'often', example: '50 kg sold partly at 8% and partly at 18% profit, overall 14%. Split?' },
+    {
+      name: 'Part sold at one profit, rest at another',
+      frequency: 'often',
+      example: '50 kg sold partly at 8% and partly at 18% profit, overall 14%. Split?',
+    },
     { name: 'Mixing two mixtures', frequency: 'rare', example: 'Vessels with milk : water 3 : 1 and 5 : 3 are mixed to get 2 : 1. Ratio?' },
   ],
   keyPoints: [
@@ -57,7 +61,81 @@ const topic: Topic = {
     {
       title: 'Mixing two mixtures',
       text: 'Use the fraction of one liquid in each mixture as its "price" and alligate the fractions.',
-      example: 'Milk is 3/4 in the first, 5/8 in the second, 2/3 wanted: second : first = (3/4 − 2/3) : (2/3 − 5/8) = 1/12 : 1/24 = 2 : 1. So first : second = **1 : 2**.',
+      example:
+        'Milk is 3/4 in the first, 5/8 in the second, 2/3 wanted: second : first = (3/4 − 2/3) : (2/3 − 5/8) = 1/12 : 1/24 = 2 : 1. So first : second = **1 : 2**.',
+    },
+  ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'The alligation cross',
+      figure: {
+        viewBox: '0 0 320 225',
+        svg: `
+<text x="60" y="22" text-anchor="middle" class="d-small d-soft" data-step="1">cheaper</text>
+<text x="60" y="45" text-anchor="middle" data-step="1">₹30</text>
+<text x="260" y="22" text-anchor="middle" class="d-small d-soft" data-step="1">dearer</text>
+<text x="260" y="45" text-anchor="middle" data-step="1">₹45</text>
+<text x="160" y="116" text-anchor="middle" class="d-blue" data-step="2">₹36</text>
+<text x="160" y="134" text-anchor="middle" class="d-small d-soft" data-step="2">mean</text>
+<line x1="240" y1="55" x2="182.4" y2="94.6" class="d-red" data-step="3"/>
+<line x1="137.6" y1="125.4" x2="80" y2="165" class="d-red" data-step="3"/>
+<text x="60" y="186" text-anchor="middle" class="d-red" data-step="3">45 − 36 = 9</text>
+<line x1="80" y1="55" x2="137.6" y2="94.6" class="d-green" data-step="4"/>
+<line x1="182.4" y1="125.4" x2="240" y2="165" class="d-green" data-step="4"/>
+<text x="260" y="186" text-anchor="middle" class="d-green" data-step="4">36 − 30 = 6</text>
+<text x="160" y="214" text-anchor="middle" data-step="5">cheaper : dearer = 9 : 6 = 3 : 2</text>`,
+        caption: 'Always big minus small along each diagonal',
+      },
+      explain: [
+        'Write the two prices at the top: cheaper ₹30 on the left, dearer ₹45 on the right.',
+        'Write the mean price you want, ₹36, in the middle.',
+        'Subtract along one diagonal: 45 − 36 = 9. It lands under the cheaper one.',
+        'Subtract along the other: 36 − 30 = 6. It lands under the dearer one.',
+        'Read across the bottom: cheaper : dearer = 9 : 6 = **3 : 2**.',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'A weighted average is a balance point',
+      figure: {
+        viewBox: '0 0 320 205',
+        svg: `
+<line x1="24" y1="120" x2="296" y2="120"/>
+<line x1="87.8" y1="114" x2="87.8" y2="126" data-step="1"/>
+<text x="87.8" y="142" text-anchor="middle" data-step="1">70</text>
+<text x="87.8" y="158" text-anchor="middle" class="d-small d-soft" data-step="1">boys</text>
+<line x1="174.4" y1="114" x2="174.4" y2="126" data-step="1"/>
+<text x="174.4" y="142" text-anchor="middle" data-step="1">76</text>
+<text x="174.4" y="158" text-anchor="middle" class="d-small d-soft" data-step="1">class</text>
+<line x1="232.2" y1="114" x2="232.2" y2="126" data-step="1"/>
+<text x="232.2" y="142" text-anchor="middle" data-step="1">80</text>
+<text x="232.2" y="158" text-anchor="middle" class="d-small d-soft" data-step="1">girls</text>
+<rect x="79.8" y="104" width="16" height="16" class="d-fill-blue" data-step="4"/>
+<rect x="79.8" y="104" width="16" height="16" class="d-thin" data-step="4"/>
+<rect x="79.8" y="88" width="16" height="16" class="d-fill-blue" data-step="4"/>
+<rect x="79.8" y="88" width="16" height="16" class="d-thin" data-step="4"/>
+<rect x="224.2" y="104" width="16" height="16" class="d-fill-pink" data-step="4"/>
+<rect x="224.2" y="104" width="16" height="16" class="d-thin" data-step="4"/>
+<rect x="224.2" y="88" width="16" height="16" class="d-fill-pink" data-step="4"/>
+<rect x="224.2" y="88" width="16" height="16" class="d-thin" data-step="4"/>
+<rect x="224.2" y="72" width="16" height="16" class="d-fill-pink" data-step="4"/>
+<rect x="224.2" y="72" width="16" height="16" class="d-thin" data-step="4"/>
+<text x="87.8" y="80" text-anchor="middle" class="d-blue" data-step="4">2</text>
+<text x="232.2" y="64" text-anchor="middle" class="d-red" data-step="4">3</text>
+<circle cx="174.4" cy="120" r="5" class="d-dot d-red" data-step="3"/>
+<text x="174.4" y="104" text-anchor="middle" class="d-small d-red" data-step="3">balance</text>
+<line x1="87.8" y1="178" x2="174.4" y2="178" class="d-blue" data-step="2"/><path d="M169.2,181 L174.4,178 L169.2,175" class="d-blue" data-step="2"/><path d="M93,175 L87.8,178 L93,181" class="d-blue" data-step="2"/>
+<text x="131.1" y="196" text-anchor="middle" class="d-blue" data-step="2">6</text>
+<line x1="174.4" y1="178" x2="232.2" y2="178" class="d-red" data-step="2"/><path d="M227,181 L232.2,178 L227,175" class="d-red" data-step="2"/><path d="M179.6,175 L174.4,178 L179.6,181" class="d-red" data-step="2"/>
+<text x="203.3" y="196" text-anchor="middle" class="d-red" data-step="2">4</text>`,
+      },
+      explain: [
+        'Put the three averages on one line: boys 70, class 76, girls 80.',
+        'Measure from the class average: boys are 6 away, girls only 4 away.',
+        'The class average balances the two groups, so it sits nearer the bigger group. Swap the distances: boys : girls = 4 : 6.',
+        'So boys : girls = **2 : 3**. Check: (2 × 70 + 3 × 80)/5 = 380/5 = 76.',
+      ],
     },
   ],
   comparisons: [
@@ -71,7 +149,10 @@ const topic: Topic = {
         { aspect: 'Example', values: ['₹30 and ₹45 to get ₹36: 3 : 2', '40 L, 4 L out 3 times: 29.16 L'] },
       ],
       reveal: 'Alligation is one weighted average. Replacement is a repeated percentage fall, like depreciation: each round keeps the same fraction.',
-      whenToUse: ['Two items or two strengths are mixed to reach a target value.', 'The words "taken out and replaced" appear, especially more than once.'],
+      whenToUse: [
+        'Two items or two strengths are mixed to reach a target value.',
+        'The words "taken out and replaced" appear, especially more than once.',
+      ],
     },
   ],
   shortcuts: [
@@ -83,7 +164,11 @@ const topic: Topic = {
       ladder: [
         { name: 'Standard', steps: ['x kg at 30 and y kg at 45: 30x + 45y = 36(x + y).', '9y = 6x, so x : y = 3 : 2.'], seconds: 40 },
         { name: 'Shortcut', steps: ['(45 − 36) : (36 − 30) = 9 : 6 = 3 : 2.'], seconds: 10 },
-        { name: 'Option elimination', steps: ['36 is nearer 30, so there is more of the cheaper rice: 3 : 2 or 3 : 1.', '3 : 1 gives (90 + 45)/4 = 33.75, not 36. So 3 : 2.'], seconds: 15 },
+        {
+          name: 'Option elimination',
+          steps: ['36 is nearer 30, so there is more of the cheaper rice: 3 : 2 or 3 : 1.', '3 : 1 gives (90 + 45)/4 = 33.75, not 36. So 3 : 2.'],
+          seconds: 15,
+        },
       ],
     },
     {
@@ -94,7 +179,11 @@ const topic: Topic = {
       ladder: [
         { name: 'Standard', steps: ['Each round removes 1/10 of the milk left.', '40 → 36 → 32.4 → 29.16 L.'], seconds: 45 },
         { name: 'Shortcut', steps: ['40 × (1 − 4/40)³ = 40 × 0.729 = 29.16 L.'], seconds: 15 },
-        { name: 'Option elimination', steps: ['28 L is the trap (3 × 4 L of pure milk removed).', 'Later rounds remove some water too, so more than 28 L is left: 29.16 L.'], seconds: 10 },
+        {
+          name: 'Option elimination',
+          steps: ['28 L is the trap (3 × 4 L of pure milk removed).', 'Later rounds remove some water too, so more than 28 L is left: 29.16 L.'],
+          seconds: 10,
+        },
       ],
     },
     {
@@ -104,7 +193,11 @@ const topic: Topic = {
       answer: '60 L',
       ladder: [
         { name: 'Standard', steps: ['Milk 40 L, water 20 L.', '40 : (20 + w) = 1 : 2 gives 20 + w = 80, so w = 60 L.'], seconds: 35 },
-        { name: 'Shortcut', steps: ['Milk stays 2 parts. 1 : 2 = 2 : 4, so water goes from 1 part to 4 parts.', 'Add 3 parts; 1 part = 20 L, so add 60 L.'], seconds: 15 },
+        {
+          name: 'Shortcut',
+          steps: ['Milk stays 2 parts. 1 : 2 = 2 : 4, so water goes from 1 part to 4 parts.', 'Add 3 parts; 1 part = 20 L, so add 60 L.'],
+          seconds: 15,
+        },
       ],
     },
   ],
@@ -209,7 +302,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'Tea at ₹60 per kg is mixed with tea at ₹75 per kg. The mixture is sold at ₹80 per kg for a 25% profit. In what ratio were they mixed?',
+      question:
+        'Tea at ₹60 per kg is mixed with tea at ₹75 per kg. The mixture is sold at ₹80 per kg for a 25% profit. In what ratio were they mixed?',
       options: ['11 : 4', '4 : 11', '3 : 2', '5 : 4'],
       answer: 0,
       explain: 'Mean CP = 80 × 100/125 = ₹64. (75 − 64) : (64 − 60) = 11 : 4.',
@@ -217,7 +311,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'A trader has 50 kg of sugar. He sells part of it at 8% profit and the rest at 18% profit, making 14% profit overall. How much did he sell at 18% profit?',
+      question:
+        'A trader has 50 kg of sugar. He sells part of it at 8% profit and the rest at 18% profit, making 14% profit overall. How much did he sell at 18% profit?',
       options: ['20 kg', '30 kg', '25 kg', '35 kg'],
       answer: 1,
       explain: '8% part : 18% part = (18 − 14) : (14 − 8) = 2 : 3. So 3/5 × 50 = 30 kg at 18%.',
@@ -241,7 +336,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'Alloy A has copper and zinc in the ratio 5 : 3, and alloy B has them in the ratio 7 : 5. Equal weights of A and B are melted together. What is the ratio of copper to zinc in the new alloy?',
+      question:
+        'Alloy A has copper and zinc in the ratio 5 : 3, and alloy B has them in the ratio 7 : 5. Equal weights of A and B are melted together. What is the ratio of copper to zinc in the new alloy?',
       options: ['3 : 2', '29 : 19', '31 : 17', '27 : 21'],
       answer: 1,
       explain: 'Copper = 5/8 + 7/12 = 15/24 + 14/24 = 29/24. Zinc = 3/8 + 5/12 = 19/24. Ratio 29 : 19.',
@@ -250,15 +346,18 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'Milk from one vessel (milk : water = 3 : 1) and another vessel (milk : water = 5 : 3) is mixed to get a mixture with milk : water = 2 : 1. In what ratio are the first and second vessels mixed?',
+      question:
+        'Milk from one vessel (milk : water = 3 : 1) and another vessel (milk : water = 5 : 3) is mixed to get a mixture with milk : water = 2 : 1. In what ratio are the first and second vessels mixed?',
       options: ['2 : 1', '1 : 1', '3 : 5', '1 : 2'],
       answer: 3,
-      explain: 'Milk fractions 3/4 and 5/8, target 2/3. First : second = (2/3 − 5/8) : (3/4 − 2/3) = 1/24 : 1/12 = 1 : 2.',
+      explain:
+        'Use the milk fraction as the "price": first 3/4, second 5/8, target 2/3. Alligate: first : second = (2/3 − 5/8) : (3/4 − 2/3). In 24ths that is (16 − 15) : (18 − 16) = 1 : 2.',
     },
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'From a 50 L container of pure milk, some milk is taken out and replaced with water. This is done twice in all, and 32 L of milk is left. How much was taken out each time?',
+      question:
+        'From a 50 L container of pure milk, some milk is taken out and replaced with water. This is done twice in all, and 32 L of milk is left. How much was taken out each time?',
       options: ['8 L', '12 L', '10 L', '15 L'],
       answer: 2,
       explain: '50 × (1 − x/50)² = 32, so (1 − x/50)² = 16/25 and 1 − x/50 = 4/5. x = 10 L.',
@@ -266,7 +365,8 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'A milkman mixes water with milk that costs him ₹48 per litre. By selling the mixture at ₹45 per litre he gains 25%. What is the ratio of water to milk?',
+      question:
+        'A milkman mixes water with milk that costs him ₹48 per litre. By selling the mixture at ₹45 per litre he gains 25%. What is the ratio of water to milk?',
       options: ['1 : 4', '1 : 3', '3 : 1', '2 : 5'],
       answer: 1,
       explain: 'Mean CP = 45 × 100/125 = ₹36. Water : milk = (48 − 36) : (36 − 0) = 12 : 36 = 1 : 3.',

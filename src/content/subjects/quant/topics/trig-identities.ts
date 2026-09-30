@@ -68,6 +68,94 @@ const topic: Topic = {
       example: 'sin⁶θ + cos⁶θ + 3 sin²θ cos²θ at θ = 0°: 0 + 1 + 0 = **1**.',
     },
   ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'Reading the ratios off one triangle',
+      figure: {
+        viewBox: '0 70 320 150',
+        svg: `
+<polygon points="262,99 58,184 262,184" class="d-fill"/>
+<line x1="262" y1="184" x2="262" y2="99" class="d-red d-thick" data-step="1 3"/>
+<line x1="58" y1="184" x2="262" y2="184" class="d-blue d-thick" data-step="1 3"/>
+<line x1="58" y1="184" x2="262" y2="99" class="d-green d-thick" data-step="2 3"/>
+<path d="M253,184 L253,175 L262,175" class="d-thin"/>
+<path d="M98,184 A40,40 0 0 0 94.9,168.6" class="d-thin" data-step="1"/>
+<text x="104" y="178" data-step="1">θ</text>
+<path d="M238,109 A26,26 0 0 0 262,125" class="d-thin" data-step="4 5"/>
+<text x="232" y="141" text-anchor="end" class="d-small" data-step="4 5">90° − θ</text>
+<text x="270" y="146.5" class="d-red" data-step="1 3">P = 5</text>
+<text x="160" y="204" text-anchor="middle" class="d-blue" data-step="1 3">B = 12</text>
+<text x="154" y="133.5" text-anchor="end" class="d-green" data-step="2 3">H = 13</text>`,
+      },
+      explain: [
+        'Stand at angle θ. The side facing it is the perpendicular P = 5; the side next to it is the base B = 12.',
+        'The side facing the right angle is the hypotenuse H = 13 (the 5-12-13 triplet).',
+        'sinθ = P/H = 5/13, cosθ = B/H = 12/13, tanθ = P/B = 5/12. Flip each one for cosec, sec and cot.',
+        'The other acute angle is 90° − θ. From that corner, 12 is the side facing it and 5 is next to it.',
+        'So sin(90° − θ) = 12/13 = cosθ. The **complementary-angle rule** is the same triangle seen from the other corner.',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'Where the 30°, 45° and 60° values come from',
+      figure: {
+        viewBox: '0 0 320 212',
+        svg: `
+<polygon points="26,178 26,74 130,178" class="d-fill-blue" data-step="1 2"/>
+<path d="M35,178 L35,169 L26,169" class="d-thin"/>
+<path d="M111.6,159.6 A26,26 0 0 0 104,178" class="d-thin" data-step="2"/>
+<text x="100" y="172" text-anchor="end" class="d-small" data-step="2">45°</text>
+<text x="20" y="131" text-anchor="end" data-step="1">1</text>
+<text x="78" y="198" text-anchor="middle" data-step="1">1</text>
+<text x="86" y="122" class="d-blue" data-step="1 2">√2</text>
+<line x1="170" y1="178" x2="234" y2="67.1" class="d-dash d-soft"/>
+<line x1="170" y1="178" x2="234" y2="178" class="d-dash d-soft"/>
+<polygon points="234,67.1 234,178 298,178" class="d-fill-pink" data-step="3 4 5"/>
+<path d="M242,178 L242,170 L234,170" class="d-thin"/>
+<path d="M287,158.9 A22,22 0 0 0 276,178" class="d-thin" data-step="4"/>
+<text x="272" y="172" text-anchor="end" class="d-small" data-step="4">60°</text>
+<path d="M234,95.1 A28,28 0 0 0 248,91.4" class="d-thin" data-step="5"/>
+<text x="238" y="111.1" class="d-small" data-step="5">30°</text>
+<text x="266" y="198" text-anchor="middle" class="d-red" data-step="3 4 5">1</text>
+<text x="228" y="142.6" text-anchor="end" class="d-red" data-step="3 4 5">√3</text>
+<text x="274" y="120.6" class="d-red" data-step="3 4 5">2</text>`,
+      },
+      explain: [
+        'Cut a square of side 1 along its diagonal: legs 1 and 1, hypotenuse √(1 + 1) = √2.',
+        'Both acute angles are 45°, so sin45° = cos45° = 1/√2 and tan45° = 1.',
+        'Cut an equilateral triangle of side 2 in half: base 1, hypotenuse 2, height √(4 − 1) = √3.',
+        'At the 60° corner: sin60° = √3/2, cos60° = 1/2, tan60° = √3.',
+        'At the 30° corner the two legs swap roles: sin30° = 1/2, cos30° = √3/2, tan30° = 1/√3.',
+      ],
+    },
+    {
+      type: 'diagram',
+      title: 'secθ + tanθ = 4 builds an 8-15-17 triangle',
+      figure: {
+        viewBox: '0 0 320 218',
+        svg: `
+<polygon points="45.6,192 116,192 116,60" class="d-fill" data-step="3"/>
+<path d="M107,192 L107,183 L116,183" class="d-thin"/>
+<path d="M65.6,192 A20,20 0 0 0 55,174.4" class="d-thin" data-step="4"/>
+<text x="65.6" y="185" data-step="4">θ</text>
+<text x="80.8" y="210" text-anchor="middle" class="d-blue" data-step="3">8</text>
+<text x="122" y="131" class="d-red" data-step="3 4">15</text>
+<text x="72.8" y="126" text-anchor="end" class="d-green" data-step="3 4">17</text>
+<text x="150" y="44" data-step="1">sec θ + tan θ = 4</text>
+<text x="150" y="72" data-step="1 2">sec θ − tan θ = 1/4</text>
+<text x="150" y="108" class="d-small d-blue" data-step="2 3">sec θ = 17/8 = H/B</text>
+<text x="150" y="132" class="d-small d-blue" data-step="2 3">tan θ = 15/8 = P/B</text>
+<text x="150" y="176" class="d-red" data-step="4">sin θ = 15/17</text>`,
+      },
+      explain: [
+        'Key fact: (secθ + tanθ)(secθ − tanθ) = sec²θ − tan²θ = 1. So secθ − tanθ = 1/4.',
+        'Add the two lines: 2 secθ = 4 + 1/4 = 17/4, so secθ = 17/8. Subtract them: 2 tanθ = 15/4, so tanθ = 15/8.',
+        'secθ = H/B and tanθ = P/B, so the triangle has base 8, perpendicular 15 and hypotenuse 17.',
+        'Read off sinθ = P/H = **15/17**. Shortcut: (k² − 1)/(k² + 1) = (16 − 1)/(16 + 1).',
+      ],
+    },
+  ],
   comparisons: [
     {
       title: 'The three identity families',
@@ -107,7 +195,11 @@ const topic: Topic = {
           seconds: 60,
         },
         { name: 'Shortcut', steps: ['sinθ = (k² − 1)/(k² + 1) = 15/17.'], seconds: 10 },
-        { name: 'Option elimination', steps: ['sinθ can never exceed 1, so 17/15 goes.', 'With k = 4 the triangle is 8-15-17, and sin takes the bigger side: 15/17.'], seconds: 15 },
+        {
+          name: 'Option elimination',
+          steps: ['sinθ can never exceed 1, so 17/15 goes.', 'With k = 4 the triangle is 8-15-17, and sin takes the bigger side: 15/17.'],
+          seconds: 15,
+        },
       ],
     },
     {
@@ -261,7 +353,8 @@ const topic: Topic = {
       question: 'If cosθ + sinθ = √2 cosθ, then cosθ − sinθ equals:',
       options: ['√2 cosθ', '2 sinθ', '√2 sinθ', 'sinθ'],
       answer: 2,
-      explain: 'sinθ = (√2 − 1) cosθ, so cosθ = sinθ ÷ (√2 − 1) = (√2 + 1) sinθ. Then cosθ − sinθ = √2 sinθ.',
+      explain:
+        'Move cosθ across: sinθ = (√2 − 1)cosθ. Divide by (√2 − 1) and multiply top and bottom by (√2 + 1): cosθ = (√2 + 1)sinθ. So cosθ − sinθ = (√2 + 1)sinθ − sinθ = √2 sinθ.',
       shortcut: 'Square both: (c + s)² + (c − s)² = 2, so (c − s)² = 2 − 2c² = 2s².',
     },
     {

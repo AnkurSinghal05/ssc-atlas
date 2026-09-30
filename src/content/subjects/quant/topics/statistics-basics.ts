@@ -67,6 +67,39 @@ const topic: Topic = {
       example: 'SD 4, then ×3 and +7: new SD = 3 × 4 = **12**.',
     },
   ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'Mode, median and mean in a skewed spread',
+      figure: {
+        viewBox: '0 0 320 242',
+        svg: `
+<path d="M30,178 C95,176 115,50 150,50 C185,50 215,150 300,174 L300,180 L30,180 Z" class="d-fill-blue" data-step="1"/>
+<path d="M30,178 C95,176 115,50 150,50 C185,50 215,150 300,174" class="d-blue" data-step="1"/>
+<line x1="20" y1="180" x2="305" y2="180"/>
+<line x1="150" y1="50" x2="150" y2="180" class="d-green" data-step="2"/>
+<text x="150" y="198" text-anchor="middle" class="d-green" data-step="2">21</text>
+<line x1="210" y1="107.6" x2="210" y2="180" class="d-soft d-dash" data-step="3"/>
+<text x="210" y="198" text-anchor="middle" data-step="3">27</text>
+<line x1="240" y1="139.6" x2="240" y2="180" class="d-red" data-step="3"/>
+<text x="240" y="198" text-anchor="middle" class="d-red" data-step="3">30</text>
+<text x="150" y="40" text-anchor="middle" class="d-small d-green" data-step="2">mode</text>
+<text x="206" y="172" text-anchor="end" class="d-small" data-step="3">median</text>
+<text x="246" y="133.6" class="d-small d-red" data-step="3">mean</text>
+<line x1="210" y1="212" x2="240" y2="212" class="d-red" data-step="4"/><path d="M235.7,214.5 L240,212 L235.7,209.5" class="d-red" data-step="4"/><path d="M214.3,209.5 L210,212 L214.3,214.5" class="d-red" data-step="4"/>
+<text x="248" y="216" class="d-small d-red" data-step="4">3</text>
+<line x1="150" y1="230" x2="240" y2="230" class="d-red" data-step="4"/><path d="M235.7,232.5 L240,230 L235.7,227.5" class="d-red" data-step="4"/><path d="M154.3,227.5 L150,230 L154.3,232.5" class="d-red" data-step="4"/>
+<text x="248" y="234" class="d-small d-red" data-step="4">9 = 3 × 3</text>`,
+        caption: 'Mean 30, median 27',
+      },
+      explain: [
+        'Most values bunch on the left and a long tail stretches right: the data is skewed.',
+        'The mode is the most common value, right under the peak: 21.',
+        'The tail drags the mean furthest out (30). The median, the middle value, sits between (27).',
+        'Mode = 3 × median − 2 × mean = 81 − 60 = **21**. Put another way, mean − mode (9) is 3 times mean − median (3).',
+      ],
+    },
+  ],
   comparisons: [
     {
       title: 'Mean vs median vs mode',
@@ -106,7 +139,14 @@ const topic: Topic = {
       ladder: [
         { name: 'Standard', steps: ['Wrong total = 250.', 'Correct total = 250 − 34 + 43 = 259.', 'Mean = 259 ÷ 10 = 25.9.'], seconds: 30 },
         { name: 'Shortcut', steps: ['Error = 43 − 34 = +9, spread over 10 values: +0.9.', '25 + 0.9 = 25.9.'], seconds: 8 },
-        { name: 'Option elimination', steps: ['The true value is larger, so the mean rises: drop 24.1.', 'A rise of 9 over 10 values is below 1: drop 26.8. 25.09 is too small a shift.'], seconds: 10 },
+        {
+          name: 'Option elimination',
+          steps: [
+            'The true value is larger, so the mean rises: drop 24.1.',
+            'A rise of 9 over 10 values is below 1: drop 26.8. 25.09 is too small a shift.',
+          ],
+          seconds: 10,
+        },
       ],
     },
     {
@@ -126,8 +166,19 @@ const topic: Topic = {
       answer: '64',
       ladder: [
         { name: 'Standard', steps: ['Totals: 30 × 60 = 1,800 and 20 × 70 = 1,400.', '3,200 ÷ 50 = 64.'], seconds: 30 },
-        { name: 'Shortcut', steps: ['Gap between means = 10, split in the ratio 20 : 50 from the first group.', '60 + 10 × 20/50 = 64.'], seconds: 12 },
-        { name: 'Option elimination', steps: ['Answer lies between 60 and 70, closer to 60 (the bigger group).', 'Below 65: 62 or 64. 62 would need a 4 : 1 split, not 3 : 2. So 64.'], seconds: 12 },
+        {
+          name: 'Shortcut',
+          steps: ['Gap between means = 10, split in the ratio 20 : 50 from the first group.', '60 + 10 × 20/50 = 64.'],
+          seconds: 12,
+        },
+        {
+          name: 'Option elimination',
+          steps: [
+            'Answer lies between 60 and 70, closer to 60 (the bigger group).',
+            'Below 65: 62 or 64. 62 would need a 4 : 1 split, not 3 : 2. So 64.',
+          ],
+          seconds: 12,
+        },
       ],
     },
   ],
@@ -278,12 +329,14 @@ const topic: Topic = {
       question: 'What is the variance of the first 10 natural numbers?',
       options: ['10', '8.25', '5.5', '2.87'],
       answer: 1,
-      explain: 'Variance = (n² − 1)/12 = 99/12 = 8.25.',
+      explain:
+        'Mean = 5.5. Mean of the squares = (1² + 2² + … + 10²)/10 = 385/10 = 38.5. Variance = mean of squares − (mean)² = 38.5 − 30.25 = 8.25. The ready formula (n² − 1)/12 = 99/12 gives the same.',
     },
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'The average of 11 numbers is 50. The average of the first six is 49 and the average of the last six is 52. What is the sixth number?',
+      question:
+        'The average of 11 numbers is 50. The average of the first six is 49 and the average of the last six is 52. What is the sixth number?',
       options: ['50', '54', '52', '56'],
       answer: 3,
       explain: 'First six total 294, last six total 312. Together they count the sixth number twice: 294 + 312 − 550 = 56.',

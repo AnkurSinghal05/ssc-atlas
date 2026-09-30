@@ -15,7 +15,8 @@ const topic: Topic = {
     {
       title: 'Fundamental Rights by group (Part III)',
       text: 'Art 12 defines "State"; Art 13 voids laws that violate FRs. **Equality** 14 to 18, **Freedom** 19 to 22, **Against exploitation** 23 to 24, **Religion** 25 to 28, **Cultural and educational** 29 to 30, **Constitutional remedies** 32. Arts 33 to 35 cover armed forces, martial law and laws to give effect to Part III.',
-      example: 'Six groups today. The Right to Property (Art 31) was removed by the **44th Amendment (1978)** and is now a legal right under **Art 300A**.',
+      example:
+        'Six groups today. The Right to Property (Art 31) was removed by the **44th Amendment (1978)** and is now a legal right under **Art 300A**.',
     },
     {
       title: 'Articles you must know by number',
@@ -39,7 +40,8 @@ const topic: Topic = {
     {
       title: 'Directive Principles (Part IV, Arts 36 to 51)',
       text: 'Borrowed from the **Irish** Constitution. **Not enforceable** by courts (Art 37) but "fundamental in the governance of the country". The Constitution does not classify them; books group them as socialistic, Gandhian and liberal-intellectual.',
-      example: 'Gandhian: **Art 40** village panchayats, Art 43 cottage industries, Art 46 weaker sections, Art 47 prohibition of intoxicants, Art 48 ban on cow slaughter. Liberal: **Art 44** uniform civil code, Art 45 early childhood care, Art 49 monuments, **Art 50** separate judiciary from executive, Art 51 international peace.',
+      example:
+        'Gandhian: **Art 40** village panchayats, Art 43 cottage industries, Art 46 weaker sections, Art 47 prohibition of intoxicants, Art 48 ban on cow slaughter. Liberal: **Art 44** uniform civil code, Art 45 early childhood care, Art 49 monuments, **Art 50** separate judiciary from executive, Art 51 international peace.',
     },
     {
       title: 'DPSPs added by amendments',
@@ -49,6 +51,40 @@ const topic: Topic = {
       title: 'Fundamental Duties (Part IVA, Art 51A)',
       text: 'Added by the **42nd Amendment (1976)** on the **Swaran Singh Committee** report; inspired by the **USSR** Constitution. Ten duties at first; the **86th Amendment (2002)** added the 11th: parents or guardians must give children aged 6 to 14 the opportunity for education (51A(k)). Duties apply to citizens only and are not enforceable by courts.',
       example: 'Sources in one line: FRs from the **USA**, DPSP from **Ireland**, Duties from the **USSR**.',
+    },
+  ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'Part III to Part IVA on one strip',
+      figure: {
+        viewBox: '0 0 320 300',
+        svg: `
+<text x="12" y="22" class="d-small d-soft">Part III: Fundamental Rights</text>
+<rect x="12" y="32" width="208" height="24" rx="5" class="d-fill" data-step="1"/><rect x="12" y="32" width="208" height="24" rx="5" data-step="1"/><text x="18" y="50" class="d-blue" data-step="1">14–18</text><text x="80" y="49" class="d-small" data-step="1">Equality</text>
+<rect x="12" y="60" width="208" height="24" rx="5" class="d-fill" data-step="1"/><rect x="12" y="60" width="208" height="24" rx="5" data-step="1"/><text x="18" y="78" class="d-blue" data-step="1">19–22</text><text x="80" y="77" class="d-small" data-step="1">Freedom</text>
+<rect x="12" y="88" width="208" height="24" rx="5" class="d-fill" data-step="2"/><rect x="12" y="88" width="208" height="24" rx="5" data-step="2"/><text x="18" y="106" class="d-blue" data-step="2">23–24</text><text x="80" y="105" class="d-small" data-step="2">Against exploitation</text>
+<rect x="12" y="116" width="208" height="24" rx="5" class="d-fill" data-step="2"/><rect x="12" y="116" width="208" height="24" rx="5" data-step="2"/><text x="18" y="134" class="d-blue" data-step="2">25–28</text><text x="80" y="133" class="d-small" data-step="2">Freedom of religion</text>
+<rect x="12" y="144" width="208" height="24" rx="5" class="d-fill" data-step="2"/><rect x="12" y="144" width="208" height="24" rx="5" data-step="2"/><text x="18" y="162" class="d-blue" data-step="2">29–30</text><text x="80" y="161" class="d-small" data-step="2">Cultural, educational</text>
+<text x="18" y="186" class="d-small d-red" data-step="4">31: property, removed in 1978</text>
+<rect x="12" y="194" width="208" height="24" rx="5" class="d-fill-pink" data-step="3"/><rect x="12" y="194" width="208" height="24" rx="5" data-step="3"/><text x="18" y="212" class="d-blue" data-step="3">32</text><text x="80" y="211" class="d-small" data-step="3">Constitutional remedies</text>
+<path d="M226,32 L234,32 L234,218 L226,218" class="d-green" data-step="3"/>
+<text x="241" y="112" class="d-small d-green" data-step="3">enforceable</text>
+<text x="241" y="126" class="d-small d-green" data-step="3">in court</text>
+<text x="241" y="140" class="d-small d-green" data-step="3">(Art 32,</text>
+<text x="241" y="154" class="d-small d-green" data-step="3">Art 226)</text>
+<rect x="12" y="234" width="208" height="24" rx="5" class="d-fill-blue" data-step="5"/><rect x="12" y="234" width="208" height="24" rx="5" class="d-dash" data-step="5"/><text x="18" y="252" class="d-blue" data-step="5">36–51</text><text x="80" y="251" class="d-small" data-step="5">Directive Principles</text>
+<rect x="12" y="264" width="208" height="24" rx="5" class="d-fill-blue" data-step="5"/><rect x="12" y="264" width="208" height="24" rx="5" class="d-dash" data-step="5"/><text x="18" y="282" class="d-blue" data-step="5">51A</text><text x="80" y="281" class="d-small" data-step="5">Fundamental Duties</text>
+<path d="M226,234 L234,234 L234,288 L226,288" class="d-red" data-step="5"/>
+<text x="241" y="258" class="d-small d-red" data-step="5">not</text><text x="241" y="272" class="d-small d-red" data-step="5">enforceable</text>`,
+      },
+      explain: [
+        'Equality is Arts 14 to 18 (17 abolishes untouchability). Freedom is Arts 19 to 22 (21 is life and personal liberty).',
+        'Against exploitation 23 to 24, freedom of religion 25 to 28, cultural and educational rights 29 to 30.',
+        'Art 32 lets you go straight to the Supreme Court to enforce these rights: Ambedkar\'s "heart and soul". High Courts use Art 226.',
+        'Art 31 (right to property) was removed by the 44th Amendment (1978). That is why the list jumps from 30 to 32.',
+        'Part IV (Arts 36 to 51, DPSP) and Part IVA (Art 51A, duties) come next, but **no court can enforce** them.',
+      ],
     },
   ],
   comparisons: [
@@ -63,7 +99,8 @@ const topic: Topic = {
         { aspect: 'Nature', values: ['Limits on the State; mostly negative', 'Instructions to the State; positive', 'Obligations of citizens'] },
         { aspect: 'Who it is about', values: ['Citizens, and some rights for foreigners too', 'The State', 'Citizens only'] },
       ],
-      reveal: 'Rights restrain the State and can be enforced in court. Directives guide the State but cannot be enforced. Duties bind citizens and also cannot be enforced directly.',
+      reveal:
+        'Rights restrain the State and can be enforced in court. Directives guide the State but cannot be enforced. Duties bind citizens and also cannot be enforced directly.',
       whenToUse: [
         'The question mentions a remedy, a writ or a court being moved.',
         'The question is about welfare goals: free legal aid, uniform civil code, panchayats, environment.',
@@ -77,13 +114,29 @@ const topic: Topic = {
         { aspect: 'Meaning', values: ['To have the body', 'We command', 'To forbid', 'To be certified', 'By what authority'] },
         {
           aspect: 'Purpose',
-          values: ['Produce a detained person and test the detention', 'Order a public official to do a public duty', 'Stop a lower court or tribunal from exceeding its jurisdiction', 'Quash an order a lower court or tribunal already passed', 'Ask a person by what right they hold a public office'],
+          values: [
+            'Produce a detained person and test the detention',
+            'Order a public official to do a public duty',
+            'Stop a lower court or tribunal from exceeding its jurisdiction',
+            'Quash an order a lower court or tribunal already passed',
+            'Ask a person by what right they hold a public office',
+          ],
           key: true,
         },
-        { aspect: 'Timing', values: ['Any time during detention', 'When a duty is not done', 'Before the order (preventive)', 'After the order (curative)', 'While the office is held'] },
+        {
+          aspect: 'Timing',
+          values: [
+            'Any time during detention',
+            'When a duty is not done',
+            'Before the order (preventive)',
+            'After the order (curative)',
+            'While the office is held',
+          ],
+        },
         { aspect: 'Can be against private persons?', values: ['Yes', 'No', 'No', 'No', 'No, only a public office'] },
       ],
-      reveal: 'Prohibition and certiorari are the pair most often confused: prohibition stops a case before a decision; certiorari quashes a decision already made.',
+      reveal:
+        'Prohibition and certiorari are the pair most often confused: prohibition stops a case before a decision; certiorari quashes a decision already made.',
       whenToUse: [
         'Someone is illegally detained.',
         'An official refuses a duty the law requires.',
@@ -115,7 +168,11 @@ const topic: Topic = {
     },
     {
       q: 'Right to education: which article and which amendment?',
-      a: ['Article 21A, education for children aged 6 to 14.', 'Added by the 86th Amendment (2002).', 'The same amendment added the 11th Fundamental Duty.'],
+      a: [
+        'Article 21A, education for children aged 6 to 14.',
+        'Added by the 86th Amendment (2002).',
+        'The same amendment added the 11th Fundamental Duty.',
+      ],
       tag: 'Asked often',
     },
     {
@@ -220,7 +277,12 @@ const topic: Topic = {
       type: 'mcq',
       difficulty: 'medium',
       question: 'Which of the following Fundamental Rights is available only to citizens of India?',
-      options: ['Equality before law (Art 14)', 'Protection of life and personal liberty (Art 21)', 'Freedom of speech and expression (Art 19)', 'Protection against arrest and detention (Art 22)'],
+      options: [
+        'Equality before law (Art 14)',
+        'Protection of life and personal liberty (Art 21)',
+        'Freedom of speech and expression (Art 19)',
+        'Protection against arrest and detention (Art 22)',
+      ],
       answer: 2,
       explain: 'Article 19 freedoms are for citizens only, as are Arts 15, 16, 29 and 30.',
     },

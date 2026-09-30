@@ -46,12 +46,45 @@ const topic: Topic = {
     {
       title: 'Commands and requests: verb + object + to + V1',
       text: 'Use told, ordered, commanded, requested, advised or begged, then the listener, then "to + verb". A negative command uses "not to". "Please" disappears into "requested".',
-      example: 'He said to me, "Please help me." → He requested me to help him. She said to them, "Don\'t make a noise." → She told them not to make a noise.',
+      example:
+        'He said to me, "Please help me." → He requested me to help him. She said to them, "Don\'t make a noise." → She told them not to make a noise.',
     },
     {
       title: 'Exclamations, wishes and "Let\'s"',
       text: 'Exclamations use "exclaimed with joy / sorrow / surprise that" and turn "What a / How" into "very". Wishes use "wished" or "prayed". "Let us" becomes "suggested / proposed that they should".',
-      example: 'He said, "What a lovely view!" → He exclaimed that it was a very lovely view. He said, "Let us go." → He suggested that they should go.',
+      example:
+        'He said, "What a lovely view!" → He exclaimed that it was a very lovely view. He said, "Let us go." → He suggested that they should go.',
+    },
+  ],
+  visuals: [
+    {
+      type: 'diagram',
+      title: 'Backshift: every tense steps down once',
+      figure: {
+        viewBox: '0 0 320 250',
+        svg: `
+<polyline points="12,80 112,80 112,150 212,150 212,220 308,220" class="d-thick" data-step="1"/>
+<text x="62" y="102" text-anchor="middle" data-step="1">present</text>
+<text x="162" y="172" text-anchor="middle" data-step="1">past</text>
+<text x="258" y="242" text-anchor="middle" class="d-red" data-step="1 4">past perfect</text>
+<text x="122" y="34" class="d-small d-blue" data-step="2">is / am → was</text>
+<text x="122" y="50" class="d-small d-blue" data-step="2">are → were</text>
+<text x="122" y="66" class="d-small d-blue" data-step="2 5">has / have → had</text>
+<text x="122" y="82" class="d-small d-blue" data-step="2">writes → wrote</text>
+<text x="122" y="98" class="d-small d-blue" data-step="2">will → would</text>
+<text x="122" y="114" class="d-small d-blue" data-step="2">can → could, may → might</text>
+<text x="222" y="168" class="d-small d-green" data-step="3">wrote →</text>
+<text x="222" y="183" class="d-small d-green" data-step="3">had written</text>
+<text x="222" y="202" class="d-small d-green" data-step="3">was → had been</text>`,
+        caption: 'After a past reporting verb such as "said".',
+      },
+      explain: [
+        'After a past reporting verb, the first verb of the reported words moves one step down. Nothing moves after "says".',
+        'Present to past: is → was, has → had, writes → wrote, will → would, can → could, may → might.',
+        'Past to past perfect: wrote → had written, was writing → had been writing.',
+        'The past perfect is the bottom step, so **had written stays had written**.',
+        'Example: He said, "I have lost my key." → He said that he **had lost** his key.',
+      ],
     },
   ],
   comparisons: [
@@ -111,12 +144,20 @@ const topic: Topic = {
     },
     {
       q: 'When does the tense NOT change in indirect speech?',
-      a: ['When the reporting verb is present or future (says, will say).', 'When the quote is a universal truth or habitual fact.', 'When the verb is already past perfect.'],
+      a: [
+        'When the reporting verb is present or future (says, will say).',
+        'When the quote is a universal truth or habitual fact.',
+        'When the verb is already past perfect.',
+      ],
       tag: 'Trap',
     },
     {
       q: 'What is the SON rule for pronouns?',
-      a: ['First person → like the Subject of the reporting verb.', 'Second person → like the Object of the reporting verb.', 'Third person → No change.'],
+      a: [
+        'First person → like the Subject of the reporting verb.',
+        'Second person → like the Object of the reporting verb.',
+        'Third person → No change.',
+      ],
     },
     {
       q: 'What do "yesterday" and "tomorrow" become?',
@@ -151,7 +192,11 @@ const topic: Topic = {
     },
     {
       q: 'Which reporting verb follows "said" directly, and which needs an object?',
-      a: ['"Said that" needs no object: He said that he was busy.', '"Told" needs an object: He told me that he was busy.', 'Never "He told that" or "He said me".'],
+      a: [
+        '"Said that" needs no object: He said that he was busy.',
+        '"Told" needs an object: He told me that he was busy.',
+        'Never "He told that" or "He said me".',
+      ],
       tag: 'Trap',
     },
   ],
@@ -168,7 +213,12 @@ const topic: Topic = {
       type: 'mcq',
       difficulty: 'easy',
       question: 'Select the option that expresses the given sentence in indirect speech.\nShe says, "I like mangoes."',
-      options: ['She says that she likes mangoes.', 'She says that she liked mangoes.', 'She said that she liked mangoes.', 'She says that I like mangoes.'],
+      options: [
+        'She says that she likes mangoes.',
+        'She says that she liked mangoes.',
+        'She said that she liked mangoes.',
+        'She says that I like mangoes.',
+      ],
       answer: 0,
       explain: 'The reporting verb "says" is present, so the tense does not change.',
     },
@@ -275,7 +325,12 @@ const topic: Topic = {
       type: 'mcq',
       difficulty: 'medium',
       question: 'Select the option that expresses the given sentence in direct speech.\nHe told me that he was busy then.',
-      options: ['He said to me, "I am busy now."', 'He said to me, "I was busy now."', 'He said to me, "He is busy then."', 'He says to me, "I am busy now."'],
+      options: [
+        'He said to me, "I am busy now."',
+        'He said to me, "I was busy now."',
+        'He said to me, "He is busy then."',
+        'He says to me, "I am busy now."',
+      ],
       answer: 0,
       explain: 'Reverse the changes: "told" → "said to", "was" → "am", "he" → "I", "then" → "now".',
     },

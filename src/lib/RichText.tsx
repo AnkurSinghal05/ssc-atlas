@@ -2,7 +2,8 @@ import { Fragment, type ReactNode } from 'react';
 
 /** Renders content strings with `code`, **bold** and stacked fractions (`a/b`, `(a + b)/(a − b)`). */
 export function RichText({ text }: { text: string }) {
-  const parts = text.split(/(`[^`]+`|\*\*.+?\*\*)/g);
+  // Keep ratios such as "4 : 21" on one line.
+  const parts = text.replace(/(\d) : (?=\d)/g, '$1\u00a0:\u00a0').split(/(`[^`]+`|\*\*.+?\*\*)/g);
   return (
     <>
       {parts.map((part, i) => {
@@ -76,6 +77,8 @@ function rightOperand(s: string, slash: number): Operand | null {
   } else {
     while (end < s.length && ATOM.test(s[end])) end++;
   }
+  // A full stop that ends the sentence is not part of the denominator.
+  while (end > start && s[end - 1] === '.' && !/\d/.test(s[end] ?? '')) end--;
   if (end === start) return null;
   return { start, end, inner: s.slice(start, end), group: false };
 }
