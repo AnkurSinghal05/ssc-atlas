@@ -1,0 +1,267 @@
+import type { Topic } from '@/content/types';
+
+const topic: Topic = {
+  id: 'one-word',
+  title: 'One-word substitution',
+  level: 'intermediate',
+  masteryMinutes: 120,
+  reviseMinutes: 40,
+  priority: 'high',
+  weightage: { tier1: 1, tier2: 2 },
+  tags: ['one word substitution', 'vocabulary', 'roots', 'phobia', 'cide', 'logy', 'cracy'],
+  summary:
+    'One word that replaces a whole phrase. Most answers are built from a handful of Greek and Latin roots, so learn the roots first and the word lists by theme.',
+  keyPoints: [
+    {
+      title: 'Learn the roots first',
+      text: 'A few roots unlock most answers. **mis-** hate, **phil-** love, **-cide** killing, **-phobia** fear, **-logy** study, **-cracy** rule, **omni-** all, **poly-** many, **mono-** one, **a-** without, **the(o)-** god.',
+      formula: '-cide = killing · -phobia = fear · -logy = study · -cracy = rule',
+      example: 'mis (hate) + anthrop (mankind) = **misanthrope**, one who hates mankind.',
+    },
+    {
+      title: 'People',
+      text: '**Philanthropist**: one who loves mankind and helps others. **Misanthrope**: one who hates mankind. **Misogynist**: one who hates women. **Polyglot**: one who speaks many languages. **Bibliophile**: a lover of books. **Philatelist**: a stamp collector. **Numismatist**: a coin collector. **Pedestrian**: one who goes on foot. **Teetotaller**: one who never drinks alcohol. **Glutton**: one who eats too much. **Octogenarian**: a person in his or her eighties. **Centenarian**: a person who is a hundred years old.',
+      example: 'My grandfather, an octogenarian, still walks five kilometres a day.',
+    },
+    {
+      title: 'Beliefs and attitudes',
+      text: '**Atheist**: one who does not believe in God. **Theist**: one who believes in God. **Agnostic**: one who believes nothing can be known about God. **Optimist** / **Pessimist**: one who expects the best / the worst. **Fatalist**: one who believes everything is decided by fate. **Stoic**: one who is indifferent to pleasure and pain. **Hedonist**: one who believes pleasure is the chief good. **Pacifist**: one who opposes war. **Heretic**: one who holds beliefs against accepted religious teaching.',
+      example: 'A true stoic shows no joy in success and no grief in loss.',
+    },
+    {
+      title: 'Government (-cracy, -archy)',
+      text: '**Democracy**: government by the people. **Autocracy**: government by one person with absolute power. **Monarchy**: rule by a king or queen. **Oligarchy**: government by a few. **Plutocracy**: government by the rich. **Aristocracy**: government by nobles. **Bureaucracy**: government by officials. **Theocracy**: government by religious leaders. **Gerontocracy**: government by old people. **Anarchy**: absence of government.',
+      example: 'In a plutocracy, wealth decides who holds power.',
+    },
+    {
+      title: 'Study of (-logy)',
+      text: '**Anthropology**: mankind. **Ornithology**: birds. **Entomology**: insects. **Etymology**: the origin of words. **Ichthyology**: fish. **Seismology**: earthquakes. **Cardiology**: the heart. **Pathology**: diseases. **Oncology**: tumours and cancer. **Palaeontology**: fossils. **Graphology**: handwriting.',
+      example: 'Do not mix up **etymology** (words) and **entomology** (insects).',
+    },
+    {
+      title: 'Killing of (-cide)',
+      text: '**Homicide**: a human being. **Suicide**: oneself. **Patricide**: one\'s father. **Matricide**: one\'s mother. **Fratricide**: one\'s brother. **Sororicide**: one\'s sister. **Infanticide**: an infant. **Regicide**: a king. **Genocide**: a whole race or community. **Uxoricide**: one\'s wife. **Pesticide**: a substance that kills pests.',
+      example: 'Regicide: rex / regis = king + -cide.',
+    },
+    {
+      title: 'Fear of (-phobia)',
+      text: '**Hydrophobia**: water. **Acrophobia**: heights. **Claustrophobia**: closed spaces. **Agoraphobia**: open or crowded public places. **Xenophobia**: foreigners. **Nyctophobia**: darkness. **Pyrophobia**: fire. **Cynophobia**: dogs. **Thanatophobia**: death.',
+      example: 'She takes the stairs because of her claustrophobia in lifts.',
+    },
+  ],
+  comparisons: [
+    {
+      title: 'Atheist vs agnostic vs theist',
+      items: ['Atheist', 'Agnostic', 'Theist'],
+      rows: [
+        {
+          aspect: 'Belief about God',
+          values: ['Does not believe God exists', 'Believes God\'s existence cannot be known', 'Believes in God'],
+          key: true,
+        },
+        { aspect: 'Root', values: ['a- (without) + theos (god)', 'a- (without) + gnosis (knowledge)', 'theos (god)'] },
+        { aspect: 'Example', values: ['An atheist rejects all gods.', 'An agnostic says, "We cannot know."', 'A theist prays to God.'] },
+      ],
+      reveal: 'The atheist says "no", the theist says "yes", and the agnostic says "it cannot be known".',
+      whenToUse: ['Denies or disbelieves.', 'Says it cannot be known.', 'Believes.'],
+    },
+    {
+      title: 'Emigrant vs immigrant',
+      items: ['Emigrant', 'Immigrant'],
+      rows: [
+        { aspect: 'Meaning', values: ['One who leaves his own country to settle in another', 'One who comes into a foreign country to settle there'] },
+        { aspect: 'Seen from', values: ['The country being **left**', 'The country being **entered**'], key: true },
+        { aspect: 'Preposition', values: ['emigrate **from**', 'immigrate **to / into**'] },
+      ],
+      reveal: 'The same person is an emigrant for India and an immigrant for Canada. E- means "out", im- means "in".',
+      whenToUse: ['The phrase stresses leaving one\'s own country.', 'The phrase stresses coming into a new country.'],
+    },
+  ],
+  qa: [
+    {
+      q: 'One who does not believe in the existence of God',
+      a: ['Atheist.', 'Not "agnostic", who says God cannot be known.'],
+      tag: 'Asked often',
+    },
+    {
+      q: 'Study of the origin and history of words',
+      a: ['Etymology.', 'Entomology is the study of insects.'],
+      tag: 'Trap',
+    },
+    {
+      q: 'One who collects postage stamps',
+      a: ['Philatelist.', 'A coin collector is a numismatist.'],
+      tag: 'Asked often',
+    },
+    {
+      q: 'One who is unable to pay his debts',
+      a: ['Insolvent (or bankrupt).'],
+    },
+    {
+      q: 'One who can use both hands equally well',
+      a: ['Ambidextrous.', 'ambi = both, dexter = right hand.'],
+    },
+    {
+      q: 'Something that cannot be read',
+      a: ['Illegible.', 'Something that cannot be corrected: incorrigible.'],
+    },
+    {
+      q: 'Life history of a person written by himself',
+      a: ['Autobiography.', 'Written by someone else: biography.'],
+      tag: 'Asked often',
+    },
+    {
+      q: 'One who knows everything / is present everywhere / is all-powerful',
+      a: ['Omniscient.', 'Omnipresent.', 'Omnipotent.'],
+      tag: 'Trap',
+    },
+    {
+      q: 'Fear of open or crowded public places',
+      a: ['Agoraphobia.', 'Fear of closed spaces: claustrophobia.'],
+      tag: 'Trap',
+    },
+    {
+      q: 'One who pretends to be what he is not',
+      a: ['Hypocrite.'],
+    },
+    {
+      q: 'Killing of a king',
+      a: ['Regicide.', 'Killing of one\'s father: patricide.'],
+    },
+    {
+      q: 'A person with long experience in a field',
+      a: ['Veteran.', 'A beginner is a novice.'],
+    },
+  ],
+  quiz: [
+    {
+      type: 'mcq',
+      difficulty: 'easy',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nOne who does not believe in the existence of God',
+      options: ['Theist', 'Atheist', 'Agnostic', 'Pagan'],
+      answer: 1,
+      explain: 'a- (without) + theos (god): an atheist does not believe God exists.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'easy',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nGovernment by the people',
+      options: ['Autocracy', 'Democracy', 'Monarchy', 'Oligarchy'],
+      answer: 1,
+      explain: 'demos (people) + -cracy (rule) = democracy.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'easy',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nThe study of birds',
+      options: ['Entomology', 'Ornithology', 'Ichthyology', 'Anthropology'],
+      answer: 1,
+      explain: 'Ornithology is the study of birds. Entomology is insects, ichthyology is fish, anthropology is mankind.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'easy',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nOne who can speak many languages',
+      options: ['Polygamist', 'Polyglot', 'Bilingual', 'Translator'],
+      answer: 1,
+      explain: 'poly (many) + glot (tongue) = polyglot. Bilingual means speaking two languages.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nThe killing of one\'s own brother',
+      options: ['Patricide', 'Fratricide', 'Regicide', 'Matricide'],
+      answer: 1,
+      explain: 'frater (brother) + -cide = fratricide. Patricide is father, matricide is mother, regicide is king.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nAn abnormal fear of heights',
+      options: ['Hydrophobia', 'Acrophobia', 'Claustrophobia', 'Xenophobia'],
+      answer: 1,
+      explain: 'acro (top, height) + phobia = acrophobia.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nAn abnormal fear of closed or narrow spaces',
+      options: ['Agoraphobia', 'Claustrophobia', 'Acrophobia', 'Nyctophobia'],
+      answer: 1,
+      explain: 'Claustrophobia is fear of closed spaces. Agoraphobia is fear of open or crowded public places.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nOne who hates mankind',
+      options: ['Misogynist', 'Misanthrope', 'Philanthropist', 'Pessimist'],
+      answer: 1,
+      explain: 'mis (hate) + anthropos (man) = misanthrope. A misogynist hates women; a philanthropist loves mankind.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nA person who is between eighty and ninety years old',
+      options: ['Septuagenarian', 'Octogenarian', 'Nonagenarian', 'Centenarian'],
+      answer: 1,
+      explain: 'octo = eight: an octogenarian is in his or her eighties. Septuagenarian is seventies, nonagenarian is nineties.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question:
+        'Select the option that can be used as a one-word substitute for the given group of words.\nA person who leaves his own country to settle in another',
+      options: ['Immigrant', 'Emigrant', 'Native', 'Tourist'],
+      answer: 1,
+      explain: 'An emigrant leaves (e- = out). An immigrant comes into a new country (im- = in).',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nOne who can use both hands equally well',
+      options: ['Ambidextrous', 'Ambivalent', 'Ambiguous', 'Amphibious'],
+      answer: 0,
+      explain: 'ambi (both) + dexter (right hand) = ambidextrous.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'hard',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nGovernment by a few',
+      options: ['Oligarchy', 'Plutocracy', 'Autocracy', 'Bureaucracy'],
+      answer: 0,
+      explain: 'oligos (few) + -archy (rule) = oligarchy. Plutocracy is rule by the rich; autocracy is rule by one person.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'hard',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nThe study of the origin and history of words',
+      options: ['Etymology', 'Entomology', 'Phonetics', 'Lexicography'],
+      answer: 0,
+      explain: 'Etymology is the origin of words. Entomology is insects; lexicography is writing dictionaries.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'hard',
+      question: 'Select the option that can be used as a one-word substitute for the given group of words.\nOne who is indifferent to pleasure and pain',
+      options: ['Stoic', 'Cynic', 'Hedonist', 'Sceptic'],
+      answer: 0,
+      explain: 'A stoic bears pleasure and pain without showing feeling. A hedonist lives for pleasure.',
+    },
+    {
+      type: 'truefalse',
+      difficulty: 'easy',
+      statement: 'Since "-cide" means killing, "regicide" is the killing of a king.',
+      answer: true,
+      explain: 'rex / regis (king) + -cide (killing) = regicide.',
+    },
+    {
+      type: 'truefalse',
+      difficulty: 'medium',
+      statement: 'An agnostic is a person who firmly denies that God exists.',
+      answer: false,
+      explain: 'That is an atheist. An agnostic believes the existence of God cannot be known.',
+    },
+  ],
+};
+
+export default topic;

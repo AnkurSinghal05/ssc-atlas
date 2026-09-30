@@ -1,0 +1,81 @@
+/*
+ * Runs every approach of every problem against its examples. In topics that have
+ * problems, it also runs each synchronous "predict the output" quiz against its marked answer.
+ * It also checks that every comparison table has one cell per compared item, that every multiple-choice
+ * question has distinct options and an answer index that exists, and that every shortcut's answer is one of its options.
+ * Usage: npm run verify [subjectId]   (default: all subjects)
+ */
+import { readdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import { format } from 'node:util';
+import { createJiti } from 'jiti';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const jiti = createJiti(import.meta.url, { alias: { '@': path.join(root, 'src') } });
+const { runExample, show } = await jiti.import(path.join(root, 'src/lib/runProblem.ts'));
+
+const only = process.argv[2];
+const subjects = readdirSync(path.join(root, 'src/content/subjects')).filter((s) => !only || s === only);
+let checked = 0;
+const failures = [];
+
+function captureConsole(code) {
+  const lines = [];
+  const fakeConsole = { log: (...a) => lines.push(format(...a)) };
+  new Function('console', code)(fakeConsole);
+  return lines.join('\n');
+}
+
+for (const id of subjects) {
+  const subject = await jiti.import(path.join(root, `src/content/subjects/${id}/index.ts`), { default: true });
+  for (const cat of subject.categories) {
+    for (const topic of cat.topics) {
+      for (const cmp of topic.comparisons ?? []) {
+        const n = cmp.items.length;
+        const where = `${topic.id} / comparison "${cmp.title ?? cmp.items.join(' vs ')}"`;
+        for (const row of cmp.rows) {
+          checked++;
+          if (row.values.length !== n) failures.push(`${where} / row "${row.aspect}": ${row.values.length} cells for ${n} items`);
+        }
+        for (const [name, list] of [['whenToUse', cmp.whenToUse], ['code', cmp.code]]) {
+          checked++;
+          if (list && list.length !== n) failures.push(`${where}: ${name} has ${list.length} entries for ${n} items`);
+        }
+      }
+      for (const [k, q] of (topic.quiz ?? []).entries()) {
+        if (q.type !== 'mcq' && q.type !== 'output') continue;
+        checked++;
+        const where = `${topic.id} / quiz ${k + 1}`;
+        if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= q.options.length) failures.push(`${where}: answer index ${q.answer} out of range`);
+        if (new Set(q.options).size !== q.options.length) failures.push(`${where}: duplicate options`);
+      }
+      for (const s of topic.shortcuts ?? []) {
+        checked++;
+        if (s.options && !s.options.includes(s.answer)) failures.push(`${topic.id} / shortcut "${s.pattern}": answer "${s.answer}" is not one of its options`);
+      }
+      for (const p of topic.problems ?? []) {
+        for (const a of [...p.approaches, ...(p.alternatives ?? [])]) {
+          p.examples.forEach((ex, k) => {
+            checked++;
+            const r = runExample(a.code, p.fn, ex.args, ex.output, p.anyOrder);
+            if (!r.ok)
+              failures.push(`${topic.id} / ${p.id} / ${a.name} / example ${k + 1}: expected ${show(ex.output)}, got ${r.error ?? show(r.got)}`);
+          });
+        }
+      }
+      for (const q of topic.problems ? (topic.quiz ?? []) : []) {
+        if (q.type !== 'output' || /setTimeout|Promise|await|document|window/.test(q.code)) continue;
+        checked++;
+        const want = q.options[q.answer].replace(/^`|`$/g, '').replace(/\\n/g, '\n');
+        let got;
+        try { got = captureConsole(q.code); } catch (e) { got = `throws ${e.message}`; }
+        if (got !== want) failures.push(`${topic.id} / quiz "${q.code.slice(0, 40)}…": marked ${JSON.stringify(want)}, ran ${JSON.stringify(got)}`);
+      }
+    }
+  }
+}
+
+console.log(`${checked} checks, ${failures.length} failures`);
+for (const f of failures) console.log('  ✗ ' + f);
+process.exit(failures.length ? 1 : 0);
