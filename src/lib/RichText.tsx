@@ -25,7 +25,7 @@ export function RichText({ text }: { text: string }) {
 // brackets are dropped) or a run of letters, digits and maths symbols. A slash between plain words
 // ("and/or") and units (km/h, m/s) stay as they are.
 
-const ATOM = /[\p{L}\p{M}\p{N}.°√π′Σ]/u;
+const ATOM = /[\p{L}\p{M}\p{N}.°√π′Σ₀-₉]/u;
 const UNITS = new Set(['km/h', 'km/hr', 'm/s', 'cm/s', 'm/min', 'km/min', 'km/l', 'kg/m']);
 const OPEN: Record<string, string> = { ')': '(', ']': '[' };
 const CLOSE: Record<string, string> = { '(': ')', '[': ']' };
@@ -93,7 +93,7 @@ function isFraction(s: string, l: Operand, r: Operand, slash: number) {
   if (spaced && !l.group && !r.group) return false;
   if (!l.group && !r.group && UNITS.has(s.slice(l.start, r.end).toLowerCase())) return false;
   if (l.group || r.group) return true;
-  const mathy = /[\d²³⁴ⁿθΣπ√°]/;
+  const mathy = /[\d²³⁴ⁿθΣπ√°₀-₉]/;
   if (mathy.test(l.inner) || mathy.test(r.inner)) return true;
   return isShortSymbol(l.inner) && isShortSymbol(r.inner);
 }
@@ -108,15 +108,28 @@ export function withFractions(s: string): ReactNode {
     const l = leftOperand(s, i);
     const r = l && rightOperand(s, i);
     if (!l || !r || l.start < cursor || !isFraction(s, l, r, i)) continue;
-    if (l.start > cursor) out.push(s.slice(cursor, l.start));
-    out.push(
+    // A mixed number such as "14 2/7" keeps its whole part on the same line.
+    if (l.start > cursor) out.push(s.slice(cursor, l.start).replace(/(\d) $/, '$1\u00a0'));
+    const frac = (
       <span key={key++} className="frac">
         <span className="frac-num">{withFractions(l.inner)}</span>
         <span className="sr-only">/</span>
         <span className="frac-den">{withFractions(r.inner)}</span>
-      </span>,
+      </span>
     );
-    cursor = r.end;
+    // Keep closing punctuation ("x/y." or "2/7%") on the fraction's line instead of wrapping alone.
+    const tail = /^[.,;:!?%)\]’”]+/.exec(s.slice(r.end))?.[0];
+    out.push(
+      tail ? (
+        <span key={key++} className="whitespace-nowrap">
+          {frac}
+          {tail}
+        </span>
+      ) : (
+        frac
+      ),
+    );
+    cursor = r.end + (tail?.length ?? 0);
     i = r.end - 1;
   }
   if (!out.length) return s;

@@ -103,7 +103,8 @@ export function HighYieldNotes() {
                           </p>
                         )
                       )}
-                      {often.length > 0 && <p className="ink-soft text-[14.5px]">Also: {often.map((p) => p.name).join(' · ')}</p>}
+                      {often.length > 0 && <p className="ink-soft text-[14.5px]">Also: <RichText text={often.map((p) => p.name).join(' · ')} />
+                        </p>}
                       <div className="no-print mt-auto flex flex-wrap gap-x-4 gap-y-1 pt-1 text-[15px] font-bold">
                         {isReady(t) ? (
                           <>

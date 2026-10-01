@@ -152,7 +152,7 @@ export function TopicRecap({ subject, topic }: { subject: Subject; topic: Topic 
             <ul className="m-0 list-none p-0">
               {reveals.map((c) => (
                 <li key={c.title ?? c.items.join()}>
-                  <span className="ink-red font-bold">⚡ {c.title ?? c.items.join(' vs ')}: </span>
+                  <span className="ink-red font-bold">⚡ <RichText text={c.title ?? c.items.join(' vs ')} />: </span>
                   <RichText text={c.reveal!} />
                 </li>
               ))}

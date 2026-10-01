@@ -73,10 +73,11 @@ export function TopicPage({ subject, topic }: { subject: Subject; topic: TopicWi
               <TabsTrigger
                 key={t.id}
                 value={t.id}
-                className="data-[state=active]:border-subject -mb-px border-b-[3px] border-transparent px-3.5 pt-2.5 pb-3"
+                className="data-[state=active]:border-subject -mb-px border-b-[3px] border-transparent px-2.5 pt-2.5 pb-3 sm:px-3.5"
               >
                 {t.label}
-                {t.count ? <span className="bg-muted rounded-full px-1.5 text-[11px] tabular-nums">{t.count}</span> : null}
+                {/* On a phone the counts are dropped so all four tabs fit without scrolling sideways. */}
+                {t.count ? <span className="bg-muted hidden rounded-full px-1.5 text-[11px] tabular-nums min-[440px]:inline">{t.count}</span> : null}
               </TabsTrigger>
             ))}
           </TabsList>

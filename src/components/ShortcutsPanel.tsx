@@ -61,7 +61,9 @@ function ShortcutCard({ shortcut: s, index }: { shortcut: Shortcut; index: numbe
       ) : (
         <>
           <p>
-            Ans: <strong className="ink-green hl-green text-[19px]">{s.answer}</strong>
+            Ans: <strong className="ink-green hl-green text-[19px]">
+              <RichText text={s.answer} />
+            </strong>
           </p>
           <ol className="m-0 mt-3 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,230px),1fr))] gap-x-5 gap-y-4 p-0">
             {s.ladder.map((rung, k) => {

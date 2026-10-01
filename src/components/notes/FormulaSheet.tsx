@@ -70,7 +70,9 @@ export function FormulaSheet() {
               {areas.map(({ area, topics }, ai) => (
                 <section key={area.id} className="mb-4 break-inside-avoid-column">
                   <h3 className="mb-1 text-[28px]">
-                    <span className={HIGHLIGHTS[ai % HIGHLIGHTS.length]}>{area.name}</span>
+                    <span className={HIGHLIGHTS[ai % HIGHLIGHTS.length]}>
+                      <RichText text={area.name} />
+                    </span>
                   </h3>
                   {topics.map(({ topic, formulas }) => (
                     <div key={topic.id} className="mb-3 break-inside-avoid">

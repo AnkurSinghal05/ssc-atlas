@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef } from 'react';
 import type { Figure } from '@/content/types';
 import { cn } from '@/lib/utils';
+import { RichText } from '@/lib/RichText';
 
 /**
  * Draws a content figure in pen on paper. A light displacement filter makes the straight
@@ -30,7 +31,9 @@ export function FigureSvg({ figure, active, className }: { figure: Figure; activ
         </filter>
         <g ref={ref} filter={`url(#rough-${id})`} dangerouslySetInnerHTML={{ __html: figure.svg }} />
       </svg>
-      {figure.caption && <figcaption className="font-hand ink-soft text-center text-[15px] leading-snug">{figure.caption}</figcaption>}
+      {figure.caption && <figcaption className="font-hand ink-soft text-center text-[15px] leading-snug">
+          <RichText text={figure.caption} />
+        </figcaption>}
     </figure>
   );
 }
