@@ -20,12 +20,12 @@ const topic: Topic = {
     },
     {
       title: 'Articles you must know by number',
-      text: '14 equality before law; 15 no discrimination on religion, race, caste, sex, place of birth; 16 equal opportunity in public jobs; 17 abolition of untouchability; 18 abolition of titles; 19 six freedoms (speech, assembly, association, movement, residence, profession); 20 protection in respect of conviction; 21 life and personal liberty; 21A education for 6 to 14 years; 22 protection against arrest and detention.',
+      text: '**14** equality before law. **15** no discrimination on grounds of religion, race, caste, sex or place of birth. **16** equal opportunity in public jobs. **17** untouchability abolished. **19** six freedoms (speech, assembly, association, movement, residence, profession). **20** protection in respect of conviction for offences. **21** life and personal liberty. **21A** education for ages 6 to 14. **22** protection against arrest and detention.',
       example: '**Art 21A** was added by the **86th Amendment (2002)**. Art 19 had seven freedoms until the 44th Amendment dropped property.',
     },
     {
       title: 'Exploitation, religion, minorities, remedies',
-      text: '23 bans traffic in human beings and forced labour; 24 bans employing children below 14 in factories, mines and hazardous work; 25 freedom of conscience and religion; 26 manage religious affairs; 27 no tax to promote a religion; 28 no religious instruction in wholly State-funded schools; 29 protects language, script and culture of minorities; 30 lets minorities set up educational institutions; 32 move the Supreme Court to enforce FRs.',
+      text: '**23** bans human trafficking and forced labour. **24** bans employing children below 14 in factories, mines and hazardous work. **25 to 28** freedom of religion (25 is freedom of conscience). **29** protects the language, script and culture of minorities. **30** lets minorities set up their own educational institutions. **32** lets you move the Supreme Court to enforce FRs.',
       example: 'Dr B.R. Ambedkar called **Art 32** the "heart and soul" of the Constitution.',
     },
     {
@@ -253,7 +253,7 @@ const topic: Topic = {
       type: 'mcq',
       difficulty: 'medium',
       question: 'The Right to Property was removed from the list of Fundamental Rights by the:',
-      options: ['42nd Amendment, 1976', '44th Amendment, 1978', '52nd Amendment, 1985', '61st Amendment, 1989'],
+      options: ['42nd Amendment, 1976', '44th Amendment, 1978', '52nd Amendment, 1985', '61st Amendment, 1988'],
       answer: 1,
       explain: 'The 44th Amendment (1978) removed it; it is now a legal right under Article 300A.',
     },

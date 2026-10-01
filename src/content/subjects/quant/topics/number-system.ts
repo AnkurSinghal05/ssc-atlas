@@ -23,7 +23,7 @@ const topic: Topic = {
   keyPoints: [
     {
       title: 'Divisibility rules',
-      text: '**2**: last digit even. **3** and **9**: digit sum divisible by 3 or 9. **4**: last two digits. **8**: last three digits. **5**: ends in 0 or 5. **11**: (sum of odd-place digits) − (sum of even-place digits) is 0 or a multiple of 11. For a composite divisor, split it into co-prime parts: 6 = 2 × 3, 12 = 3 × 4, 72 = 8 × 9, 88 = 8 × 11.',
+      text: '**2**: last digit even. **3** and **9**: digit sum divisible by 3 or 9. **4**: last two digits. **8**: last three digits. **5**: ends in 0 or 5. **11**: (sum of odd-place digits) − (sum of even-place digits) is 0 or a multiple of 11. Split a bigger divisor into co-prime parts (no common factor): 6 = 2 × 3, 12 = 3 × 4, 72 = 8 × 9, 88 = 8 × 11.',
       formula: '72 = 8 × 9, 88 = 8 × 11 (co-prime parts)',
       example: 'x479y divisible by 72: 8 needs 79y divisible by 8, so y = 2. Then 9 needs x + 22 divisible by 9, so x = 5.',
     },
@@ -35,7 +35,7 @@ const topic: Topic = {
     },
     {
       title: 'Remainders of powers',
-      text: 'The remainder of a product is the product of the remainders. For powers, look for a remainder of 1 or −1. (x + 1)ⁿ ÷ x always leaves 1. (x − 1)ⁿ ÷ x leaves 1 for even n and x − 1 for odd n. Also aⁿ + bⁿ is divisible by a + b when n is odd.',
+      text: 'The remainder of a product is the product of the remainders. For powers, look for a power that leaves 1 or −1. A remainder one less than the divisor counts as −1. (x + 1)ⁿ ÷ x always leaves 1. (x − 1)ⁿ ÷ x leaves 1 for even n and x − 1 for odd n. Also aⁿ + bⁿ is divisible by a + b when n is odd.',
       formula: '(x + 1)ⁿ ÷ x → remainder 1',
       example: '2⁴ = 16 leaves −1 with 17, so 2⁸ leaves 1 and 2²⁵⁶ = (2⁸)³² leaves **1**.',
     },
@@ -65,7 +65,7 @@ const topic: Topic = {
     },
     {
       title: 'Recurring decimals',
-      text: 'A pure recurring decimal: write the repeating block over as many 9s as it has digits. A mixed one: (all digits − non-repeating digits) over 9s followed by 0s (one 9 per repeating digit, one 0 per non-repeating digit).',
+      text: 'A pure recurring decimal (every digit after the point repeats, like 0.3636…): write the repeating block over as many 9s as it has digits. A mixed one (some digits do not repeat, like 0.1666…): (all digits − non-repeating digits) over 9s followed by 0s (one 9 per repeating digit, one 0 per non-repeating digit).',
       formula: '0.ababab… = ab/99; 0.abbb… = (ab − a)/90',
       example: '0.3636… = 36/99 = **4/11**. 0.1666… = (16 − 1)/90 = 15/90 = **1/6**.',
     },
@@ -228,7 +228,7 @@ const topic: Topic = {
       question: 'A number leaves remainder 19 when divided by 119. What remainder does it leave when divided by 17?',
       options: ['2', '7', '19', '3'],
       answer: 0,
-      explain: '119 = 7 × 17, so the multiple of 119 is also a multiple of 17. Remainder = 19 ÷ 17 → 2.',
+      explain: 'The number is 119k + 19. Since 119 = 7 × 17, the part 119k is a multiple of 17. So only 19 matters: 19 ÷ 17 leaves 2.',
     },
     {
       type: 'mcq',

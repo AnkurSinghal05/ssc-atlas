@@ -58,13 +58,13 @@ const topic: Topic = {
     },
     {
       title: 'The four centres and their angle formulas',
-      text: 'Centroid G: medians meet. Incentre I: angle bisectors meet. Circumcentre O: perpendicular bisectors of the sides meet. Orthocentre H: altitudes meet. The excentre opposite A gives 90° − A/2.',
+      text: 'Centroid G: medians meet. Incentre I: angle bisectors meet. Circumcentre O: perpendicular bisectors of the sides meet. Orthocentre H: altitudes meet. The excentre opposite A (centre of the circle touching BC and the extensions of AB and AC) gives 90° − A/2.',
       formula: '∠BIC = 90° + A/2; ∠BOC = 2A (acute); ∠BHC = 180° − A',
       example: '∠A = 70°: ∠BIC = **125°**, ∠BOC = **140°**, ∠BHC = **110°**.',
     },
     {
       title: 'Medians, centroid and Apollonius',
-      text: 'The centroid divides each median 2 : 1 from the vertex. The three medians cut the triangle into 6 equal areas. For median AD: AB² + AC² = 2(AD² + BD²). The squares of the medians add to 3/4 of the squares of the sides.',
+      text: 'Write a = BC, b = CA, c = AB (each side named after the opposite corner). The centroid divides each median 2 : 1 from the vertex. The three medians cut the triangle into 6 equal areas. For median AD: AB² + AC² = 2(AD² + BD²). The squares of the medians add to 3/4 of the squares of the sides.',
       formula: 'AD² = (2b² + 2c² − a²)/4',
       example: 'AB = 7, AC = 9, BC = 8: AD² = (98 + 162 − 64)/4 = 49, so AD = **7**.',
     },
@@ -76,7 +76,7 @@ const topic: Topic = {
     },
     {
       title: 'Area formulas and the equilateral triangle',
-      text: 'Area = 1/2 × base × height. Heron: area = √(s(s − a)(s − b)(s − c)) with s the half-perimeter. Inradius r = (area)/s, circumradius R = abc/(4 × area). Equilateral triangle of side a: height √3/2 × a, area √3/4 × a², R = a/√3, r = a/(2√3), so R = 2r. All four centres coincide.',
+      text: 'Area = 1/2 × base × height. Heron: area = √(s(s − a)(s − b)(s − c)), where s is half the perimeter. Inradius r = (area)/s. Circumradius R = abc/(4 × area). For an equilateral triangle of side a: height = √3/2 × a and area = √3/4 × a². Also R = a/√3 and r = a/(2√3), so R = 2r. All four centres are the same point.',
       formula: 'Equilateral: area = √3/4 × a², R = a/√3, r = a/(2√3)',
       example: 'Sides 13, 14, 15: s = 21, area = √(21 × 8 × 7 × 6) = **84**.',
     },

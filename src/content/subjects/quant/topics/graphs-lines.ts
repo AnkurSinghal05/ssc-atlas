@@ -48,7 +48,7 @@ const topic: Topic = {
     },
     {
       title: 'Slope',
-      text: 'In y = mx + c, m is the slope and c the y-intercept. For ax + by + c = 0 the slope is −a/b. Parallel lines have equal slopes. Perpendicular lines have slopes that multiply to −1.',
+      text: 'The slope tells how steep a line is: how much y changes when x goes up by 1. In y = mx + c, m is the slope and c the y-intercept. For ax + by + c = 0 the slope is −a/b. Parallel lines have equal slopes. Perpendicular lines have slopes that multiply to −1.',
       formula: 'm = −a/b; parallel m₁ = m₂; perpendicular m₁ × m₂ = −1',
       example: '3x − 4y + 7 = 0 has slope −3/(−4) = **3/4**.',
     },
@@ -418,7 +418,7 @@ const topic: Topic = {
       question: 'For what value of k are the lines 2x + 3y = 6 and 4x + ky = 5 parallel?',
       options: ['−6', '3', '9', '6'],
       answer: 3,
-      explain: 'Parallel needs 2/4 = 3/k, so k = 6. The constants 6/5 differ, so the lines do not coincide.',
+      explain: 'Parallel needs 2/4 = 3/k, so k = 6. The constant ratio 6/5 is not 1/2, so the lines are separate, not the same line.',
     },
     {
       type: 'mcq',

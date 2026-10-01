@@ -9,7 +9,7 @@ const topic: Topic = {
   priority: 'medium',
   tags: ['angle of elevation', 'angle of depression', 'tower', 'shadow', '30-60-90', '45-45-90', 'two observers'],
   summary:
-    'Almost every question uses 30°, 45° or 60°, so it is a right-triangle ratio problem. Learn the side ratios 1 : √3 : 2 and 1 : 1 : √2 and a few ready formulas.',
+    'Finding the height of a tower, tree or cliff, or a distance on the ground, from the angle at which its top is seen. Almost every question uses 30°, 45° or 60°, so it is a right-triangle ratio problem. Learn the side ratios 1 : √3 : 2 and 1 : 1 : √2 and a few ready formulas.',
   patterns: [
     {
       name: 'Observer walks toward the tower (two angles, same side)',
@@ -63,7 +63,7 @@ const topic: Topic = {
     },
     {
       title: 'Same side: observer moves distance d toward the tower',
-      text: 'Angles α (near, larger) and β (far, smaller). The distance walked is the difference of the two ground distances.',
+      text: 'Angles α (near, larger) and β (far, smaller). The distance walked is the difference of the two ground distances. Here cot = 1/tan, so ground distance = h cot(angle): h√3 at 30°, h at 45°, h/√3 at 60°.',
       formula: 'h = d/(cot β − cot α)',
       example: '30° → 60°, d = 40: h = 40/(√3 − 1/√3) = 40 × √3/2 = **20√3 m**.',
     },
@@ -487,7 +487,7 @@ const topic: Topic = {
       },
       options: ['100(√3 − 1) m', '100(√3 + 1) m', '200 m', '100√3 m'],
       answer: 1,
-      explain: 'Distances are 100√3 and 100. Sum = 100(√3 + 1) ≈ 273.2 m.',
+      explain: 'Ground distance = height ÷ tan(angle). At 30°: 100 ÷ (1/√3) = 100√3. At 45°: 100 ÷ 1 = 100. The tower is between them, so add: 100(√3 + 1) ≈ 273.2 m.',
     },
     {
       type: 'mcq',
@@ -544,7 +544,7 @@ const topic: Topic = {
       },
       options: ['12 m', '12.5 m', '25 m', '7 m'],
       answer: 0,
-      explain: 'tan θ = h/9 and cot θ = h/16. Multiply: h²/144 = 1, so h = 12 m.',
+      explain: 'Let the angle at the near point (9 m) be θ, so tan θ = h/9. The far angle is 90° − θ, and tan(90° − θ) = cot θ, so cot θ = h/16. Multiply: tan θ × cot θ = 1, so h²/144 = 1 and h = 12 m.',
       shortcut: 'h = √(9 × 16) = 12.',
     },
     {

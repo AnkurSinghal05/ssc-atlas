@@ -226,7 +226,7 @@ const topic: Topic = {
     },
     {
       q: 'Two trips with different distances up and down are given. How do you solve?',
-      a: ['Let u = 1/U and d = 1/D.', 'Write two linear equations in u and d and eliminate one.'],
+      a: ['Let x = 1/U and y = 1/D.', 'Write two linear equations in x and y and eliminate one.'],
     },
     {
       q: 'A boat covers x km down and y km up in the same time. What follows?',
@@ -340,7 +340,7 @@ const topic: Topic = {
         'A boat goes 30 km upstream and 44 km downstream in 10 hours. It goes 40 km upstream and 55 km downstream in 13 hours. What is the speed of the stream?',
       options: ['8 km/h', '3 km/h', '5 km/h', '2.5 km/h'],
       answer: 1,
-      explain: 'Let u = 1/U, d = 1/D: 30u + 44d = 10 and 40u + 55d = 13. This gives d = 1/11, u = 1/5, so D = 11, U = 5 and S = 3 km/h.',
+      explain: 'Let x = 1/U and y = 1/D: 30x + 44y = 10 and 40x + 55y = 13. Multiply the first by 4 and the second by 3: 120x + 176y = 40 and 120x + 165y = 39. Subtract: 11y = 1, so y = 1/11 and D = 11. Then 30x = 10 − 4 = 6, so x = 1/5 and U = 5. S = (11 − 5)/2 = 3 km/h.',
       shortcut: 'Put values: U = 5, D = 11 gives 6 + 4 = 10 h and 8 + 5 = 13 h.',
     },
     {
@@ -350,7 +350,7 @@ const topic: Topic = {
         'A man rows to a place 48 km away and back in 14 hours. He can row 4 km downstream in the same time as 3 km upstream. What is the speed of the stream?',
       options: ['2 km/h', '1.5 km/h', '1 km/h', '0.5 km/h'],
       answer: 2,
-      explain: 'D : U = 4 : 3. Let D = 4k, U = 3k: 12/k + 16/k = 14, so k = 2. D = 8, U = 6, S = 1 km/h.',
+      explain: 'In the same time he goes 4 km down and 3 km up, so D : U = 4 : 3. Let D = 4k and U = 3k. Then 48/(4k) + 48/(3k) = 14, so 12/k + 16/k = 28/k = 14 and k = 2. D = 8, U = 6, so S = (8 − 6)/2 = 1 km/h.',
     },
     {
       type: 'mcq',

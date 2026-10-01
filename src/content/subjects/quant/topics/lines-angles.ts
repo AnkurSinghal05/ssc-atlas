@@ -41,7 +41,7 @@ const topic: Topic = {
     },
     {
       title: 'A bent line between parallel lines',
-      text: 'Draw a third line through the bend, parallel to both. If the bend points into the gap between the given angles (Z shapes), the bend angle is their sum. If the given angles are co-interior with the bend, all three add to 360°.',
+      text: 'Draw a third line through the bend, parallel to both. If each given angle makes a Z shape (alternate angles) with its part of the bend, the bend angle is their sum. If they make C shapes (co-interior angles), all three angles add to 360°.',
       formula: '∠E = ∠a + ∠b, or ∠a + ∠b + ∠E = 360°',
       example: '∠BAE = 40°, ∠DCE = 55° on the Z side: ∠AEC = **95°**.',
     },

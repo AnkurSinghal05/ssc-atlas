@@ -58,7 +58,7 @@ const topic: Topic = {
     },
     {
       title: 'Dishonest dealer (false weight)',
-      text: 'A dealer who sells at CP but gives less weight gains on the weight he keeps back. Gain % = error ÷ (true weight − error) × 100. If he also adds a profit, multiply the two effects.',
+      text: 'A dealer who sells at CP but gives less weight gains on the weight he keeps back. The error is the weight held back (100 g if he gives 900 g for 1 kg). Gain % = error ÷ (true weight − error) × 100. If he also adds a profit, multiply the two effects.',
       formula: 'gain % = error/(true − error) × 100',
       example: '900 g for 1 kg: 100/900 = **11 1/9%**. Weight 20% less: 20/80 = **25%**.',
     },
@@ -408,6 +408,15 @@ const topic: Topic = {
       answer: 2,
       explain: 'CP 100, MP 125, SP needed 110. Discount = 15 on 125 = 12%.',
       shortcut: 'Discount = (MP − SP)/MP = 15/125 = 12%.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'A shop offers "buy 4, get 1 free". What is the effective discount percent?',
+      options: ['25%', '20%', '16⅔%', '15%'],
+      answer: 1,
+      explain: 'You pay for 4 items and take home 5. The free item is 1 of the 5 items received, so the discount is 1/5 × 100 = 20% of the marked price of 5 items.',
+      shortcut: 'Buy x, get y free: discount = y/(x + y) × 100 = 1/5 × 100 = 20%.',
     },
     {
       type: 'truefalse',

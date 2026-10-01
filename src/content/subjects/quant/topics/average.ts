@@ -191,7 +191,7 @@ const topic: Topic = {
       question: 'What is the average of the first 50 natural numbers?',
       options: ['25', '25.5', '26', '50.5'],
       answer: 1,
-      explain: '(n + 1)/2 = 51/2 = 25.5.',
+      explain: 'The average of the first n natural numbers is (n + 1)/2. Here n = 50, so (50 + 1)/2 = 51/2 = 25.5.',
     },
     {
       type: 'mcq',
@@ -240,7 +240,7 @@ const topic: Topic = {
       question: 'A batsman scores 98 runs in his 19th innings, which raises his average by 4. What is his average after the 19th innings?',
       options: ['22', '24', '30', '26'],
       answer: 3,
-      explain: '18x + 98 = 19(x + 4) gives x = 22. New average 26.',
+      explain: 'Let the average after 18 innings be x. Then 18x + 98 = 19(x + 4), so 18x + 98 = 19x + 76 and x = 22. New average = 22 + 4 = 26.',
       shortcut: '98 − 18 × 4 = 26.',
     },
     {
@@ -249,7 +249,7 @@ const topic: Topic = {
       question: 'The average of 13 results is 60. The average of the first 7 is 57 and the average of the last 7 is 64. What is the 7th result?',
       options: ['67', '64', '60', '71'],
       answer: 0,
-      explain: '7 × 57 + 7 × 64 − 13 × 60 = 399 + 448 − 780 = 67.',
+      explain: 'First 7 total = 7 × 57 = 399. Last 7 total = 7 × 64 = 448. These two groups count the 7th result twice, so 399 + 448 − 13 × 60 = 847 − 780 = 67.',
       shortcut: 'Deviations from 60: 7 × (−3) + 7 × (+4) = +7. Seventh = 60 + 7 = 67.',
     },
     {
@@ -283,7 +283,7 @@ const topic: Topic = {
       question: 'The average of 10 innings of a batsman is 32. How many runs must he score in the next innings to raise his average by 4?',
       options: ['72', '76', '36', '80'],
       answer: 1,
-      explain: 'New total = 11 × 36 = 396. Old total = 320. Needed: 76.',
+      explain: 'Old total = 10 × 32 = 320. The new average must be 32 + 4 = 36, so the new total = 11 × 36 = 396. Runs needed = 396 − 320 = 76.',
       shortcut: 'New average + n × rise = 36 + 10 × 4 = 76.',
     },
     {

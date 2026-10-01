@@ -35,7 +35,7 @@ const topic: Topic = {
     },
     {
       title: 'Section formula and midpoint',
-      text: 'The point dividing the join of A(x₁, y₁) and B(x₂, y₂) internally in the ratio m : n. Cross-multiply: m goes with the far point B. The midpoint is the case m = n.',
+      text: 'This gives the point P on the segment from A(x₁, y₁) to B(x₂, y₂) with AP : PB = m : n. Cross over: m multiplies the far point B, n multiplies A. The midpoint is the case m = n.',
       formula: 'x = (mx₂ + nx₁)/(m + n),  y = (my₂ + ny₁)/(m + n)',
       example: '(2, 3) and (8, 9) in 1 : 2: x = (8 + 4)/3 = 4, y = (9 + 6)/3 = 5, so **(4, 5)**.',
     },
@@ -246,7 +246,7 @@ const topic: Topic = {
       items: ['Parallel lines', 'Perpendicular lines'],
       rows: [
         { aspect: 'Slopes', values: ['m₁ = m₂', 'm₁ × m₂ = −1'], key: true },
-        { aspect: 'Line through a point, like ax + by + c = 0', values: ['ax + by + k = 0', 'bx − ay + k = 0'] },
+        { aspect: 'Line parallel or perpendicular to ax + by + c = 0', values: ['ax + by + k = 0', 'bx − ay + k = 0'] },
         { aspect: 'Example with 2x + 3y = 6', values: ['2x + 3y = k', '3x − 2y = k'] },
         { aspect: 'a₁/a₂ vs b₁/b₂', values: ['a₁/a₂ = b₁/b₂ (no solution if c differs)', 'a₁a₂ + b₁b₂ = 0'] },
       ],

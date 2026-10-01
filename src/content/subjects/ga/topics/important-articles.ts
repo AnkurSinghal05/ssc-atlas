@@ -33,38 +33,38 @@ const topic: Topic = {
   keyPoints: [
     {
       title: 'Part I and Part II: territory and citizenship',
-      text: '**Art 1**: "India, that is Bharat, shall be a **Union of States**" · Art 2: admit or set up new states · **Art 3**: form new states, change boundaries or names (simple majority, bill needs the President\'s recommendation) · Art 4: such laws are not amendments under Art 368 · **Art 5**: citizenship at commencement · Art 9: voluntary foreign citizenship ends Indian citizenship · **Art 11**: Parliament regulates citizenship by law.',
+      text: '**Art 1**: "India, that is Bharat, shall be a **Union of States**". **Art 3**: Parliament can form new states and change their boundaries or names, by a simple majority (the bill needs the President\'s recommendation). Art 2 admits new states, like Sikkim. Citizenship: **Art 5** at the commencement, **Art 9** taking a foreign citizenship ends Indian citizenship, **Art 11** Parliament regulates citizenship by law.',
     },
     {
       title: 'Parts III, IV, IVA: headline articles only',
-      text: 'Rights: Art 12 "State" · 13 laws against FRs are void · **14** equality before law · **17** untouchability abolished · **19** six freedoms · **21** life and personal liberty · **21A** education, 6 to 14 years · **32** constitutional remedies. DPSP: **40** village panchayats · **44** uniform civil code · 48A environment · **50** separate judiciary from executive. Duties: **51A**.',
+      text: 'Fundamental Rights: **14** equality before law, **17** untouchability abolished, **19** six freedoms, **21** life and personal liberty, **21A** education for ages 6 to 14, **32** the right to move the Supreme Court. Directive Principles: **40** village panchayats, **44** uniform civil code, **50** separate the judiciary from the executive. Duties: **51A**.',
       example: 'The full detail (writs, who gets which right, DPSP groups) is in the Fundamental Rights, DPSP and Duties topic.',
     },
     {
       title: 'Part V: the Union executive and Parliament',
-      text: '**Art 52** President · 53 executive power in the President · **61** impeachment · **63** Vice-President · 64 VP chairs the Rajya Sabha · **72** pardoning power · **74** council of ministers aids and advises · 75 PM and ministers appointed · **76** Attorney General · 79 Parliament · **108** joint sitting · **110** money bill · **112** Budget (annual financial statement) · **123** ordinances.',
+      text: 'President: **Art 52** the office, **61** impeachment, **72** pardoning power, **123** ordinances. **Art 63**: the Vice-President, who chairs the Rajya Sabha. **Art 74**: the council of ministers aids and advises the President. **Art 76**: the Attorney General. Parliament: **108** joint sitting, **110** money bill, **112** the Budget (called the annual financial statement).',
       example: 'Details (ages, elections, the money bill path) are in the Union executive and Parliament topic.',
     },
     {
       title: 'Part V: Supreme Court and CAG',
-      text: '**Art 124**: Supreme Court established · **129**: a court of record · **131**: original jurisdiction (Centre vs states, state vs state) · 137: review its own judgments · **141**: its law binds all courts · **143**: President may seek its **advisory opinion** · **148**: Comptroller and Auditor General (CAG).',
+      text: '**Art 124** sets up the Supreme Court. **131**: original jurisdiction (Centre vs states, state vs state). **141**: its law binds all courts. **143**: the President may seek its **advisory opinion**. **148**: the Comptroller and Auditor General (CAG).',
     },
     {
       title: 'Part VI: the States',
-      text: "**Art 153** Governor · 155 Governor appointed by the President · **161** Governor's pardoning power · 163 council of ministers · **165** Advocate General · **169** create or abolish a Legislative Council · 200 Governor may reserve a bill for the President · **213** Governor's ordinances · **214** High Courts · **226** High Court writs · 231 one High Court for two or more states.",
-      example: 'Nearby: **239AA** special provisions for Delhi; Part IX Panchayats (243 to 243O); Part IXA Municipalities (243P to 243ZG).',
+      text: "Governor: **Art 153** the office, **161** pardoning power, **213** ordinances. **165**: the Advocate General. **169**: Parliament can create or abolish a Legislative Council. High Courts: **214** a High Court for each state, **226** High Court writs.",
+      example: 'Details on the Governor and High Courts are in the State government and Judiciary topics.',
     },
     {
       title: 'Centre-state relations and finance',
-      text: '**Art 246**: subjects of laws, via the three Lists of the Seventh Schedule · **249**: Rajya Sabha lets Parliament legislate on a State List subject · **262**: inter-state river water disputes · **263**: Inter-State Council · **266**: Consolidated Fund · **267**: Contingency Fund · **280**: Finance Commission, every 5 years · **300A**: right to property, a legal right · **301**: freedom of trade and commerce.',
+      text: '**Art 246**: who makes laws on what, through the three Lists of the Seventh Schedule. **249**: the Rajya Sabha can let Parliament make laws on a State List subject. **263**: Inter-State Council. **266**: Consolidated Fund; **267**: Contingency Fund. **280**: Finance Commission, every 5 years. **300A**: right to property, now only a legal right.',
     },
     {
       title: 'Services, elections, special classes',
-      text: '**Art 312** all-India services · **315** UPSC and State PSCs · 323A administrative tribunals · **324** Election Commission · **326** adult suffrage (voting age 18 since the 61st Amendment) · 330 Lok Sabha seats reserved for SCs and STs · **338** National Commission for SCs · 338A for STs · 338B for Backward Classes · 340 commission on backward classes.',
+      text: '**Art 315**: UPSC and the State Public Service Commissions. **324**: Election Commission. **326**: adult suffrage (voting age 18 since the 61st Amendment, 1988). National Commissions: **338** for Scheduled Castes, **338A** for Scheduled Tribes, **338B** for Backward Classes.',
     },
     {
       title: 'Language, emergency, amendment',
-      text: "**Art 343**: Hindi in Devanagari, official language of the Union · 350A: primary education in the mother tongue · 351: develop Hindi · **352** national emergency · **356** President's rule · **360** financial emergency · 358 and 359: FRs during an emergency · 361: immunity of President and Governors · **368** amending the Constitution · **370** Jammu and Kashmir (inoperative since 2019) · 371: special provisions for some states.",
+      text: "**Art 343**: Hindi in Devanagari is the official language of the Union. Emergencies: **352** national, **356** President's rule in a state, **360** financial. **368**: amending the Constitution. **370**: Jammu and Kashmir (inoperative since 2019).",
     },
   ],
   visuals: [

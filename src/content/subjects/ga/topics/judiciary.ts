@@ -280,7 +280,7 @@ const topic: Topic = {
       question: 'Which writ literally means "we command"?',
       options: ['Mandamus', 'Prohibition', 'Certiorari', 'Habeas corpus'],
       answer: 0,
-      explain: 'Mandamus orders a public official or body to perform a public duty it has failed to do.',
+      explain: 'Mandamus literally means "we command". It orders a public official or body to perform a public duty it has failed to do.',
     },
     {
       type: 'mcq',

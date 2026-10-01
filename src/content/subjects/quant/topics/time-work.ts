@@ -23,7 +23,7 @@ const topic: Topic = {
   keyPoints: [
     {
       title: 'The LCM (total work) method',
-      text: "Take the total work as the LCM of the days given. Each person's efficiency is total ÷ their days. Add efficiencies for people working together.",
+      text: "Take the total work as the LCM of the days given. A person's efficiency is the units of work they do in one day: total ÷ their days. Add efficiencies for people working together.",
       formula: 'time = (total work)/(combined efficiency)',
       example: 'A in 10 days, B in 15: work = 30 units, A = 3, B = 2 per day. Together 30/5 = **6 days**.',
     },
@@ -177,7 +177,7 @@ const topic: Topic = {
         { aspect: 'Total work', values: ['The job', 'One full tank'] },
         { aspect: 'Who works', values: ['People or machines', 'Inlet pipes (fill) and outlets or leaks (empty)'] },
         { aspect: 'Can a rate be negative?', values: ['No, everyone adds work', '**Yes**: outlets and leaks subtract'], key: true },
-        { aspect: 'Together formula', values: ['ab/(a + b)', 'ab/(a + b) to fill; ab/(b − a) for fill minus empty'] },
+        { aspect: 'Together formula', values: ['ab/(a + b)', 'Two fill pipes: ab/(a + b). One fills in a, one empties in b (b > a): ab/(b − a)'] },
         { aspect: 'Method', values: ['LCM of days as total work', 'LCM of hours or minutes as tank capacity'] },
       ],
       reveal: 'It is one model: rate × time = work. Pipes only add the idea of a negative rate, so always check which pipes empty.',
@@ -309,7 +309,7 @@ const topic: Topic = {
       question: 'A can finish a job in 10 days and B in 15 days. In how many days can they finish it together?',
       options: ['12.5 days', '6 days', '8 days', '5 days'],
       answer: 1,
-      explain: 'Work = 30 units. A = 3, B = 2 per day. 30/5 = 6 days.',
+      explain: 'Take the work as LCM(10, 15) = 30 units. A does 30/10 = 3 and B does 30/15 = 2 units a day, 5 together. Time = 30/5 = 6 days.',
       shortcut: 'ab/(a + b) = 150/25 = 6.',
     },
     {
@@ -318,7 +318,7 @@ const topic: Topic = {
       question: 'A, B and C can do a job in 12, 24 and 8 days respectively. In how many days can they do it together?',
       options: ['4 days', '5 days', '6 days', '3 days'],
       answer: 0,
-      explain: 'Work = 24 units. Rates 2 + 1 + 3 = 6 per day. 24/6 = 4 days.',
+      explain: 'Take the work as LCM(12, 24, 8) = 24 units. Rates 24/12 + 24/24 + 24/8 = 2 + 1 + 3 = 6 units a day. 24/6 = 4 days.',
     },
     {
       type: 'mcq',
@@ -344,7 +344,7 @@ const topic: Topic = {
         'A can do a job in 20 days and B in 30 days. They work together for 6 days, then A leaves. In how many more days will B finish the job?',
       options: ['12 days', '15 days', '18 days', '10 days'],
       answer: 1,
-      explain: 'Work = 60 units, A = 3, B = 2. In 6 days: 6 × 5 = 30 units. Left 30 units, B takes 30/2 = 15 days.',
+      explain: 'Work = LCM(20, 30) = 60 units, A = 3, B = 2 units a day. In 6 days together: 6 × 5 = 30 units. Left 30 units, B takes 30/2 = 15 days.',
     },
     {
       type: 'mcq',
@@ -352,7 +352,7 @@ const topic: Topic = {
       question: 'Pipe A fills a tank in 6 hours and pipe B fills it in 8 hours. If both are opened together, how long will they take to fill it?',
       options: ['3 3/7 hours', '7 hours', '3 1/2 hours', '4 hours'],
       answer: 0,
-      explain: 'Tank = 24 units. Rates 4 + 3 = 7 per hour. 24/7 = 3 3/7 hours.',
+      explain: 'Tank = LCM(6, 8) = 24 units. Rates 24/6 + 24/8 = 4 + 3 = 7 units an hour. 24/7 = 3 3/7 hours.',
       shortcut: 'ab/(a + b) = 48/14 = 24/7.',
     },
     {
@@ -372,7 +372,7 @@ const topic: Topic = {
         'Pipes A and B can fill a tank in 20 and 30 minutes. Pipe C can empty it in 15 minutes. If all three are opened together, how long will the empty tank take to fill?',
       options: ['30 minutes', '45 minutes', '50 minutes', '60 minutes'],
       answer: 3,
-      explain: 'Tank = 60 units. Net rate = 3 + 2 − 4 = 1 per minute. Full in 60 minutes.',
+      explain: 'Tank = LCM(20, 30, 15) = 60 units. A fills 3, B fills 2 and C empties 4 units a minute. Net rate = 3 + 2 − 4 = 1 unit a minute, so full in 60 minutes.',
     },
     {
       type: 'mcq',
@@ -407,7 +407,7 @@ const topic: Topic = {
       question: "A can do a job in 10 days and B in 15 days. Working together, they are paid ₹5,000. What is A's share?",
       options: ['₹2,500', '₹2,000', '₹3,500', '₹3,000'],
       answer: 3,
-      explain: 'Efficiencies 3 : 2 (from 30 units). A gets 3/5 × 5,000 = ₹3,000.',
+      explain: 'Work = 30 units, so A does 3 and B does 2 units a day. They work the same days, so pay is split 3 : 2. A gets 3/5 × 5,000 = ₹3,000.',
     },
     {
       type: 'mcq',
@@ -416,7 +416,7 @@ const topic: Topic = {
         'Two pipes can fill a tank in 12 and 15 minutes. Both are opened together, and after 3 minutes the first pipe is closed. How much more time will the second pipe take to fill the tank?',
       options: ['8 min 30 s', '8 min 15 s', '9 min', '7 min 45 s'],
       answer: 1,
-      explain: 'Tank = 60 units, rates 5 and 4. In 3 minutes: 27 units. Left 33 units at 4 units a minute = 8.25 min = 8 min 15 s.',
+      explain: 'Tank = LCM(12, 15) = 60 units, rates 5 and 4 units a minute. In 3 minutes together: 3 × 9 = 27 units. Left 33 units at 4 units a minute = 33/4 = 8.25 min = 8 min 15 s.',
     },
     {
       type: 'mcq',
@@ -425,8 +425,25 @@ const topic: Topic = {
         'A can do a job in 10 days and B in 15 days. They work on alternate days, starting with A. In how many days will the job be finished?',
       options: ['11 days', '12 days', '13 days', '6 days'],
       answer: 1,
-      explain: 'Work = 30 units. Each 2-day block does 3 + 2 = 5 units. 6 blocks = 12 days finish exactly 30 units.',
+      explain: 'Work = 30 units, A = 3 and B = 2 units a day. Each 2-day block (A then B) does 3 + 2 = 5 units. 30/5 = 6 blocks = 12 days, and the work ends exactly on day 12.',
       shortcut: 'Check the day before: after 11 days only 25 + 3 = 28 units are done, so 12 days.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'A is 50% more efficient than B. B alone can finish a job in 30 days. In how many days can A and B finish it together?',
+      options: ['15 days', '12 days', '18 days', '10 days'],
+      answer: 1,
+      explain: 'Efficiency A : B = 150 : 100 = 3 : 2. Work = B\'s rate × B\'s days = 2 × 30 = 60 units. Together they do 3 + 2 = 5 units a day, so 60/5 = 12 days.',
+      shortcut: 'A alone takes 30 × 2/3 = 20 days. Together: 20 × 30/(20 + 30) = 12 days.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'hard',
+      question: 'A can do a job in 20 days and B in 30 days. They start together, but A leaves 5 days before the job is finished. In how many days is the job finished?',
+      options: ['12 days', '15 days', '14 days', '17 days'],
+      answer: 1,
+      explain: 'Work = 60 units, A = 3, B = 2 units a day. In the last 5 days only B works: 5 × 2 = 10 units. The other 50 units are done together at 5 a day: 10 days. Total = 10 + 5 = 15 days.',
     },
     {
       type: 'truefalse',

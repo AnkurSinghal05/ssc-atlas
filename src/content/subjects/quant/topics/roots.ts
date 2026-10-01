@@ -32,7 +32,7 @@ const topic: Topic = {
     },
     {
       title: 'Square root of a 5 or 6 digit perfect square',
-      text: 'Drop the last two digits. Find n with n² ≤ the rest. The root is n followed by one of the two unit digits. If the rest is less than n × (n + 1), take the smaller digit; otherwise the larger.',
+      text: 'Drop the last two digits. Find the largest n with n² ≤ the rest. The root is n followed by one of the two unit digits. If the rest is less than n × (n + 1), take the smaller digit; otherwise the larger.',
       formula: 'rest < n(n + 1) → smaller digit; rest ≥ n(n + 1) → larger digit',
       example: '√17424: rest 174, n = 13 (169). 13 × 14 = 182 > 174, so smaller digit 2: **132**.',
     },
@@ -126,7 +126,7 @@ const topic: Topic = {
     },
     {
       q: 'How do you choose between the two unit digits for a square root?',
-      a: ['Find n with n² ≤ leading group.', 'If the group is less than n(n + 1), take the smaller digit; else the larger.'],
+      a: ['Find the largest n with n² ≤ leading group.', 'If the group is less than n(n + 1), take the smaller digit; else the larger.'],
       tag: 'Shortcut',
     },
     {

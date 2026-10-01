@@ -40,7 +40,7 @@ const topic: Topic = {
     },
     {
       title: 'Exterior angles always add to 360°',
-      text: 'For any convex polygon the exterior angles sum to 360°. In a regular polygon each exterior angle is 360°/n, and interior + exterior = 180°. This is the fastest way to find n.',
+      text: 'An exterior angle is the angle between one side and the next side extended. For any convex polygon (no corner pointing inwards) the exterior angles sum to 360°. In a regular polygon (all sides and angles equal) each exterior angle is 360°/n, and interior + exterior = 180°. This is the fastest way to find n.',
       formula: 'Each exterior angle = 360°/n,  n = 360°/exterior',
       example: 'Exterior angle 24°: n = 360/24 = **15** sides.',
     },
@@ -58,7 +58,7 @@ const topic: Topic = {
     },
     {
       title: 'Parallelogram',
-      text: 'Opposite sides and opposite angles are equal. Adjacent angles add to 180°. Diagonals bisect each other but are not equal. Area = base × height. Sides a, b and diagonals d₁, d₂ satisfy the parallelogram law.',
+      text: 'Opposite sides and opposite angles are equal. Adjacent angles add to 180°. Diagonals bisect each other but are not equal in general. Area = base × height. Sides a, b and diagonals d₁, d₂ satisfy the parallelogram law.',
       formula: 'd₁² + d₂² = 2(a² + b²)',
       example: 'Sides 7 and 9, one diagonal 8: d₂² = 2(49 + 81) − 64 = 196, so d₂ = **14**.',
     },
@@ -365,7 +365,7 @@ const topic: Topic = {
       question: 'Each interior angle of a regular polygon is 5 times its exterior angle. How many sides does it have?',
       options: ['10', '14', '12', '15'],
       answer: 2,
-      explain: 'Exterior = 180/6 = 30°, so n = 360/30 = 12.',
+      explain: 'Let the exterior angle be E. Then interior = 5E and 5E + E = 180°, so E = 30°. n = 360/30 = 12.',
       shortcut: 'n = 2(k + 1) = 2 × 6 = 12.',
     },
     {

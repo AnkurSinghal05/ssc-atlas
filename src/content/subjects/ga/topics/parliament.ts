@@ -25,7 +25,7 @@ const topic: Topic = {
   keyPoints: [
     {
       title: 'President: key articles',
-      text: '**Art 52** there shall be a President; 53 executive power vests in the President; 54 election; 56 term of 5 years; 58 qualifications (minimum age **35**); **61 impeachment** for "violation of the Constitution"; **72 pardoning power**; **123 ordinances** when Parliament is not in session.',
+      text: '**Art 52**: there shall be a President. Term 5 years; minimum age **35**. **Art 61**: impeachment, only for "violation of the Constitution". **Art 72**: pardoning power. **Art 123**: ordinances when Parliament is not in session.',
       example: 'Oath is given by the **Chief Justice of India** (Art 60). The President resigns by writing to the **Vice-President**.',
     },
     {

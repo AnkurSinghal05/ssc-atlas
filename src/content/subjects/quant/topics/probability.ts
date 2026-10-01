@@ -34,7 +34,7 @@ const topic: Topic = {
     },
     {
       title: 'Addition rule for "or"',
-      text: 'For A or B, add the two and subtract the overlap once. If A and B cannot happen together, the overlap is 0.',
+      text: 'For A or B, add the two and subtract the overlap once. If A and B cannot happen together, the overlap is 0. In the formula, ∪ means "or" and ∩ means "and".',
       formula: 'P(A ∪ B) = P(A) + P(B) − P(A ∩ B)',
       example: 'King or red card: 4/52 + 26/52 − 2/52 = 28/52 = **7/13**.',
     },
@@ -63,7 +63,7 @@ const topic: Topic = {
     },
     {
       title: 'Permutation and combination counts',
-      text: 'Arrangements (order matters) use ⁿPᵣ; selections (order does not matter) use ⁿCᵣ. ⁿPᵣ = ⁿCᵣ × r!.',
+      text: 'Arrangements (order matters) use ⁿPᵣ. Selections (order does not matter) use ⁿCᵣ. Here n! (n factorial) means n × (n − 1) × … × 1, so 3! = 6. Quick count: ⁿC₂ = n(n − 1)/2, so ¹⁰C₂ = 45. ⁿPᵣ = ⁿCᵣ × r!.',
       formula: 'ⁿPᵣ = (n!)/((n − r)!); ⁿCᵣ = (n!)/(r! × (n − r)!)',
       example: '⁷P₃ = 210 and ⁷C₃ = 35.',
     },
@@ -381,7 +381,7 @@ const topic: Topic = {
       question: 'A bag has 4 red and 6 black balls. Two balls are drawn at random. What is the probability that both are red?',
       options: ['2/15', '4/25', '2/5', '1/15'],
       answer: 0,
-      explain: '⁴C₂/¹⁰C₂ = 6/45 = 2/15.',
+      explain: 'Ways to pick 2 red from 4: ⁴C₂ = (4 × 3)/2 = 6. Ways to pick any 2 from 10: ¹⁰C₂ = (10 × 9)/2 = 45. Probability = 6/45 = 2/15.',
       shortcut: 'One after another: 4/10 × 3/9 = 2/15.',
     },
     {
@@ -415,7 +415,7 @@ const topic: Topic = {
       question: 'A bag has 5 red and 4 green balls. Three balls are drawn at random. What is the probability that at least one is green?',
       options: ['5/42', '31/42', '37/42', '10/21'],
       answer: 2,
-      explain: 'None green = ⁵C₃/⁹C₃ = 10/84 = 5/42. At least one green = 1 − 5/42 = 37/42.',
+      explain: 'None green means all three are red. ⁵C₃ = (5 × 4 × 3)/(3 × 2 × 1) = 10 and ⁹C₃ = (9 × 8 × 7)/(3 × 2 × 1) = 84. So P(none green) = 10/84 = 5/42. At least one green = 1 − 5/42 = 37/42.',
       shortcut: 'Use 1 − P(none).',
     },
     {

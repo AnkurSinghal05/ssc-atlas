@@ -189,7 +189,7 @@ const topic: Topic = {
   weightage: { tier1: 3, tier2: 3 },
   tags: ['DI', 'table', 'bar graph', 'pie chart', 'line graph', 'percentage', 'ratio', 'average', 'growth', 'approximation'],
   summary:
-    'One chart, three to five linked questions. Almost every question is a percentage, a ratio, an average or a growth rate. Read the units first, then approximate hard.',
+    'Data interpretation (DI) means reading numbers off a table, bar graph, line graph or pie chart and doing quick arithmetic with them. One chart usually comes with three to five linked questions. Almost every question is a percentage, a ratio, an average or a growth rate. Read the units first, then approximate hard.',
   patterns: [
     { name: 'Table: percentage change and percentage share', frequency: 'most', example: 'By what percent did production rise from 2019 to 2022?' },
     { name: 'Bar graph: ratio and difference', frequency: 'most', example: 'Ratio of sales of A in 2022 to sales of C in 2023?' },
@@ -478,7 +478,7 @@ const topic: Topic = {
       figure: CARS_FIG,
       options: ['2020', '2022', '2023', '2021'],
       answer: 1,
-      explain: '2020: 30/120 = 25%. 2021: fall. 2022: 45/135 = 33.3%. 2023: 20/180 = 11.1%. Highest is 2022.',
+      explain: 'Rise ÷ previous year. 2020: 30/120 = 25%. 2021: a fall (150 → 135), so no increase. 2022: 45/135 = 33.3%. 2023: 20/180 = 11.1%. Highest is 2022.',
       shortcut: 'Compare 1/4, 1/3 and 1/9. 1/3 wins.',
     },
     {
@@ -546,7 +546,7 @@ const topic: Topic = {
       figure: SALES_FIG,
       options: ['15.2%', '16.4%', '18.6%', '20.5%'],
       answer: 2,
-      explain: '2022 total = 840. 2023 total = 996. Rise = 156/840 × 100 ≈ 18.57%.',
+      explain: '2022 total = 240 + 320 + 280 = 840. 2023 total = 300 + 360 + 336 = 996. Rise = 996 − 840 = 156, and 156/840 × 100 ≈ 18.57%.',
       shortcut: '156/840 is a bit less than 160/840 ≈ 19%. Only 18.6% fits.',
     },
     {

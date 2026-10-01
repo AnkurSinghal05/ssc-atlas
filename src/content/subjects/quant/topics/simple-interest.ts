@@ -59,7 +59,7 @@ const topic: Topic = {
     },
     {
       title: 'Sum split at two rates: use alligation',
-      text: 'Find the average rate (total interest ÷ total sum). The two parts are in the ratio (higher − average) : (average − lower).',
+      text: 'Alligation is the mixing rule: the further a rate is from the average, the smaller its share. Find the average rate (total interest ÷ total sum × 100). Then lower-rate part : higher-rate part = (higher − average) : (average − lower).',
       example: '₹10,000, ₹920 a year: average 9.2%. At 8% : at 10% = 0.8 : 1.2 = 2 : 3, so **₹4,000** at 8% and ₹6,000 at 10%.',
     },
     {
@@ -77,7 +77,7 @@ const topic: Topic = {
         { aspect: 'How the sum grows', values: ['Adds the same amount every year', 'Multiplies by the same factor every year'] },
         { aspect: 'Doubles in 5 years, 4 times in', values: ['15 years (3 lots of P)', '10 years (2 × 2)'], key: true },
         { aspect: 'Doubles in 5 years, 8 times in', values: ['35 years (7 lots of P)', '15 years (2 × 2 × 2)'] },
-        { aspect: 'Rule', values: ['Time is proportional to n − 1', 'Time is proportional to the power of 2'] },
+        { aspect: 'Rule', values: ['Time is proportional to n − 1', 'Time is proportional to the number of doublings'] },
       ],
       reveal: 'SI counts how many extra principals are earned (n − 1). CI counts how many doublings happen.',
       whenToUse: ['The question says "at simple interest": count the extra principals.', 'The question says "at compound interest": count the doublings or triplings.'],

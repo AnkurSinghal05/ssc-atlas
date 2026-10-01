@@ -21,7 +21,7 @@ const topic: Topic = {
   keyPoints: [
     {
       title: 'Mean',
-      text: 'Add all values and divide by how many there are. For a frequency table, weight each value by its frequency.',
+      text: 'Add all values and divide by how many there are. For a frequency table, weight each value by its frequency (how many times it occurs). In the formulas, Σ means "the sum of", n is the count, f is a frequency and x̄ (x-bar) is the mean.',
       formula: 'mean = Σx/n; weighted mean = (Σfx)/(Σf)',
       example: '12, 15, 18, 21, 24: 90/5 = **18**. For evenly spaced values, mean = (first + last)/2.',
     },
@@ -63,7 +63,7 @@ const topic: Topic = {
     },
     {
       title: 'Shifting and scaling the data',
-      text: 'Adding k to every value adds k to mean, median and mode but leaves range, variance and SD unchanged. Multiplying by k multiplies the averages, range and SD by k and the variance by k².',
+      text: 'Adding k to every value adds k to mean, median and mode but leaves range, variance and SD unchanged. Multiplying by k multiplies the averages by k, the range and SD by |k| (k without its minus sign) and the variance by k².',
       example: 'SD 4, then ×3 and +7: new SD = 3 × 4 = **12**.',
     },
   ],
@@ -279,7 +279,7 @@ const topic: Topic = {
       question: 'The mean of 10 numbers is 25. It was later found that 43 was wrongly read as 34. What is the correct mean?',
       options: ['24.1', '25.09', '25.9', '26.8'],
       answer: 2,
-      explain: 'Correct total = 250 + 9 = 259. Mean = 25.9.',
+      explain: 'Wrong total = 10 × 25 = 250. The true value is 43 − 34 = 9 more, so the correct total = 250 + 9 = 259. Mean = 259 ÷ 10 = 25.9.',
       shortcut: 'Error +9 over 10 values: +0.9.',
     },
     {
@@ -313,7 +313,7 @@ const topic: Topic = {
       question: 'The mean of 5, 8, x, 12 and 15 is 10. What is x?',
       options: ['8', '12', '9', '10'],
       answer: 3,
-      explain: 'Total needed = 50. Known values sum to 40. x = 10.',
+      explain: 'Total needed = 5 × 10 = 50. Known values: 5 + 8 + 12 + 15 = 40. So x = 50 − 40 = 10.',
     },
     {
       type: 'mcq',
@@ -339,7 +339,7 @@ const topic: Topic = {
         'The average of 11 numbers is 50. The average of the first six is 49 and the average of the last six is 52. What is the sixth number?',
       options: ['50', '54', '52', '56'],
       answer: 3,
-      explain: 'First six total 294, last six total 312. Together they count the sixth number twice: 294 + 312 − 550 = 56.',
+      explain: 'All 11 total 11 × 50 = 550. First six total 6 × 49 = 294, last six total 6 × 52 = 312. Together the two groups cover all 11 numbers but count the sixth number twice: 294 + 312 − 550 = 56.',
     },
     {
       type: 'mcq',
@@ -349,6 +349,16 @@ const topic: Topic = {
       answer: 0,
       explain: 'Mean becomes 40 + 5 = 45, then 45 ÷ 2 = 22.5.',
       shortcut: 'Apply to the mean exactly what was done to each value.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'The values 2, 4, 6 and 8 occur 3, 5, 8 and 4 times respectively. What is the mean?',
+      options: ['5', '5.5', '5.3', '6'],
+      answer: 2,
+      explain:
+        'Multiply each value by its frequency: 2 × 3 + 4 × 5 + 6 × 8 + 8 × 4 = 6 + 20 + 48 + 32 = 106. Total frequency = 3 + 5 + 8 + 4 = 20. Mean = 106 ÷ 20 = 5.3.',
+      shortcut: 'Weighted mean = (Σfx)/(Σf).',
     },
     {
       type: 'truefalse',

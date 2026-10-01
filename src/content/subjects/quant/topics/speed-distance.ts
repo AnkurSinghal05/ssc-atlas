@@ -353,7 +353,7 @@ const topic: Topic = {
       question: 'Walking at 5 km/h, a man reaches his office 7 minutes late. Walking at 6 km/h, he reaches 5 minutes early. How far is his office?',
       options: ['5 km', '7.2 km', '6 km', '4.5 km'],
       answer: 2,
-      explain: 'D/5 − D/6 = 12/60 h, so D/30 = 1/5 and D = 6 km.',
+      explain: 'The two times differ by 7 min late + 5 min early = 12 min = 12/60 h. So D/5 − D/6 = 12/60, which gives D/30 = 1/5 and D = 6 km.',
       shortcut: 'S₁S₂/(S₂ − S₁) × gap = 30 × 12/60 = 6 km.',
     },
     {
@@ -389,7 +389,7 @@ const topic: Topic = {
         'A man covers a journey in 5 hours. He travels the first half of the distance at 4 km/h and the second half at 6 km/h. What is the total distance?',
       options: ['20 km', '25 km', '30 km', '24 km'],
       answer: 3,
-      explain: 'D/8 + D/12 = 5, so 5D/24 = 5 and D = 24 km.',
+      explain: 'Each half is D/2. Time for the first half = (D/2)/4 = D/8 and for the second = (D/2)/6 = D/12. So D/8 + D/12 = 5, which gives 5D/24 = 5 and D = 24 km.',
       shortcut: 'Average speed = 2 × 4 × 6/10 = 4.8 km/h; 4.8 × 5 = 24 km.',
     },
     {

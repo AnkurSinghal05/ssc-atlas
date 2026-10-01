@@ -166,7 +166,7 @@ const topic: Topic = {
     },
     {
       q: 'Write 1/7, 1/9 and 1/11 as percentages.',
-      a: ['1/7 = 14 2/7% ≈ 14.28%.', '1/9 = 11 1/9% ≈ 11.11%.', '1/11 = 9 1/11% ≈ 9.09%.'],
+      a: ['1/7 = 14 2/7% ≈ 14.29%.', '1/9 = 11 1/9% ≈ 11.11%.', '1/11 = 9 1/11% ≈ 9.09%.'],
     },
     {
       q: 'How do you find the original value after a known percentage change?',
@@ -301,6 +301,15 @@ const topic: Topic = {
       options: ['75%', '80%', '85%', '125%'],
       answer: 1,
       explain: 'A = 1.25B, so B = A ÷ 1.25 = 0.8A = 80% of A.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'A man saves 25% of his income. His income rises by 20% and his expenditure rises by 10%. By what percent do his savings rise?',
+      options: ['30%', '40%', '50%', '45%'],
+      answer: 2,
+      explain: 'Take income 100: expenditure 75, savings 25. New income 120, new expenditure 75 × 1.1 = 82.5, new savings 120 − 82.5 = 37.5. Rise = 12.5/25 × 100 = 50%.',
+      shortcut: 'Savings = income − expenditure. Always work out the new income and new expenditure first, then subtract.',
     },
     {
       type: 'truefalse',

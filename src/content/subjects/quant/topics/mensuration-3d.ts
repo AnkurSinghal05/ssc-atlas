@@ -23,7 +23,7 @@ const topic: Topic = {
     'melting and recasting',
   ],
   summary:
-    'Volume stays the same when a solid is melted and recast, and surface area and volume scale as k² and k³. With the cylinder, cone and sphere formulas, that covers most questions.',
+    'Volume (the space a solid fills) and surface area (the total area of its outer faces) of cubes, cuboids, cylinders, cones and spheres. Two ideas cover most questions: volume stays the same when a solid is melted and recast, and if every length is multiplied by k, surface area is multiplied by k² and volume by k³.',
   patterns: [
     { name: 'Melting and recasting', frequency: 'most', example: 'A sphere of radius 9 cm is melted into spheres of radius 3 cm. How many?' },
     {
@@ -58,13 +58,13 @@ const topic: Topic = {
     },
     {
       title: 'Cylinder',
-      text: 'Volume πr²h, curved surface 2πrh, total surface 2πr(r + h). Hollow pipe: π(R² − r²)h.',
+      text: 'Volume πr²h. Curved surface area (CSA, the side only) is 2πrh. Total surface area (TSA) adds the two circular ends: 2πr(r + h). Hollow pipe with outer radius R and inner radius r: volume π(R² − r²)h.',
       formula: 'V = πr²h,  CSA = 2πrh,  TSA = 2πr(r + h)',
       example: 'r = 7, h = 10: V = 22/7 × 49 × 10 = **1,540**.',
     },
     {
       title: 'Cone',
-      text: 'Volume is one third of the cylinder with the same base and height. Slant height l from Pythagoras. When a sector is rolled into a cone, the arc becomes the base circumference and the sector radius becomes the slant height.',
+      text: 'Volume is one third of the cylinder with the same base and height. The slant height l (tip to rim along the side) comes from Pythagoras. When a sector is rolled into a cone, the arc becomes the base circumference and the sector radius becomes the slant height.',
       formula: 'V = 1/3 πr²h,  l = √(r² + h²),  CSA = πrl,  TSA = πr(l + r)',
       example: 'r = 6, h = 8: l = 10, CSA = **60π**.',
     },
@@ -94,7 +94,7 @@ const topic: Topic = {
     },
     {
       title: 'Scaling and percentage change',
-      text: 'Multiply every length by k: surface area × k², volume × k³. For x% change in every length, surface area changes 2x + x²/100 percent; volume: apply x% three times.',
+      text: 'Multiply every length by k: surface area × k², volume × k³. If every length changes by x%, surface area changes 2x + x²/100 percent. For volume, multiply by (1 + x/100) three times.',
       formula: 'Volume factor = (1 + x/100)³',
       example: 'Radius +10%: 1.1³ = 1.331, volume up **33.1%**; surface up 21%.',
     },
@@ -477,7 +477,7 @@ const topic: Topic = {
       },
       options: ['240 cm²', '260 cm²', '400 cm²', '520 cm²'],
       answer: 1,
-      explain: 'Slant height = √(12² + 5²) = 13. Lateral area = 1/2 × 40 × 13 = 260 cm².',
+      explain: 'The slant height runs from the tip to the middle of a base edge, which is 10/2 = 5 cm from the centre. Slant height = √(12² + 5²) = 13. Lateral area = 1/2 × base perimeter × slant height = 1/2 × 40 × 13 = 260 cm².',
     },
     {
       type: 'mcq',
@@ -508,6 +508,15 @@ const topic: Topic = {
     },
     {
       type: 'mcq',
+      difficulty: 'medium',
+      question: 'The radii of two cylinders are in the ratio 2 : 3 and their heights in the ratio 5 : 3. What is the ratio of their volumes?',
+      options: ['10 : 9', '4 : 9', '20 : 27', '2 : 3'],
+      answer: 2,
+      explain: 'Volume = πr²h, so the ratio is (2² × 5) : (3² × 3) = 20 : 27. Square the radius ratio, then multiply by the height ratio.',
+      shortcut: '4/9 × 5/3 = 20/27.',
+    },
+    {
+      type: 'mcq',
       difficulty: 'hard',
       question:
         'A toy is a cone mounted on a hemisphere of the same radius, 7 cm. The total height of the toy is 31 cm. What is its total surface area? (Take π = 22/7.)',
@@ -532,7 +541,7 @@ const topic: Topic = {
       },
       options: ['858 cm²', '1,012 cm²', '704 cm²', '770 cm²'],
       answer: 0,
-      explain: 'Cone height = 31 − 7 = 24, so l = 25. Area = πrl + 2πr² = 22/7 × 7 × (25 + 14) = 22 × 39 = 858 cm².',
+      explain: 'Cone height = 31 − 7 = 24, so l = √(7² + 24²) = 25. The outside is the cone\'s curved surface plus the hemisphere\'s curved surface; the flat circle where they join is hidden. Area = πrl + 2πr² = 22/7 × 7 × (25 + 14) = 22 × 39 = 858 cm².',
       shortcut: 'Take πr out: πr(l + 2r).',
     },
     {

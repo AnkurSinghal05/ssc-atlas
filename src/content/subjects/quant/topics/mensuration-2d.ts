@@ -10,7 +10,7 @@ const topic: Topic = {
   weightage: { tier1: 1, tier2: 1.5 },
   tags: ['area', 'perimeter', 'triangle', "Heron's formula", 'circle', 'sector', 'ring', 'rhombus', 'trapezium', 'path', 'wheel'],
   summary:
-    'Learn the area formulas cold and the numbers 22/7, 7, 14, 21 and 154. Most questions are one formula plus one Pythagorean triplet or one percentage-change step.',
+    'How much flat space a shape covers (area) and how long its boundary is (perimeter), for triangles, rectangles, squares, circles and their parts. Learn the formulas cold and the numbers 22/7, 7, 14, 21 and 154. Most questions need one formula plus one Pythagorean triplet (like 3-4-5) or one percentage-change step.',
   patterns: [
     {
       name: 'Circle, sector, arc and ring (circular path)',
@@ -39,7 +39,7 @@ const topic: Topic = {
   keyPoints: [
     {
       title: "Triangle and Heron's formula",
-      text: "Use 1/2 × base × height when a height is known. With three sides, use Heron's formula with the semi-perimeter s. Remember 13, 14, 15 → 84 and any right triangle: half the product of the legs.",
+      text: "Use 1/2 × base × height when a height is known. With three sides, use Heron's formula with the semi-perimeter s. For a right triangle, the area is half the product of the two legs (the sides that meet at 90°). Remember: sides 13, 14, 15 give area 84.",
       formula: 'Area = √(s(s − a)(s − b)(s − c)),  s = (a + b + c)/2',
       example: '17, 25, 28: s = 35, √(35 × 18 × 10 × 7) = √44,100 = **210**.',
     },
@@ -81,7 +81,7 @@ const topic: Topic = {
     },
     {
       title: 'Rhombus, trapezium, wheels and % change in area',
-      text: 'Rhombus 1/2 × d₁ × d₂. Trapezium 1/2 × (a + b) × h. Revolutions = distance ÷ circumference. If length and breadth change a% and b%, area changes a + b + ab/100 percent; if every side or the radius changes x%, area changes 2x + x²/100 percent.',
+      text: 'Rhombus: 1/2 × d₁ × d₂, where d₁ and d₂ are the diagonals. They cross at 90° and bisect each other, so side = √((d₁/2)² + (d₂/2)²). Trapezium: 1/2 × (a + b) × h, where a and b are the parallel sides and h the gap between them. Wheel revolutions = distance ÷ circumference. If length changes a% and breadth b%, area changes a + b + ab/100 percent. If every side (or the radius) changes x%, area changes 2x + x²/100 percent.',
       formula: '% change in area = 2x + x²/100',
       example: 'Radius +10%: 20 + 1 = **21%** more area.',
     },
@@ -446,7 +446,7 @@ const topic: Topic = {
       },
       options: ['4 cm', '2.5 cm', '3.5 cm', '3 cm'],
       answer: 3,
-      explain: 'Hypotenuse 17. r = (8 + 15 − 17)/2 = 3 cm.',
+      explain: 'Hypotenuse = √(8² + 15²) = √289 = 17. Inradius r = (8 + 15 − 17)/2 = 6/2 = 3 cm.',
     },
     {
       type: 'mcq',
@@ -455,7 +455,7 @@ const topic: Topic = {
       options: ['2 : 1', '4 : 1', '3 : 1', '√3 : 1'],
       answer: 1,
       explain:
-        'The centre sits on each height at 1/3 of the way up, so r = h/3 and R = 2h/3. So R = 2r. Circle areas go with the square of the radius: 2² : 1 = 4 : 1.',
+        'In an equilateral triangle both circles share one centre. It sits on each height (corner to the middle of the opposite side) one third of the way up. So the inradius r = height/3 and the circumradius R = 2 × height/3, which means R = 2r. Circle areas go with the square of the radius: 2² : 1 = 4 : 1.',
     },
     {
       type: 'mcq',
@@ -492,6 +492,16 @@ const topic: Topic = {
       options: ['42 cm²', '49 cm²', '56 cm²', '35 cm²'],
       answer: 0,
       explain: 'Centres form a square of side 14: area 196. Inside it are four quarter circles = one full circle = 154. Gap = 196 − 154 = 42 cm².',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'The diagonals of a rhombus are 24 cm and 10 cm. What is its perimeter?',
+      options: ['68 cm', '52 cm', '48 cm', '26 cm'],
+      answer: 1,
+      explain:
+        'The diagonals of a rhombus cut each other in half at 90°. So each side is the hypotenuse of a right triangle with legs 24/2 = 12 and 10/2 = 5. Side = √(12² + 5²) = √169 = 13. Perimeter = 4 × 13 = 52 cm.',
+      shortcut: 'Half-diagonals 5 and 12 make the 5-12-13 triplet.',
     },
     {
       type: 'truefalse',

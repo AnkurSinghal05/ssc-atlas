@@ -73,13 +73,13 @@ const topic: Topic = {
     },
     {
       title: 'Speeds from times after meeting',
-      text: 'Two trains start towards each other at the same time. After meeting they take t₁ and t₂ hours to finish.',
+      text: 'Two trains start towards each other at the same time. After meeting, train 1 takes t₁ hours and train 2 takes t₂ hours to finish. Note the swap in the formula: the train that takes longer is the slower one.',
       formula: 'S₁ : S₂ = √t₂ : √t₁',
       example: 'Times 9 h and 4 h after meeting: S₁ : S₂ = 2 : 3.',
     },
     {
       title: 'Stoppage time per hour',
-      text: 'Speed drops because the train stands still part of each hour.',
+      text: 'Speed drops because the train stands still part of each hour. S is the speed without stops and s the speed with stops. The lost distance (S − s) is what it would have run while stopped.',
       formula: 'stop minutes per hour = (S − s)/S × 60',
       example: '54 km/h without stops, 45 km/h with: 9/54 × 60 = **10 minutes**.',
     },

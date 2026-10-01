@@ -64,7 +64,7 @@ const topic: Topic = {
     },
     {
       title: 'Equal annual instalments',
-      text: 'The loan equals the present value of all instalments. Each instalment x is divided by the multiplier once for every year it is away.',
+      text: 'The loan equals the present value of all instalments. The present value of a payment is the sum that would grow into it by its due date. So each instalment x is divided by the multiplier once for every year it is away.',
       formula: 'P = x/(1 + r/100) + x/(1 + r/100)²',
       example: '₹2,100 at 10% in 2 instalments: x × (10/11 + 100/121) = 2,100, so x = **₹1,210**.',
     },
@@ -249,7 +249,7 @@ const topic: Topic = {
       question: 'A sum amounts to ₹4,840 in 2 years and to ₹5,324 in 3 years at compound interest. Find the sum.',
       options: ['₹4,400', '₹3,800', '₹4,200', '₹4,000'],
       answer: 3,
-      explain: 'Rate = 484/4,840 = 10%. P = 4,840 ÷ 1.21 = ₹4,000.',
+      explain: 'Year 3 interest = 5,324 − 4,840 = 484, so the rate = 484/4,840 = 10%. Two years at 10% multiply P by 1.21, so P = 4,840 ÷ 1.21 = ₹4,000.',
     },
     {
       type: 'mcq',

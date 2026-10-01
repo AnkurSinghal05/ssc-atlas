@@ -10,7 +10,7 @@ const topic: Topic = {
   weightage: { tier1: 2, tier2: 2 },
   tags: ['trigonometry', 'standard angles', 'identities', 'complementary angles', 'sec tan', 'maximum minimum', 'putting values'],
   summary:
-    'Learn the standard-angle table and the three Pythagorean identities cold. Most questions then fall to one of four moves: factorise a pair, use a complementary angle, apply √(a² + b²), or put θ = 0° or 45°.',
+    'Trigonometry compares the sides of a right triangle through six ratios (sin, cos, tan and their flips). Learn the standard-angle table and the three Pythagorean identities cold. Most questions then fall to one of four moves: factorise a pair, use a complementary angle, apply √(a² + b²), or put θ = 0° or 45°.',
   patterns: [
     { name: 'Simplify using the three identities', frequency: 'most', example: 'Find the value of (1 − sin²θ) × sec²θ.' },
     { name: 'Standard-angle values', frequency: 'most', example: 'Find sin²30° + cos²30° + tan²45°.' },
@@ -23,7 +23,7 @@ const topic: Topic = {
   keyPoints: [
     {
       title: 'The six ratios',
-      text: 'In a right triangle with angle θ: sin = perpendicular over hypotenuse, cos = base over hypotenuse, tan = perpendicular over base. cosec, sec and cot are their reciprocals. Know the triplets 3-4-5, 5-12-13, 8-15-17 and 7-24-25.',
+      text: 'In a right triangle, stand at angle θ. The perpendicular (P) is the side facing θ, the base (B) is the other side next to θ, and the hypotenuse (H) faces the right angle. sin = P/H, cos = B/H, tan = P/B. cosec, sec and cot are their reciprocals (flips). Know the triplets 3-4-5, 5-12-13, 8-15-17 and 7-24-25.',
       formula: 'sinθ = P/H, cosθ = B/H, tanθ = P/B = (sinθ)/(cosθ)',
       example: 'tanθ = 8/15 gives the triangle 8, 15, 17, so sinθ = 8/17 and cosθ = 15/17.',
     },
@@ -52,7 +52,7 @@ const topic: Topic = {
     },
     {
       title: 'Maximum and minimum values',
-      text: 'a sinθ + b cosθ always lies between −√(a² + b²) and +√(a² + b²). For a tan²θ + b cot²θ (and the sec, cosec forms) use AM ≥ GM: minimum 2√(ab). sinθ cosθ is at most 1/2.',
+      text: 'a sinθ + b cosθ always lies between −√(a² + b²) and +√(a² + b²). For a tan²θ + b cot²θ use AM ≥ GM: for two positive numbers, x + y is at least 2√(xy). Since tan²θ × cot²θ = 1, the minimum is 2√(ab). sinθ cosθ is at most 1/2.',
       formula: 'max of a sinθ + b cosθ = √(a² + b²); min of a tan²θ + b cot²θ = 2√(ab)',
       example: '5 sinθ + 12 cosθ: max √(25 + 144) = **13**. 9 tan²θ + 4 cot²θ: min 2√36 = **12**.',
     },
@@ -380,7 +380,7 @@ const topic: Topic = {
       question: 'What is the maximum value of 7 + 3 sinθ − 4 cosθ?',
       options: ['14', '12', '10', '5'],
       answer: 1,
-      explain: '3 sinθ − 4 cosθ lies between −5 and 5. Maximum = 7 + 5 = 12.',
+      explain: '3 sinθ − 4 cosθ lies between −√(3² + 4²) and +√(3² + 4²), that is between −5 and 5. Maximum = 7 + 5 = 12.',
     },
     {
       type: 'mcq',
@@ -388,7 +388,7 @@ const topic: Topic = {
       question: 'If sinθ + sin²θ = 1, what is the value of cos²θ + cos⁴θ?',
       options: ['0', '2', '1/2', '1'],
       answer: 3,
-      explain: 'sinθ = 1 − sin²θ = cos²θ. So cos²θ + cos⁴θ = sinθ + sin²θ = 1.',
+      explain: 'From the given equation, sinθ = 1 − sin²θ = cos²θ. So cos²θ = sinθ and cos⁴θ = sin²θ. Then cos²θ + cos⁴θ = sinθ + sin²θ = 1.',
     },
     {
       type: 'mcq',
@@ -396,7 +396,7 @@ const topic: Topic = {
       question: 'What is the minimum value of 9 tan²θ + 4 cot²θ?',
       options: ['13', '6', '12', '36'],
       answer: 2,
-      explain: 'AM ≥ GM: 9 tan²θ + 4 cot²θ ≥ 2√(9 × 4) = 12, since tan²θ × cot²θ = 1.',
+      explain: 'AM ≥ GM says x + y ≥ 2√(xy) for positive x and y. Here xy = 9 tan²θ × 4 cot²θ = 36, since tan²θ × cot²θ = 1. So the sum is at least 2√36 = 12.',
     },
     {
       type: 'mcq',
@@ -404,8 +404,18 @@ const topic: Topic = {
       question: 'What is the value of sin⁶θ + cos⁶θ + 3 sin²θ cos²θ?',
       options: ['0', '1', '2', '3'],
       answer: 1,
-      explain: 'With a = sin²θ, b = cos²θ and a + b = 1: a³ + b³ = 1 − 3ab. Adding 3ab gives 1.',
+      explain: 'Let a = sin²θ and b = cos²θ, so a + b = 1. Then a³ + b³ = (a + b)³ − 3ab(a + b) = 1 − 3ab. Adding 3ab gives 1.',
       shortcut: 'Put θ = 0°: 0 + 1 + 0 = 1.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'If sinθ + cosθ = 7/5, what is the value of sinθ cosθ?',
+      options: ['24/25', '12/25', '7/25', '6/25'],
+      answer: 1,
+      explain:
+        'Square both sides: sin²θ + cos²θ + 2 sinθ cosθ = 49/25. Since sin²θ + cos²θ = 1, 2 sinθ cosθ = 49/25 − 1 = 24/25. So sinθ cosθ = 12/25.',
+      shortcut: 'sinθ cosθ = (k² − 1)/2 with k = 7/5. Check: sin = 3/5, cos = 4/5 gives 12/25.',
     },
     {
       type: 'truefalse',

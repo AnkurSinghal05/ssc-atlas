@@ -235,6 +235,15 @@ const topic: Topic = {
     },
     {
       type: 'mcq',
+      difficulty: 'easy',
+      question: 'If a + b = 7 and ab = 12, what is a³ + b³?',
+      options: ['175', '91', '343', '127'],
+      answer: 1,
+      explain: 'Use a³ + b³ = (a + b)³ − 3ab(a + b). So a³ + b³ = 7³ − 3 × 12 × 7 = 343 − 252 = 91.',
+      shortcut: 'The numbers are 3 and 4 (sum 7, product 12): 27 + 64 = 91.',
+    },
+    {
+      type: 'mcq',
       difficulty: 'medium',
       question: 'If x − 1/x = 4, what is the value of x² + 1/x²?',
       options: ['14', '16', '20', '18'],

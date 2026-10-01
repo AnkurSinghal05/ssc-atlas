@@ -33,7 +33,7 @@ const topic: Topic = {
   keyPoints: [
     {
       title: 'Election Commission, UPSC and law officers',
-      text: '**Art 324** Election Commission: the CEC + 2 Election Commissioners; term **6 years or age 65**; the CEC is removed like a Supreme Court judge · **Arts 315 to 323** UPSC and State PSCs; UPSC members serve 6 years or till **65** (State PSC: **62**) · **Art 76** Attorney General · **Art 165** Advocate General of a state.',
+      text: '**Art 324** Election Commission: at present (2026) the CEC + 2 Election Commissioners; term **6 years or age 65**; the CEC is removed like a Supreme Court judge · **Arts 315 to 323** UPSC and State PSCs; UPSC members serve 6 years or till **65** (State PSC: **62**) · **Art 76** Attorney General · **Art 165** Advocate General of a state.',
       example: 'The Solicitor General is **not** a constitutional post. The AG can speak in Parliament but cannot vote (Art 88).',
     },
     {
@@ -65,7 +65,7 @@ const topic: Topic = {
     },
     {
       title: 'The twelve Schedules',
-      text: '**1** states and UTs · **2** salaries · **3** oaths · **4** Rajya Sabha seats · **5** Scheduled Areas · **6** tribal areas of Assam, Meghalaya, Tripura, Mizoram · **7** Union, State and Concurrent Lists · **8** languages (**22**) · **9** laws shielded (1st Amendment) · **10** anti-defection (52nd) · **11** panchayats (73rd) · **12** municipalities (74th).',
+      text: '**1** states and UTs · **2** salaries · **3** oaths · **4** Rajya Sabha seats · **5** Scheduled Areas · **6** tribal areas of Assam, Meghalaya, Tripura, Mizoram · **7** Union, State and Concurrent Lists · **8** languages (**22**) · **9** land reform and other laws shielded from court challenge (1st Amendment) · **10** anti-defection (52nd) · **11** panchayats (73rd) · **12** municipalities (74th).',
       example: 'The original Constitution had 8 Schedules. The 8th had 14 languages; the 92nd Amendment (2003) brought it to 22.',
     },
   ],

@@ -37,13 +37,13 @@ const topic: Topic = {
     },
     {
       title: 'Combine two ratios',
-      text: 'Make the common term equal using the LCM. Quick form for A : B = a : b and B : C = c : d: A : B : C = ac : bc : bd.',
+      text: 'B appears in both ratios. Make its two terms equal using their LCM, then read off A : B : C. Quick form for A : B = a : b and B : C = c : d: A : B : C = ac : bc : bd.',
       formula: 'A : B : C = ac : bc : bd',
       example: '2 : 3 and 4 : 5: (2 × 4) : (3 × 4) : (3 × 5) = **8 : 12 : 15**.',
     },
     {
       title: 'Proportion and the three proportionals',
-      text: 'a : b = c : d means ad = bc (product of extremes = product of means).',
+      text: 'Four numbers are in proportion when a : b = c : d. Then ad = bc. The outer terms a and d are the extremes, the inner terms b and c are the means, so product of extremes = product of means.',
       formula: 'fourth = bc/a,  third = b²/a,  mean = √(ab)',
       example: 'Fourth proportional to 4, 9, 12 = 108/4 = **27**. Third to 16, 36 = 1,296/16 = **81**. Mean of 9, 25 = **15**.',
     },
@@ -237,7 +237,7 @@ const topic: Topic = {
         { name: 'Shortcut', steps: ['Value ratio 5 : 3 : 2, so 50p coins are worth 3/10 × 210 = ₹63.', '₹63 ÷ 0.5 = 126 coins.'], seconds: 15 },
         {
           name: 'Option elimination',
-          steps: ['The count must be a multiple of 6: 126 or 120.', '120 gives x = 20 and a total of ₹200, so 126.'],
+          steps: ['The count must be a multiple of 6: 126, 168 or 120.', '120 gives x = 20 and a total of ₹200. 168 gives x = 28 and ₹280. So 126.'],
           seconds: 12,
         },
       ],
@@ -306,7 +306,7 @@ const topic: Topic = {
       question: 'If A : B = 2 : 3 and B : C = 4 : 5, what is A : C?',
       options: ['8 : 15', '2 : 5', '3 : 5', '10 : 12'],
       answer: 0,
-      explain: 'A : B : C = 8 : 12 : 15, so A : C = 8 : 15.',
+      explain: 'Make B equal: A : B = 8 : 12 and B : C = 12 : 15. So A : B : C = 8 : 12 : 15, and A : C = 8 : 15.',
       shortcut: 'A/C = A/B × B/C = 2/3 × 4/5 = 8/15.',
     },
     {
@@ -410,6 +410,15 @@ const topic: Topic = {
       options: ['25', '30', '35', '36'],
       answer: 1,
       explain: '(4 + 9 + 25)x² = 38x² = 1,368, so x² = 36 and x = 6. Largest = 5 × 6 = 30.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'easy',
+      question: 'If 2A = 3B = 4C, what is A : B : C?',
+      options: ['2 : 3 : 4', '6 : 4 : 3', '4 : 3 : 2', '3 : 4 : 6'],
+      answer: 1,
+      explain: 'Let 2A = 3B = 4C = k. Then A = k/2, B = k/3, C = k/4. Multiply each by 12 (the LCM of 2, 3, 4): A : B : C = 6 : 4 : 3.',
+      shortcut: 'Check 6 : 4 : 3: 2 × 6 = 3 × 4 = 4 × 3 = 12.',
     },
     {
       type: 'truefalse',

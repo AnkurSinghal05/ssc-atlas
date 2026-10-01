@@ -35,7 +35,7 @@ const topic: Topic = {
     },
     {
       title: 'Numbers as H × co-primes',
-      text: 'If the HCF is H, the numbers are Ha and Hb with a and b co-prime. Their LCM is Hab. Numbers in the ratio a : b with HCF H follow the same rule.',
+      text: 'If the HCF is H, the numbers are Hx and Hy, where x and y are co-prime (no common factor except 1). Their LCM is Hxy. Numbers in the ratio x : y with HCF H follow the same rule.',
       formula: 'a = Hx, b = Hy (x, y co-prime) → LCM = Hxy',
       example: 'Ratio 3 : 4, LCM 180: H × 12 = 180, so HCF = **15** and the numbers are 45 and 60.',
     },
@@ -53,7 +53,7 @@ const topic: Topic = {
     },
     {
       title: 'HCF and LCM of fractions',
-      text: 'Write the fractions in lowest terms first. Then HCF works on numerators and LCM on denominators, and the other way round.',
+      text: 'Write the fractions in lowest terms first. For the HCF, take the HCF of the numerators over the LCM of the denominators. For the LCM, take the LCM of the numerators over the HCF of the denominators.',
       formula: 'HCF = (HCF of numerators)/(LCM of denominators); LCM = (LCM of numerators)/(HCF of denominators)',
       example: '2/3, 4/9, 8/15: HCF = 2/45, LCM = 8/3.',
     },
