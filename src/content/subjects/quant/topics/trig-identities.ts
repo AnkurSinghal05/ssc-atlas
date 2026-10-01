@@ -41,7 +41,7 @@ const topic: Topic = {
     {
       title: 'The secθ + tanθ pair',
       text: 'Since (secθ + tanθ)(secθ − tanθ) = 1, if secθ + tanθ = k then secθ − tanθ = 1/k. Add and subtract to get secθ and tanθ. The same works for cosecθ + cotθ.',
-      formula: 'secθ + tanθ = k ⇒ sinθ = (k² − 1)/(k² + 1)',
+      formula: 'secθ + tanθ = k ⇒ sinθ = (k² − 1)/(k² + 1);  cosecθ + cotθ = k ⇒ cosθ = (k² − 1)/(k² + 1)',
       example: 'k = 4: sinθ = 15/17. Check: secθ = 17/8, tanθ = 15/8.',
     },
     {
@@ -416,6 +416,16 @@ const topic: Topic = {
       explain:
         'Square both sides: sin²θ + cos²θ + 2 sinθ cosθ = 49/25. Since sin²θ + cos²θ = 1, 2 sinθ cosθ = 49/25 − 1 = 24/25. So sinθ cosθ = 12/25.',
       shortcut: 'sinθ cosθ = (k² − 1)/2 with k = 7/5. Check: sin = 3/5, cos = 4/5 gives 12/25.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'If cosecθ + cotθ = 3, what is the value of cosθ?',
+      options: ['3/5', '4/5', '5/4', '3/4'],
+      answer: 1,
+      explain:
+        'cosec²θ − cot²θ = 1, so (cosecθ + cotθ)(cosecθ − cotθ) = 1 and cosecθ − cotθ = 1/3. Adding the two equations: 2 cosecθ = 10/3, so cosecθ = 5/3. Subtracting: 2 cotθ = 8/3, so cotθ = 4/3. cosθ = cotθ ÷ cosecθ = (4/3) ÷ (5/3) = 4/5.',
+      shortcut: 'cosecθ + cotθ = k gives cosθ = (k² − 1)/(k² + 1) = 8/10 = 4/5.',
     },
     {
       type: 'truefalse',

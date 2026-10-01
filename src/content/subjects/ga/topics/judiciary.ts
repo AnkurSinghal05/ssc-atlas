@@ -333,10 +333,10 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'Which writ asks a person to show by what authority he holds a public office?',
-      options: ['Habeas corpus', 'Mandamus', 'Quo warranto', 'Prohibition'],
-      answer: 2,
-      explain: 'Quo warranto means "by what authority". It prevents illegal occupation of a public office.',
+      question: 'Which pair of judges is credited with pioneering public interest litigation (PIL) in India?',
+      options: ['H.J. Kania and Patanjali Sastri', 'P.N. Bhagwati and V.R. Krishna Iyer', 'A.N. Ray and M.H. Beg', 'J.S. Verma and A.M. Ahmadi'],
+      answer: 1,
+      explain: 'Justices P.N. Bhagwati and V.R. Krishna Iyer relaxed the rule of standing (locus standi) in the late 1970s and 1980s, so anyone acting in good faith, even by letter, could approach the court for people who could not.',
     },
     {
       type: 'mcq',

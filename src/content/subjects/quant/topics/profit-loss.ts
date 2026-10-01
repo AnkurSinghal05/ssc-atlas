@@ -68,6 +68,12 @@ const topic: Topic = {
       formula: 'profit % = (n − m)/m × 100',
       example: 'CP of 20 = SP of 16: (20 − 16)/16 = **25% profit**.',
     },
+    {
+      title: 'Buy x, get y free',
+      text: 'You pay for x items but take home x + y. The y free items are the discount, measured on the marked price of everything you receive.',
+      formula: 'discount % = y/(x + y) × 100',
+      example: 'Buy 3, get 2 free: 2/5 × 100 = **40%** discount. Buy 4, get 1 free: **20%**.',
+    },
   ],
   visuals: [
     {

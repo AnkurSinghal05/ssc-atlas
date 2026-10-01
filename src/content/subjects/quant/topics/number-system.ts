@@ -59,8 +59,8 @@ const topic: Topic = {
     },
     {
       title: 'Counting multiples and series sums',
-      text: 'Multiples of k from 1 to N: the whole part of N ÷ k. Between a and b: count up to b minus count up to a − 1. Sums of the first n natural numbers, squares and cubes come up in series questions.',
-      formula: '1 + 2 + … + n = (n(n + 1))/2; squares: (n(n + 1)(2n + 1))/6; cubes: (n²(n + 1)²)/4',
+      text: 'Multiples of k from 1 to N: the whole part of N ÷ k. Between a and b: count up to b minus count up to a − 1. Sums of the first n natural numbers, squares and cubes come up in series questions. The first n odd numbers add to n².',
+      formula: '1 + 2 + … + n = (n(n + 1))/2; odd numbers: n²; squares: (n(n + 1)(2n + 1))/6; cubes: (n²(n + 1)²)/4',
       example: 'Multiples of 7 from 100 to 500: 71 − 14 = **57**.',
     },
     {
@@ -322,6 +322,25 @@ const topic: Topic = {
       answer: 1,
       explain: '720 = 2⁴ × 3² × 5. An even factor needs at least one 2: 4 choices for the power of 2, then 3 × 2. 4 × 3 × 2 = 24.',
       shortcut: 'Odd factors = 3 × 2 = 6. Even = 30 − 6 = 24.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'easy',
+      question: 'What is the sum of the first 20 odd numbers, 1 + 3 + 5 + … + 39?',
+      options: ['420', '380', '441', '400'],
+      answer: 3,
+      explain: 'The first n odd numbers add to n². Here n = 20 (the 20th odd number is 2 × 20 − 1 = 39), so the sum is 20² = 400.',
+      shortcut: 'Check small cases: 1 + 3 = 4 = 2², 1 + 3 + 5 = 9 = 3².',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'What is the value of 11² + 12² + 13² + … + 20²?',
+      options: ['2,485', '2,870', '2,385', '2,585'],
+      answer: 0,
+      explain:
+        'Sum of the first n squares = n(n + 1)(2n + 1)/6. Up to 20: 20 × 21 × 41/6 = 2,870. Up to 10: 10 × 11 × 21/6 = 385. Subtract the part you do not want: 2,870 − 385 = 2,485.',
+      shortcut: 'Sum from 11 to 20 = (sum to 20) − (sum to 10).',
     },
     {
       type: 'truefalse',

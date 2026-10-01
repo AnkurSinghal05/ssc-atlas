@@ -589,6 +589,42 @@ const topic: Topic = {
       shortcut: 'Area of an equilateral triangle = 3√3 × r² = 3√3 × 16 = 48√3.',
     },
     {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'In △ABC, DE ∥ BC with D on AB and E on AC. If AD = 4 cm, DB = 6 cm and DE = 6 cm, what is BC?',
+      figure: {
+        viewBox: '0 0 320 230',
+        svg: `
+<polygon points="150,22 30,202 290,202"/>
+<line x1="102" y1="94" x2="206" y2="94" class="d-blue d-thick"/>
+<text x="149.2" y="14" text-anchor="middle">A</text>
+<text x="17.3" y="214" text-anchor="middle">B</text>
+<text x="302.8" y="213.7" text-anchor="middle">C</text>
+<text x="88" y="100" text-anchor="middle">D</text>
+<text x="220" y="100" text-anchor="middle">E</text>
+<text x="113" y="57.3" class="d-small" text-anchor="end">4 cm</text>
+<text x="53" y="147.3" class="d-small" text-anchor="end">6 cm</text>
+<text x="154" y="86" class="d-small d-blue" text-anchor="middle">6 cm</text>
+<text x="160" y="222" class="d-red" text-anchor="middle">?</text>`,
+        caption: 'DE ∥ BC',
+      },
+      options: ['9 cm', '15 cm', '12 cm', '10 cm'],
+      answer: 1,
+      explain:
+        'DE ∥ BC, so △ADE ~ △ABC (they share ∠A, and the parallel lines make the base angles equal). Matching sides are in one ratio: DE/BC = AD/AB. AB = 4 + 6 = 10, so 6/BC = 4/10 and BC = 15 cm.',
+      shortcut: 'Compare with the whole side AB, not with DB: 6 × 10/4 = 15. Using DB gives the trap answer 9.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'The height of an equilateral triangle is 9 cm. What is the radius of its circumcircle?',
+      options: ['4.5 cm', '3√3 cm', '6 cm', '3 cm'],
+      answer: 2,
+      explain:
+        'In an equilateral triangle every height is also a median, and all four centres are the same point. The centroid divides a median 2 : 1 from the vertex, so the circumradius (distance from the centre to a corner) is 2/3 of the height: 2/3 × 9 = 6 cm.',
+      shortcut: 'R = 2/3 of the height, r = 1/3 of it. Here R = 6 and r = 3.',
+    },
+    {
       type: 'truefalse',
       difficulty: 'easy',
       statement: 'In an equilateral triangle, the circumradius is twice the inradius.',

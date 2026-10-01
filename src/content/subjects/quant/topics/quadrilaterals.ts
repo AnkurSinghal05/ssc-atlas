@@ -518,6 +518,16 @@ const topic: Topic = {
       shortcut: 'Check options: 360/12 − 360/15 = 30 − 24 = 6. Done.',
     },
     {
+      type: 'mcq',
+      difficulty: 'easy',
+      question: 'The diagonal of a square is 14 cm. What is its area?',
+      options: ['196 cm²', '98 cm²', '49 cm²', '108 cm²'],
+      answer: 1,
+      explain:
+        'The diagonal of a square of side a is a√2, so a = 14/√2 = 7√2 cm and the area a² = 49 × 2 = 98 cm².',
+      shortcut: 'Area = d²/2 = 196/2 = 98. (A square is a rhombus, so ½ × d × d works too.)',
+    },
+    {
       type: 'truefalse',
       difficulty: 'easy',
       statement: 'The diagonals of a rhombus are always equal.',

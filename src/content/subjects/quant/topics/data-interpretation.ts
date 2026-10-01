@@ -10,6 +10,10 @@ const STUDENTS = 'The pie chart shows the 1,800 students of a college by stream,
 
 const MARKS = 'The bar chart shows the marks of a student out of 100 in five subjects.';
 
+const STAFF = 'The table shows the number of employees in four departments of a company from 2021 to 2023.';
+
+const SHOP = 'The line graph shows the monthly sales (in ₹ lakh) of a shop from January to June.';
+
 const CARS_FIG = {
   viewBox: '0 0 320 212',
   svg: `
@@ -177,6 +181,83 @@ const MARKS_FIG = {
 <text x="279.3" y="67" text-anchor="middle" class="d-small">80</text>
 <text x="279.3" y="203" text-anchor="middle" class="d-small">SSt</text>`,
   caption: 'SSt = Social Science',
+};
+
+const STAFF_FIG = {
+  viewBox: '0 0 320 152',
+  svg: `
+<rect x="16" y="16" width="288" height="24" class="d-fill-blue"/>
+<rect x="16" y="16" width="288" height="120"/>
+<line x1="16" y1="40" x2="304" y2="40" class="d-thin"/>
+<line x1="16" y1="64" x2="304" y2="64" class="d-thin"/>
+<line x1="16" y1="88" x2="304" y2="88" class="d-thin"/>
+<line x1="16" y1="112" x2="304" y2="112" class="d-thin"/>
+<line x1="112" y1="16" x2="112" y2="136" class="d-thin"/>
+<line x1="176" y1="16" x2="176" y2="136" class="d-thin"/>
+<line x1="240" y1="16" x2="240" y2="136" class="d-thin"/>
+<text x="24" y="33" class="d-small">Department</text>
+<text x="144" y="33" text-anchor="middle" class="d-small">2021</text>
+<text x="208" y="33" text-anchor="middle" class="d-small">2022</text>
+<text x="272" y="33" text-anchor="middle" class="d-small">2023</text>
+<text x="24" y="57" class="d-small">HR</text>
+<text x="144" y="57" text-anchor="middle" class="d-small">40</text>
+<text x="208" y="57" text-anchor="middle" class="d-small">50</text>
+<text x="272" y="57" text-anchor="middle" class="d-small">45</text>
+<text x="24" y="81" class="d-small">Sales</text>
+<text x="144" y="81" text-anchor="middle" class="d-small">120</text>
+<text x="208" y="81" text-anchor="middle" class="d-small">150</text>
+<text x="272" y="81" text-anchor="middle" class="d-small">180</text>
+<text x="24" y="105" class="d-small">IT</text>
+<text x="144" y="105" text-anchor="middle" class="d-small">100</text>
+<text x="208" y="105" text-anchor="middle" class="d-small">120</text>
+<text x="272" y="105" text-anchor="middle" class="d-small">108</text>
+<text x="24" y="129" class="d-small">Accounts</text>
+<text x="144" y="129" text-anchor="middle" class="d-small">60</text>
+<text x="208" y="129" text-anchor="middle" class="d-small">80</text>
+<text x="272" y="129" text-anchor="middle" class="d-small">96</text>`,
+};
+
+const SHOP_FIG = {
+  viewBox: '0 0 320 212',
+  svg: `
+<text x="42" y="189" text-anchor="end" class="d-small d-soft">0</text>
+<line x1="44" y1="157" x2="48" y2="157"/>
+<text x="42" y="161" text-anchor="end" class="d-small d-soft">20</text>
+<line x1="44" y1="129" x2="48" y2="129"/>
+<text x="42" y="133" text-anchor="end" class="d-small d-soft">40</text>
+<line x1="44" y1="101" x2="48" y2="101"/>
+<text x="42" y="105" text-anchor="end" class="d-small d-soft">60</text>
+<line x1="44" y1="73" x2="48" y2="73"/>
+<text x="42" y="77" text-anchor="end" class="d-small d-soft">80</text>
+<line x1="44" y1="45" x2="48" y2="45"/>
+<text x="42" y="49" text-anchor="end" class="d-small d-soft">100</text>
+<line x1="48" y1="185" x2="305" y2="185"/>
+<line x1="48" y1="185" x2="48" y2="37"/>
+<text x="48" y="31" class="d-small d-soft">₹ lakh</text>
+<line x1="72" y1="129" x2="117" y2="115" class="d-blue d-thick"/>
+<line x1="117" y1="115" x2="162" y2="122" class="d-blue d-thick"/>
+<line x1="162" y1="122" x2="207" y2="101" class="d-blue d-thick"/>
+<line x1="207" y1="101" x2="252" y2="80" class="d-blue d-thick"/>
+<line x1="252" y1="80" x2="297" y2="59" class="d-blue d-thick"/>
+<circle cx="72" cy="129" r="3.5" class="d-dot"/>
+<text x="72" y="119" text-anchor="middle" class="d-small">40</text>
+<text x="72" y="203" text-anchor="middle" class="d-small">Jan</text>
+<circle cx="117" cy="115" r="3.5" class="d-dot"/>
+<text x="117" y="105" text-anchor="middle" class="d-small">50</text>
+<text x="117" y="203" text-anchor="middle" class="d-small">Feb</text>
+<circle cx="162" cy="122" r="3.5" class="d-dot"/>
+<text x="162" y="112" text-anchor="middle" class="d-small">45</text>
+<text x="162" y="203" text-anchor="middle" class="d-small">Mar</text>
+<circle cx="207" cy="101" r="3.5" class="d-dot"/>
+<text x="207" y="91" text-anchor="middle" class="d-small">60</text>
+<text x="207" y="203" text-anchor="middle" class="d-small">Apr</text>
+<circle cx="252" cy="80" r="3.5" class="d-dot"/>
+<text x="252" y="70" text-anchor="middle" class="d-small">75</text>
+<text x="252" y="203" text-anchor="middle" class="d-small">May</text>
+<circle cx="297" cy="59" r="3.5" class="d-dot"/>
+<text x="297" y="49" text-anchor="middle" class="d-small">90</text>
+<text x="297" y="203" text-anchor="middle" class="d-small">Jun</text>
+`,
 };
 
 const topic: Topic = {
@@ -578,6 +659,68 @@ const topic: Topic = {
       answer: 2,
       explain: 'Old total = 84 + 76 + 68 + 72 + 80 = 380. Needed total = 6 × 78 = 468. Sixth score = 468 − 380 = 88.',
       shortcut: 'Old average 76. The new subject must cover its own 78 plus 2 for each of the 5 old subjects: 78 + 10 = 88.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'easy',
+      question: `${STAFF}\n\nWhat percent of the company's employees in 2022 worked in IT?`,
+      figure: STAFF_FIG,
+      options: ['25%', '28%', '30%', '37.5%'],
+      answer: 2,
+      explain: 'Total in 2022 = 50 + 150 + 120 + 80 = 400. IT share = 120/400 × 100 = 30%.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: `${STAFF}\n\nWhich department had the highest percentage growth in employees from 2021 to 2023?`,
+      figure: STAFF_FIG,
+      options: ['Sales', 'Accounts', 'HR', 'IT'],
+      answer: 1,
+      explain:
+        'Growth ÷ 2021 value. HR: 5/40 = 12.5%. Sales: 60/120 = 50%. IT: 8/100 = 8%. Accounts: 36/60 = 60%. Accounts is highest, even though Sales added more people.',
+      shortcut: 'Sales 1/2, Accounts 3/5. 3/5 is bigger.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'hard',
+      question: `${STAFF}\n\nThe average number of employees per department in 2021 is what percent less than the average in 2022?`,
+      figure: STAFF_FIG,
+      options: ['25%', '20%', '18%', '22.5%'],
+      answer: 1,
+      explain:
+        'Totals: 2021 = 40 + 120 + 100 + 60 = 320, 2022 = 400. Averages over 4 departments: 80 and 100. "Less than 2022" puts 2022 in the denominator: (100 − 80)/100 × 100 = 20%.',
+      shortcut: 'Same number of departments, so compare the totals: 80/400 = 20%. 25% is the trap (it divides by 2021).',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'easy',
+      question: `${SHOP}\n\nWhat are the average monthly sales over the six months?`,
+      figure: SHOP_FIG,
+      options: ['₹55 lakh', '₹60 lakh', '₹62.5 lakh', '₹65 lakh'],
+      answer: 1,
+      explain: 'Total = 40 + 50 + 45 + 60 + 75 + 90 = 360. 360 ÷ 6 = ₹60 lakh.',
+      shortcut: 'Base 60, deviations −20, −10, −15, 0, 15, 30 add to 0, so the average is 60.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: `${SHOP}\n\nIn which month was the percentage increase in sales over the previous month the highest?`,
+      figure: SHOP_FIG,
+      options: ['February', 'May', 'June', 'April'],
+      answer: 3,
+      explain:
+        'Rise ÷ previous month. Feb: 10/40 = 25%. Mar: a fall. Apr: 15/45 = 33.3%. May: 15/60 = 25%. Jun: 15/75 = 20%. April is highest.',
+      shortcut: 'April, May and June all rise by 15; the smallest base (45) gives the biggest percentage.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'hard',
+      question: `${SHOP}\n\nTotal sales in the first three months are what percent of total sales in the last three months?`,
+      figure: SHOP_FIG,
+      options: ['60%', '40%', '62.5%', '66⅔%'],
+      answer: 0,
+      explain: 'First three months: 40 + 50 + 45 = 135. Last three: 60 + 75 + 90 = 225. 135/225 × 100 = 60%.',
+      shortcut: '135/225: divide both by 45 to get 3/5 = 60%.',
     },
     {
       type: 'truefalse',

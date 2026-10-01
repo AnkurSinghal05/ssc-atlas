@@ -7,7 +7,7 @@ const topic: Topic = {
   masteryMinutes: 45,
   reviseMinutes: 15,
   priority: 'low',
-  tags: ['distance formula', 'section formula', 'midpoint', 'centroid', 'slope', 'intercepts', 'area of triangle', 'collinear'],
+  tags: ['distance formula', 'section formula', 'midpoint', 'centroid', 'slope', 'intercepts', 'area of triangle', 'collinear', 'parallelogram', 'equidistant point'],
   summary:
     'Six formulas cover the whole chapter: distance, section, midpoint, centroid, slope and area. The line-with-axes triangle is the most asked question.',
   patterns: [
@@ -369,11 +369,13 @@ const topic: Topic = {
     },
     {
       type: 'mcq',
-      difficulty: 'easy',
-      question: 'What is the slope of the line 3x − 4y + 7 = 0?',
-      options: ['−3/4', '4/3', '3/4', '−4/3'],
+      difficulty: 'medium',
+      question: 'A(1, 2), B(4, 3) and C(6, 6) are three vertices of parallelogram ABCD, in order. What are the coordinates of D?',
+      options: ['(9, 7)', '(−1, −1)', '(3, 5)', '(5, 3)'],
       answer: 2,
-      explain: 'Slope = −a/b = −3/(−4) = 3/4.',
+      explain:
+        'The diagonals of a parallelogram bisect each other, so AC and BD have the same midpoint. Then A + C = B + D: D = (1 + 6 − 4, 2 + 6 − 3) = (3, 5).',
+      shortcut: 'D = A + C − B. The vertex opposite the one you subtract is the missing one.',
     },
     {
       type: 'mcq',
@@ -501,29 +503,12 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'hard',
-      question: 'What is the area of the triangle formed by the lines y = x, y = −x and y = 6?',
-      figure: {
-        viewBox: '0 0 320 230',
-        svg: `
-<polygon points="160,166 262,64 58,64" class="d-fill"/>
-<line x1="17.2" y1="166" x2="306.2" y2="166" class="d-soft"/>
-<line x1="160" y1="189.8" x2="160" y2="36.8" class="d-soft"/>
-<path d="M299.2,162 L306.2,166 L299.2,170" class="d-soft"/>
-<path d="M156,43.8 L160,36.8 L164,43.8" class="d-soft"/>
-<text x="308.2" y="184" class="d-small d-soft" text-anchor="middle">x</text>
-<text x="148" y="44.8" class="d-small d-soft" text-anchor="middle">y</text>
-<line x1="146.4" y1="179.6" x2="275.6" y2="50.4" class="d-blue"/>
-<line x1="173.6" y1="179.6" x2="44.4" y2="50.4" class="d-blue"/>
-<line x1="24" y1="64" x2="296" y2="64" class="d-red"/>
-<text x="272.2" y="49.3" class="d-small d-blue" text-anchor="start">y = x</text>
-<text x="47.8" y="49.3" class="d-small d-blue" text-anchor="end">y = −x</text>
-<text x="26" y="80" class="d-small d-red" text-anchor="start">y = 6</text>
-<text x="160" y="108.8" class="d-red" text-anchor="middle">?</text>`,
-      },
-      options: ['18', '72', '36', '24'],
-      answer: 2,
-      explain: 'Vertices (0, 0), (6, 6) and (−6, 6). Base 12 along y = 6, height 6. Area = 1/2 × 12 × 6 = 36.',
-      shortcut: 'For y = x, y = −x and y = k the area is k².',
+      question: 'Which point on the x-axis is equidistant from A(2, −5) and B(−2, 9)?',
+      options: ['(7, 0)', '(−7, 0)', '(0, 2)', '(−3, 0)'],
+      answer: 1,
+      explain:
+        'A point on the x-axis is (x, 0). Set PA² = PB²: (x − 2)² + 25 = (x + 2)² + 81. Expanding, x² − 4x + 29 = x² + 4x + 85, so −8x = 56 and x = −7. Check: PA² = 81 + 25 = 106 and PB² = 25 + 81 = 106.',
+      shortcut: 'Test options with squared distances only: (−7, 0) gives 106 and 106.',
     },
     {
       type: 'truefalse',

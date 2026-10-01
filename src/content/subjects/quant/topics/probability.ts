@@ -436,6 +436,28 @@ const topic: Topic = {
       shortcut: 'Addition rule: subtract the overlap (multiples of 15) once.',
     },
     {
+      type: 'mcq',
+      difficulty: 'medium',
+      question:
+        'A bag has 3 red and 5 blue balls. A ball is drawn, its colour noted, and it is put back. A second ball is then drawn. What is the probability that both balls are blue?',
+      options: ['5/14', '25/64', '15/64', '5/8'],
+      answer: 1,
+      explain:
+        'The ball is put back (with replacement), so the bag is the same for both draws and the draws are independent. P(blue) = 5/8 each time. P(both blue) = 5/8 × 5/8 = 25/64.',
+      shortcut: '5/14 = 5/8 × 4/7 is the answer without replacement. Read whether the ball goes back.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'hard',
+      question:
+        'Two dice are thrown. What is the probability of getting a doublet (the same number on both dice) or a sum of 4?',
+      options: ['1/4', '1/6', '2/9', '5/18'],
+      answer: 2,
+      explain:
+        'Doublets: (1, 1) to (6, 6), 6 outcomes. Sum 4: (1, 3), (2, 2), (3, 1), 3 outcomes. (2, 2) is in both lists, so count it once: 6 + 3 − 1 = 8 outcomes of 36. P = 8/36 = 2/9.',
+      shortcut: 'Addition rule: P(A or B) = P(A) + P(B) − P(both) = 6/36 + 3/36 − 1/36.',
+    },
+    {
       type: 'truefalse',
       difficulty: 'easy',
       statement: 'The probability of an event can be 1.2 if the event is very likely.',

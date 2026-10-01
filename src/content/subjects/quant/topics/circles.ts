@@ -58,7 +58,7 @@ const topic: Topic = {
       title: 'Cyclic quadrilateral',
       text: 'When all four corners lie on a circle, opposite angles add to 180°. An exterior angle equals the interior opposite angle.',
       formula: '∠A + ∠C = 180°, ∠B + ∠D = 180°',
-      example: '∠A = 75° gives ∠C = **105°**.',
+      example: '∠A = 75° gives ∠C = **105°**. Extend AB beyond B: the exterior angle at B equals ∠D.',
     },
     {
       title: 'Tangents from a point',
@@ -599,6 +599,26 @@ const topic: Topic = {
       options: ['3 cm', '5 cm', '4 cm', '9 cm'],
       answer: 0,
       explain: 'AB + CD = AD + BC: 6 + 4 = AD + 7, so AD = 3 cm.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'AB and CD are equal chords of a circle of radius 13 cm. If AB = 24 cm, how far is CD from the centre?',
+      options: ['12 cm', '6.5 cm', '7 cm', '5 cm'],
+      answer: 3,
+      explain:
+        'Equal chords are equally far from the centre, so find the distance of AB. The perpendicular from the centre halves AB into 12 cm pieces. Distance = √(13² − 12²) = √25 = 5 cm, and CD is also 5 cm from the centre.',
+      shortcut: '5-12-13 triplet.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'easy',
+      question: 'ABCD is a cyclic quadrilateral. Side AB is extended beyond B to a point E, and ∠CBE = 80°. What is ∠ADC?',
+      options: ['80°', '100°', '160°', '40°'],
+      answer: 0,
+      explain:
+        '∠ABC = 180° − 80° = 100° (angles on a straight line). Opposite angles of a cyclic quadrilateral add to 180°, so ∠ADC = 180° − 100° = 80°.',
+      shortcut: 'An exterior angle of a cyclic quadrilateral equals the interior opposite angle: ∠ADC = ∠CBE = 80°.',
     },
     {
       type: 'truefalse',

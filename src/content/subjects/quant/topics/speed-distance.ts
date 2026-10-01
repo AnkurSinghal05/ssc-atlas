@@ -8,7 +8,7 @@ const topic: Topic = {
   reviseMinutes: 40,
   priority: 'high',
   weightage: { tier1: 1, tier2: 1.5 },
-  tags: ['speed', 'distance', 'km/h to m/s', 'average speed', 'relative speed', 'late and early', 'chase', 'trains', 'boats'],
+  tags: ['speed', 'distance', 'km/h to m/s', 'average speed', 'relative speed', 'late and early', 'chase', 'races', 'circular track', 'trains', 'boats'],
   summary:
     'Distance = speed × time. Convert units first, use 2xy/(x + y) for equal distances, and add or subtract speeds for things moving towards or after each other.',
   patterns: [
@@ -24,6 +24,7 @@ const topic: Topic = {
       example: 'At 4 km/h he is 10 min late; at 5 km/h, 5 min early. Distance?',
     },
     { name: 'Speed ratio and time ratio', frequency: 'often', example: 'Walking at 3/4 of his speed he is 20 min late. Usual time?' },
+    { name: 'Races and circular tracks', frequency: 'rare', example: 'In a 1 km race A beats B by 40 m or 8 s. A\'s time?' },
     { name: 'Unit conversion', frequency: 'rare', example: '72 km/h in m/s?' },
   ],
   keyPoints: [
@@ -68,6 +69,18 @@ const topic: Topic = {
       text: 'Distance = product of speeds ÷ difference of speeds × total time gap. The time gap is late + early (in hours).',
       formula: 'D = S₁S₂/(S₂ − S₁) × (t₁ + t₂)',
       example: '5 km/h late 7 min, 6 km/h early 5 min: 30/1 × 12/60 = **6 km**.',
+    },
+    {
+      title: 'Races',
+      text: '"A beats B by x m" means B is x m short of the finish when A finishes. "A beats B by t s" means B finishes t seconds after A. If both are given, B covers x m in t seconds.',
+      formula: 'B speed = x/t',
+      example: '1 km race, A beats B by 40 m or 8 s: B speed = 5 m/s, B time 200 s, A time **192 s**.',
+    },
+    {
+      title: 'Circular track: first meeting',
+      text: 'Two runners start together from the same point on a track of length L. Same direction: they meet when the faster has gained one full lap. Opposite directions: they meet when together they have covered one lap.',
+      formula: 'same: L/(S₁ − S₂); opposite: L/(S₁ + S₂)',
+      example: '600 m track, 6 and 4 m/s: same way 600/2 = **300 s**, opposite 600/10 = **60 s**.',
     },
     {
       title: 'Trains and boats in one line',
@@ -359,28 +372,44 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'A 120 m long train running at 54 km/h crosses a 180 m long platform. How long does it take?',
-      options: ['15 s', '20 s', '8 s', '12 s'],
+      question: 'In a 1 km race, A beats B by 40 m or by 8 seconds. How long does A take to run the race?',
+      options: ['200 s', '192 s', '180 s', '208 s'],
       answer: 1,
-      explain: '54 km/h = 15 m/s. Distance = 120 + 180 = 300 m. Time = 300/15 = 20 s.',
+      explain:
+        'Both statements describe the same moment: when A finishes, B is 40 m short, and B needs 8 more seconds to cover it. So B runs 40 m in 8 s, which is 5 m/s. B takes 1,000/5 = 200 s for the race, and A finishes 8 s earlier: 192 s.',
+      shortcut: 'B speed = 40/8 = 5 m/s. A time = 1,000/5 − 8 = 192 s.',
     },
     {
       type: 'mcq',
-      difficulty: 'easy',
-      question: 'A boat goes downstream at 15 km/h and upstream at 9 km/h. What is the speed of the stream?',
-      options: ['6 km/h', '12 km/h', '3 km/h', '4 km/h'],
+      difficulty: 'hard',
+      question: 'In a 1 km race, A beats B by 100 m, and B beats C by 100 m. By how many metres does A beat C in a 1 km race?',
+      options: ['200 m', '180 m', '190 m', '210 m'],
       answer: 2,
-      explain: 'Stream = (downstream − upstream)/2 = (15 − 9)/2 = 3 km/h.',
+      explain:
+        'While A runs 1,000 m, B runs 900 m. While B runs 1,000 m, C runs 900 m, so while B runs 900 m, C runs 900 × 900/1,000 = 810 m. So when A finishes, C has run 810 m and A wins by 1,000 − 810 = 190 m.',
+      shortcut: 'Multiply the ratios: A : C = 1,000 : (0.9 × 0.9 × 1,000) = 1,000 : 810.',
     },
     {
       type: 'mcq',
       difficulty: 'medium',
       question:
-        'Two trains 200 m and 150 m long run at 50 km/h and 40 km/h in opposite directions on parallel tracks. How long do they take to cross each other?',
-      options: ['14 s', '126 s', '12 s', '16 s'],
+        'Two runners start together from the same point on a 600 m circular track and run in the same direction at 4 m/s and 6 m/s. After how long do they meet for the first time?',
+      options: ['60 s', '150 s', '100 s', '300 s'],
+      answer: 3,
+      explain:
+        'Same direction, so the faster runner gains 6 − 4 = 2 m every second. They meet again when he has gained one full lap of 600 m: 600/2 = 300 s.',
+      shortcut: 'Same direction: track length ÷ (difference of speeds).',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question:
+        'Two cyclists start together from the same point on a 400 m circular track and ride in opposite directions at 18 km/h and 27 km/h. After how long do they meet for the first time?',
+      options: ['32 s', '160 s', '40 s', '48 s'],
       answer: 0,
-      explain: 'Relative speed = 90 km/h = 25 m/s. Distance = 350 m. Time = 350/25 = 14 s.',
-      shortcut: 'Add the speeds first, then convert once.',
+      explain:
+        'Opposite directions, so the gap closes at 18 + 27 = 45 km/h = 45 × 5/18 = 12.5 m/s. Together they must cover one lap of 400 m: 400/12.5 = 32 s.',
+      shortcut: 'Opposite directions: track length ÷ (sum of speeds).',
     },
     {
       type: 'mcq',

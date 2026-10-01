@@ -29,8 +29,8 @@ const topic: Topic = {
     },
     {
       title: 'Effective rate for 2 and 3 years',
-      text: 'Two years at r% is the same as one change of 2r + r²/100 percent. Learn these: 5% → 10.25% and 15.7625%; 10% → 21% and 33.1%; 20% → 44% and 72.8%.',
-      formula: '2 years: 2r + r²/100',
+      text: 'Two years at r% is the same as one change of 2r + r²/100 percent; three years, 3r + 3r²/100 + r³/10,000 percent. Learn these: 5% → 10.25% and 15.7625%; 10% → 21% and 33.1%; 20% → 44% and 72.8%.',
+      formula: '2 years: 2r + r²/100;  3 years: 3r + 3r²/100 + r³/10,000',
       example: '₹5,000 at 20% for 2 years: 44% of 5,000 = **₹2,200** CI.',
     },
     {
@@ -312,6 +312,16 @@ const topic: Topic = {
       answer: 3,
       explain: 'Half-yearly: 20,000 × 1.1² = 24,200, CI 4,200. Annual: 4,000. Difference ₹200.',
       shortcut: 'It is interest on the first half-year\'s interest: 10% of 2,000 = 200.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'Find the compound interest on ₹5,000 at 20% per annum for 3 years, compounded annually.',
+      options: ['₹3,000', '₹3,640', '₹3,456', '₹8,640'],
+      answer: 1,
+      explain:
+        'Effective rate for 3 years = 3r + 3r²/100 + r³/10,000 = 60 + 12 + 0.8 = 72.8%. CI = 72.8% of 5,000 = ₹3,640. Check: 5,000 × (6/5)³ = 5,000 × 216/125 = 8,640, and 8,640 − 5,000 = 3,640.',
+      shortcut: '20% = 1/5, so the amount is 5,000 × 216/125 = 8,640. ₹8,640 is the amount, not the interest.',
     },
     {
       type: 'truefalse',

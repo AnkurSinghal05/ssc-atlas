@@ -545,6 +545,26 @@ const topic: Topic = {
       shortcut: 'Take πr out: πr(l + 2r).',
     },
     {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'A solid metal sphere of radius 6 cm is melted and recast into 27 equal small spheres. What is the radius of each small sphere?',
+      options: ['3 cm', '1.5 cm', '2 cm', '2/9 cm'],
+      answer: 2,
+      explain:
+        'The volume is unchanged: 4/3 π × 6³ = 27 × 4/3 π × r³. Cancel 4/3 π: 216 = 27r³, so r³ = 8 and r = 2 cm.',
+      shortcut: 'Number of spheres = (R/r)³, so R/r = ∛27 = 3 and r = 6/3 = 2.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'A room is 10 m long, 8 m wide and 4 m high. What is the cost of painting its four walls at ₹25 per m²?',
+      options: ['₹5,600', '₹7,600', '₹1,800', '₹3,600'],
+      answer: 3,
+      explain:
+        'The four walls are the lateral surface of the cuboid: 2h(l + b) = 2 × 4 × (10 + 8) = 144 m². Cost = 144 × 25 = ₹3,600.',
+      shortcut: 'Four walls = perimeter of the floor × height = 36 × 4 = 144 m². Adding the ceiling (80 m²) gives the trap ₹5,600.',
+    },
+    {
       type: 'truefalse',
       difficulty: 'easy',
       statement: 'The volume of a cone is one third of the volume of a cylinder with the same base and height.',

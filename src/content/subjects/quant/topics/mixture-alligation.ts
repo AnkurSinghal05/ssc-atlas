@@ -372,6 +372,27 @@ const topic: Topic = {
       explain: 'Mean CP = 45 × 100/125 = ₹36. Water : milk = (48 − 36) : (36 − 0) = 12 : 36 = 1 : 3.',
     },
     {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: 'A 60 L mixture has milk and water in the ratio 2 : 1. 15 L of the mixture is taken out and replaced with 15 L of pure milk. What is the new ratio of milk to water?',
+      options: ['2 : 1', '5 : 2', '3 : 1', '4 : 1'],
+      answer: 2,
+      explain:
+        'At first: milk 40 L, water 20 L. The 15 L taken out is a quarter of the mixture, so it carries away a quarter of each part: milk falls to 30 L and water to 15 L. Adding 15 L of milk makes milk 45 L. New ratio 45 : 15 = 3 : 1.',
+      shortcut: 'Removing part of a mixture keeps the ratio 2 : 1; only the added liquid changes it.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'hard',
+      question:
+        'A 60 L mixture has milk and water in the ratio 4 : 1. How much of the mixture must be taken out and replaced with water so that the ratio becomes 3 : 2?',
+      options: ['12 L', '10 L', '20 L', '15 L'],
+      answer: 3,
+      explain:
+        'Milk at first = 4/5 × 60 = 48 L. The total stays 60 L, so at 3 : 2 milk must be 3/5 × 60 = 36 L. Taking out x litres of mixture keeps the fraction (60 − x)/60 of the milk: 48 × (60 − x)/60 = 36, so (60 − x)/60 = 3/4 and x = 15 L. Check: milk 36 L, water 9 + 15 = 24 L, ratio 3 : 2.',
+      shortcut: 'Milk must fall from 4/5 to 3/5 of the vessel, so keep 3/4 of the mixture: take out 1/4 of 60 = 15 L.',
+    },
+    {
       type: 'truefalse',
       difficulty: 'easy',
       statement: 'If 10 L is taken out of 100 L of milk and replaced with water, twice, exactly 80 L of milk remains.',

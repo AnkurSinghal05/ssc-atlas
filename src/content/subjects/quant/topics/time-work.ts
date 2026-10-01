@@ -446,6 +446,27 @@ const topic: Topic = {
       explain: 'Work = 60 units, A = 3, B = 2 units a day. In the last 5 days only B works: 5 × 2 = 10 units. The other 50 units are done together at 5 a day: 10 days. Total = 10 + 5 = 15 days.',
     },
     {
+      type: 'mcq',
+      difficulty: 'medium',
+      question: '3 men, or 4 women, or 6 children can finish a job in 20 days. In how many days will 1 man, 2 women and 3 children finish it together?',
+      options: ['12 days', '16 days', '15 days', '18 days'],
+      answer: 2,
+      explain:
+        'One man alone takes 3 × 20 = 60 days, one woman 4 × 20 = 80 days and one child 6 × 20 = 120 days. Take the job as LCM(60, 80, 120) = 240 units. A man does 4, a woman 3 and a child 2 units a day. The team does 4 + 2 × 3 + 3 × 2 = 16 units a day, so 240/16 = 15 days.',
+      shortcut: '3 men = 4 women = 6 children, so 1 man = 2 children and 1 woman = 1.5 children. Team = 2 + 3 + 3 = 8 children; 6 children take 20 days, so 8 take 20 × 6/8 = 15 days.',
+    },
+    {
+      type: 'mcq',
+      difficulty: 'hard',
+      question:
+        '20 men working 6 hours a day lay 120 m of a road in 8 days. How many men are needed to lay 240 m of the road in 10 days, working 8 hours a day?',
+      options: ['20', '30', '24', '32'],
+      answer: 2,
+      explain:
+        'The work changes, so use M₁D₁H₁/W₁ = M₂D₂H₂/W₂. Left side: 20 × 8 × 6/120 = 8. Right side: M × 10 × 8/240 = M/3. So M/3 = 8 and M = 24 men.',
+      shortcut: 'Start from 20 men and scale: double the road (× 2), more days (× 8/10), more hours (× 6/8). 20 × 2 × 8/10 × 6/8 = 24.',
+    },
+    {
       type: 'truefalse',
       difficulty: 'easy',
       statement: 'If A is twice as efficient as B, then A takes twice as many days as B to finish the same job.',

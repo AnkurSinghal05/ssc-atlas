@@ -228,10 +228,10 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'easy',
-      question: 'The Directive Principles of State Policy were borrowed from the constitution of:',
-      options: ['USA', 'Ireland', 'USSR', 'Canada'],
-      answer: 1,
-      explain: 'DPSP came from the Irish Constitution. Fundamental Duties came from the USSR.',
+      question: 'Which article guarantees equality before law and the equal protection of the laws?',
+      options: ['Article 14', 'Article 15', 'Article 16', 'Article 19'],
+      answer: 0,
+      explain: 'Article 14 applies to every person, citizens and foreigners alike. 15 bars discrimination, 16 gives equal opportunity in public jobs, 19 lists six freedoms.',
     },
     {
       type: 'mcq',
@@ -252,10 +252,10 @@ const topic: Topic = {
     {
       type: 'mcq',
       difficulty: 'medium',
-      question: 'The Right to Property was removed from the list of Fundamental Rights by the:',
-      options: ['42nd Amendment, 1976', '44th Amendment, 1978', '52nd Amendment, 1985', '61st Amendment, 1988'],
-      answer: 1,
-      explain: 'The 44th Amendment (1978) removed it; it is now a legal right under Article 300A.',
+      question: 'The Supreme Court has read many rights into Article 21 (life and personal liberty). Which of these has it held is NOT a fundamental right?',
+      options: ['Right to privacy', 'Right to livelihood', 'Right to a speedy trial', 'Right to strike'],
+      answer: 3,
+      explain: 'Rights read into Article 21 include privacy (Puttaswamy, 2017), livelihood (Olga Tellis, 1985) and a speedy trial (Hussainara Khatoon, 1979). In T.K. Rangarajan (2003) the Court held there is no fundamental right to strike.',
     },
     {
       type: 'mcq',
