@@ -125,7 +125,7 @@ const topic: Topic = {
 <polygon points="154,110 166,110 166,122 154,122" class="d-fill-pink d-red" data-step="3"/>
 <polygon points="40,36 280,36 280,196 40,196"/>
 <text x="160" y="26" text-anchor="middle" data-step="1">60 m</text>
-<text x="35" y="76" text-anchor="end" data-step="2">40</text><text x="35" y="94" text-anchor="end" data-step="2">m</text>
+<text x="31" y="116" text-anchor="middle" transform="rotate(-90 31 116)" data-step="2">40 m</text>
 <text x="88" y="104" text-anchor="middle" class="d-small" data-step="1">3 m</text>
 <text x="170" y="154" text-anchor="start" class="d-small" data-step="2">3 m</text>
 <text x="182" y="104" text-anchor="start" class="d-small d-red" data-step="3 4">3 × 3</text>`,
@@ -417,8 +417,7 @@ const topic: Topic = {
 <polygon points="158,30 170,30 170,190 158,190" class="d-fill"/>
 <polygon points="44,30 284,30 284,190 44,190"/>
 <text x="164" y="20" text-anchor="middle">60 m</text>
-<text x="39" y="70" text-anchor="end">40</text>
-<text x="39" y="88" text-anchor="end">m</text>
+<text x="35" y="110" text-anchor="middle" transform="rotate(-90 35 110)">40 m</text>
 <text x="92" y="98" text-anchor="middle" class="d-small">3 m</text>
 <text x="174" y="150" text-anchor="start" class="d-small">3 m</text>`,
         caption: 'Area of the two roads = ?',

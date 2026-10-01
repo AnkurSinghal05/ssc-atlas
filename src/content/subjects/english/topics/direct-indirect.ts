@@ -73,9 +73,10 @@ const topic: Topic = {
 <text x="122" y="82" class="d-small d-blue" data-step="2">writes → wrote</text>
 <text x="122" y="98" class="d-small d-blue" data-step="2">will → would</text>
 <text x="122" y="114" class="d-small d-blue" data-step="2">can → could, may → might</text>
-<text x="222" y="168" class="d-small d-green" data-step="3">wrote →</text>
-<text x="222" y="183" class="d-small d-green" data-step="3">had written</text>
-<text x="222" y="202" class="d-small d-green" data-step="3">was → had been</text>`,
+<text x="222" y="166" class="d-small d-green" data-step="3">wrote →</text>
+<text x="222" y="180" class="d-small d-green" data-step="3">had written</text>
+<text x="222" y="197" class="d-small d-green" data-step="3">was →</text>
+<text x="222" y="211" class="d-small d-green" data-step="3">had been</text>`,
         caption: 'After a past reporting verb such as "said".',
       },
       explain: [

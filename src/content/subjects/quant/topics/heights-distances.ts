@@ -649,9 +649,9 @@ const topic: Topic = {
 <line x1="110" y1="192" x2="203" y2="30.9" class="d-blue d-thin"/>
 <line x1="203" y1="192" x2="110" y2="138.3" class="d-red d-thin"/>
 <path d="M130,192 A20,20 0 0 0 120,174.7" class="d-blue"/>
-<text x="148" y="179.6" text-anchor="middle" class="d-small d-blue">60°</text>
+<text x="137" y="174" text-anchor="middle" class="d-small d-blue">60°</text>
 <path d="M177,177 A30,30 0 0 0 173,192" class="d-red"/>
-<text x="169" y="187" text-anchor="end" class="d-small d-red">30°</text>
+<text x="155" y="189" text-anchor="middle" class="d-small d-red">30°</text>
 <text x="156.5" y="210" text-anchor="middle" class="d-small">60 m</text>
 <text x="104" y="170.2" text-anchor="end" class="d-small">shorter</text>
 <text x="209" y="116.5" class="d-small">taller</text>`,

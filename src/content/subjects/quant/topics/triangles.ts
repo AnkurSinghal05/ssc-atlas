@@ -166,7 +166,7 @@ const topic: Topic = {
 <circle cx="146.7" cy="141.3" r="3" class="d-dot"/>
 <text x="139" y="163.6" text-anchor="middle">G</text>
 <text x="123.6" y="90.9" class="d-blue" text-anchor="middle" data-step="2">2</text>
-<text x="143.6" y="178.9" class="d-blue" text-anchor="middle" data-step="2">1</text>
+<text x="165" y="178" class="d-blue" text-anchor="middle" data-step="2">1</text>
 <text x="112.2" y="186.4" class="d-red" text-anchor="middle" data-step="4">12</text>`,
         caption: 'area △ABC = 72 cm²',
       },
@@ -403,7 +403,7 @@ const topic: Topic = {
       difficulty: 'medium',
       question: 'H is the orthocentre of an acute triangle ABC with ∠A = 65°. What is ∠BHC?',
       figure: {
-        viewBox: '0 0 320 230',
+        viewBox: '0 -22 320 252',
         svg: `
 <polygon points="148,4.3 35,200 285,200"/>
 <line x1="35" y1="200" x2="202.8" y2="82.5" class="d-blue"/>

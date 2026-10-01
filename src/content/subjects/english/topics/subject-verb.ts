@@ -60,16 +60,16 @@ const topic: Topic = {
       figure: {
         viewBox: '0 0 320 195',
         svg: `
-<text x="12" y="76" class="d-small">Neither the</text><text x="80" y="76" class="d-small">teacher</text><text x="128" y="76" class="d-small">nor the</text><text x="174" y="76" class="d-small d-green" data-step="2">students</text><text x="234" y="76" class="d-small d-green" data-step="1 2">were …</text>
-<path d="M243,62 Q171,14 100,62" class="d-red d-dash" data-step="1"/><polyline points="104.4,54.2 100,62 108.9,60.8" class="d-red d-dash" data-step="1"/>
-<text x="171" y="30" text-anchor="middle" class="d-small d-red" data-step="1">not this one</text>
-<path d="M247,62 Q223,40 200,62" class="d-green" data-step="1 2"/><polyline points="203,53.6 200,62 208.5,59.4" class="d-green" data-step="1 2"/>
-<text x="200" y="94" text-anchor="middle" class="d-small d-soft" data-step="2">nearer, plural</text>
-<rect x="92" y="146" width="158" height="20" rx="5" class="d-dash d-soft" data-step="3"/>
-<text x="12" y="160" class="d-small">The</text><text x="36" y="160" class="d-small d-blue" data-step="4">captain,</text><text x="98" y="160" class="d-small d-soft" data-step="3">along with his players,</text><text x="256" y="160" class="d-small d-blue" data-step="4">was …</text>
-<text x="171" y="186" text-anchor="middle" class="d-small d-soft" data-step="3">extra phrase: skip it</text>
-<path d="M264,144 Q164,96 62,144" class="d-blue" data-step="4"/><polyline points="67.5,137 62,144 70.9,144.2" class="d-blue" data-step="4"/>
-<text x="164" y="112" text-anchor="middle" class="d-small d-blue" data-step="4">first subject, singular</text>`,
+<text x="12" y="76" class="d-small">Neither the</text><text x="90" y="76" class="d-small">teacher</text><text x="144" y="76" class="d-small">nor the</text><text x="196" y="76" class="d-small d-green" data-step="2">students</text><text x="256" y="76" class="d-small d-green" data-step="1 2">were …</text>
+<path d="M265,62 Q190,14 114,62" class="d-red d-dash" data-step="1"/><polyline points="118.4,54.2 114,62 122.9,60.8" class="d-red d-dash" data-step="1"/>
+<text x="190" y="30" text-anchor="middle" class="d-small d-red" data-step="1">not this one</text>
+<path d="M269,62 Q246,40 222,62" class="d-green" data-step="1 2"/><polyline points="225,53.6 222,62 230.5,59.4" class="d-green" data-step="1 2"/>
+<text x="223" y="94" text-anchor="middle" class="d-small d-soft" data-step="2">nearer, plural</text>
+<rect x="93" y="146" width="152" height="20" rx="5" class="d-dash d-soft" data-step="3"/>
+<text x="12" y="160" class="d-small">The</text><text x="40" y="160" class="d-small d-blue" data-step="4">captain,</text><text x="98" y="160" class="d-small d-soft" data-step="3">along with his players,</text><text x="249" y="160" class="d-small d-blue" data-step="4">was …</text>
+<text x="167" y="186" text-anchor="middle" class="d-small d-soft" data-step="3">extra phrase: skip it</text>
+<path d="M256,144 Q161,96 66,144" class="d-blue" data-step="4"/><polyline points="71.5,137 66,144 74.9,144.2" class="d-blue" data-step="4"/>
+<text x="161" y="112" text-anchor="middle" class="d-small d-blue" data-step="4">first subject, singular</text>`,
         caption: 'Neither the teacher nor the students were present. The captain, along with his players, was welcomed.',
       },
       explain: [

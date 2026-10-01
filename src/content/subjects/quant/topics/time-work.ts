@@ -158,7 +158,7 @@ const topic: Topic = {
 <text x="300" y="30" text-anchor="end" class="d-small d-green" data-step="2">B (30 min): +2</text>
 <path d="M110,170 L60,170 L60,184" class="d-red" data-step="3"/>
 <line x1="60" y1="180" x2="60" y2="204" class="d-red" data-step="3"/><path d="M56.5,197.9 L60,204 L63.5,197.9" class="d-red" data-step="3"/>
-<text x="18" y="150" class="d-small d-red" data-step="3">C (15 min): −4</text>
+<text x="10" y="150" class="d-small d-red" data-step="3">C (15 min): −4</text>
 <text x="170" y="204" text-anchor="middle" class="d-small" data-step="4">net 3 + 2 − 4 = +1 a minute</text>`,
       },
       explain: [

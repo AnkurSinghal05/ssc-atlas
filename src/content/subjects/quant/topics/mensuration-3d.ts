@@ -187,7 +187,7 @@ const topic: Topic = {
         'Roll the sector up until its two straight edges meet. The sector radius 10 becomes the slant height: l = 10.',
         'The arc becomes the rim of the base: 216/360 × 2π × 10 = 12π = 2πr, so r = 6.',
         'The height comes from the right triangle: h = √(10² − 6²) = √64 = 8.',
-        'Volume = 1/3 × π × 6² × 8 = **96π**. Shortcut: r = θ/360 × R = 3/5 × 10.',
+        'Volume = 1/3 × π × 6² × 8 = **96π**. Shortcut: r = θ/360 × R = 3/5 × 10 = 6.',
       ],
     },
   ],

@@ -72,38 +72,38 @@ const topic: Topic = {
       type: 'diagram',
       title: 'The Constitution as a strip of Parts',
       figure: {
-        viewBox: '0 0 352 424',
+        viewBox: '0 0 320 424',
         svg: `
-<text x="14" y="18" class="d-small d-soft">Part</text><text x="76" y="18" class="d-small d-soft">what, articles</text><text x="222" y="18" class="d-small d-soft">must know</text>
-<rect x="8" y="26" width="336" height="24" rx="5" class="d-fill-blue" data-step="1"/><rect x="8" y="26" width="336" height="24" rx="5" data-step="1"/>
-<text x="14" y="43" class="d-blue" data-step="1">I</text><text x="76" y="42" class="d-small" data-step="1">Union, territory 1–4</text><text x="222" y="43" class="d-red" data-step="1">1, 3</text>
-<rect x="8" y="52" width="336" height="24" rx="5" class="d-fill-blue" data-step="1"/><rect x="8" y="52" width="336" height="24" rx="5" data-step="1"/>
-<text x="14" y="69" class="d-blue" data-step="1">II</text><text x="76" y="68" class="d-small" data-step="1">Citizenship 5–11</text><text x="222" y="69" class="d-red" data-step="1">5, 9, 11</text>
-<rect x="8" y="78" width="336" height="24" rx="5" class="d-fill-green" data-step="2"/><rect x="8" y="78" width="336" height="24" rx="5" data-step="2"/>
-<text x="14" y="95" class="d-blue" data-step="2">III</text><text x="76" y="94" class="d-small" data-step="2">Rights 12–35</text><text x="222" y="95" class="d-red" data-step="2">14, 21, 32</text>
-<rect x="8" y="104" width="336" height="24" rx="5" class="d-fill-green" data-step="2"/><rect x="8" y="104" width="336" height="24" rx="5" data-step="2"/>
-<text x="14" y="121" class="d-blue" data-step="2">IV</text><text x="76" y="120" class="d-small" data-step="2">DPSP 36–51</text><text x="222" y="121" class="d-red" data-step="2">40, 44, 50</text>
-<rect x="8" y="130" width="336" height="24" rx="5" class="d-fill-green" data-step="2"/><rect x="8" y="130" width="336" height="24" rx="5" data-step="2"/>
-<text x="14" y="147" class="d-blue" data-step="2">IVA</text><text x="76" y="146" class="d-small" data-step="2">Duties</text><text x="222" y="147" class="d-red" data-step="2">51A</text>
-<rect x="8" y="156" width="336" height="24" rx="5" class="d-fill" data-step="3"/><rect x="8" y="156" width="336" height="24" rx="5" data-step="3"/>
-<text x="14" y="173" class="d-blue" data-step="3">V</text><text x="76" y="172" class="d-small" data-step="3">President, Parliament</text><text x="222" y="173" class="d-red" data-step="3">72, 110, 123</text>
-<rect x="8" y="182" width="336" height="24" rx="5" class="d-fill" data-step="3"/><rect x="8" y="182" width="336" height="24" rx="5" data-step="3"/>
-<text x="14" y="199" class="d-blue" data-step="3">V</text><text x="76" y="198" class="d-small" data-step="3">Supreme Court, CAG</text><text x="222" y="199" class="d-red" data-step="3">124, 143, 148</text>
-<rect x="8" y="208" width="336" height="24" rx="5" class="d-fill-pink" data-step="4"/><rect x="8" y="208" width="336" height="24" rx="5" data-step="4"/>
-<text x="14" y="225" class="d-blue" data-step="4">VI</text><text x="76" y="224" class="d-small" data-step="4">States 152–237</text><text x="222" y="225" class="d-red" data-step="4">153, 213, 226</text>
-<rect x="8" y="234" width="336" height="24" rx="5" data-step="5"/>
-<text x="14" y="251" class="d-blue" data-step="5">XI</text><text x="76" y="250" class="d-small" data-step="5">Centre-state 245–263</text><text x="230" y="251" class="d-red" data-step="5">246, 263</text>
-<rect x="8" y="260" width="336" height="24" rx="5" data-step="5"/>
-<text x="14" y="277" class="d-blue" data-step="5">XII</text><text x="76" y="276" class="d-small" data-step="5">Finance 264–300A</text><text x="222" y="277" class="d-red" data-step="5">280, 300A</text>
-<rect x="8" y="286" width="336" height="24" rx="5" data-step="5"/>
-<text x="14" y="303" class="d-blue" data-step="5">XV</text><text x="76" y="302" class="d-small" data-step="5">Elections 324–329</text><text x="222" y="303" class="d-red" data-step="5">324, 326</text>
-<rect x="8" y="312" width="336" height="24" rx="5" data-step="5"/>
-<text x="14" y="329" class="d-blue" data-step="5">XVII</text><text x="76" y="328" class="d-small" data-step="5">Official language</text><text x="222" y="329" class="d-red" data-step="5">343</text>
-<rect x="8" y="338" width="336" height="24" rx="5" class="d-fill-pink" data-step="6"/><rect x="8" y="338" width="336" height="24" rx="5" data-step="6"/>
-<text x="14" y="355" class="d-blue" data-step="6">XVIII</text><text x="76" y="354" class="d-small" data-step="6">Emergency 352–360</text><text x="222" y="355" class="d-red" data-step="6">352, 356, 360</text>
-<rect x="8" y="364" width="336" height="24" rx="5" class="d-fill-pink" data-step="6"/><rect x="8" y="364" width="336" height="24" rx="5" data-step="6"/>
-<text x="14" y="381" class="d-blue" data-step="6">XX</text><text x="76" y="380" class="d-small" data-step="6">Amendment</text><text x="222" y="381" class="d-red" data-step="6">368</text>
-<text x="176" y="412" text-anchor="middle" class="d-small d-soft">red = the articles SSC asks most</text>`,
+<text x="10" y="18" class="d-small d-soft">Part</text><text x="66" y="18" class="d-small d-soft">what, articles</text><text x="216" y="18" class="d-small d-soft">must know</text>
+<rect x="6" y="26" width="308" height="24" rx="5" class="d-fill-blue" data-step="1"/><rect x="6" y="26" width="308" height="24" rx="5" data-step="1"/>
+<text x="10" y="43" class="d-blue" data-step="1">I</text><text x="66" y="42" class="d-small" data-step="1">Union, territory 1–4</text><text x="216" y="42" class="d-small d-red" data-step="1">1, 3</text>
+<rect x="6" y="52" width="308" height="24" rx="5" class="d-fill-blue" data-step="1"/><rect x="6" y="52" width="308" height="24" rx="5" data-step="1"/>
+<text x="10" y="69" class="d-blue" data-step="1">II</text><text x="66" y="68" class="d-small" data-step="1">Citizenship 5–11</text><text x="216" y="68" class="d-small d-red" data-step="1">5, 9, 11</text>
+<rect x="6" y="78" width="308" height="24" rx="5" class="d-fill-green" data-step="2"/><rect x="6" y="78" width="308" height="24" rx="5" data-step="2"/>
+<text x="10" y="95" class="d-blue" data-step="2">III</text><text x="66" y="94" class="d-small" data-step="2">Rights 12–35</text><text x="216" y="94" class="d-small d-red" data-step="2">14, 21, 32</text>
+<rect x="6" y="104" width="308" height="24" rx="5" class="d-fill-green" data-step="2"/><rect x="6" y="104" width="308" height="24" rx="5" data-step="2"/>
+<text x="10" y="121" class="d-blue" data-step="2">IV</text><text x="66" y="120" class="d-small" data-step="2">DPSP 36–51</text><text x="216" y="120" class="d-small d-red" data-step="2">40, 44, 50</text>
+<rect x="6" y="130" width="308" height="24" rx="5" class="d-fill-green" data-step="2"/><rect x="6" y="130" width="308" height="24" rx="5" data-step="2"/>
+<text x="10" y="147" class="d-blue" data-step="2">IVA</text><text x="66" y="146" class="d-small" data-step="2">Duties</text><text x="216" y="146" class="d-small d-red" data-step="2">51A</text>
+<rect x="6" y="156" width="308" height="24" rx="5" class="d-fill" data-step="3"/><rect x="6" y="156" width="308" height="24" rx="5" data-step="3"/>
+<text x="10" y="173" class="d-blue" data-step="3">V</text><text x="66" y="172" class="d-small" data-step="3">President, Parliament</text><text x="216" y="172" class="d-small d-red" data-step="3">72, 110, 123</text>
+<rect x="6" y="182" width="308" height="24" rx="5" class="d-fill" data-step="3"/><rect x="6" y="182" width="308" height="24" rx="5" data-step="3"/>
+<text x="10" y="199" class="d-blue" data-step="3">V</text><text x="66" y="198" class="d-small" data-step="3">Supreme Court, CAG</text><text x="216" y="198" class="d-small d-red" data-step="3">124, 143, 148</text>
+<rect x="6" y="208" width="308" height="24" rx="5" class="d-fill-pink" data-step="4"/><rect x="6" y="208" width="308" height="24" rx="5" data-step="4"/>
+<text x="10" y="225" class="d-blue" data-step="4">VI</text><text x="66" y="224" class="d-small" data-step="4">States 152–237</text><text x="216" y="224" class="d-small d-red" data-step="4">153, 213, 226</text>
+<rect x="6" y="234" width="308" height="24" rx="5" data-step="5"/>
+<text x="10" y="251" class="d-blue" data-step="5">XI</text><text x="66" y="250" class="d-small" data-step="5">Centre-state 245–263</text><text x="216" y="250" class="d-small d-red" data-step="5">246, 263</text>
+<rect x="6" y="260" width="308" height="24" rx="5" data-step="5"/>
+<text x="10" y="277" class="d-blue" data-step="5">XII</text><text x="66" y="276" class="d-small" data-step="5">Finance 264–300A</text><text x="216" y="276" class="d-small d-red" data-step="5">280, 300A</text>
+<rect x="6" y="286" width="308" height="24" rx="5" data-step="5"/>
+<text x="10" y="303" class="d-blue" data-step="5">XV</text><text x="66" y="302" class="d-small" data-step="5">Elections 324–329</text><text x="216" y="302" class="d-small d-red" data-step="5">324, 326</text>
+<rect x="6" y="312" width="308" height="24" rx="5" data-step="5"/>
+<text x="10" y="329" class="d-blue" data-step="5">XVII</text><text x="66" y="328" class="d-small" data-step="5">Official language</text><text x="216" y="328" class="d-small d-red" data-step="5">343</text>
+<rect x="6" y="338" width="308" height="24" rx="5" class="d-fill-pink" data-step="6"/><rect x="6" y="338" width="308" height="24" rx="5" data-step="6"/>
+<text x="10" y="355" class="d-blue" data-step="6">XVIII</text><text x="66" y="354" class="d-small" data-step="6">Emergency 352–360</text><text x="216" y="354" class="d-small d-red" data-step="6">352, 356, 360</text>
+<rect x="6" y="364" width="308" height="24" rx="5" class="d-fill-pink" data-step="6"/><rect x="6" y="364" width="308" height="24" rx="5" data-step="6"/>
+<text x="10" y="381" class="d-blue" data-step="6">XX</text><text x="66" y="380" class="d-small" data-step="6">Amendment</text><text x="216" y="380" class="d-small d-red" data-step="6">368</text>
+<text x="160" y="412" text-anchor="middle" class="d-small d-soft">red = the articles SSC asks most</text>`,
       },
       explain: [
         'Part I opens with Art 1 ("India, that is Bharat, shall be a Union of States") and Art 3 (new states). Part II covers citizenship: 5 at commencement, 9 foreign citizenship, 11 Parliament regulates.',

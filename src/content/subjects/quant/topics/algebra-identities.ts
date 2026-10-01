@@ -132,8 +132,8 @@ const topic: Topic = {
     {
       pattern: 'Expression options: put values',
       example: 'If x = a(b − c), y = b(c − a) and z = c(a − b), then (x/a)³ + (y/b)³ + (z/c)³ equals:',
-      options: ['xyz/abc', '3xyz/abc', 'xyz', '3abc'],
-      answer: '3xyz/abc',
+      options: ['(xyz)/(abc)', '3(xyz)/(abc)', 'xyz', '3abc'],
+      answer: '3(xyz)/(abc)',
       ladder: [
         {
           name: 'Standard',
@@ -142,7 +142,7 @@ const topic: Topic = {
         },
         {
           name: 'Shortcut',
-          steps: ['x/a + y/b + z/c = 0, so the sum of cubes = 3 × (x/a)(y/b)(z/c).', '= 3xyz/abc.'],
+          steps: ['x/a + y/b + z/c = 0, so the sum of cubes = 3 × (x/a)(y/b)(z/c).', '= 3(xyz)/(abc).'],
           seconds: 15,
         },
         {
@@ -150,7 +150,7 @@ const topic: Topic = {
           steps: [
             'a = 1, b = 2, c = 3: x = −1, y = 4, z = −3.',
             'Question: (−1)³ + 2³ + (−1)³ = 6.',
-            'Options: xyz/abc = 2, 3xyz/abc = 6, xyz = 12, 3abc = 18. Only 3xyz/abc fits.',
+            'Options: (xyz)/(abc) = 2, 3(xyz)/(abc) = 6, xyz = 12, 3abc = 18. Only 3(xyz)/(abc) fits.',
           ],
           seconds: 30,
         },

@@ -69,35 +69,40 @@ const topic: Topic = {
       type: 'diagram',
       title: 'Parliament has three parts',
       figure: {
-        viewBox: '0 0 320 225',
+        viewBox: '0 0 320 228',
         svg: `
 <rect x="76" y="14" width="168" height="30" rx="6" class="d-fill" data-step="1"/><rect x="76" y="14" width="168" height="30" rx="6" data-step="1"/>
 <text x="160" y="35" text-anchor="middle" data-step="1">Parliament (Art 79)</text>
-<line x1="160" y1="44" x2="160" y2="58" data-step="1"/><line x1="56" y1="58" x2="264" y2="58" data-step="1"/>
-<line x1="56" y1="58" x2="56" y2="72" data-step="1"/>
+<line x1="160" y1="44" x2="160" y2="58" data-step="1"/><line x1="50" y1="58" x2="270" y2="58" data-step="1"/>
+<line x1="50" y1="58" x2="50" y2="72" data-step="1"/>
 <line x1="160" y1="58" x2="160" y2="72" data-step="1"/>
-<line x1="264" y1="58" x2="264" y2="72" data-step="1"/>
-<rect x="12" y="72" width="88" height="28" rx="6" class="d-fill-green" data-step="2"/><rect x="12" y="72" width="88" height="28" rx="6" data-step="2"/>
-<text x="56" y="91" text-anchor="middle" data-step="2">President</text>
-<text x="56" y="120" text-anchor="middle" class="d-small" data-step="2">Art 52</text>
-<text x="56" y="137" text-anchor="middle" class="d-small" data-step="2">not a member</text>
-<text x="56" y="154" text-anchor="middle" class="d-small" data-step="2">of either House</text>
-<text x="56" y="171" text-anchor="middle" class="d-small" data-step="2">assents to bills</text>
-<rect x="112" y="72" width="96" height="28" rx="6" class="d-fill-blue" data-step="3"/><rect x="112" y="72" width="96" height="28" rx="6" data-step="3"/>
+<line x1="270" y1="58" x2="270" y2="72" data-step="1"/>
+<rect x="4" y="72" width="92" height="28" rx="6" class="d-fill-green" data-step="2"/><rect x="4" y="72" width="92" height="28" rx="6" data-step="2"/>
+<text x="50" y="91" text-anchor="middle" data-step="2">President</text>
+<text x="50" y="120" text-anchor="middle" class="d-small" data-step="2">Art 52</text>
+<text x="50" y="136" text-anchor="middle" class="d-small" data-step="2">not a member</text>
+<text x="50" y="152" text-anchor="middle" class="d-small" data-step="2">of either</text>
+<text x="50" y="168" text-anchor="middle" class="d-small" data-step="2">House</text>
+<text x="50" y="184" text-anchor="middle" class="d-small" data-step="2">assents to</text>
+<text x="50" y="200" text-anchor="middle" class="d-small" data-step="2">bills</text>
+<rect x="102" y="72" width="116" height="28" rx="6" class="d-fill-blue" data-step="3"/><rect x="102" y="72" width="116" height="28" rx="6" data-step="3"/>
 <text x="160" y="91" text-anchor="middle" data-step="3">Rajya Sabha</text>
 <text x="160" y="120" text-anchor="middle" class="d-small" data-step="3">Art 80</text>
-<text x="160" y="137" text-anchor="middle" class="d-small" data-step="3">max 250</text>
-<text x="160" y="154" text-anchor="middle" class="d-small" data-step="3">(12 nominated)</text>
-<text x="160" y="171" text-anchor="middle" class="d-small" data-step="3">permanent House</text>
-<text x="160" y="188" text-anchor="middle" class="d-small" data-step="3 5">chair:</text>
-<text x="160" y="205" text-anchor="middle" class="d-small" data-step="3 5">Vice-President</text>
-<rect x="220" y="72" width="88" height="28" rx="6" class="d-fill-pink" data-step="4"/><rect x="220" y="72" width="88" height="28" rx="6" data-step="4"/>
-<text x="264" y="91" text-anchor="middle" data-step="4">Lok Sabha</text>
-<text x="264" y="120" text-anchor="middle" class="d-small" data-step="4">Art 81</text>
-<text x="264" y="137" text-anchor="middle" class="d-small" data-step="4">max 550 elected</text>
-<text x="264" y="154" text-anchor="middle" class="d-small" data-step="4">5-year term</text>
-<text x="264" y="171" text-anchor="middle" class="d-small" data-step="4">can be dissolved</text>
-<text x="264" y="188" text-anchor="middle" class="d-small" data-step="4 5">chair: Speaker</text>`,
+<text x="160" y="136" text-anchor="middle" class="d-small" data-step="3">max 250</text>
+<text x="160" y="152" text-anchor="middle" class="d-small" data-step="3">(12 nominated)</text>
+<text x="160" y="168" text-anchor="middle" class="d-small" data-step="3">permanent</text>
+<text x="160" y="184" text-anchor="middle" class="d-small" data-step="3">House</text>
+<text x="160" y="200" text-anchor="middle" class="d-small" data-step="3 5">chair:</text>
+<text x="160" y="216" text-anchor="middle" class="d-small" data-step="3 5">Vice-President</text>
+<rect x="224" y="72" width="92" height="28" rx="6" class="d-fill-pink" data-step="4"/><rect x="224" y="72" width="92" height="28" rx="6" data-step="4"/>
+<text x="270" y="91" text-anchor="middle" data-step="4">Lok Sabha</text>
+<text x="270" y="120" text-anchor="middle" class="d-small" data-step="4">Art 81</text>
+<text x="270" y="136" text-anchor="middle" class="d-small" data-step="4">max 550</text>
+<text x="270" y="152" text-anchor="middle" class="d-small" data-step="4">elected</text>
+<text x="270" y="168" text-anchor="middle" class="d-small" data-step="4">5-year term</text>
+<text x="270" y="184" text-anchor="middle" class="d-small" data-step="4">can be</text>
+<text x="270" y="200" text-anchor="middle" class="d-small" data-step="4">dissolved</text>
+<text x="270" y="216" text-anchor="middle" class="d-small" data-step="4 5">chair: Speaker</text>`,
       },
       explain: [
         'Article 79: Parliament = the President + the Rajya Sabha + the Lok Sabha. Three parts, not two.',
@@ -123,7 +128,7 @@ const topic: Topic = {
 <text x="160" y="106" text-anchor="middle" class="d-small" data-step="3">Lok Sabha passes it</text>
 <line x1="160" y1="116" x2="160" y2="126" data-step="3"/><polyline points="156,120 160,126 164,120" data-step="3"/>
 <rect x="20" y="128" width="280" height="24" rx="6" class="d-fill-pink" data-step="3"/><rect x="20" y="128" width="280" height="24" rx="6" data-step="3"/>
-<text x="160" y="144" text-anchor="middle" class="d-small d-red" data-step="3">Rajya Sabha: 14 days, can only recommend</text>
+<text x="160" y="144" text-anchor="middle" class="d-small d-red" data-step="3">Rajya Sabha: 14 days, only recommends</text>
 <line x1="160" y1="154" x2="160" y2="164" data-step="4"/><polyline points="156,158 160,164 164,158" data-step="4"/>
 <rect x="20" y="166" width="280" height="24" rx="6" class="d-fill" data-step="4"/><rect x="20" y="166" width="280" height="24" rx="6" data-step="4"/>
 <text x="160" y="182" text-anchor="middle" class="d-small" data-step="4">Lok Sabha accepts or rejects them</text>
@@ -143,7 +148,7 @@ const topic: Topic = {
       type: 'diagram',
       title: 'Ordinary bill: deadlock and the joint sitting',
       figure: {
-        viewBox: '0 0 320 260',
+        viewBox: '0 0 320 274',
         svg: `
 <rect x="30" y="14" width="260" height="26" rx="6" class="d-fill" data-step="1"/><rect x="30" y="14" width="260" height="26" rx="6" data-step="1"/>
 <text x="160" y="31" text-anchor="middle" class="d-small" data-step="1">Bill passed by the House where it began</text>
@@ -164,8 +169,9 @@ const topic: Topic = {
 <text x="233" y="199" text-anchor="middle" class="d-small" data-step="4">Speaker presides</text>
 <line x1="233" y1="206" x2="233" y2="222" data-step="5"/><polyline points="229,216 233,222 237,216" data-step="5"/>
 <line x1="85" y1="102" x2="85" y2="222" data-step="2"/><polyline points="81,216 85,222 89,216" data-step="2"/>
-<rect x="20" y="222" width="280" height="26" rx="6" class="d-fill" data-step="5"/><rect x="20" y="222" width="280" height="26" rx="6" data-step="5"/>
-<text x="160" y="239" text-anchor="middle" class="d-small" data-step="5">President: assents, withholds or returns once</text>`,
+<rect x="20" y="222" width="280" height="42" rx="6" class="d-fill" data-step="5"/><rect x="20" y="222" width="280" height="42" rx="6" data-step="5"/>
+<text x="160" y="239" text-anchor="middle" class="d-small" data-step="5">President: assents, withholds</text>
+<text x="160" y="255" text-anchor="middle" class="d-small" data-step="5">or returns it once</text>`,
       },
       explain: [
         'An ordinary bill can start in either House and must be passed by both (Art 107).',

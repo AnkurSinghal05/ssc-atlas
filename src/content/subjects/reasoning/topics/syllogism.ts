@@ -95,14 +95,14 @@ const topic: Topic = {
 <circle cx="112" cy="125" r="30" class="d-blue" data-step="2 3 4"/>
 <text x="80" y="72" text-anchor="middle">dogs</text>
 <text x="62" y="114" text-anchor="middle" class="d-small">cats</text>
-<text x="124" y="136" text-anchor="middle" class="d-small d-blue">rats</text>
+<text x="130" y="170" text-anchor="middle" class="d-small d-blue">rats</text>
 <circle cx="235" cy="105" r="55" data-step="1 4"/>
 <circle cx="212" cy="105" r="22" class="d-fill-pink" data-step="1 3"/>
 <circle cx="212" cy="105" r="22" data-step="1 3"/>
 <circle cx="280" cy="130" r="24" class="d-blue" data-step="2 3 4"/>
 <text x="235" y="72" text-anchor="middle">dogs</text>
 <text x="212" y="109" text-anchor="middle" class="d-small">cats</text>
-<text x="282" y="136" text-anchor="middle" class="d-small d-blue">rats</text>`,
+<text x="292" y="170" text-anchor="middle" class="d-small d-blue">rats</text>`,
         caption: 'All cats are dogs. Some dogs are rats.',
       },
       explain: [
@@ -123,8 +123,8 @@ const topic: Topic = {
 <circle cx="160" cy="100" r="45" data-step="1 2"/>
 <circle cx="262" cy="100" r="40" class="d-fill-blue" data-step="2"/>
 <circle cx="262" cy="100" r="40" data-step="2"/>
-<text x="68" y="106" text-anchor="middle">chairs</text>
-<text x="182" y="106" text-anchor="middle">tables</text>
+<text x="78" y="106" text-anchor="middle">chairs</text>
+<text x="172" y="106" text-anchor="middle">tables</text>
 <text x="262" y="106" text-anchor="middle">beds</text>
 <text x="125" y="160" text-anchor="middle" class="d-small d-red" data-step="3">not beds</text>
 <line x1="125" y1="147" x2="125" y2="118" class="d-red d-thin" data-step="3"/>`,

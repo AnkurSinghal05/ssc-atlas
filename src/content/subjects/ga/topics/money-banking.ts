@@ -85,7 +85,7 @@ const topic: Topic = {
       type: 'diagram',
       title: 'Building M1 to M4',
       figure: {
-        viewBox: '0 0 320 200',
+        viewBox: '0 0 320 206',
         svg: `
 <text x="14" y="39">M1</text>
 <rect x="50" y="20" width="80" height="26" class="d-fill" data-step="1"/><rect x="50" y="20" width="80" height="26" data-step="1"/><text x="90" y="37" text-anchor="middle" class="d-small" data-step="1">cash + DD</text>
@@ -102,7 +102,8 @@ const topic: Topic = {
 <rect x="50" y="134" width="80" height="26" class="d-fill" data-step="1"/><rect x="50" y="134" width="80" height="26" data-step="1"/><text x="90" y="151" text-anchor="middle" class="d-small" data-step="1">M1</text>
 <rect x="130" y="134" width="90" height="26" class="d-fill-pink" data-step="3"/><rect x="130" y="134" width="90" height="26" data-step="3"/><text x="175" y="151" text-anchor="middle" class="d-small" data-step="3">time deposits</text>
 <rect x="220" y="134" width="80" height="26" class="d-fill-blue" data-step="4"/><rect x="220" y="134" width="80" height="26" data-step="4"/><text x="260" y="151" text-anchor="middle" class="d-small" data-step="4">PO deposits</text>
-<text x="50" y="186" class="d-small d-soft">Liquidity falls going down: M1 most, M4 least.</text>`,
+<text x="50" y="182" class="d-small d-soft">Liquidity falls going down:</text>
+<text x="50" y="197" class="d-small d-soft">M1 most, M4 least.</text>`,
         caption: 'Cash = currency with the public; DD = demand deposits; PO = post office.',
       },
       explain: [

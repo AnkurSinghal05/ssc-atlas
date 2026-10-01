@@ -108,8 +108,11 @@ export function withFractions(s: string): ReactNode {
     const l = leftOperand(s, i);
     const r = l && rightOperand(s, i);
     if (!l || !r || l.start < cursor || !isFraction(s, l, r, i)) continue;
-    // A mixed number such as "14 2/7" keeps its whole part on the same line.
-    if (l.start > cursor) out.push(s.slice(cursor, l.start).replace(/(\d) $/, '$1\u00a0'));
+    // A mixed number such as "14 2/7" keeps its whole part with the fraction.
+    let before = l.start > cursor ? s.slice(cursor, l.start) : '';
+    const whole = /(?:^|[^\d.,])(\d+) $/.exec(before) ? /(\d+) $/.exec(before)![1] : '';
+    if (whole) before = before.slice(0, -(whole.length + 1));
+    if (before) out.push(before);
     const frac = (
       <span key={key++} className="frac">
         <span className="frac-num">{withFractions(l.inner)}</span>
@@ -120,8 +123,9 @@ export function withFractions(s: string): ReactNode {
     // Keep closing punctuation ("x/y." or "2/7%") on the fraction's line instead of wrapping alone.
     const tail = /^[.,;:!?%)\]’”]+/.exec(s.slice(r.end))?.[0];
     out.push(
-      tail ? (
+      tail || whole ? (
         <span key={key++} className="whitespace-nowrap">
+          {whole && `${whole}\u00a0`}
           {frac}
           {tail}
         </span>

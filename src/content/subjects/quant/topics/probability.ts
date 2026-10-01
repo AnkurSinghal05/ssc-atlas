@@ -75,6 +75,7 @@ const topic: Topic = {
       figure: {
         viewBox: '0 0 320 215',
         svg: `
+<g transform="translate(-10,0)">
 <rect x="80" y="45" width="26" height="26" class="d-fill-green" data-step="4"/>
 <rect x="80" y="175" width="26" height="26" class="d-fill" data-step="2"/>
 <rect x="106" y="71" width="26" height="26" class="d-fill-green" data-step="4"/>
@@ -152,15 +153,16 @@ const topic: Topic = {
 <text x="72" y="192.5" text-anchor="end" class="d-small d-blue" data-step="1">6</text>
 <text x="80" y="20" class="d-small d-blue" data-step="1">die 1 →</text>
 <text x="18" y="128" class="d-small d-blue" data-step="1">die 2</text>
-<rect x="246" y="69" width="12" height="12" class="d-fill" data-step="2"/>
-<rect x="246" y="69" width="12" height="12" class="d-thin" data-step="2"/>
-<text x="262" y="80" class="d-small" data-step="2">sum 7: 6</text>
-<rect x="246" y="109" width="12" height="12" class="d-fill-pink" data-step="3"/>
-<rect x="246" y="109" width="12" height="12" class="d-thin" data-step="3"/>
-<text x="262" y="120" class="d-small" data-step="3">sum 9: 4</text>
-<rect x="246" y="149" width="12" height="12" class="d-fill-green" data-step="4"/>
-<rect x="246" y="149" width="12" height="12" class="d-thin" data-step="4"/>
-<text x="262" y="160" class="d-small" data-step="4">doubles: 6</text>`,
+<rect x="233" y="69" width="12" height="12" class="d-fill" data-step="2"/>
+<rect x="233" y="69" width="12" height="12" class="d-thin" data-step="2"/>
+<text x="249" y="80" class="d-small" data-step="2">sum 7: 6</text>
+<rect x="233" y="109" width="12" height="12" class="d-fill-pink" data-step="3"/>
+<rect x="233" y="109" width="12" height="12" class="d-thin" data-step="3"/>
+<text x="249" y="120" class="d-small" data-step="3">sum 9: 4</text>
+<rect x="233" y="149" width="12" height="12" class="d-fill-green" data-step="4"/>
+<rect x="233" y="149" width="12" height="12" class="d-thin" data-step="4"/>
+<text x="249" y="160" class="d-small" data-step="4">doubles: 6</text>
+</g>`,
         caption: 'Each step away from 7 loses one square',
       },
       explain: [

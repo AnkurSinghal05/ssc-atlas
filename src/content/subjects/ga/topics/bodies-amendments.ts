@@ -100,27 +100,28 @@ const topic: Topic = {
       type: 'diagram',
       title: 'In the Constitution or not?',
       figure: {
-        viewBox: '0 0 360 236',
+        viewBox: '0 0 320 236',
         svg: `
-<rect x="10" y="12" width="165" height="30" rx="6" class="d-fill-green" data-step="1"/><rect x="10" y="12" width="165" height="30" rx="6" data-step="1"/>
-<text x="92" y="32" text-anchor="middle" class="d-small" data-step="1">Constitutional (Art)</text>
-<rect x="185" y="12" width="165" height="30" rx="6" class="d-fill-pink" data-step="2 3"/><rect x="185" y="12" width="165" height="30" rx="6" data-step="2 3"/>
-<text x="267" y="32" text-anchor="middle" class="d-small" data-step="2 3">Not constitutional</text>
-<line x1="180" y1="50" x2="180" y2="224" class="d-soft d-dash"/>
-<text x="18" y="66" class="d-small" data-step="1">Election Comm.</text><text x="168" y="66" text-anchor="end" class="d-small d-red" data-step="1">324</text>
-<text x="18" y="90" class="d-small" data-step="1">UPSC</text><text x="168" y="90" text-anchor="end" class="d-small d-red" data-step="1">315</text>
-<text x="18" y="114" class="d-small" data-step="1">Finance Comm.</text><text x="168" y="114" text-anchor="end" class="d-small d-red" data-step="1">280</text>
-<text x="18" y="138" class="d-small" data-step="1">CAG</text><text x="168" y="138" text-anchor="end" class="d-small d-red" data-step="1">148</text>
-<text x="18" y="162" class="d-small" data-step="1">Attorney General</text><text x="168" y="162" text-anchor="end" class="d-small d-red" data-step="1">76</text>
-<text x="18" y="186" class="d-small" data-step="1">GST Council</text><text x="168" y="186" text-anchor="end" class="d-small d-red" data-step="1">279A</text>
-<text x="18" y="210" class="d-small" data-step="1">NCSC</text><text x="168" y="210" text-anchor="end" class="d-small d-red" data-step="1">338</text>
-<text x="193" y="66" class="d-small d-blue" data-step="2">By an Act of Parliament</text>
-<text x="201" y="90" class="d-small" data-step="2">NHRC</text><text x="342" y="90" text-anchor="end" class="d-small" data-step="2">1993</text>
-<text x="201" y="114" class="d-small" data-step="2 4">CVC</text><text x="342" y="114" text-anchor="end" class="d-small" data-step="2 4">2003</text>
-<text x="201" y="138" class="d-small" data-step="2">Lokpal</text><text x="342" y="138" text-anchor="end" class="d-small" data-step="2">2013</text>
-<text x="193" y="170" class="d-small d-blue" data-step="3">By a resolution</text>
-<text x="201" y="194" class="d-small" data-step="3">NITI Aayog</text><text x="342" y="194" text-anchor="end" class="d-small" data-step="3">2015</text>
-<text x="201" y="218" class="d-small" data-step="3 4">CBI</text><text x="342" y="218" text-anchor="end" class="d-small" data-step="3 4">1963</text>`,
+<rect x="6" y="12" width="150" height="30" rx="6" class="d-fill-green" data-step="1"/><rect x="6" y="12" width="150" height="30" rx="6" data-step="1"/>
+<text x="81" y="32" text-anchor="middle" class="d-small" data-step="1">Constitutional (Art)</text>
+<rect x="164" y="12" width="150" height="30" rx="6" class="d-fill-pink" data-step="2 3"/><rect x="164" y="12" width="150" height="30" rx="6" data-step="2 3"/>
+<text x="239" y="32" text-anchor="middle" class="d-small" data-step="2 3">Not constitutional</text>
+<line x1="160" y1="50" x2="160" y2="224" class="d-soft d-dash"/>
+<text x="12" y="66" class="d-small" data-step="1">Election Comm.</text><text x="150" y="66" text-anchor="end" class="d-small d-red" data-step="1">324</text>
+<text x="12" y="90" class="d-small" data-step="1">UPSC</text><text x="150" y="90" text-anchor="end" class="d-small d-red" data-step="1">315</text>
+<text x="12" y="114" class="d-small" data-step="1">Finance Comm.</text><text x="150" y="114" text-anchor="end" class="d-small d-red" data-step="1">280</text>
+<text x="12" y="138" class="d-small" data-step="1">CAG</text><text x="150" y="138" text-anchor="end" class="d-small d-red" data-step="1">148</text>
+<text x="12" y="162" class="d-small" data-step="1">Attorney General</text><text x="150" y="162" text-anchor="end" class="d-small d-red" data-step="1">76</text>
+<text x="12" y="186" class="d-small" data-step="1">GST Council</text><text x="150" y="186" text-anchor="end" class="d-small d-red" data-step="1">279A</text>
+<text x="12" y="210" class="d-small" data-step="1">NCSC</text><text x="150" y="210" text-anchor="end" class="d-small d-red" data-step="1">338</text>
+<text x="168" y="62" class="d-small d-blue" data-step="2">By an Act of</text>
+<text x="168" y="77" class="d-small d-blue" data-step="2">Parliament</text>
+<text x="176" y="98" class="d-small" data-step="2">NHRC</text><text x="308" y="98" text-anchor="end" class="d-small" data-step="2">1993</text>
+<text x="176" y="120" class="d-small" data-step="2 4">CVC</text><text x="308" y="120" text-anchor="end" class="d-small" data-step="2 4">2003</text>
+<text x="176" y="142" class="d-small" data-step="2">Lokpal</text><text x="308" y="142" text-anchor="end" class="d-small" data-step="2">2013</text>
+<text x="168" y="170" class="d-small d-blue" data-step="3">By a resolution</text>
+<text x="176" y="194" class="d-small" data-step="3">NITI Aayog</text><text x="308" y="194" text-anchor="end" class="d-small" data-step="3">2015</text>
+<text x="176" y="218" class="d-small" data-step="3 4">CBI</text><text x="308" y="218" text-anchor="end" class="d-small" data-step="3 4">1963</text>`,
       },
       explain: [
         'Constitutional bodies are named in the Constitution, so only an amendment can abolish them. Learn each with its article.',

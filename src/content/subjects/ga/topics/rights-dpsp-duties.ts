@@ -67,7 +67,7 @@ const topic: Topic = {
 <rect x="12" y="116" width="208" height="24" rx="5" class="d-fill" data-step="2"/><rect x="12" y="116" width="208" height="24" rx="5" data-step="2"/><text x="18" y="134" class="d-blue" data-step="2">25–28</text><text x="80" y="133" class="d-small" data-step="2">Freedom of religion</text>
 <rect x="12" y="144" width="208" height="24" rx="5" class="d-fill" data-step="2"/><rect x="12" y="144" width="208" height="24" rx="5" data-step="2"/><text x="18" y="162" class="d-blue" data-step="2">29–30</text><text x="80" y="161" class="d-small" data-step="2">Cultural, educational</text>
 <text x="18" y="186" class="d-small d-red" data-step="4">31: property, removed in 1978</text>
-<rect x="12" y="194" width="208" height="24" rx="5" class="d-fill-pink" data-step="3"/><rect x="12" y="194" width="208" height="24" rx="5" data-step="3"/><text x="18" y="212" class="d-blue" data-step="3">32</text><text x="80" y="211" class="d-small" data-step="3">Constitutional remedies</text>
+<rect x="12" y="194" width="208" height="24" rx="5" class="d-fill-pink" data-step="3"/><rect x="12" y="194" width="208" height="24" rx="5" data-step="3"/><text x="18" y="212" class="d-blue" data-step="3">32</text><text x="52" y="211" class="d-small" data-step="3">Constitutional remedies</text>
 <path d="M226,32 L234,32 L234,218 L226,218" class="d-green" data-step="3"/>
 <text x="241" y="112" class="d-small d-green" data-step="3">enforceable</text>
 <text x="241" y="126" class="d-small d-green" data-step="3">in court</text>

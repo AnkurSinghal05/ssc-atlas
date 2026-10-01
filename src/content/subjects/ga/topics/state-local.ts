@@ -77,32 +77,32 @@ const topic: Topic = {
       type: 'diagram',
       title: 'Governor and a state bill (Art 200)',
       figure: {
-        viewBox: '0 0 340 210',
+        viewBox: '0 0 320 210',
         svg: `
-<rect x="30" y="12" width="280" height="28" rx="6" class="d-fill" data-step="1"/><rect x="30" y="12" width="280" height="28" rx="6" data-step="1"/>
-<text x="170" y="31" text-anchor="middle" class="d-small" data-step="1">Bill passed by the state legislature</text>
-<line x1="170" y1="42" x2="170" y2="54" data-step="1"/><polyline points="166,48 170,54 174,48" data-step="1"/>
-<rect x="80" y="56" width="180" height="30" rx="6" class="d-fill-blue" data-step="1"/><rect x="80" y="56" width="180" height="30" rx="6" data-step="1"/>
-<text x="170" y="76" text-anchor="middle" data-step="1">Governor (Art 200)</text>
-<line x1="170" y1="86" x2="170" y2="98" data-step="1"/><line x1="47" y1="98" x2="293" y2="98" data-step="1"/>
-<line x1="47" y1="98" x2="47" y2="112" data-step="2"/><line x1="129" y1="98" x2="129" y2="112" data-step="3"/>
-<line x1="211" y1="98" x2="211" y2="112" data-step="4"/><line x1="293" y1="98" x2="293" y2="112" data-step="5"/>
-<rect x="10" y="112" width="74" height="28" rx="6" class="d-fill-green" data-step="2"/><rect x="10" y="112" width="74" height="28" rx="6" data-step="2"/>
-<text x="47" y="131" text-anchor="middle" class="d-small" data-step="2">Assent</text>
-<text x="47" y="160" text-anchor="middle" class="d-small" data-step="2">becomes</text>
-<text x="47" y="176" text-anchor="middle" class="d-small" data-step="2">law</text>
-<rect x="92" y="112" width="74" height="28" rx="6" class="d-fill-pink" data-step="3"/><rect x="92" y="112" width="74" height="28" rx="6" data-step="3"/>
-<text x="129" y="131" text-anchor="middle" class="d-small" data-step="3">Withhold</text>
-<text x="129" y="160" text-anchor="middle" class="d-small" data-step="3">bill ends</text>
-<rect x="174" y="112" width="74" height="28" rx="6" class="d-fill" data-step="4"/><rect x="174" y="112" width="74" height="28" rx="6" data-step="4"/>
-<text x="211" y="131" text-anchor="middle" class="d-small" data-step="4">Return</text>
-<text x="211" y="160" text-anchor="middle" class="d-small" data-step="4">once; never</text>
-<text x="211" y="176" text-anchor="middle" class="d-small" data-step="4">money bills</text>
-<rect x="256" y="112" width="74" height="28" rx="6" class="d-fill-blue" data-step="5"/><rect x="256" y="112" width="74" height="28" rx="6" data-step="5"/>
-<text x="293" y="131" text-anchor="middle" class="d-small" data-step="5">Reserve</text>
-<text x="293" y="160" text-anchor="middle" class="d-small" data-step="5">for the</text>
-<text x="293" y="176" text-anchor="middle" class="d-small" data-step="5">President</text>
-<text x="293" y="192" text-anchor="middle" class="d-small" data-step="5">(Art 201)</text>`,
+<rect x="20" y="12" width="280" height="28" rx="6" class="d-fill" data-step="1"/><rect x="20" y="12" width="280" height="28" rx="6" data-step="1"/>
+<text x="160" y="31" text-anchor="middle" class="d-small" data-step="1">Bill passed by the state legislature</text>
+<line x1="160" y1="42" x2="160" y2="54" data-step="1"/><polyline points="156,48 160,54 164,48" data-step="1"/>
+<rect x="70" y="56" width="180" height="30" rx="6" class="d-fill-blue" data-step="1"/><rect x="70" y="56" width="180" height="30" rx="6" data-step="1"/>
+<text x="160" y="76" text-anchor="middle" data-step="1">Governor (Art 200)</text>
+<line x1="160" y1="86" x2="160" y2="98" data-step="1"/><line x1="42" y1="98" x2="276" y2="98" data-step="1"/>
+<line x1="42" y1="98" x2="42" y2="112" data-step="2"/><line x1="120" y1="98" x2="120" y2="112" data-step="3"/>
+<line x1="198" y1="98" x2="198" y2="112" data-step="4"/><line x1="276" y1="98" x2="276" y2="112" data-step="5"/>
+<rect x="6" y="112" width="72" height="28" rx="6" class="d-fill-green" data-step="2"/><rect x="6" y="112" width="72" height="28" rx="6" data-step="2"/>
+<text x="42" y="131" text-anchor="middle" class="d-small" data-step="2">Assent</text>
+<text x="42" y="160" text-anchor="middle" class="d-small" data-step="2">becomes</text>
+<text x="42" y="176" text-anchor="middle" class="d-small" data-step="2">law</text>
+<rect x="84" y="112" width="72" height="28" rx="6" class="d-fill-pink" data-step="3"/><rect x="84" y="112" width="72" height="28" rx="6" data-step="3"/>
+<text x="120" y="131" text-anchor="middle" class="d-small" data-step="3">Withhold</text>
+<text x="120" y="160" text-anchor="middle" class="d-small" data-step="3">bill ends</text>
+<rect x="162" y="112" width="72" height="28" rx="6" class="d-fill" data-step="4"/><rect x="162" y="112" width="72" height="28" rx="6" data-step="4"/>
+<text x="198" y="131" text-anchor="middle" class="d-small" data-step="4">Return</text>
+<text x="198" y="160" text-anchor="middle" class="d-small" data-step="4">once; never</text>
+<text x="198" y="176" text-anchor="middle" class="d-small" data-step="4">money bills</text>
+<rect x="240" y="112" width="72" height="28" rx="6" class="d-fill-blue" data-step="5"/><rect x="240" y="112" width="72" height="28" rx="6" data-step="5"/>
+<text x="276" y="131" text-anchor="middle" class="d-small" data-step="5">Reserve</text>
+<text x="276" y="160" text-anchor="middle" class="d-small" data-step="5">for the</text>
+<text x="276" y="176" text-anchor="middle" class="d-small" data-step="5">President</text>
+<text x="276" y="192" text-anchor="middle" class="d-small" data-step="5">(Art 201)</text>`,
       },
       explain: [
         'Every bill passed by the state legislature goes to the Governor, who has four choices under Article 200.',
@@ -116,33 +116,33 @@ const topic: Topic = {
       type: 'diagram',
       title: 'Local bodies: rural and urban',
       figure: {
-        viewBox: '0 0 360 260',
+        viewBox: '0 0 320 260',
         svg: `
-<text x="90" y="22" text-anchor="middle" data-step="1">Rural: Part IX</text>
-<text x="270" y="22" text-anchor="middle" data-step="2">Urban: Part IXA</text>
-<line x1="180" y1="8" x2="180" y2="200" class="d-soft d-dash"/>
-<rect x="10" y="34" width="160" height="40" rx="6" class="d-fill-green" data-step="1"/><rect x="10" y="34" width="160" height="40" rx="6" data-step="1"/>
-<text x="90" y="51" text-anchor="middle" class="d-small" data-step="1">Zila Parishad</text>
-<text x="90" y="67" text-anchor="middle" class="d-small" data-step="1">district</text>
-<rect x="10" y="86" width="160" height="40" rx="6" class="d-fill-green" data-step="1"/><rect x="10" y="86" width="160" height="40" rx="6" data-step="1"/>
-<text x="90" y="103" text-anchor="middle" class="d-small" data-step="1">Panchayat Samiti</text>
-<text x="90" y="119" text-anchor="middle" class="d-small" data-step="1">intermediate (block)</text>
-<rect x="10" y="138" width="160" height="40" rx="6" class="d-fill-green" data-step="1"/><rect x="10" y="138" width="160" height="40" rx="6" data-step="1"/>
-<text x="90" y="155" text-anchor="middle" class="d-small" data-step="1">Gram Panchayat</text>
-<text x="90" y="171" text-anchor="middle" class="d-small" data-step="1">village</text>
-<rect x="190" y="34" width="160" height="40" rx="6" class="d-fill-blue" data-step="2"/><rect x="190" y="34" width="160" height="40" rx="6" data-step="2"/>
-<text x="270" y="51" text-anchor="middle" class="d-small" data-step="2">Municipal Corporation</text>
-<text x="270" y="67" text-anchor="middle" class="d-small" data-step="2">larger urban area</text>
-<rect x="190" y="86" width="160" height="40" rx="6" class="d-fill-blue" data-step="2"/><rect x="190" y="86" width="160" height="40" rx="6" data-step="2"/>
-<text x="270" y="103" text-anchor="middle" class="d-small" data-step="2">Municipal Council</text>
-<text x="270" y="119" text-anchor="middle" class="d-small" data-step="2">smaller urban area</text>
-<rect x="190" y="138" width="160" height="40" rx="6" class="d-fill-blue" data-step="2"/><rect x="190" y="138" width="160" height="40" rx="6" data-step="2"/>
-<text x="270" y="155" text-anchor="middle" class="d-small" data-step="2">Nagar Panchayat</text>
-<text x="270" y="171" text-anchor="middle" class="d-small" data-step="2">area in transition</text>
-<text x="90" y="198" text-anchor="middle" class="d-small d-red" data-step="3">11th Sch: 29 subjects</text>
-<text x="270" y="198" text-anchor="middle" class="d-small d-red" data-step="3">12th Sch: 18 subjects</text>
-<rect x="40" y="214" width="280" height="34" rx="6" class="d-fill-pink" data-step="4"/><rect x="40" y="214" width="280" height="34" rx="6" data-step="4"/>
-<text x="180" y="236" text-anchor="middle" class="d-small" data-step="4">Both: 1/3 women · 5 years · SEC · SFC</text>`,
+<text x="81" y="22" text-anchor="middle" data-step="1">Rural: Part IX</text>
+<text x="239" y="22" text-anchor="middle" data-step="2">Urban: Part IXA</text>
+<line x1="160" y1="8" x2="160" y2="200" class="d-soft d-dash"/>
+<rect x="6" y="34" width="150" height="40" rx="6" class="d-fill-green" data-step="1"/><rect x="6" y="34" width="150" height="40" rx="6" data-step="1"/>
+<text x="81" y="51" text-anchor="middle" class="d-small" data-step="1">Zila Parishad</text>
+<text x="81" y="67" text-anchor="middle" class="d-small" data-step="1">district</text>
+<rect x="6" y="86" width="150" height="40" rx="6" class="d-fill-green" data-step="1"/><rect x="6" y="86" width="150" height="40" rx="6" data-step="1"/>
+<text x="81" y="103" text-anchor="middle" class="d-small" data-step="1">Panchayat Samiti</text>
+<text x="81" y="119" text-anchor="middle" class="d-small" data-step="1">intermediate (block)</text>
+<rect x="6" y="138" width="150" height="40" rx="6" class="d-fill-green" data-step="1"/><rect x="6" y="138" width="150" height="40" rx="6" data-step="1"/>
+<text x="81" y="155" text-anchor="middle" class="d-small" data-step="1">Gram Panchayat</text>
+<text x="81" y="171" text-anchor="middle" class="d-small" data-step="1">village</text>
+<rect x="164" y="34" width="150" height="40" rx="6" class="d-fill-blue" data-step="2"/><rect x="164" y="34" width="150" height="40" rx="6" data-step="2"/>
+<text x="239" y="51" text-anchor="middle" class="d-small" data-step="2">Municipal Corporation</text>
+<text x="239" y="67" text-anchor="middle" class="d-small" data-step="2">larger urban area</text>
+<rect x="164" y="86" width="150" height="40" rx="6" class="d-fill-blue" data-step="2"/><rect x="164" y="86" width="150" height="40" rx="6" data-step="2"/>
+<text x="239" y="103" text-anchor="middle" class="d-small" data-step="2">Municipal Council</text>
+<text x="239" y="119" text-anchor="middle" class="d-small" data-step="2">smaller urban area</text>
+<rect x="164" y="138" width="150" height="40" rx="6" class="d-fill-blue" data-step="2"/><rect x="164" y="138" width="150" height="40" rx="6" data-step="2"/>
+<text x="239" y="155" text-anchor="middle" class="d-small" data-step="2">Nagar Panchayat</text>
+<text x="239" y="171" text-anchor="middle" class="d-small" data-step="2">area in transition</text>
+<text x="81" y="198" text-anchor="middle" class="d-small d-red" data-step="3">11th Sch: 29 subjects</text>
+<text x="239" y="198" text-anchor="middle" class="d-small d-red" data-step="3">12th Sch: 18 subjects</text>
+<rect x="20" y="214" width="280" height="34" rx="6" class="d-fill-pink" data-step="4"/><rect x="20" y="214" width="280" height="34" rx="6" data-step="4"/>
+<text x="160" y="236" text-anchor="middle" class="d-small" data-step="4">Both: 1/3 women · 5 years · SEC · SFC</text>`,
       },
       explain: [
         'The 73rd Amendment set up three tiers of panchayats: village, intermediate (block) and district. Small states under 20 lakh people may skip the middle tier.',

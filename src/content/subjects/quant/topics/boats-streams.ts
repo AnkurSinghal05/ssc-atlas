@@ -85,16 +85,16 @@ const topic: Topic = {
 <line x1="28" y1="112" x2="72" y2="112" class="d-blue d-thin" data-step="2"/><path d="M66.8,115 L72,112 L66.8,109" class="d-blue d-thin" data-step="2"/>
 <line x1="222" y1="112" x2="266" y2="112" class="d-blue d-thin" data-step="2"/><path d="M260.8,115 L266,112 L260.8,109" class="d-blue d-thin" data-step="2"/>
 <text x="160" y="117" text-anchor="middle" class="d-small d-blue" data-step="2">stream 3 km/h</text>
-<path d="M98,79 L142,79 L134,91 L106,91 Z" class="d-fill" data-step="1"/>
-<path d="M98,79 L142,79 L134,91 L106,91 Z" data-step="1"/>
-<line x1="150" y1="85" x2="200" y2="85" class="d-red d-thick" data-step="3"/><path d="M193.9,88.5 L200,85 L193.9,81.5" class="d-red d-thick" data-step="3"/>
-<path d="M178,134 L222,134 L214,146 L186,146 Z" class="d-fill" data-step="1"/>
-<path d="M178,134 L222,134 L214,146 L186,146 Z" data-step="1"/>
-<line x1="170" y1="140" x2="120" y2="140" class="d-green d-thick" data-step="4"/><path d="M126.1,136.5 L120,140 L126.1,143.5" class="d-green d-thick" data-step="4"/>
+<path d="M98,70 L142,70 L134,82 L106,82 Z" class="d-fill" data-step="1"/>
+<path d="M98,70 L142,70 L134,82 L106,82 Z" data-step="1"/>
+<line x1="150" y1="76" x2="200" y2="76" class="d-red d-thick" data-step="3"/><path d="M193.9,79.5 L200,76 L193.9,72.5" class="d-red d-thick" data-step="3"/>
+<path d="M178,138 L222,138 L214,150 L186,150 Z" class="d-fill" data-step="1"/>
+<path d="M178,138 L222,138 L214,150 L186,150 Z" data-step="1"/>
+<line x1="170" y1="144" x2="120" y2="144" class="d-green d-thick" data-step="4"/><path d="M126.1,140.5 L120,144 L126.1,147.5" class="d-green d-thick" data-step="4"/>
 <text x="160" y="44" text-anchor="middle" class="d-red" data-step="3">downstream: 12 + 3 = 15 km/h</text>
 <text x="160" y="186" text-anchor="middle" class="d-green" data-step="4">upstream: 12 − 3 = 9 km/h</text>
-<text x="120" y="104" text-anchor="middle" class="d-small" data-step="1">boat 12</text>
-<text x="200" y="130" text-anchor="middle" class="d-small" data-step="1">boat 12</text>`,
+<text x="90" y="81" text-anchor="end" class="d-small" data-step="1">boat 12</text>
+<text x="230" y="149" class="d-small" data-step="1">boat 12</text>`,
       },
       explain: [
         'In still water the boat moves at B = 12 km/h.',

@@ -75,7 +75,7 @@ const topic: Topic = {
         viewBox: '0 0 320 232',
         svg: `
 <line x1="64" y1="18" x2="64" y2="214" class="d-soft"/>
-<circle cx="64" cy="31" r="4" class="d-dot" data-step="1"/><text x="54" y="36" text-anchor="end" data-step="1">1757</text><text x="76" y="36" data-step="1">Plassey</text><text x="76" y="52" class="d-small" data-step="1">Clive defeats Siraj-ud-Daulah of Bengal</text>
+<circle cx="64" cy="31" r="4" class="d-dot" data-step="1"/><text x="54" y="36" text-anchor="end" data-step="1">1757</text><text x="76" y="36" data-step="1">Plassey</text><text x="76" y="52" class="d-small" data-step="1">Clive defeats Siraj-ud-Daulah</text>
 <circle cx="64" cy="73" r="4" class="d-dot" data-step="2"/><text x="54" y="78" text-anchor="end" data-step="2">1760</text><text x="76" y="78" data-step="2">Wandiwash</text><text x="76" y="94" class="d-small" data-step="2">The English defeat the French</text>
 <circle cx="64" cy="115" r="4" class="d-dot" data-step="3"/><text x="54" y="120" text-anchor="end" data-step="3">1761</text><text x="76" y="120" data-step="3">Panipat III</text><text x="76" y="136" class="d-small" data-step="3">Abdali defeats the Marathas</text>
 <circle cx="64" cy="157" r="4" class="d-dot" data-step="4"/><text x="54" y="162" text-anchor="end" data-step="4">1764</text><text x="76" y="162" data-step="4">Buxar</text><text x="76" y="178" class="d-small" data-step="4">Munro defeats three allied rulers</text>

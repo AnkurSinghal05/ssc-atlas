@@ -81,35 +81,35 @@ const topic: Topic = {
       type: 'diagram',
       title: 'Making of the Constitution: a timeline',
       figure: {
-        viewBox: '0 0 340 330',
+        viewBox: '0 0 320 330',
         svg: `
-<line x1="40" y1="18" x2="40" y2="314" class="d-soft"/>
-<circle cx="40" cy="24" r="5" class="d-dot" data-step="1"/>
-<text x="56" y="22" class="d-blue" data-step="1">9 Dec 1946</text>
-<text x="56" y="38" class="d-small" data-step="1">first meeting, Sinha temporary President</text>
-<circle cx="40" cy="62" r="5" class="d-dot" data-step="1"/>
-<text x="56" y="60" class="d-blue" data-step="1">11 Dec 1946</text>
-<text x="56" y="76" class="d-small" data-step="1">Rajendra Prasad elected President</text>
-<circle cx="40" cy="100" r="5" class="d-dot" data-step="2"/>
-<text x="56" y="98" class="d-blue" data-step="2">13 Dec 1946</text>
-<text x="56" y="114" class="d-small" data-step="2">Nehru: Objectives Resolution</text>
-<circle cx="40" cy="138" r="5" class="d-dot" data-step="3"/>
-<text x="56" y="136" class="d-blue" data-step="3">22 Jul 1947</text>
-<text x="56" y="152" class="d-small" data-step="3">national flag adopted</text>
-<circle cx="40" cy="176" r="5" class="d-dot" data-step="3"/>
-<text x="56" y="174" class="d-blue" data-step="3">29 Aug 1947</text>
-<text x="56" y="190" class="d-small" data-step="3">Drafting Committee, chair Ambedkar</text>
-<rect x="50" y="202" width="270" height="36" rx="6" class="d-fill-pink" data-step="4"/>
-<circle cx="40" cy="220" r="6" class="d-dot d-red" data-step="4"/>
-<text x="56" y="218" class="d-red" data-step="4">26 Nov 1949</text>
-<text x="56" y="233" class="d-small" data-step="4">Constitution adopted (Constitution Day)</text>
-<circle cx="40" cy="258" r="5" class="d-dot" data-step="5"/>
-<text x="56" y="256" class="d-blue" data-step="5">24 Jan 1950</text>
-<text x="56" y="272" class="d-small" data-step="5">signed; first President; anthem, song</text>
-<rect x="50" y="284" width="270" height="36" rx="6" class="d-fill-green" data-step="6"/>
-<circle cx="40" cy="302" r="6" class="d-dot d-green" data-step="6"/>
-<text x="56" y="300" class="d-green" data-step="6">26 Jan 1950</text>
-<text x="56" y="315" class="d-small" data-step="6">comes into force (Republic Day)</text>`,
+<line x1="30" y1="18" x2="30" y2="314" class="d-soft"/>
+<circle cx="30" cy="24" r="5" class="d-dot" data-step="1"/>
+<text x="44" y="22" class="d-blue" data-step="1">9 Dec 1946</text>
+<text x="44" y="38" class="d-small" data-step="1">first meeting, Sinha temporary President</text>
+<circle cx="30" cy="62" r="5" class="d-dot" data-step="1"/>
+<text x="44" y="60" class="d-blue" data-step="1">11 Dec 1946</text>
+<text x="44" y="76" class="d-small" data-step="1">Rajendra Prasad elected President</text>
+<circle cx="30" cy="100" r="5" class="d-dot" data-step="2"/>
+<text x="44" y="98" class="d-blue" data-step="2">13 Dec 1946</text>
+<text x="44" y="114" class="d-small" data-step="2">Nehru: Objectives Resolution</text>
+<circle cx="30" cy="138" r="5" class="d-dot" data-step="3"/>
+<text x="44" y="136" class="d-blue" data-step="3">22 Jul 1947</text>
+<text x="44" y="152" class="d-small" data-step="3">national flag adopted</text>
+<circle cx="30" cy="176" r="5" class="d-dot" data-step="3"/>
+<text x="44" y="174" class="d-blue" data-step="3">29 Aug 1947</text>
+<text x="44" y="190" class="d-small" data-step="3">Drafting Committee, chair Ambedkar</text>
+<rect x="38" y="202" width="276" height="36" rx="6" class="d-fill-pink" data-step="4"/>
+<circle cx="30" cy="220" r="6" class="d-dot d-red" data-step="4"/>
+<text x="44" y="218" class="d-red" data-step="4">26 Nov 1949</text>
+<text x="44" y="233" class="d-small" data-step="4">Constitution adopted (Constitution Day)</text>
+<circle cx="30" cy="258" r="5" class="d-dot" data-step="5"/>
+<text x="44" y="256" class="d-blue" data-step="5">24 Jan 1950</text>
+<text x="44" y="272" class="d-small" data-step="5">signed; first President; anthem, song</text>
+<rect x="38" y="284" width="276" height="36" rx="6" class="d-fill-green" data-step="6"/>
+<circle cx="30" cy="302" r="6" class="d-dot d-green" data-step="6"/>
+<text x="44" y="300" class="d-green" data-step="6">26 Jan 1950</text>
+<text x="44" y="315" class="d-small" data-step="6">comes into force (Republic Day)</text>`,
       },
       explain: [
         'The Assembly first met on 9 Dec 1946 with Sachchidananda Sinha, the oldest member, as temporary President. Dr Rajendra Prasad was elected permanent President two days later.',
@@ -124,23 +124,23 @@ const topic: Topic = {
       type: 'diagram',
       title: 'The Preamble in four parts',
       figure: {
-        viewBox: '0 0 340 290',
+        viewBox: '0 0 320 290',
         svg: `
-<rect x="12" y="12" width="316" height="46" rx="6" class="d-fill-blue" data-step="1"/><rect x="12" y="12" width="316" height="46" rx="6" data-step="1"/>
-<text x="22" y="32" class="d-small d-soft" data-step="1">1. Source of authority</text>
-<text x="22" y="50" data-step="1">We, the people of India</text>
-<rect x="12" y="68" width="316" height="66" rx="6" class="d-fill" data-step="2"/><rect x="12" y="68" width="316" height="66" rx="6" data-step="2"/>
-<text x="22" y="88" class="d-small d-soft" data-step="2">2. Nature of the Indian State</text>
-<text x="22" y="106" data-step="2">Sovereign</text><text x="108" y="106" class="d-red" data-step="2">Socialist Secular</text>
-<text x="22" y="125" data-step="2">Democratic Republic</text>
-<rect x="12" y="144" width="316" height="86" rx="6" class="d-fill-green" data-step="3"/><rect x="12" y="144" width="316" height="86" rx="6" data-step="3"/>
-<text x="22" y="164" class="d-small d-soft" data-step="3">3. Objectives</text>
-<text x="22" y="183" data-step="3">Justice · Liberty</text>
-<text x="22" y="202" data-step="3">Equality · Fraternity</text>
-<text x="22" y="221" class="d-small" data-step="3">Fraternity: unity and</text><text x="158" y="221" class="d-small d-red" data-step="3">integrity</text><text x="217" y="221" class="d-small" data-step="3">of the Nation</text>
-<rect x="12" y="240" width="316" height="42" rx="6" class="d-fill-pink" data-step="4"/><rect x="12" y="240" width="316" height="42" rx="6" data-step="4"/>
-<text x="22" y="259" class="d-small d-soft" data-step="4">4. Date of adoption</text>
-<text x="22" y="276" data-step="4">26 November 1949</text>`,
+<rect x="8" y="12" width="304" height="46" rx="6" class="d-fill-blue" data-step="1"/><rect x="8" y="12" width="304" height="46" rx="6" data-step="1"/>
+<text x="18" y="32" class="d-small d-soft" data-step="1">1. Source of authority</text>
+<text x="18" y="50" data-step="1">We, the people of India</text>
+<rect x="8" y="68" width="304" height="66" rx="6" class="d-fill" data-step="2"/><rect x="8" y="68" width="304" height="66" rx="6" data-step="2"/>
+<text x="18" y="88" class="d-small d-soft" data-step="2">2. Nature of the Indian State</text>
+<text x="18" y="106" data-step="2">Sovereign</text><text x="108" y="106" class="d-red" data-step="2">Socialist Secular</text>
+<text x="18" y="125" data-step="2">Democratic Republic</text>
+<rect x="8" y="144" width="304" height="86" rx="6" class="d-fill-green" data-step="3"/><rect x="8" y="144" width="304" height="86" rx="6" data-step="3"/>
+<text x="18" y="164" class="d-small d-soft" data-step="3">3. Objectives</text>
+<text x="18" y="183" data-step="3">Justice · Liberty</text>
+<text x="18" y="202" data-step="3">Equality · Fraternity</text>
+<text x="18" y="221" class="d-small" data-step="3">Fraternity: unity and</text><text x="155" y="221" class="d-small d-red" data-step="3">integrity</text><text x="216" y="221" class="d-small" data-step="3">of the Nation</text>
+<rect x="8" y="240" width="304" height="42" rx="6" class="d-fill-pink" data-step="4"/><rect x="8" y="240" width="304" height="42" rx="6" data-step="4"/>
+<text x="18" y="259" class="d-small d-soft" data-step="4">4. Date of adoption</text>
+<text x="18" y="276" data-step="4">26 November 1949</text>`,
       },
       explain: [
         'The Constitution draws its authority from the people: "We, the people of India... give to ourselves this Constitution".',

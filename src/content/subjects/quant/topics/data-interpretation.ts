@@ -367,7 +367,7 @@ const topic: Topic = {
       explain: [
         'Read each point first (thousand cars): 120, 150, 135, 180, 200.',
         '2021 falls from 150 to 135, so it cannot be the highest growth year.',
-        'Growth rate = rise ÷ previous value: 2020 30/120 = 25%, 2022 45/135 = 33.3%, 2023 20/180 = 11.1%.',
+        'Growth rate = rise ÷ previous value: 2020: 30/120 = 25%; 2022: 45/135 = 33.3%; 2023: 20/180 = 11.1%.',
         'The biggest rise against its base is **2022**. A tall jump from a high base (2023) can still be a small percentage.',
       ],
     },

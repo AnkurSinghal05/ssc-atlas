@@ -585,16 +585,16 @@ const topic: Topic = {
       figure: {
         viewBox: '0 0 320 240',
         svg: `
-<polygon points="102.3,45.2 256.7,66.9 127.2,194.8 63.3,112.8"/>
-<circle cx="132.9" cy="107.9" r="57.8" class="d-soft"/>
-<text x="96.1" y="38.7" text-anchor="middle">A</text>
-<text x="270" y="68.5" text-anchor="middle">B</text>
-<text x="126.3" y="214.7" text-anchor="middle">C</text>
-<text x="49.3" y="119.8" text-anchor="middle">D</text>
-<text x="181.2" y="50.2" text-anchor="middle">6</text>
-<text x="200.4" y="145.4" text-anchor="middle">7</text>
-<text x="85.8" y="167.2" text-anchor="middle">4</text>
-<text x="72.4" y="79" class="d-red" text-anchor="middle">?</text>`,
+<polygon points="76.7,25.1 281.6,25.0 136.6,215.0 38.4,120.1"/>
+<circle cx="128.0" cy="101.0" r="76.0" class="d-soft"/>
+<text x="68.4" y="18.7" text-anchor="middle">A</text>
+<text x="295.1" y="24.3" text-anchor="middle">B</text>
+<text x="137.7" y="236.0" text-anchor="middle">C</text>
+<text x="23.7" y="129.2" text-anchor="middle">D</text>
+<text x="187.0" y="19.4" text-anchor="middle">6</text>
+<text x="222.7" y="129.2" text-anchor="middle">7</text>
+<text x="80.2" y="185.5" text-anchor="middle">4</text>
+<text x="44.6" y="73.3" class="d-red" text-anchor="middle">?</text>`,
       },
       options: ['3 cm', '5 cm', '4 cm', '9 cm'],
       answer: 0,

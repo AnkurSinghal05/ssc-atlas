@@ -82,45 +82,45 @@ const topic: Topic = {
       figure: {
         viewBox: '0 0 320 188',
         svg: `
-<rect x="70" y="60" width="26" height="26" class="d-fill" data-step="1"/>
-<rect x="70" y="60" width="26" height="26" data-step="1"/>
-<text x="83" y="78" text-anchor="middle" class="d-small" data-step="2">140</text>
-<rect x="96" y="60" width="26" height="26" class="d-fill" data-step="1"/>
-<rect x="96" y="60" width="26" height="26" data-step="1"/>
-<text x="109" y="78" text-anchor="middle" class="d-small" data-step="2">140</text>
-<rect x="122" y="60" width="26" height="26" class="d-fill" data-step="1"/>
-<rect x="122" y="60" width="26" height="26" data-step="1"/>
+<rect x="60" y="60" width="30" height="26" class="d-fill" data-step="1"/>
+<rect x="60" y="60" width="30" height="26" data-step="1"/>
+<text x="75" y="78" text-anchor="middle" class="d-small" data-step="2">140</text>
+<rect x="90" y="60" width="30" height="26" class="d-fill" data-step="1"/>
+<rect x="90" y="60" width="30" height="26" data-step="1"/>
+<text x="105" y="78" text-anchor="middle" class="d-small" data-step="2">140</text>
+<rect x="120" y="60" width="30" height="26" class="d-fill" data-step="1"/>
+<rect x="120" y="60" width="30" height="26" data-step="1"/>
 <text x="135" y="78" text-anchor="middle" class="d-small" data-step="2">140</text>
-<rect x="148" y="60" width="26" height="26" class="d-fill" data-step="1"/>
-<rect x="148" y="60" width="26" height="26" data-step="1"/>
-<text x="161" y="78" text-anchor="middle" class="d-small" data-step="2">140</text>
-<rect x="174" y="60" width="26" height="26" class="d-fill" data-step="1"/>
-<rect x="174" y="60" width="26" height="26" data-step="1"/>
-<text x="187" y="78" text-anchor="middle" class="d-small" data-step="2">140</text>
-<rect x="70" y="104" width="26" height="26" class="d-fill-blue" data-step="1"/>
-<rect x="70" y="104" width="26" height="26" data-step="1"/>
-<text x="83" y="122" text-anchor="middle" class="d-small" data-step="2">140</text>
-<rect x="96" y="104" width="26" height="26" class="d-fill-blue" data-step="1"/>
-<rect x="96" y="104" width="26" height="26" data-step="1"/>
-<text x="109" y="122" text-anchor="middle" class="d-small" data-step="2">140</text>
-<rect x="122" y="104" width="26" height="26" class="d-fill-blue" data-step="1"/>
-<rect x="122" y="104" width="26" height="26" data-step="1"/>
+<rect x="150" y="60" width="30" height="26" class="d-fill" data-step="1"/>
+<rect x="150" y="60" width="30" height="26" data-step="1"/>
+<text x="165" y="78" text-anchor="middle" class="d-small" data-step="2">140</text>
+<rect x="180" y="60" width="30" height="26" class="d-fill" data-step="1"/>
+<rect x="180" y="60" width="30" height="26" data-step="1"/>
+<text x="195" y="78" text-anchor="middle" class="d-small" data-step="2">140</text>
+<rect x="60" y="104" width="30" height="26" class="d-fill-blue" data-step="1"/>
+<rect x="60" y="104" width="30" height="26" data-step="1"/>
+<text x="75" y="122" text-anchor="middle" class="d-small" data-step="2">140</text>
+<rect x="90" y="104" width="30" height="26" class="d-fill-blue" data-step="1"/>
+<rect x="90" y="104" width="30" height="26" data-step="1"/>
+<text x="105" y="122" text-anchor="middle" class="d-small" data-step="2">140</text>
+<rect x="120" y="104" width="30" height="26" class="d-fill-blue" data-step="1"/>
+<rect x="120" y="104" width="30" height="26" data-step="1"/>
 <text x="135" y="122" text-anchor="middle" class="d-small" data-step="2">140</text>
-<rect x="148" y="104" width="26" height="26" class="d-fill-blue" data-step="1"/>
-<rect x="148" y="104" width="26" height="26" data-step="1"/>
-<text x="161" y="122" text-anchor="middle" class="d-small" data-step="2">140</text>
-<rect x="174" y="104" width="26" height="26" class="d-fill-blue" data-step="1"/>
-<rect x="174" y="104" width="26" height="26" data-step="1"/>
-<text x="187" y="122" text-anchor="middle" class="d-small" data-step="2">140</text>
-<rect x="200" y="104" width="26" height="26" class="d-fill-blue" data-step="1"/>
-<rect x="200" y="104" width="26" height="26" data-step="1"/>
-<text x="213" y="122" text-anchor="middle" class="d-small" data-step="2">140</text>
-<text x="58" y="79" text-anchor="end" data-step="1">A</text>
-<text x="58" y="123" text-anchor="end" data-step="1">B</text>
-<text x="208" y="79" class="d-red" data-step="3">= ₹700</text>
-<text x="234" y="123" class="d-red" data-step="3">= ₹840</text>
-<text x="70" y="40" class="d-small d-soft" data-step="1">5 parts</text>
-<text x="70" y="150" class="d-small d-soft" data-step="1">6 parts</text>
+<rect x="150" y="104" width="30" height="26" class="d-fill-blue" data-step="1"/>
+<rect x="150" y="104" width="30" height="26" data-step="1"/>
+<text x="165" y="122" text-anchor="middle" class="d-small" data-step="2">140</text>
+<rect x="180" y="104" width="30" height="26" class="d-fill-blue" data-step="1"/>
+<rect x="180" y="104" width="30" height="26" data-step="1"/>
+<text x="195" y="122" text-anchor="middle" class="d-small" data-step="2">140</text>
+<rect x="210" y="104" width="30" height="26" class="d-fill-blue" data-step="1"/>
+<rect x="210" y="104" width="30" height="26" data-step="1"/>
+<text x="225" y="122" text-anchor="middle" class="d-small" data-step="2">140</text>
+<text x="50" y="79" text-anchor="end" data-step="1">A</text>
+<text x="50" y="123" text-anchor="end" data-step="1">B</text>
+<text x="216" y="79" class="d-red" data-step="3">= ₹700</text>
+<text x="246" y="123" class="d-red" data-step="3">= ₹840</text>
+<text x="60" y="40" class="d-small d-soft" data-step="1">5 parts</text>
+<text x="60" y="150" class="d-small d-soft" data-step="1">6 parts</text>
 <text x="160" y="176" text-anchor="middle" data-step="2">11 parts = ₹1,540, 1 part = ₹140</text>`,
         caption: '₹1,540 in the ratio 5 : 6',
       },
@@ -144,7 +144,7 @@ const topic: Topic = {
 <text x="268" y="68" text-anchor="middle" class="d-small" data-step="2">40,000 × 3</text>
 <rect x="110" y="122" width="180" height="48" class="d-fill-blue" data-step="3"/>
 <rect x="110" y="122" width="180" height="48" data-step="3"/>
-<text x="200" y="151" text-anchor="middle" class="d-small" data-step="3">80,000 × 9</text>
+<text x="170" y="151" text-anchor="middle" class="d-small" data-step="3">80,000 × 9</text>
 <text x="38" y="88" text-anchor="end" data-step="1">A</text>
 <text x="38" y="152" text-anchor="end" data-step="1">B</text>
 <line x1="110" y1="170" x2="110" y2="186" class="d-dash d-soft" data-step="3"/>
